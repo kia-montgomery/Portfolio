@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kia Montgomery — PM Portfolio</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.hero { min-height: 100vh; display: grid; grid-template-columns: 55% 45%; padding-top: 4rem; position: relative; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 6rem 4rem 6rem 5rem; position: relative; }
+.hero-left::before { content: ''; position: absolute; top: 0; right: -80px; bottom: 0; left: 0; background: var(--parchment); clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); z-index: -1; }
+.eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.eyebrow-line { width: 2.5rem; height: 1px; background: var(--rose); }
+.eyebrow-text { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); }
+.hero-name { font-family: var(--serif); font-size: clamp(3.5rem, 5.5vw, 5.5rem); font-weight: 400; line-height: 1.0; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
+.hero-name em { font-style: italic; color: var(--clay); }
+.hero-role { font-family: var(--serif); font-size: clamp(1rem, 1.8vw, 1.4rem); font-style: italic; font-weight: 400; color: var(--slate); margin-bottom: 2.5rem; margin-top: 0.8rem; }
+.hero-bio { font-size: 0.94rem; line-height: 1.88; color: #5C4A42; max-width: 420px; margin-bottom: 2.5rem; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; }
+.badge { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.38rem 0.9rem; border-radius: 100px; border: 1px solid var(--blush); color: var(--clay); background: transparent; }
+.badge.active { background: var(--clay); color: white; border-color: var(--clay); }
+.btn-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-right { position: relative; background: linear-gradient(145deg, var(--teal) 0%, var(--slate) 40%, var(--blush) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem; gap: 2.5rem; }
+.hero-monogram { font-family: var(--serif); font-size: 9rem; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.15); line-height: 1; user-select: none; animation: drift 7s ease-in-out infinite; }
+.stat-box { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); width: 100%; max-width: 320px; }
+.stat { background: rgba(255,255,255,0.08); padding: 1.2rem 1.5rem; }
+.stat-val { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; color: white; display: block; line-height: 1; margin-bottom: 0.3rem; }
+.stat-label { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+
+/* ABOUT */
+.about-section { background: white; }
+.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: start; }
+.about-text { font-size: 0.95rem; line-height: 1.9; color: #4E3C35; }
+.about-text p + p { margin-top: 1.2rem; }
+.about-sidebar { display: flex; flex-direction: column; gap: 2.5rem; }
+.sb-label { font-family: var(--mono); font-size: 0.57rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem; }
+.sb-label::after { content: ''; flex: 1; height: 1px; background: var(--sand); }
+.sb-item { font-size: 0.85rem; color: var(--ink); padding: 0.52rem 0; border-bottom: 1px solid var(--parchment); display: flex; align-items: flex-start; gap: 0.6rem; }
+.sb-item::before { content: '·'; color: var(--rose); margin-top: 1px; flex-shrink: 0; }
+
+/* PORTFOLIO GRID */
+.work-section { background: var(--warm-white); }
+.disclaimer { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; color: #8C7268; background: var(--parchment); border-left: 3px solid var(--blush); padding: 0.8rem 1.2rem; margin-bottom: 3rem; }
+
+/* Featured */
+.featured-card { background: var(--ink); color: white; display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 2px; position: relative; overflow: hidden; cursor: pointer; text-decoration: none; display: block; transition: opacity 0.2s; }
+.featured-card:hover { opacity: 0.95; }
+.featured-inner { display: grid; grid-template-columns: 1fr 1fr; }
+.featured-badge { position: absolute; top: 2rem; left: 2.5rem; font-family: var(--mono); font-size: 0.54rem; letter-spacing: 0.25em; color: var(--sky); }
+.fc-left { padding: 5rem 3.5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+.fc-tag { font-family: var(--mono); font-size: 0.57rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sky); margin-bottom: 1.2rem; margin-top: 2rem; }
+.fc-title { font-family: var(--serif); font-size: 2.3rem; font-weight: 400; line-height: 1.15; color: white; margin-bottom: 1rem; }
+.fc-title em { font-style: italic; color: var(--blush); }
+.fc-desc { font-size: 0.88rem; line-height: 1.8; color: rgba(255,255,255,0.68); margin-bottom: 1.5rem; max-width: 380px; }
+.fc-metrics { display: flex; gap: 2rem; margin-bottom: 2rem; }
+.fc-metric-val { font-family: var(--serif); font-size: 1.8rem; color: var(--blush); display: block; line-height: 1; }
+.fc-metric-label { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 0.3rem; }
+.fc-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 2rem; }
+.fc-cta { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); display: inline-flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.2rem; }
+.fc-right { background: linear-gradient(160deg, var(--teal) 0%, #2a5566 100%); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 4rem 3rem; gap: 1rem; }
+.fc-right-label { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem; margin-top: 0.5rem; }
+.tl-row { display: flex; align-items: center; gap: 0.8rem; width: 100%; }
+.tl-phase { font-family: var(--mono); font-size: 0.56rem; color: rgba(255,255,255,0.65); width: 90px; flex-shrink: 0; }
+.tl-date { font-family: var(--mono); font-size: 0.5rem; color: rgba(255,255,255,0.35); width: 80px; flex-shrink: 0; }
+.tl-bw { flex: 1; height: 5px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+.tl-bf { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--blush), var(--sky)); animation: slideIn 1.2s ease forwards; transform-origin: left; }
+.tl-s { font-family: var(--mono); font-size: 0.48rem; letter-spacing: 0.08em; padding: 0.18rem 0.45rem; border-radius: 2px; flex-shrink: 0; }
+.tl-done { background: rgba(168,197,216,0.25); color: var(--sky); }
+.tl-wip { background: rgba(220,180,140,0.25); color: #DDB88A; }
+.tl-plan { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); }
+.bud-row { display: flex; align-items: center; gap: 0.8rem; width: 100%; }
+.bud-lbl { font-family: var(--mono); font-size: 0.5rem; color: rgba(255,255,255,0.5); width: 120px; flex-shrink: 0; }
+.bud-bw { flex: 1; height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; }
+.bud-bf { height: 100%; background: linear-gradient(90deg, var(--rose), var(--sky)); border-radius: 2px; animation: slideIn 1.4s ease forwards; transform-origin: left; }
+.bud-pct { font-family: var(--mono); font-size: 0.48rem; color: rgba(255,255,255,0.4); width: 28px; text-align: right; flex-shrink: 0; }
+
+/* Card grid */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--sand); border: 2px solid var(--sand); }
+.card { background: var(--warm-white); padding: 2.5rem; position: relative; overflow: hidden; transition: background 0.25s; text-decoration: none; color: inherit; display: block; }
+.card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; width: 0; background: var(--clay); transition: width 0.4s ease; }
+.card:hover { background: white; }
+.card:hover::after { width: 100%; }
+.card-num { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.15em; color: var(--sand); margin-bottom: 0.8rem; }
+.card-tag { font-family: var(--mono); font-size: 0.57rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+.card-title { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; line-height: 1.2; color: var(--ink); margin-bottom: 0.9rem; }
+.card-title em { font-style: italic; color: var(--clay); }
+.card-desc { font-size: 0.83rem; line-height: 1.75; color: #6B5248; margin-bottom: 1.2rem; }
+.card-highlights { margin-bottom: 1.2rem; display: flex; flex-direction: column; gap: 0.38rem; }
+.highlight { font-family: var(--mono); font-size: 0.59rem; color: var(--clay); display: flex; align-items: baseline; gap: 0.45rem; }
+.highlight::before { content: '→'; opacity: 0.55; flex-shrink: 0; }
+.card-tools { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 1.2rem; }
+.card-cta { font-family: var(--mono); font-size: 0.59rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--clay); display: inline-flex; align-items: center; gap: 0.4rem; border-bottom: 1px solid var(--blush); padding-bottom: 0.15rem; }
+
+/* EXPERIENCE */
+.exp-section { background: white; }
+.exp-item { display: grid; grid-template-columns: 220px 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 1px solid var(--parchment); }
+.exp-item:first-child { padding-top: 0; }
+.exp-item:last-child { border-bottom: none; }
+.exp-co { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+.exp-dates { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em; color: var(--rose); margin-bottom: 0.5rem; }
+.exp-location { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.08em; color: #999; }
+.exp-title { font-size: 0.98rem; font-weight: 500; color: var(--ink); margin-bottom: 0.8rem; }
+.exp-bullets { display: flex; flex-direction: column; gap: 0.6rem; }
+.exp-bullet { font-size: 0.87rem; line-height: 1.72; color: #4E3C35; padding-left: 1.2rem; position: relative; }
+.exp-bullet::before { content: '—'; position: absolute; left: 0; color: var(--blush); font-size: 0.75rem; }
+
+/* SKILLS */
+.skills-section { background: var(--parchment); }
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; }
+.sk-head { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); padding-bottom: 0.8rem; border-bottom: 2px solid var(--blush); margin-bottom: 1.2rem; }
+.sk-item { margin-bottom: 0.7rem; }
+.sk-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.25rem; }
+.sk-name { font-size: 0.84rem; color: var(--ink); font-weight: 400; }
+.sk-pct { font-family: var(--mono); font-size: 0.56rem; color: var(--rose); }
+.sk-track { height: 3px; background: var(--blush); border-radius: 2px; overflow: hidden; }
+.sk-fill { height: 100%; background: linear-gradient(90deg, var(--clay), var(--teal)); border-radius: 2px; animation: slideIn 1.2s ease forwards; transform-origin: left; }
+.certs-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 3rem; }
+.cert-card { background: white; border: 1px solid var(--sand); padding: 1.1rem 1.7rem; display: flex; align-items: center; gap: 1rem; min-width: 210px; }
+.cert-icon { font-size: 1.4rem; }
+.cert-name { font-size: 0.84rem; font-weight: 500; color: var(--ink); }
+.cert-sub { font-family: var(--mono); font-size: 0.53rem; letter-spacing: 0.1em; color: var(--rose); text-transform: uppercase; margin-top: 0.2rem; }
+.cert-card.pending { border-style: dashed; border-color: var(--rose); }
+
+/* CONTACT */
+.contact-section { background: var(--ink); padding: 8rem 5rem; text-align: center; }
+.contact-eyebrow { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-style: italic; font-weight: 400; color: white; margin-bottom: 1.5rem; }
+.contact-body { font-size: 0.94rem; line-height: 1.85; color: var(--blush); max-width: 480px; margin: 0 auto 3.5rem; }
+.contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.c-link { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 1rem 2rem; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); color: white; transition: all 0.22s; }
+.c-link:hover { background: var(--clay); border-color: var(--clay); transform: translateY(-3px); }
+.c-link.primary { background: var(--clay); border-color: var(--clay); }
+
+@media (max-width: 1000px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left::before { clip-path: none; }
+  .featured-inner { grid-template-columns: 1fr; }
+  .fc-right { display: none; }
+  .card-grid { grid-template-columns: 1fr 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+}
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Kia Montgomery</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Portfolio</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0;">
+  <div class="hero-left">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Project & Program Manager · AI & Technology</span></div>
+    <h1 class="hero-name">Kia<br/><em>Montgomery</em></h1>
+    <p class="hero-role">HR Transformation · Agile Delivery · AI-Enabled Programs</p>
+    <p class="hero-bio">HR Transformation consultant with 9+ years spanning management consulting, federal HR program delivery, and HR operations leadership. I advise on HR strategy, operating model design, and large-scale HRIS modernization — leading cross-functional teams, managing complex program risk, and translating data-driven insights into executive-ready recommendations in fast-paced, matrixed environments.</p>
+    <div class="badge-row">
+      <span class="badge active">PMP — May 2026</span>
+      <span class="badge active">SAFe 6.0 Scrum Master</span>
+      <span class="badge active">ICP Certified</span>
+      <span class="badge">Howard University MBA</span>
+      <span class="badge">Remote · Open to Work</span>
+    </div>
+    <div class="btn-row">
+      <a href="#work" class="btn btn-primary">View My Portfolio</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-monogram">KM</div>
+    <div class="stat-box">
+      <div class="stat"><span class="stat-val">9+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-val">IBM</span><span class="stat-label">Current Employer</span></div>
+      <div class="stat"><span class="stat-val">$11M+</span><span class="stat-label">Programs Managed</span></div>
+      <div class="stat"><span class="stat-val">50+</span><span class="stat-label">Consultants Led</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="s-head reveal"><span class="s-num">01</span><h2 class="s-title">About <em>Me</em></h2><div class="s-rule"></div></div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I'm a Senior Consultant at IBM with a career built at the intersection of HR, technology, and enterprise program delivery. My background spans federal HR transformation at IBM and Accenture, five years leading HR operations for Harris County, and early HR roles at ABM and LyondellBasell.</p>
+      <p>What sets me apart is the combination: I understand HR deeply enough to challenge requirements, I understand technology well enough to hold vendors accountable, and I understand people well enough to lead change that actually sticks. I've overseen $11.1M in contract funding, led 50+ consultants, tracked 350+ change requests, and delivered HRIS modernization for 50,000+ end users — zero delivery disruption.</p>
+      <p>I'm actively transitioning into Project & Program Manager roles in AI and technology — remote-first, high-impact environments where I can own outcomes from strategy to go-live. The portfolio below demonstrates the full PM toolkit through a complete mock project: an AI-Powered HR Onboarding Platform implementation, built artifact by artifact the way a real IBM PM engagement would unfold.</p>
+      <p>Currently completing my PMP certification (May 2026). MBA from Howard University, with international consulting engagements in Johannesburg and Beijing. Graduate Assistantship Scholar and MBA Student Advisory Board member.</p>
+    </div>
+    <div class="about-sidebar reveal">
+      <div><div class="sb-label">Education</div>
+        <div><div class="sb-item"><strong>MBA</strong> · Howard University, 2023</div>
+        <div class="sb-item">MS, Global Trilateral Consulting · Wits Business School + CUFE</div>
+        <div class="sb-item">BBA, Business Administration · Sam Houston State, 2016</div></div>
+      </div>
+      <div><div class="sb-label">Certifications</div>
+        <div><div class="sb-item">SAFe 6.0 Scrum Master</div>
+        <div class="sb-item">ICAgile Certified Professional (ICP)</div>
+        <div class="sb-item">PMP — In Progress (May 2026)</div>
+        <div class="sb-item">PHR — Prior</div></div>
+      </div>
+      <div><div class="sb-label">Tools & Platforms</div>
+        <div><div class="sb-item">Jira · Confluence · Monday.com</div>
+        <div class="sb-item">Power BI · SAP Concur · ALM · AWS · WalkMe</div>
+        <div class="sb-item">Oracle PeopleSoft · Workday · NeoGov</div>
+        <div class="sb-item">WatsonX · MS Copilot · Claude · ChatGPT · Gemini</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="work-section" id="work">
+  <div class="s-head reveal"><span class="s-num">02</span><h2 class="s-title">Portfolio <em>Work</em></h2><div class="s-rule"></div></div>
+  <div class="disclaimer reveal">⚠ All artifacts are mock deliverables created to demonstrate PM competency. They are not client confidential documents.</div>
+
+  <!-- FEATURED -->
+  <a href="cs-01-charter.html" class="featured-card reveal" style="display:block; text-decoration:none;">
+    <div class="featured-badge">★ FEATURED — CLICK TO VIEW FULL CASE STUDY</div>
+    <div class="featured-inner">
+      <div class="fc-left">
+        <div class="fc-tag">01 · Project Charter</div>
+        <h3 class="fc-title">AI-Powered HR<br/><em>Onboarding Platform</em></h3>
+        <p class="fc-desc">Full project charter for a $1.25M enterprise AI implementation — scope, objectives, governance, budget breakdown, stakeholder authorization, and a 9-month phased timeline led by IBM Consulting.</p>
+        <div class="fc-metrics">
+          <div><span class="fc-metric-val">$1.25M</span><span class="fc-metric-label">Total Budget</span></div>
+          <div><span class="fc-metric-val">9 mo</span><span class="fc-metric-label">Timeline</span></div>
+          <div><span class="fc-metric-val">85.5%</span><span class="fc-metric-label">3-Year ROI</span></div>
+        </div>
+        <div class="fc-tools">
+          <span class="tag tag-dark">Project Initiation</span><span class="tag tag-dark">Scope Definition</span><span class="tag tag-dark">Budget Planning</span><span class="tag tag-dark">Governance</span>
+        </div>
+        <span class="fc-cta">View Full Case Study →</span>
+      </div>
+      <div class="fc-right">
+        <div class="fc-right-label">Project Timeline</div>
+        <div class="tl-row"><span class="tl-phase">Discovery</span><span class="tl-date">Jan–Feb 2025</span><div class="tl-bw"><div class="tl-bf" style="width:100%"></div></div><span class="tl-s tl-done">✓ Done</span></div>
+        <div class="tl-row"><span class="tl-phase">Design & Build</span><span class="tl-date">Mar–May 2025</span><div class="tl-bw"><div class="tl-bf" style="width:82%; animation-delay:.15s"></div></div><span class="tl-s tl-wip">82%</span></div>
+        <div class="tl-row"><span class="tl-phase">Pilot</span><span class="tl-date">Jun–Jul 2025</span><div class="tl-bw"><div class="tl-bf" style="width:12%; animation-delay:.3s"></div></div><span class="tl-s tl-plan">Upcoming</span></div>
+        <div class="tl-row"><span class="tl-phase">Enterprise</span><span class="tl-date">Aug–Sep 2025</span><div class="tl-bw"><div class="tl-bf" style="width:4%; animation-delay:.45s"></div></div><span class="tl-s tl-plan">Planned</span></div>
+        <div class="fc-right-label">Budget Allocation</div>
+        <div class="bud-row"><span class="bud-lbl">Software Licensing</span><div class="bud-bw"><div class="bud-bf" style="width:32%"></div></div><span class="bud-pct">32%</span></div>
+        <div class="bud-row"><span class="bud-lbl">IBM Consulting</span><div class="bud-bw"><div class="bud-bf" style="width:40%; animation-delay:.1s"></div></div><span class="bud-pct">40%</span></div>
+        <div class="bud-row"><span class="bud-lbl">IT Integration</span><div class="bud-bw"><div class="bud-bf" style="width:16%; animation-delay:.2s"></div></div><span class="bud-pct">16%</span></div>
+        <div class="bud-row"><span class="bud-lbl">Change Mgmt</span><div class="bud-bw"><div class="bud-bf" style="width:8%; animation-delay:.3s"></div></div><span class="bud-pct">8%</span></div>
+        <div class="bud-row"><span class="bud-lbl">Contingency</span><div class="bud-bw"><div class="bud-bf" style="width:4%; animation-delay:.4s"></div></div><span class="bud-pct">4%</span></div>
+      </div>
+    </div>
+  </a>
+
+  <!-- CARD GRID -->
+  <div class="card-grid">
+    <a href="cs-02-comms.html" class="card reveal">
+      <div class="card-num">02</div><div class="card-tag">Stakeholder Management</div>
+      <h3 class="card-title">Communication Plan<br/><em>& RACI Matrix</em></h3>
+      <p class="card-desc">Stakeholder register, 7-channel communications matrix, full RACI across 8 deliverables, and 3-level escalation path with SLAs.</p>
+      <div class="card-highlights">
+        <span class="highlight">6 stakeholder groups mapped by influence & interest</span>
+        <span class="highlight">RACI: Charter, UAT, Go-Live, Budget & more</span>
+        <span class="highlight">Same-day → 72-hr escalation tiers defined</span>
+      </div>
+      <div class="card-tools"><span class="tag">RACI</span><span class="tag">Comms Planning</span><span class="tag">Governance</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-03-risk.html" class="card reveal">
+      <div class="card-num">03</div><div class="card-tag">Risk Management</div>
+      <h3 class="card-title">Risk Register &<br/><em>Response Plan</em></h3>
+      <p class="card-desc">10-risk register across 6 categories: technical, people, vendor, data/compliance, schedule, and adoption — each with probability/impact scoring and mitigation actions.</p>
+      <div class="card-highlights">
+        <span class="highlight">4 High / 5 Medium / 1 Low risks tracked</span>
+        <span class="highlight">AI bias audit protocol embedded</span>
+        <span class="highlight">CCPA + TX HB4 compliance risk addressed</span>
+      </div>
+      <div class="card-tools"><span class="tag">Risk Matrix</span><span class="tag">Compliance</span><span class="tag">AI Risk</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-04-process.html" class="card reveal">
+      <div class="card-num">04</div><div class="card-tag">Process Design</div>
+      <h3 class="card-title">Current → Future State<br/><em>Process Flow</em></h3>
+      <p class="card-desc">14-system, 22-day manual process redesigned into 5-stage automated workflow with automation level mapping and before/after metrics.</p>
+      <div class="card-highlights">
+        <span class="highlight">22 days → &lt;5 days (77% reduction)</span>
+        <span class="highlight">8 hrs/hire → 2 hrs (75% time savings)</span>
+        <span class="highlight">IT provisioning: Day 1 auto-triggered</span>
+      </div>
+      <div class="card-tools"><span class="tag">Process Mapping</span><span class="tag">Automation</span><span class="tag">Workday</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-05-status.html" class="card reveal">
+      <div class="card-num">05</div><div class="card-tag">Executive Reporting</div>
+      <h3 class="card-title">Executive Status Report<br/><em>& KPI Dashboard</em></h3>
+      <p class="card-desc">Phase 2 executive status report with RAG dashboard, 6 KPIs tracked against baseline/target, accomplishments, next actions, and leadership decisions required.</p>
+      <div class="card-highlights">
+        <span class="highlight">Schedule 🟢 Budget 🟢 Risks 🔴 at reporting date</span>
+        <span class="highlight">$612K of $1.25M spent — on track</span>
+        <span class="highlight">2 decisions required with hard deadlines</span>
+      </div>
+      <div class="card-tools"><span class="tag">Status Reporting</span><span class="tag">KPIs</span><span class="tag">RAG Status</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-06-business.html" class="card reveal">
+      <div class="card-num">06</div><div class="card-tag">Financial Analysis</div>
+      <h3 class="card-title">Business Case &<br/><em>ROI Analysis</em></h3>
+      <p class="card-desc">Full business case justifying $1.25M investment — problem statement, 4 alternatives, quantified benefit modeling, and 3-year financial projection with payback analysis.</p>
+      <div class="card-highlights">
+        <span class="highlight">$1.07M annual benefit (conservative)</span>
+        <span class="highlight">18-month payback · 85.5% 3-year ROI</span>
+        <span class="highlight">4 alternatives evaluated with recommendation</span>
+      </div>
+      <div class="card-tools"><span class="tag">Business Case</span><span class="tag">ROI</span><span class="tag">Financial Modeling</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-07-gantt.html" class="card reveal">
+      <div class="card-num">07</div><div class="card-tag">Project Scheduling</div>
+      <h3 class="card-title">Project Schedule<br/><em>& Gantt Chart</em></h3>
+      <p class="card-desc">21-task Gantt chart across 4 project phases (Jan–Sep 2025), with task IDs, owners, start/end dates, durations, percent complete, and status tracking.</p>
+      <div class="card-highlights">
+        <span class="highlight">21 tasks · 4 phases · 9-month project arc</span>
+        <span class="highlight">Phase 1 complete · Phase 2 at 82%</span>
+        <span class="highlight">Go-live: Aug 18 · Close: Sep 30</span>
+      </div>
+      <div class="card-tools"><span class="tag">Gantt</span><span class="tag">Scheduling</span><span class="tag">WBS</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-08-sprint.html" class="card reveal">
+      <div class="card-num">08</div><div class="card-tag">Agile Delivery</div>
+      <h3 class="card-title">Sprint Board, Backlog<br/><em>& Velocity Tracker</em></h3>
+      <p class="card-desc">Active sprint board with 10 user stories, full product backlog, and 6-sprint velocity tracker with sprint goal achievement rates and burndown health metrics.</p>
+      <div class="card-highlights">
+        <span class="highlight">Avg velocity: 35.5 pts · 5/6 goals met (83.3%)</span>
+        <span class="highlight">US-021 through US-030 with acceptance criteria</span>
+        <span class="highlight">8.1% carry-over rate · 15 bugs YTD</span>
+      </div>
+      <div class="card-tools"><span class="tag">Agile / Scrum</span><span class="tag">Jira</span><span class="tag">Backlog</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-09-minutes.html" class="card reveal">
+      <div class="card-num">09</div><div class="card-tag">Facilitation & Governance</div>
+      <h3 class="card-title">Meeting Minutes:<br/><em>Kickoff & Sprint 6</em></h3>
+      <p class="card-desc">Two professional meeting minutes artifacts — Steering Committee kickoff (Jan 2025) and Sprint 6 Review (Apr 2025) — spanning formal governance and agile delivery.</p>
+      <div class="card-highlights">
+        <span class="highlight">Charter signed · ServiceNow CR raised · SLAs agreed</span>
+        <span class="highlight">Sprint 6: 31/36 pts · Workday sync live</span>
+        <span class="highlight">CR-004 escalation · vendor licensing flagged</span>
+      </div>
+      <div class="card-tools"><span class="tag">Meeting Facilitation</span><span class="tag">Governance</span><span class="tag">Agile</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+
+    <a href="cs-10-financials.html" class="card reveal">
+      <div class="card-num">10</div><div class="card-tag">Financial Tracking</div>
+      <h3 class="card-title">Budget, Labor &<br/><em>Contractor Cost Reports</em></h3>
+      <p class="card-desc">Three financial management artifacts: budget tracker by category and quarter, labor utilization by team member, and contractor cost report with invoice tracking.</p>
+      <div class="card-highlights">
+        <span class="highlight">$612K spent of $1.25M · $32K under forecast</span>
+        <span class="highlight">7-person team · billing rates · YTD hours</span>
+        <span class="highlight">Q3 projected: $312K · Forecasted total: $1.05M</span>
+      </div>
+      <div class="card-tools"><span class="tag">Budget Mgmt</span><span class="tag">Labor Tracking</span><span class="tag">Invoicing</span></div>
+      <span class="card-cta">View Case Study →</span>
+    </a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp-section" id="experience">
+  <div class="s-head reveal"><span class="s-num">03</span><h2 class="s-title">Professional <em>Experience</em></h2><div class="s-rule"></div></div>
+  <div>
+    <div class="exp-item reveal">
+      <div><div class="exp-co">IBM</div><div class="exp-dates">Jan 2024 – Present</div><div class="exp-location">Houston, TX · Remote</div></div>
+      <div><div class="exp-title">Senior Consultant · HR Strategy & Transformation</div>
+        <div class="exp-bullets">
+          <p class="exp-bullet">Delivery lead for a federal HR Line of Business program (Oracle PeopleSoft) — overseeing active payroll implementation across four federal agencies; led 50+ technical and functional consultants with zero delivery disruption.</p>
+          <p class="exp-bullet">Designed HR performance dashboards using Power BI, Monday.com, and Claude to consolidate payroll, labor forecasting, utilization, and risk metrics across $11.1M in contract funding for 100+ personnel.</p>
+          <p class="exp-bullet">Managed program risk and quality: tracked 50+ program risks, 350+ change requests, and 30+ contractual deliverables within an Integrated Master Schedule (IMS); ensured compliance with federal regulations and contractual SLA requirements.</p>
+          <p class="exp-bullet">Led AI enablement sessions training teams on WatsonX and Microsoft Copilot; operated within SAFe Agile — led sprint planning, backlog grooming, PI planning, and tracked velocity in Jira.</p>
+          <p class="exp-bullet">Executed regression and functional testing across AWS environments (INT, TNT, UAT) using Jira and ALM to manage defects affecting 50,000+ end users.</p>
+        </div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div><div class="exp-co">Accenture</div><div class="exp-dates">May 2022 – Aug 2022</div><div class="exp-location">Washington, D.C.</div></div>
+      <div><div class="exp-title">Strategy & Transformation Consultant</div>
+        <div class="exp-bullets">
+          <p class="exp-bullet">Embedded on a federal HR transformation program — organizational change management, HR process modernization, and governance design supporting a HQ relocation impacting 150+ employees.</p>
+          <p class="exp-bullet">Performed pre/post employee survey analysis to identify flight risk and engagement gaps; synthesized findings into an executive risk brief for senior stakeholders.</p>
+          <p class="exp-bullet">Designed phased, role-based change management roadmap and HR operating model assets: process maps, governance cadences, and communications plans.</p>
+        </div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div><div class="exp-co">Harris County</div><div class="exp-dates">Jan 2016 – Aug 2021</div><div class="exp-location">Houston, TX</div></div>
+      <div><div class="exp-title">HR Division Manager</div>
+        <div class="exp-bullets">
+          <p class="exp-bullet">Led county-wide organizational restructuring across 6 divisions; managed end-to-end payroll system migration from IFAS to Oracle PeopleSoft for 500+ employees — UAT, ESS/MSS security, data migration, and training — zero disruption.</p>
+          <p class="exp-bullet">Forecasted $1–3M annual workforce budget; monitored PCN burn rates, compensation reclassifications, and allowances using Excel for executive reporting.</p>
+          <p class="exp-bullet">Launched a workplace accommodations internship program in partnership with the Texas Workforce Commission — achieved ~70% full-time conversion rate.</p>
+        </div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div><div class="exp-co">ABM Corporate HQ</div><div class="exp-dates">2012 – 2015</div><div class="exp-location">Houston, TX</div></div>
+      <div><div class="exp-title">HR Generalist</div>
+        <div class="exp-bullets"><p class="exp-bullet">Full-cycle HR generalist supporting corporate HQ operations across recruitment, employee relations, onboarding, and compliance.</p></div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div><div class="exp-co">LyondellBasell (CITGO)</div><div class="exp-dates">2011 – 2012</div><div class="exp-location">Houston, TX</div></div>
+      <div><div class="exp-title">HR Coordinator</div>
+        <div class="exp-bullets"><p class="exp-bullet">HR coordination supporting payroll, onboarding, and compliance functions in a Fortune 500 petrochemical environment.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="s-head reveal"><span class="s-num">04</span><h2 class="s-title">Skills &<br/><em>Competencies</em></h2><div class="s-rule"></div></div>
+  <div class="skills-grid">
+    <div class="reveal"><div class="sk-head">Program Management</div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Risk & Issue Mgmt</span><span class="sk-pct">95%</span></div><div class="sk-track"><div class="sk-fill" style="width:95%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Stakeholder Mgmt</span><span class="sk-pct">95%</span></div><div class="sk-track"><div class="sk-fill" style="width:95%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Budget Forecasting</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Change Management</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Executive Communication</span><span class="sk-pct">95%</span></div><div class="sk-track"><div class="sk-fill" style="width:95%"></div></div></div>
+    </div>
+    <div class="reveal"><div class="sk-head">Agile & Delivery</div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">SAFe Agile / Scrum</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Sprint Planning</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Jira</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Process Design</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">UAT / QA Management</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
+    </div>
+    <div class="reveal"><div class="sk-head">Tools & Technology</div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Power BI</span><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill" style="width:80%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Oracle PeopleSoft</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Workday</span><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill" style="width:80%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">WatsonX / MS Copilot</span><span class="sk-pct">75%</span></div><div class="sk-track"><div class="sk-fill" style="width:75%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Excel / Monday.com</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
+    </div>
+    <div class="reveal"><div class="sk-head">Domain Expertise</div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">HRIS Modernization</span><span class="sk-pct">95%</span></div><div class="sk-track"><div class="sk-fill" style="width:95%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">HR Strategy & Ops</span><span class="sk-pct">95%</span></div><div class="sk-track"><div class="sk-fill" style="width:95%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">AI Enablement</span><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill" style="width:80%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Federal Programs</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Business Case / ROI</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
+    </div>
+  </div>
+  <div class="certs-row reveal">
+    <div class="cert-card"><div class="cert-icon">🏅</div><div><div class="cert-name">SAFe 6.0 Scrum Master</div><div class="cert-sub">Scaled Agile · Active</div></div></div>
+    <div class="cert-card"><div class="cert-icon">🏅</div><div><div class="cert-name">ICAgile Certified Professional</div><div class="cert-sub">ICP · Active</div></div></div>
+    <div class="cert-card pending"><div class="cert-icon">⏳</div><div><div class="cert-name">PMP Certification</div><div class="cert-sub">PMI · May 2026</div></div></div>
+    <div class="cert-card pending"><div class="cert-icon">⏳</div><div><div class="cert-name">PMI-ACP</div><div class="cert-sub">PMI · Planned</div></div></div>
+    <div class="cert-card pending"><div class="cert-icon">⏳</div><div><div class="cert-name">AWS / Azure Fundamentals</div><div class="cert-sub">Cloud · Planned</div></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <p class="contact-eyebrow reveal">Let's work together.</p>
+  <p class="contact-body reveal">Open to fully remote Project & Program Manager roles in AI and technology. If my background aligns with what you're building — from strategy to go-live — I'd love to connect.</p>
+  <div class="contact-links reveal">
+    <a href="mailto:kmontgomery1292@gmail.com" class="c-link primary">Email Me</a>
+    <a href="https://www.linkedin.com/in/kiamontgomery" class="c-link" target="_blank">LinkedIn</a>
+    <a href="Kia_Montgomery_Resume_2026.pdf" class="c-link" download>Download Resume</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-copy">© 2026 Kia Montgomery · Senior Consultant, IBM · Houston, TX</span>
+  <div class="footer-links">
+    <a href="#top">Back to Top</a>
+    <a href="#work">Portfolio</a>
+    <a href="mailto:kmontgomery1292@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'), i*65); io.unobserve(e.target); } });
+}, {threshold: 0.07});
+reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

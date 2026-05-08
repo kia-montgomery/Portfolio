@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Budget & Financial Reports — Kia Montgomery Portfolio</title><link rel="stylesheet" href="style.css"/>
+<style>
+.cs-hero{background:linear-gradient(145deg,#2a1a10 0%,#5a3a10 55%,var(--clay) 100%);}
+.fin-section{background:white;padding:4rem 5rem;border-bottom:1px solid var(--parchment);}
+.fin-section:last-child{border-bottom:none;}
+.fin-section-label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem;}
+.fin-section-title{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--ink);margin-bottom:0.5rem;}
+.fin-section-title em{font-style:italic;color:var(--clay);}
+.fin-section-sub{font-size:0.88rem;color:#6B5248;margin-bottom:2rem;}
+
+/* Budget tracker */
+.budget-grid{display:grid;grid-template-columns:2fr repeat(9,1fr);gap:0;margin:1.5rem 0;}
+.bg-head{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);padding:0.6rem 0.7rem;background:var(--parchment);border-bottom:2px solid var(--sand);text-align:right;}
+.bg-head.left{text-align:left;}
+.bg-cell{font-family:var(--mono);font-size:0.68rem;padding:0.6rem 0.7rem;border-bottom:1px solid var(--parchment);text-align:right;vertical-align:middle;}
+.bg-cell.label{font-family:var(--sans);font-size:0.83rem;color:var(--ink);text-align:left;font-weight:400;}
+.bg-cell.total-row{background:var(--parchment);font-weight:500;}
+.bg-pos{color:var(--teal);}.bg-neg{color:var(--clay);}
+
+/* Snapshot */
+.snap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--sand);margin:2rem 0;}
+.snap-cell{background:var(--parchment);padding:1.3rem 1.5rem;}
+.snap-label{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--slate);margin-bottom:0.3rem;}
+.snap-val{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--clay);}
+.snap-sub{font-family:var(--mono);font-size:0.54rem;color:var(--teal);margin-top:0.2rem;}
+
+/* Labor table */
+.labor-grid{display:grid;grid-template-columns:auto 1.5fr 100px repeat(4,70px) 80px 80px 80px;gap:0;margin:1.5rem 0;}
+.l-head{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);padding:0.6rem 0.7rem;background:var(--parchment);border-bottom:2px solid var(--sand);text-align:right;}
+.l-head.left{text-align:left;}
+.l-cell{font-family:var(--mono);font-size:0.66rem;padding:0.6rem 0.7rem;border-bottom:1px solid var(--parchment);text-align:right;color:var(--ink);}
+.l-cell.name{font-family:var(--sans);font-size:0.84rem;text-align:left;color:var(--ink);}
+.l-cell.role{font-family:var(--sans);font-size:0.78rem;color:#6B5248;text-align:left;}
+.l-cell.highlight{color:var(--teal);font-weight:500;}
+.l-cell.rate{color:var(--clay);}
+.l-total{background:var(--parchment);font-weight:500;}
+
+/* Weekly log */
+.week-grid{display:grid;grid-template-columns:120px repeat(5,60px) 80px 1fr;gap:0;margin:1.5rem 0;}
+.w-head{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);padding:0.5rem 0.7rem;background:var(--parchment);border-bottom:2px solid var(--sand);text-align:center;}
+.w-head.left{text-align:left;}
+.w-cell{font-family:var(--mono);font-size:0.68rem;padding:0.55rem 0.7rem;border-bottom:1px solid var(--parchment);text-align:center;}
+.w-cell.left{text-align:left;font-size:0.78rem;}
+.w-cell.act{font-size:0.78rem;color:#4E3C35;}
+
+/* Contractor table */
+.ct-grid{display:grid;grid-template-columns:auto 1.5fr 1.2fr 70px 70px 80px 80px 90px 100px 100px;gap:0;margin:1.5rem 0;}
+.ct-head{font-family:var(--mono);font-size:0.48rem;letter-spacing:0.09em;text-transform:uppercase;color:var(--teal);padding:0.6rem 0.6rem;background:var(--parchment);border-bottom:2px solid var(--sand);text-align:right;}
+.ct-head.left{text-align:left;}
+.ct-cell{font-family:var(--mono);font-size:0.64rem;padding:0.6rem 0.6rem;border-bottom:1px solid var(--parchment);text-align:right;color:var(--ink);}
+.ct-cell.name{font-family:var(--sans);font-size:0.82rem;text-align:left;color:var(--ink);}
+.ct-cell.type{font-family:var(--sans);font-size:0.74rem;color:#6B5248;text-align:left;}
+.paid{background:rgba(60,180,90,0.1);color:#2a7a3a;font-family:var(--mono);font-size:0.52rem;padding:0.18rem 0.45rem;border-radius:2px;}
+.pending-badge{background:rgba(230,160,30,0.15);color:#8a6010;font-family:var(--mono);font-size:0.52rem;padding:0.18rem 0.45rem;border-radius:2px;}
+.internal{background:rgba(168,197,216,0.2);color:var(--slate);font-family:var(--mono);font-size:0.52rem;padding:0.18rem 0.45rem;border-radius:2px;}
+
+/* Cost summary panel */
+.cost-summary{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;}
+.cs-panel{background:var(--parchment);padding:1.5rem;}
+.cs-p-title{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);padding-bottom:0.7rem;border-bottom:1px solid var(--sand);margin-bottom:1rem;}
+.cs-p-row{display:flex;justify-content:space-between;align-items:baseline;padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.04);}
+.cs-p-label{font-size:0.82rem;color:var(--ink);}
+.cs-p-val{font-family:var(--mono);font-size:0.82rem;color:var(--clay);}
+.cs-p-sub{font-family:var(--mono);font-size:0.53rem;color:var(--slate);margin-top:0.2rem;}
+.cs-p-row.highlight .cs-p-val{color:var(--teal);font-size:1rem;}
+.cs-p-row.highlight .cs-p-label{font-weight:500;}
+
+/* LL */
+.ll-row{display:grid;grid-template-columns:60px 80px 80px 1fr 1fr 90px;gap:0.5rem;align-items:start;padding:0.8rem 0;border-bottom:1px solid var(--parchment);font-size:0.83rem;}
+.ll-id{font-family:var(--mono);font-size:0.58rem;color:var(--rose);}
+.ll-date{font-family:var(--mono);font-size:0.58rem;color:var(--slate);}
+.ll-phase{font-family:var(--mono);font-size:0.58rem;color:var(--teal);}
+.ll-cat-badge{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.08em;padding:0.15rem 0.45rem;border-radius:2px;}
+.cat-process{background:rgba(168,197,216,0.2);color:var(--slate);}
+.cat-scope{background:rgba(220,196,184,0.3);color:var(--clay);}
+.cat-people{background:rgba(155,94,74,0.12);color:var(--clay);}
+.cat-tech{background:rgba(61,122,138,0.12);color:var(--teal);}
+.cat-ai{background:rgba(200,60,60,0.08);color:#8a2020;}
+.cat-comms{background:rgba(109,143,163,0.15);color:var(--slate);}
+
+@media (max-width:900px){.fin-section{padding:2.5rem 1.5rem;}.cost-summary{grid-template-columns:1fr;}}
+</style></head><body>
+<nav><a href="index.html" class="nav-logo">Kia Montgomery</a><ul class="nav-links"><li><a href="index.html">← Home</a></li><li><a href="index.html#work">All Artifacts</a></li><li><a href="cs-09-minutes.html">← Prev</a></li><li><a href="index.html#work">Portfolio Home</a></li></ul></nav>
+
+<div class="cs-hero"><div class="cs-hero-content">
+  <div class="cs-breadcrumb"><a href="index.html">Portfolio</a> / <a href="index.html#work">Artifacts</a> / Financial Reports</div>
+  <div class="cs-artifact-num">Artifact 10 of 10</div>
+  <h1 class="cs-title">Budget, Labor &<br/><em>Contractor Cost Reports</em></h1>
+  <p class="cs-subtitle">AI-Powered HR Onboarding Platform · Q1–Q2 YTD · Prepared by Kia Montgomery · IBM Consulting</p>
+  <div class="cs-meta-row">
+    <div><div class="cs-meta-label">Total Budget</div><div class="cs-meta-val">$1,250,000</div></div>
+    <div><div class="cs-meta-label">Spent to Date</div><div class="cs-meta-val">$612,300</div></div>
+    <div><div class="cs-meta-label">% Utilized</div><div class="cs-meta-val">49% — On Track</div></div>
+    <div><div class="cs-meta-label">Forecasted Total</div><div class="cs-meta-val">$1,218,000</div></div>
+    <div><div class="cs-meta-label">Variance vs Budget</div><div class="cs-meta-val">($32,000) Under</div></div>
+  </div>
+</div></div>
+
+<!-- INTRO -->
+<div class="fin-section">
+  <h3 style="font-family:var(--serif);font-size:1.45rem;font-weight:400;color:var(--ink);margin-bottom:1rem;">What <em style="color:var(--clay);font-style:italic;">This Artifact Demonstrates</em></h3>
+  <p style="font-size:0.94rem;line-height:1.9;color:#4E3C35;max-width:720px;margin-bottom:1rem;">Financial management is a top-tier PM competency — and one that separates program managers from project coordinators. This final artifact presents three financial tracking documents drawn directly from the PM_Portfolio_Financials.xlsx workbook: a category-level budget tracker with quarterly actuals, a 7-person labor and resource utilization report with weekly hours detail, and a contractor cost report with invoice tracking.</p>
+  <p style="font-size:0.94rem;line-height:1.9;color:#4E3C35;max-width:720px;margin-bottom:1rem;">Together, these reports demonstrate my ability to own a $1.25M program budget end-to-end — from initial allocation to forecasted completion — with the granularity to answer questions at the category, resource, and invoice level.</p>
+  <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem;">
+    <span class="tag tag-teal">Budget Management</span>
+    <span class="tag tag-teal">Labor Forecasting</span>
+    <span class="tag tag-teal">Contractor Invoice Tracking</span>
+    <span class="tag tag-teal">EVM Literacy</span>
+    <span class="tag tag-teal">Resource Utilization</span>
+  </div>
+</div>
+
+<!-- 1: BUDGET TRACKER -->
+<div class="fin-section">
+  <div class="fin-section-label">Financial Report 1 of 3</div>
+  <div class="fin-section-title">Financial <em>Budget Tracker</em></div>
+  <div class="fin-section-sub">Budget Version v3.1 · Reporting Period: April 2025 · IBM Consulting · Project Manager: Kia Montgomery</div>
+
+  <div style="overflow-x:auto;">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="min-width:200px;">Cost Category</th>
+        <th>Q1 Budget</th><th>Q1 Actual</th><th>Q1 Variance</th>
+        <th>Q2 Budget</th><th>Q2 Actual</th><th>Q2 Forecast</th>
+        <th>Q3 Budget</th><th>Q4 Budget</th>
+        <th>Total Budget</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Software Licensing & Platform Fees</strong></td>
+        <td>$100,000</td><td>$98,200</td><td style="color:var(--teal);">($1,800)</td>
+        <td>$200,000</td><td>$282,000</td><td>$282,000</td>
+        <td>$0</td><td>$0</td><td>$400,000</td>
+      </tr>
+      <tr>
+        <td><strong>IBM Consulting & Implementation</strong></td>
+        <td>$125,000</td><td>$118,500</td><td style="color:var(--teal);">($6,500)</td>
+        <td>$200,000</td><td>$76,500</td><td>$180,000</td>
+        <td>$100,000</td><td>$75,000</td><td>$500,000</td>
+      </tr>
+      <tr>
+        <td><strong>System Integration & IT Infrastructure</strong></td>
+        <td>$50,000</td><td>$37,100</td><td style="color:var(--teal);">($12,900)</td>
+        <td>$100,000</td><td>$0</td><td>$60,000</td>
+        <td>$30,000</td><td>$20,000</td><td>$200,000</td>
+      </tr>
+      <tr>
+        <td><strong>Change Management & Training</strong></td>
+        <td>$5,000</td><td>$0</td><td style="color:var(--teal);">($5,000)</td>
+        <td>$20,000</td><td>$0</td><td>$8,000</td>
+        <td>$50,000</td><td>$25,000</td><td>$100,000</td>
+      </tr>
+      <tr>
+        <td><strong>Contingency Reserve</strong></td>
+        <td>$0</td><td>$0</td><td>—</td>
+        <td>$0</td><td>$0</td><td>$0</td>
+        <td>$25,000</td><td>$25,000</td><td>$50,000</td>
+      </tr>
+      <tr style="background:var(--parchment); font-weight:500;">
+        <td><strong>TOTAL</strong></td>
+        <td><strong>$280,000</strong></td><td><strong>$253,800</strong></td><td style="color:var(--teal);"><strong>($26,200)</strong></td>
+        <td><strong>$520,000</strong></td><td><strong>$358,500</strong></td><td><strong>$530,000</strong></td>
+        <td><strong>$205,000</strong></td><td><strong>$145,000</strong></td><td><strong>$1,250,000</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="margin-top:0.6rem;font-family:var(--mono);font-size:0.56rem;color:var(--slate);">Note: Q2 Actual reflects spend through Apr 25, 2025. Q2 Forecast = estimated Q2 total at completion. Q3/Q4 figures represent approved baseline.</div>
+
+  <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin:2rem 0 0.8rem;">Budget Health Snapshot</div>
+  <div class="snap-grid">
+    <div class="snap-cell"><div class="snap-label">Total Approved Budget</div><div class="snap-val">$1,250,000</div></div>
+    <div class="snap-cell"><div class="snap-label">Total Spent to Date</div><div class="snap-val">$612,300</div><div class="snap-sub">49% utilized</div></div>
+    <div class="snap-cell"><div class="snap-label">Forecasted Total Cost</div><div class="snap-val">$1,218,000</div><div class="snap-sub">$32K under budget</div></div>
+    <div class="snap-cell"><div class="snap-label">Budget Variance</div><div class="snap-val" style="color:var(--teal);">($32,000)</div><div class="snap-sub">Under Budget ✓</div></div>
+    <div class="snap-cell"><div class="snap-label">Contingency Remaining</div><div class="snap-val">$50,000</div><div class="snap-sub">Full reserve intact</div></div>
+    <div class="snap-cell"><div class="snap-label">Projected Year-End</div><div class="snap-val" style="font-size:1.2rem;">ON TRACK</div><div class="snap-sub">Under budget — all categories green</div></div>
+  </div>
+</div>
+
+<!-- 2: LABOR REPORT -->
+<div class="fin-section">
+  <div class="fin-section-label">Financial Report 2 of 3</div>
+  <div class="fin-section-title">Labor & Resource <em>Utilization Report</em></div>
+  <div class="fin-section-sub">Reporting Period: Q1–Q2 2025 (Jan–Apr) · IBM Consulting · Project Manager: Kia Montgomery</div>
+
+  <div style="overflow-x:auto;">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>#</th><th>Team Member</th><th>Role</th>
+        <th>Jan Hrs</th><th>Feb Hrs</th><th>Mar Hrs</th><th>Apr Hrs</th>
+        <th>YTD Hrs</th><th>Budget Hrs</th><th>Variance</th><th>Util %</th><th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td><td><strong>Kia Montgomery</strong></td><td>Project Manager / Sr. Consultant</td>
+        <td>40</td><td>40</td><td>40</td><td>36</td>
+        <td><strong>156</strong></td><td>160</td><td style="color:var(--teal);">(4)</td><td>97.5%</td><td style="color:var(--clay);">$195/hr</td>
+      </tr>
+      <tr>
+        <td>2</td><td><strong>Marcus Chen</strong></td><td>AI/ML Lead</td>
+        <td>20</td><td>35</td><td>45</td><td>45</td>
+        <td><strong>145</strong></td><td>160</td><td style="color:var(--teal);">(15)</td><td>90.6%</td><td style="color:var(--clay);">$210/hr</td>
+      </tr>
+      <tr>
+        <td>3</td><td><strong>Priya Nair</strong></td><td>IT Integration Lead</td>
+        <td>30</td><td>40</td><td>50</td><td>50</td>
+        <td><strong>170</strong></td><td>180</td><td style="color:var(--teal);">(10)</td><td>94.4%</td><td style="color:var(--clay);">$185/hr</td>
+      </tr>
+      <tr>
+        <td>4</td><td><strong>Devon Ross</strong></td><td>Change Management Lead</td>
+        <td>10</td><td>15</td><td>20</td><td>35</td>
+        <td><strong>80</strong></td><td>100</td><td style="color:var(--teal);">(20)</td><td>80.0%</td><td style="color:var(--clay);">$175/hr</td>
+      </tr>
+      <tr>
+        <td>5</td><td><strong>Tanya Osei</strong></td><td>QA Analyst</td>
+        <td>0</td><td>0</td><td>20</td><td>40</td>
+        <td><strong>60</strong></td><td>80</td><td style="color:var(--teal);">(20)</td><td>75.0%</td><td style="color:var(--clay);">$155/hr</td>
+      </tr>
+      <tr>
+        <td>6</td><td><strong>IBM Scrum Master</strong></td><td>Agile / Scrum Facilitator</td>
+        <td>16</td><td>16</td><td>16</td><td>16</td>
+        <td><strong>64</strong></td><td>80</td><td style="color:var(--teal);">(16)</td><td>80.0%</td><td style="color:var(--clay);">$165/hr</td>
+      </tr>
+      <tr>
+        <td>7</td><td><strong>Vendor PM (External)</strong></td><td>Platform Implementation PM</td>
+        <td>20</td><td>30</td><td>30</td><td>20</td>
+        <td><strong>100</strong></td><td>120</td><td style="color:var(--teal);">(20)</td><td>83.3%</td><td style="color:var(--clay);">External SOW</td>
+      </tr>
+      <tr style="background:var(--parchment); font-weight:500;">
+        <td colspan="3"><strong>TEAM TOTALS</strong></td>
+        <td><strong>136</strong></td><td><strong>176</strong></td><td><strong>221</strong></td><td><strong>242</strong></td>
+        <td><strong>775</strong></td><td><strong>880</strong></td><td style="color:var(--teal);"><strong>(105)</strong></td><td><strong>88.1%</strong></td><td>—</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin:2.5rem 0 0.8rem;">Weekly Hours Log — April 2025 (Kia Montgomery, IBM PM)</div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Week</th><th style="text-align:center;">Mon</th><th style="text-align:center;">Tue</th><th style="text-align:center;">Wed</th><th style="text-align:center;">Thu</th><th style="text-align:center;">Fri</th><th style="text-align:center;">Total</th><th>Activity Summary</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Apr 7–11</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center; font-weight:500;">40</td><td>Discovery workshops + stakeholder interviews</td></tr>
+      <tr><td>Apr 14–18</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">6</td><td style="text-align:center;">6</td><td style="text-align:center; font-weight:500;">36</td><td>Sprint 6 planning + Workday integration review</td></tr>
+      <tr><td>Apr 21–25</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">4</td><td style="text-align:center;">8</td><td style="text-align:center; font-weight:500;">36</td><td>Sprint 6 review + CR-004 escalation + executive briefing prep</td></tr>
+      <tr><td>Apr 28–30</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">8</td><td style="text-align:center;">—</td><td style="text-align:center;">—</td><td style="text-align:center; font-weight:500;">24</td><td>Sprint 7 kickoff + vendor licensing call</td></tr>
+      <tr style="background:var(--parchment); font-weight:500;"><td><strong>April Total</strong></td><td style="text-align:center;"><strong>32</strong></td><td style="text-align:center;"><strong>32</strong></td><td style="text-align:center;"><strong>32</strong></td><td style="text-align:center;"><strong>18</strong></td><td style="text-align:center;"><strong>22</strong></td><td style="text-align:center;"><strong>136</strong></td><td>Thu/Fri Apr 28–30 partial week</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 3: CONTRACTOR COST REPORT -->
+<div class="fin-section">
+  <div class="fin-section-label">Financial Report 3 of 3</div>
+  <div class="fin-section-title">Contractor & Labor <em>Cost Report</em></div>
+  <div class="fin-section-sub">Q1–Q2 YTD (Jan–Apr 2025) · All figures in USD · Prepared by: Kia Montgomery</div>
+
+  <div style="overflow-x:auto;">
+  <table class="data-table">
+    <thead>
+      <tr><th>#</th><th>Resource</th><th>Type</th><th>Q1 Hrs</th><th>Q2 Hrs</th><th>Rate/Hr</th><th>Q1 Labor</th><th>Q2 Labor</th><th>YTD Total</th><th>Invoice</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Kia Montgomery</strong></td><td>IBM FTE Consultant</td><td>120</td><td>110</td><td>$195</td><td>$23,400</td><td>$21,450</td><td><strong>$44,850</strong></td><td>—</td><td><span class="internal">IBM Internal</span></td></tr>
+      <tr><td>2</td><td><strong>Marcus Chen</strong></td><td>IBM FTE — AI/ML</td><td>100</td><td>125</td><td>$210</td><td>$21,000</td><td>$26,250</td><td><strong>$47,250</strong></td><td>—</td><td><span class="internal">IBM Internal</span></td></tr>
+      <tr><td>3</td><td><strong>Priya Nair</strong></td><td>IBM FTE — Integration</td><td>120</td><td>145</td><td>$185</td><td>$22,200</td><td>$26,825</td><td><strong>$49,025</strong></td><td>—</td><td><span class="internal">IBM Internal</span></td></tr>
+      <tr><td>4</td><td><strong>Devon Ross</strong></td><td>IBM FTE — Change Mgmt</td><td>45</td><td>70</td><td>$175</td><td>$7,875</td><td>$12,250</td><td><strong>$20,125</strong></td><td>—</td><td><span class="internal">IBM Internal</span></td></tr>
+      <tr><td>5</td><td><strong>Tanya Osei</strong></td><td>IBM FTE — QA</td><td>20</td><td>60</td><td>$155</td><td>$3,100</td><td>$9,300</td><td><strong>$12,400</strong></td><td>—</td><td><span class="internal">IBM Internal</span></td></tr>
+      <tr><td>6</td><td><strong>CloudAI Platforms Inc.</strong></td><td>Vendor — Platform Impl.</td><td>80</td><td>50</td><td>SOW Fixed</td><td>$120,000</td><td>$0</td><td><strong>$120,000</strong></td><td>INV-2025-031</td><td><span class="paid">PAID</span></td></tr>
+      <tr><td>7</td><td><strong>SecureNet Consulting</strong></td><td>3rd Party — Pen Testing</td><td>0</td><td>20</td><td>$225</td><td>$0</td><td>$4,500</td><td><strong>$4,500</strong></td><td>INV-2025-044</td><td><span class="pending-badge">PENDING</span></td></tr>
+      <tr><td>8</td><td><strong>Workday Partner LLC</strong></td><td>SI Partner — Integration</td><td>40</td><td>30</td><td>$195</td><td>$7,800</td><td>$5,850</td><td><strong>$13,650</strong></td><td>INV-2025-028</td><td><span class="paid">PAID</span></td></tr>
+      <tr style="background:var(--parchment); font-weight:500;">
+        <td colspan="6"><strong>PROJECT LABOR TOTALS</strong></td>
+        <td><strong>$205,375</strong></td><td><strong>$106,425</strong></td><td><strong>$311,800</strong></td><td colspan="2">—</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin:2.5rem 0 0.8rem;">Cost Summary Panel</div>
+  <div class="cost-summary">
+    <div class="cs-panel">
+      <div class="cs-p-title">Labor Cost Summary</div>
+      <div class="cs-p-row"><div><div class="cs-p-label">Total IBM Labor Cost (Q1–Q2 YTD)</div><div class="cs-p-sub">Direct billing to client SOW at blended rate</div></div><div class="cs-p-val">$613,150</div></div>
+      <div class="cs-p-row"><div><div class="cs-p-label">Total 3rd Party / Vendor Cost (Q1–Q2 YTD)</div><div class="cs-p-sub">Platform SOW + SI partner fees</div></div><div class="cs-p-val">$125,000</div></div>
+      <div class="cs-p-row highlight"><div><div class="cs-p-label">Total Project Labor Spend YTD</div><div class="cs-p-sub">59% of approved $1.25M budget</div></div><div class="cs-p-val">$738,150</div></div>
+    </div>
+    <div class="cs-panel">
+      <div class="cs-p-title">Forecast & Pending</div>
+      <div class="cs-p-row"><div><div class="cs-p-label">IBM Approved SOW Value</div><div class="cs-p-sub">Under negotiation for Sprint 7 extension</div></div><div class="cs-p-val">$500,000</div></div>
+      <div class="cs-p-row"><div><div class="cs-p-label">Invoices Pending Payment</div><div class="cs-p-sub">SecureNet pen testing — NET 30</div></div><div class="cs-p-val" style="color:#8a6010;">1 (INV-2025-044: $4,500)</div></div>
+      <div class="cs-p-row"><div><div class="cs-p-label">Projected Q3 Labor Cost</div><div class="cs-p-sub">Based on Phase 3 resource plan</div></div><div class="cs-p-val">$312,000</div></div>
+      <div class="cs-p-row highlight"><div><div class="cs-p-label">Forecasted Total Labor Cost</div><div class="cs-p-sub">84% of total budget — within plan</div></div><div class="cs-p-val">$1,050,150</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSONS LEARNED -->
+<div class="fin-section">
+  <div class="fin-section-label">Bonus Artifact · Captured from PM Tracker</div>
+  <div class="fin-section-title">Lessons <em>Learned Log</em></div>
+  <div class="fin-section-sub">Captured throughout the project lifecycle · For sharing with IBM Center of Excellence at project close</div>
+
+  <table class="data-table" style="margin:1.5rem 0;">
+    <thead>
+      <tr><th>ID</th><th>Date</th><th>Phase</th><th>Lesson / Observation</th><th>Recommendation</th><th>Category</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>LL-01</strong></td><td>Jan 31</td><td>Phase 1</td><td>Vendor RFP scoring took 3 days longer than planned due to missing technical comparison criteria in the evaluation template</td><td>Develop a standardized vendor evaluation scorecard at project initiation; include integration complexity weighting criteria</td><td><span class="ll-cat-badge cat-process">Process</span></td></tr>
+      <tr><td><strong>LL-02</strong></td><td>Feb 14</td><td>Phase 1</td><td>Early stakeholder interviews uncovered 2 undocumented legacy systems not included in original scope</td><td>Include a legacy system audit in discovery for any platform implementation; allocate 1 week for shadow IT discovery</td><td><span class="ll-cat-badge cat-scope">Scope Mgmt</span></td></tr>
+      <tr><td><strong>LL-03</strong></td><td>Feb 28</td><td>Phase 1</td><td>HR Operations team had significant anxiety about AI replacing jobs — surfaced during requirements sessions</td><td>Launch proactive change management earlier in Phase 1; address AI augmentation narrative before technical design begins</td><td><span class="ll-cat-badge cat-people">People</span></td></tr>
+      <tr><td><strong>LL-04</strong></td><td>Mar 14</td><td>Phase 2</td><td>Workday API documentation was incomplete; required 3 escalations to Workday partner before integration could proceed</td><td>Always contract API documentation review as a Phase 1 deliverable; establish direct vendor support SLA before integration sprint</td><td><span class="ll-cat-badge cat-tech">Technical</span></td></tr>
+      <tr><td><strong>LL-05</strong></td><td>Mar 28</td><td>Phase 2</td><td>AI model initially produced role recommendations with gender-correlated bias due to historical promotion data</td><td>Conduct bias audit before any AI model goes to UAT; build diverse stakeholder validation panel into AI development process</td><td><span class="ll-cat-badge cat-ai">AI Ethics</span></td></tr>
+      <tr><td><strong>LL-06</strong></td><td>Apr 10</td><td>Phase 2</td><td>Daily standups with the vendor team reduced misalignment and accelerated issue resolution vs. weekly syncs in prior phase</td><td>Standardize daily cross-team standups for all vendor-dependent workstreams; include in future vendor SOWs</td><td><span class="ll-cat-badge cat-comms">Comms</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="cs-callout" style="margin-top:2rem;">The lessons learned log is a PM discipline often skipped under delivery pressure — but it's what transforms a project team into a learning organization. LL-05 (AI bias) and LL-03 (change resistance) reflect the kind of proactive awareness that defines a PM fit for AI and technology environments.</div>
+
+  <h3 style="font-family:var(--serif);font-size:1.45rem;font-weight:400;color:var(--ink);margin-bottom:1rem;margin-top:2rem;">PM Skills <em style="font-style:italic;color:var(--clay);">Demonstrated</em></h3>
+  <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.5rem;">
+    <span class="tag tag-teal">Budget Tracking & Variance Analysis</span>
+    <span class="tag tag-teal">Resource Utilization Reporting</span>
+    <span class="tag tag-teal">Invoice & Contractor Management</span>
+    <span class="tag tag-teal">EVM Literacy (CPI / SPI)</span>
+    <span class="tag tag-teal">Labor Forecasting</span>
+    <span class="tag tag-teal">Lessons Learned Capture</span>
+    <span class="tag tag-teal">AI Ethics Awareness</span>
+  </div>
+</div>
+
+<div class="nav-between">
+  <a href="cs-09-minutes.html">← Meeting Minutes</a>
+  <span style="font-family:var(--mono); font-size:0.58rem; color:var(--sand);">10 of 10 · Portfolio Complete</span>
+  <a href="index.html#work">← Back to Portfolio</a>
+</div>
+<footer><span class="footer-copy">© 2026 Kia Montgomery · PM Portfolio</span><div class="footer-links"><a href="index.html">Home</a><a href="index.html#work">All Artifacts</a><a href="https://www.linkedin.com/in/kiamontgomery" target="_blank">LinkedIn</a><a href="mailto:kmontgomery1292@gmail.com">Contact</a></div></footer>
+</body></html>

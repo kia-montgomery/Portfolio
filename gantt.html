@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Project Schedule & Gantt — Kia Montgomery Portfolio</title><link rel="stylesheet" href="style.css"/>
+<style>.cs-hero{background:linear-gradient(145deg,#1a2a1a 0%,#3a5a3a 55%,var(--teal) 100%);}
+.gantt-phase{background:var(--ink);color:white;padding:0.6rem 1.2rem;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;margin-top:1.5rem;margin-bottom:0.3rem;}
+.gantt-row{display:grid;grid-template-columns:50px 220px 100px 90px 90px 70px 80px;gap:0;align-items:center;border-bottom:1px solid var(--parchment);padding:0.55rem 0;}
+.gantt-head{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);padding:0.6rem 0.5rem;border-bottom:2px solid var(--sand);background:var(--parchment);}
+.g-id{font-family:var(--mono);font-size:0.58rem;color:var(--rose);padding:0 0.5rem;}
+.g-task{font-size:0.84rem;color:var(--ink);padding:0 0.5rem;}
+.g-owner{font-family:var(--mono);font-size:0.58rem;color:var(--slate);padding:0 0.5rem;}
+.g-date{font-family:var(--mono);font-size:0.56rem;color:#888;padding:0 0.5rem;}
+.g-dur{font-family:var(--mono);font-size:0.6rem;color:var(--ink);padding:0 0.5rem;text-align:center;}
+.g-pct{font-family:var(--mono);font-size:0.58rem;text-align:center;}
+.g-status{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.08em;padding:0.15rem 0.4rem;border-radius:2px;text-align:center;}
+.s-done{background:rgba(60,180,90,0.12);color:#2a7a3a;}
+.s-wip{background:rgba(230,160,30,0.15);color:#8a6010;}
+.s-not{background:rgba(150,150,150,0.1);color:#888;}
+.cr-row{display:grid;grid-template-columns:60px 1fr 80px 80px 80px 100px;gap:0.5rem;align-items:start;padding:0.7rem 0;border-bottom:1px solid var(--parchment);font-size:0.84rem;}
+</style></head><body>
+<nav><a href="index.html" class="nav-logo">Kia Montgomery</a><ul class="nav-links"><li><a href="index.html">← Home</a></li><li><a href="index.html#work">All Artifacts</a></li><li><a href="cs-06-business.html">← Prev</a></li><li><a href="cs-08-sprint.html">Next →</a></li></ul></nav>
+
+<div class="cs-hero"><div class="cs-hero-content">
+  <div class="cs-breadcrumb"><a href="index.html">Portfolio</a> / <a href="index.html#work">Artifacts</a> / Project Schedule</div>
+  <div class="cs-artifact-num">Artifact 07 of 10</div>
+  <h1 class="cs-title">Project Schedule<br/><em>& Gantt Chart</em></h1>
+  <p class="cs-subtitle">AI-Powered HR Onboarding Platform · Jan 2025 – Sep 2025 · IBM Consulting</p>
+  <div class="cs-meta-row">
+    <div><div class="cs-meta-label">Total Tasks</div><div class="cs-meta-val">21</div></div>
+    <div><div class="cs-meta-label">Phases</div><div class="cs-meta-val">4</div></div>
+    <div><div class="cs-meta-label">Project Duration</div><div class="cs-meta-val">9 Months</div></div>
+    <div><div class="cs-meta-label">Phase 1 Status</div><div class="cs-meta-val">✓ Complete</div></div>
+    <div><div class="cs-meta-label">Phase 2 Status</div><div class="cs-meta-val">82% Complete</div></div>
+  </div>
+</div></div>
+
+<div class="cs-body">
+  <h3>What <em>This Artifact Demonstrates</em></h3>
+  <p>A project schedule is the PM's primary tool for controlling delivery. This Gantt chart demonstrates my ability to decompose a 9-month initiative into 21 sequenced tasks across 4 phases, with named owners, realistic durations, and live progress tracking. It's the artifact that turns a high-level plan into an actionable delivery commitment.</p>
+  <p>This schedule was also used to manage two change requests (CR-001: ServiceNow addition; CR-004: 2-week Phase 2 extension) — demonstrating that I treat the schedule as a living document that absorbs change through formal process, not informal workarounds.</p>
+
+  <div class="cs-stat-row">
+    <div class="cs-stat"><span class="cs-stat-val">21</span><span class="cs-stat-label">Total Tasks</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">4</span><span class="cs-stat-label">Project Phases</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">5</span><span class="cs-stat-label">CRs Logged</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">Jan 6</span><span class="cs-stat-label">Project Start</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">Sep 30</span><span class="cs-stat-label">Project Close</span></div>
+  </div>
+
+  <h3>Full <em>Task Schedule</em></h3>
+  <div style="overflow-x:auto; margin:1.5rem 0;">
+    <div style="display:grid;grid-template-columns:50px 220px 100px 90px 90px 70px 80px;gap:0;">
+      <div class="gantt-head">ID</div><div class="gantt-head">Task</div><div class="gantt-head">Owner</div><div class="gantt-head">Start</div><div class="gantt-head">End</div><div class="gantt-head">Days</div><div class="gantt-head">Status</div>
+    </div>
+    <div class="gantt-phase" style="grid-column:1/-1; display:block;">Phase 1: Discovery & Planning</div>
+    <div class="gantt-row"><div class="g-id">T-01</div><div class="g-task">Define project scope & charter</div><div class="g-owner">IBM PM</div><div class="g-date">Jan 6</div><div class="g-date">Jan 17</div><div class="g-dur">10d</div><div><span class="g-status s-done">Complete</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-02</div><div class="g-task">Stakeholder analysis & interviews</div><div class="g-owner">IBM PM</div><div class="g-date">Jan 13</div><div class="g-date">Jan 31</div><div class="g-dur">14d</div><div><span class="g-status s-done">Complete</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-03</div><div class="g-task">Current-state process mapping</div><div class="g-owner">HR Ops</div><div class="g-date">Jan 20</div><div class="g-date">Feb 7</div><div class="g-dur">14d</div><div><span class="g-status s-done">Complete</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-04</div><div class="g-task">Vendor RFP & evaluation</div><div class="g-owner">Procurement</div><div class="g-date">Jan 27</div><div class="g-date">Feb 21</div><div class="g-dur">20d</div><div><span class="g-status s-done">Complete</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-05</div><div class="g-task">Platform selection & contract</div><div class="g-owner">IBM PM</div><div class="g-date">Feb 10</div><div class="g-date">Feb 28</div><div class="g-dur">14d</div><div><span class="g-status s-done">Complete</span></div></div>
+
+    <div class="gantt-phase" style="grid-column:1/-1; display:block;">Phase 2: Design & Build</div>
+    <div class="gantt-row"><div class="g-id">T-06</div><div class="g-task">Solution architecture design</div><div class="g-owner">IT Lead</div><div class="g-date">Mar 3</div><div class="g-date">Mar 21</div><div class="g-dur">14d</div><div><span class="g-status s-done">Complete</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-07</div><div class="g-task">AI/ML model config & training</div><div class="g-owner">AI/ML Lead</div><div class="g-date">Mar 10</div><div class="g-date">Apr 25</div><div class="g-dur">35d</div><div><span class="g-status s-wip">85%</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-08</div><div class="g-task">Workday HRIS integration</div><div class="g-owner">IT Lead</div><div class="g-date">Mar 17</div><div class="g-date">Apr 18</div><div class="g-dur">25d</div><div><span class="g-status s-wip">90%</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-09</div><div class="g-task">ADP Payroll integration</div><div class="g-owner">IT Lead</div><div class="g-date">Mar 24</div><div class="g-date">Apr 11</div><div class="g-dur">15d</div><div><span class="g-status s-done">Complete</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-10</div><div class="g-task">UI/UX design & platform config</div><div class="g-owner">Vendor</div><div class="g-date">Mar 10</div><div class="g-date">Apr 25</div><div class="g-dur">35d</div><div><span class="g-status s-wip">80%</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-11</div><div class="g-task">Security & compliance review</div><div class="g-owner">Security</div><div class="g-date">Apr 14</div><div class="g-date">May 9</div><div class="g-dur">18d</div><div><span class="g-status s-wip">40%</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-12</div><div class="g-task">Internal QA & testing</div><div class="g-owner">QA Team</div><div class="g-date">Apr 28</div><div class="g-date">May 23</div><div class="g-dur">20d</div><div><span class="g-status s-not">Not Started</span></div></div>
+
+    <div class="gantt-phase" style="grid-column:1/-1; display:block;">Phase 3: Pilot</div>
+    <div class="gantt-row"><div class="g-id">T-13</div><div class="g-task">Pilot deployment (2 BUs)</div><div class="g-owner">IBM PM</div><div class="g-date">Jun 2</div><div class="g-date">Jun 13</div><div class="g-dur">10d</div><div><span class="g-status s-not">Not Started</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-14</div><div class="g-task">User Acceptance Testing (UAT)</div><div class="g-owner">HR Ops</div><div class="g-date">Jun 9</div><div class="g-date">Jun 27</div><div class="g-dur">15d</div><div><span class="g-status s-not">Not Started</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-15</div><div class="g-task">Defect resolution & regression</div><div class="g-owner">Dev Team</div><div class="g-date">Jun 23</div><div class="g-date">Jul 11</div><div class="g-dur">15d</div><div><span class="g-status s-not">Not Started</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-16</div><div class="g-task">Pilot sign-off & lessons learned</div><div class="g-owner">IBM PM</div><div class="g-date">Jul 7</div><div class="g-date">Jul 18</div><div class="g-dur">10d</div><div><span class="g-status s-not">Not Started</span></div></div>
+
+    <div class="gantt-phase" style="grid-column:1/-1; display:block;">Phase 4: Enterprise Rollout</div>
+    <div class="gantt-row"><div class="g-id">T-17</div><div class="g-task">Training content development</div><div class="g-owner">Change Mgr</div><div class="g-date">Jul 14</div><div class="g-date">Jul 25</div><div class="g-dur">10d</div><div><span class="g-status s-not">Not Started</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-18</div><div class="g-task">End-user training rollout</div><div class="g-owner">HR Ops</div><div class="g-date">Jul 28</div><div class="g-date">Aug 15</div><div class="g-dur">15d</div><div><span class="g-status s-not">Not Started</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-19</div><div class="g-task">Enterprise go-live</div><div class="g-owner">IBM PM</div><div class="g-date">Aug 18</div><div class="g-date">Aug 22</div><div class="g-dur">5d</div><div><span class="g-status s-not">Not Started</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-20</div><div class="g-task">Hypercare & stabilization</div><div class="g-owner">IBM PM</div><div class="g-date">Aug 25</div><div class="g-date">Sep 19</div><div class="g-dur">20d</div><div><span class="g-status s-not">Not Started</span></div></div>
+    <div class="gantt-row"><div class="g-id">T-21</div><div class="g-task">Project close & retrospective</div><div class="g-owner">IBM PM</div><div class="g-date">Sep 22</div><div class="g-date">Sep 30</div><div class="g-dur">7d</div><div><span class="g-status s-not">Not Started</span></div></div>
+  </div>
+
+  <h3>Change Request <em>Log</em></h3>
+  <p>The project absorbed 5 change requests from kickoff through April 2025. Each was formally evaluated for schedule, budget, and scope impact before decision.</p>
+  <table class="data-table" style="margin:1.5rem 0;">
+    <thead><tr><th>CR ID</th><th>Change</th><th>Schedule</th><th>Budget</th><th>Decision</th></tr></thead>
+    <tbody>
+      <tr><td>CR-001</td><td>Add ServiceNow IT provisioning integration</td><td>+7 days</td><td>+$35,000</td><td><span class="rag rag-green">Approved Feb 5</span></td></tr>
+      <tr><td>CR-002</td><td>Replace VendorA with higher-rated VendorB from RFP</td><td>No impact</td><td>+$28,000</td><td><span class="rag rag-green">Approved Feb 26</span></td></tr>
+      <tr><td>CR-003</td><td>Add offboarding workflow (originally out of scope)</td><td>+21 days</td><td>+$75,000</td><td><span class="rag rag-red">Rejected — Phase 2</span></td></tr>
+      <tr><td>CR-004</td><td>Extend Phase 2 by 2 weeks for Workday integration testing</td><td>+14 days</td><td>No impact</td><td><span class="rag rag-amber">Pending — Due Apr 15</span></td></tr>
+      <tr><td>CR-005</td><td>Add Spanish-language onboarding flow for TX offices</td><td>+5 days</td><td>+$12,000</td><td><span class="rag rag-amber">Under Review</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>PM Skills <em>Demonstrated</em></h3>
+  <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
+    <span class="tag tag-teal">Schedule Management (PMBOK 6)</span>
+    <span class="tag tag-teal">Work Breakdown Structure</span>
+    <span class="tag tag-teal">Change Request Management</span>
+    <span class="tag tag-teal">Baseline Control</span>
+    <span class="tag tag-teal">Integrated Change Control</span>
+  </div>
+</div>
+
+<div class="nav-between">
+  <a href="cs-06-business.html">← Business Case</a>
+  <span style="font-family:var(--mono); font-size:0.58rem; color:var(--sand);">7 of 10</span>
+  <a href="cs-08-sprint.html">Next: Sprint Board →</a>
+</div>
+<footer><span class="footer-copy">© 2026 Kia Montgomery · PM Portfolio</span><div class="footer-links"><a href="index.html">Home</a><a href="index.html#work">All Artifacts</a><a href="https://www.linkedin.com/in/kiamontgomery" target="_blank">LinkedIn</a><a href="mailto:kmontgomery1292@gmail.com">Contact</a></div></footer>
+</body></html>

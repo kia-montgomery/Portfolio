@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sprint Board & Velocity — Kia Montgomery Portfolio</title><link rel="stylesheet" href="style.css"/>
+<style>.cs-hero{background:linear-gradient(145deg,#1a1a3a 0%,#2a3a6a 55%,var(--slate) 100%);}
+.sprint-col{background:var(--parchment);padding:1.2rem;}
+.sprint-col-head{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;padding-bottom:0.7rem;border-bottom:2px solid var(--sand);margin-bottom:0.8rem;}
+.sprint-col-head.done{border-color:#2a7a3a;color:#2a7a3a;}
+.sprint-col-head.wip{border-color:#8a6010;color:#8a6010;}
+.sprint-col-head.todo{border-color:var(--slate);color:var(--slate);}
+.story-card{background:white;padding:0.9rem 1rem;margin-bottom:0.5rem;border-left:3px solid var(--sand);}
+.story-card.critical{border-color:var(--clay);}
+.story-card.high{border-color:var(--sky);}
+.story-id{font-family:var(--mono);font-size:0.52rem;color:var(--rose);margin-bottom:0.2rem;}
+.story-text{font-size:0.8rem;line-height:1.5;color:var(--ink);}
+.story-pts{font-family:var(--mono);font-size:0.58rem;color:var(--slate);margin-top:0.3rem;}
+.vel-bar-row{display:flex;align-items:center;gap:1rem;margin-bottom:0.5rem;}
+.vel-sprint{font-family:var(--mono);font-size:0.58rem;color:var(--slate);width:70px;flex-shrink:0;}
+.vel-pts-label{font-family:var(--mono);font-size:0.58rem;color:var(--rose);width:40px;text-align:right;flex-shrink:0;}
+</style></head><body>
+<nav><a href="index.html" class="nav-logo">Kia Montgomery</a><ul class="nav-links"><li><a href="index.html">← Home</a></li><li><a href="index.html#work">All Artifacts</a></li><li><a href="cs-07-gantt.html">← Prev</a></li><li><a href="cs-09-minutes.html">Next →</a></li></ul></nav>
+
+<div class="cs-hero"><div class="cs-hero-content">
+  <div class="cs-breadcrumb"><a href="index.html">Portfolio</a> / <a href="index.html#work">Artifacts</a> / Sprint Board & Velocity</div>
+  <div class="cs-artifact-num">Artifact 08 of 10</div>
+  <h1 class="cs-title">Sprint Board, Backlog<br/><em>& Velocity Tracker</em></h1>
+  <p class="cs-subtitle">Current Sprint: Sprint 6 (Apr 14–25, 2025) · Tool: Jira Cloud · SAFe Agile</p>
+  <div class="cs-meta-row">
+    <div><div class="cs-meta-label">Sprint Length</div><div class="cs-meta-val">2 weeks</div></div>
+    <div><div class="cs-meta-label">Avg Velocity</div><div class="cs-meta-val">35.5 pts</div></div>
+    <div><div class="cs-meta-label">Goal Achievement</div><div class="cs-meta-val">5 of 6 (83.3%)</div></div>
+    <div><div class="cs-meta-label">Carry-Over Rate</div><div class="cs-meta-val">8.1% (target &lt;10%)</div></div>
+  </div>
+</div></div>
+
+<div class="cs-body">
+  <h3>What <em>This Artifact Demonstrates</em></h3>
+  <p>Agile delivery is a core differentiator for PM roles in technology. This artifact demonstrates my hands-on fluency with sprint mechanics — backlog management, story pointing, sprint planning, and velocity tracking — built through real SAFe Agile experience at IBM managing sprints in Jira for a federal HR platform serving 50,000+ users.</p>
+  <p>The sprint board captures Sprint 6 in real-time: what's done, what's in progress, and what's blocked. The velocity tracker tells the story of the team's performance across 6 sprints — including a candid analysis of the Sprint 6 dip caused by a security review blocker.</p>
+
+  <div class="cs-stat-row">
+    <div class="cs-stat"><span class="cs-stat-val">35.5</span><span class="cs-stat-label">Avg Velocity (6-Sprint)</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">83.3%</span><span class="cs-stat-label">Goal Achievement Rate</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">8.1%</span><span class="cs-stat-label">Avg Carry-Over Rate</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">15</span><span class="cs-stat-label">Bugs Opened YTD</span></div>
+    <div class="cs-stat"><span class="cs-stat-val">10</span><span class="cs-stat-label">Stories in Board</span></div>
+  </div>
+
+  <h3>Sprint 6 <em>Board — Current State</em></h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:var(--sand); margin:1.5rem 0;">
+    <div class="sprint-col">
+      <div class="sprint-col-head done">✓ Done (21 pts)</div>
+      <div class="story-card critical"><div class="story-id">US-021 · 8 pts · CRITICAL</div><div class="story-text">As an HR admin, I want new hire data to auto-sync from Workday to the AI platform so I don't have to manually enter data.</div><div class="story-pts">Data syncs in &lt;5 min; error rate &lt;0.5%</div></div>
+      <div class="story-card high"><div class="story-id">US-022 · 5 pts · HIGH</div><div class="story-text">As a new hire, I want my IT equipment provisioned automatically upon offer acceptance so I'm ready on Day 1.</div><div class="story-pts">ServiceNow ticket auto-created within 48 hrs</div></div>
+      <div class="story-card critical"><div class="story-id">US-023 · 8 pts · CRITICAL</div><div class="story-text">As an HR manager, I want the AI to generate a personalized 30-60-90 day plan based on the new hire's role.</div><div class="story-pts">Plans generated in &lt;10 sec; 90%+ relevance score</div></div>
+    </div>
+    <div class="sprint-col">
+      <div class="sprint-col-head wip">⚙ In Progress (10 pts)</div>
+      <div class="story-card critical"><div class="story-id">US-024 · 5 pts · CRITICAL — BLOCKED</div><div class="story-text">As a compliance officer, I want all new hire PII encrypted at rest and in transit to meet SOC 2 requirements.</div><div class="story-pts">Blocked: pen test not yet scheduled</div></div>
+      <div class="story-card high"><div class="story-id">US-025 · 5 pts · HIGH</div><div class="story-text">As a new hire, I want to complete onboarding paperwork digitally via mobile before my first day.</div><div class="story-pts">iOS & Android; form completion rate &gt;95% in UAT</div></div>
+    </div>
+    <div class="sprint-col">
+      <div class="sprint-col-head todo">○ To Do — Sprint 7+</div>
+      <div class="story-card high"><div class="story-id">US-026 · 13 pts · HIGH · Sprint 7</div><div class="story-text">As an HR analyst, I want a predictive attrition risk score for each new hire at 30, 60, and 90 days.</div><div class="story-pts">&gt;80% model accuracy on test set</div></div>
+      <div class="story-card"><div class="story-id">US-027 · 3 pts · MEDIUM · Sprint 7</div><div class="story-text">As a new hire, I want role-specific video training auto-assigned based on my department.</div></div>
+      <div class="story-card high"><div class="story-id">US-028 · 5 pts · HIGH · Sprint 7</div><div class="story-text">As the CHRO, I want a real-time dashboard showing onboarding completion rates by department.</div></div>
+      <div class="story-card"><div class="story-id">US-029 · 5 pts · MEDIUM · Sprint 8</div><div class="story-text">As a payroll admin, I want new hire tax forms to auto-route to ADP upon digital submission.</div></div>
+      <div class="story-card"><div class="story-id">US-030 · 3 pts · LOW · Sprint 8</div><div class="story-text">As an HR manager, I want a weekly digest of new hire sentiment scores from the onboarding chatbot.</div></div>
+    </div>
+  </div>
+
+  <h3>6-Sprint <em>Velocity History</em></h3>
+  <div style="margin: 1.5rem 0;">
+    <div class="vel-bar-row"><span class="vel-sprint">Sprint 1</span><div class="bar-wrap"><div class="bar-fill" style="width:80%"></div></div><span class="vel-pts-label">32 pts</span><span style="font-family:var(--mono);font-size:0.56rem;color:#2a7a3a;margin-left:0.5rem;">✓ Goal met</span></div>
+    <div class="vel-bar-row"><span class="vel-sprint">Sprint 2</span><div class="bar-wrap"><div class="bar-fill" style="width:87.5%"></div></div><span class="vel-pts-label">35 pts</span><span style="font-family:var(--mono);font-size:0.56rem;color:#2a7a3a;margin-left:0.5rem;">✓ Goal met</span></div>
+    <div class="vel-bar-row"><span class="vel-sprint">Sprint 3</span><div class="bar-wrap"><div class="bar-fill" style="width:95%"></div></div><span class="vel-pts-label">38 pts</span><span style="font-family:var(--mono);font-size:0.56rem;color:#2a7a3a;margin-left:0.5rem;">✓ Goal met</span></div>
+    <div class="vel-bar-row"><span class="vel-sprint">Sprint 4</span><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div><span class="vel-pts-label">40 pts</span><span style="font-family:var(--mono);font-size:0.56rem;color:#2a7a3a;margin-left:0.5rem;">✓ Goal met</span></div>
+    <div class="vel-bar-row"><span class="vel-sprint">Sprint 5</span><div class="bar-wrap"><div class="bar-fill" style="width:92.5%"></div></div><span class="vel-pts-label">37 pts</span><span style="font-family:var(--mono);font-size:0.56rem;color:#2a7a3a;margin-left:0.5rem;">✓ Goal met</span></div>
+    <div class="vel-bar-row"><span class="vel-sprint">Sprint 6</span><div class="bar-wrap"><div class="bar-fill" style="width:77.5%; background:linear-gradient(90deg, #8a6010, #c4a060);"></div></div><span class="vel-pts-label">31 pts</span><span style="font-family:var(--mono);font-size:0.56rem;color:#8a6010;margin-left:0.5rem;">⚠ Partial (US-024 blocked)</span></div>
+  </div>
+
+  <div class="cs-callout">Sprint 6 dip from 37 to 31 points was caused by US-024 (SOC 2 encryption review) being blocked waiting for pen test scheduling. This was immediately flagged in the Sprint 6 review, a security team action item was raised with an Apr 28 deadline, and US-024 was carried forward to Sprint 7. Transparency on velocity shortfalls — and clear root cause analysis — is how a PM maintains team credibility.</div>
+
+  <h3>Velocity Health <em>Metrics</em></h3>
+  <table class="data-table" style="margin:1.5rem 0;">
+    <thead><tr><th>Metric</th><th>Value</th><th>Target</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Average Team Velocity (6-sprint rolling)</td><td><strong>35.5 story points</strong></td><td>38 pts</td><td><span class="rag rag-amber">Within range</span></td></tr>
+      <tr><td>Sprint Goal Achievement Rate</td><td><strong>5 of 6 (83.3%)</strong></td><td>≥80%</td><td><span class="rag rag-green">On target</span></td></tr>
+      <tr><td>Average Carry-Over Rate</td><td><strong>8.1%</strong></td><td>&lt;10%</td><td><span class="rag rag-green">Within target</span></td></tr>
+      <tr><td>Total Bugs Opened YTD</td><td><strong>15</strong></td><td>—</td><td>13 closed · 2 open</td></tr>
+      <tr><td>Sprint 7 Committed Points</td><td><strong>36 pts</strong></td><td>—</td><td>US-026, -027, -028</td></tr>
+      <tr><td>Projected Phase 2 Completion</td><td><strong>May 9, 2025</strong></td><td>May 9</td><td><span class="rag rag-green">On track</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>PM Skills <em>Demonstrated</em></h3>
+  <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem;">
+    <span class="tag tag-teal">Agile / SAFe Scrum</span>
+    <span class="tag tag-teal">Sprint Planning & Review</span>
+    <span class="tag tag-teal">Backlog Management</span>
+    <span class="tag tag-teal">Velocity Tracking</span>
+    <span class="tag tag-teal">User Story Writing</span>
+    <span class="tag tag-teal">Blocker Resolution</span>
+    <span class="tag tag-teal">Jira</span>
+  </div>
+</div>
+
+<div class="nav-between">
+  <a href="cs-07-gantt.html">← Project Schedule</a>
+  <span style="font-family:var(--mono); font-size:0.58rem; color:var(--sand);">8 of 10</span>
+  <a href="cs-09-minutes.html">Next: Meeting Minutes →</a>
+</div>
+<footer><span class="footer-copy">© 2026 Kia Montgomery · PM Portfolio</span><div class="footer-links"><a href="index.html">Home</a><a href="index.html#work">All Artifacts</a><a href="https://www.linkedin.com/in/kiamontgomery" target="_blank">LinkedIn</a><a href="mailto:kmontgomery1292@gmail.com">Contact</a></div></footer>
+</body></html>
