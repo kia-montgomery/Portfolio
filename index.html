@@ -5,229 +5,229 @@
 <title>Kia Montgomery — PM Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{--ink:#141010;--warm-white:#FAF8F5;--parchment:#F0EBE3;--sand:#E2D9CC;--blush:#DCC4B8;--rose:#C4907E;--clay:#9B5E4A;--sky:#A8C5D8;--slate:#6D8FA3;--teal:#3D7A8A;--serif:'Playfair Display',serif;--sans:'Outfit',sans-serif;--mono:'Martian Mono',monospace;}
+:root{--ink:#1a1a2e;--white:#ffffff;--offwhite:#f5f9fe;--panel:#f5f9fe;--border:#e4eef8;--muted:#6b7a8d;--blue:#3a86c8;--blue-tint:#edf5ff;--blue-dark:#1a6bb5;--blue-mid:#5ba8e0;--sans:'Plus Jakarta Sans',sans-serif;--mono:'DM Mono',monospace;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 section[id],div[id]{scroll-margin-top:70px;}
-body{background:var(--warm-white);color:var(--ink);font-family:var(--sans);font-weight:300;overflow-x:hidden;}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-weight:400;overflow-x:hidden;}
 @keyframes slideIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes drift{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-20px) rotate(2deg)}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3.5rem;background:rgba(250,248,245,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--sand);}
-.nav-logo{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--ink);text-decoration:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 3.5rem;background:rgba(250,248,245,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:var(--sans);font-size:1.1rem;font-style:italic;color:var(--blue);text-decoration:none;}
 .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;flex-wrap:wrap;}
-.nav-links a{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--clay);text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover{color:var(--teal);}
-.nav-cta{background:var(--clay)!important;color:white!important;padding:0.45rem 1.1rem;border-radius:2px;}
+.nav-links a{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--blue);}
+.nav-cta{background:var(--blue)!important;color:white!important;padding:0.45rem 1.1rem;border-radius:2px;}
 
 /* TAGS */
-.tag{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.65rem;background:var(--parchment);color:var(--clay);border-radius:2px;display:inline-block;}
-.tag-teal{background:rgba(61,122,138,0.12);color:var(--teal);}
-.tag-sky{background:rgba(168,197,216,0.2);color:var(--slate);}
-.tag-dark{background:rgba(255,255,255,0.1);color:var(--sky);}
+.tag{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.65rem;background:var(--offwhite);color:var(--blue);border-radius:2px;display:inline-block;}
+.tag-teal{background:rgba(61,122,138,0.12);color:var(--blue);}
+.tag-sky{background:rgba(168,197,216,0.2);color:var(--muted);}
+.tag-dark{background:rgba(255,255,255,0.1);color:var(--blue-tint);}
 
 /* SHARED */
 .s-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:3rem;}
-.s-num{font-family:var(--mono);font-size:0.6rem;color:var(--rose);letter-spacing:0.18em;}
-.s-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;color:var(--ink);}
-.s-title em{font-style:italic;color:var(--clay);}
-.s-rule{flex:1;height:1px;background:linear-gradient(90deg,var(--sand),transparent);}
+.s-num{font-family:var(--mono);font-size:0.6rem;color:var(--blue);letter-spacing:0.18em;}
+.s-title{font-family:var(--sans);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;color:var(--ink);}
+.s-title em{font-style:italic;color:var(--blue);}
+.s-rule{flex:1;height:1px;background:var(--blue);}
 .rag{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--mono);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;border-radius:2px;}
 .rag-green{background:rgba(60,180,90,0.12);color:#2a7a3a;}
 .rag-amber{background:rgba(230,160,30,0.15);color:#8a6010;}
 .rag-red{background:rgba(200,60,60,0.12);color:#8a2020;}
 .rag-blue{background:rgba(38,132,255,0.12);color:#1a5db5;}
 .data-table{width:100%;border-collapse:collapse;font-size:0.83rem;}
-.data-table th{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);padding:0.75rem 1rem;text-align:left;border-bottom:2px solid var(--sand);background:var(--parchment);font-weight:400;}
-.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--parchment);color:var(--ink);vertical-align:top;line-height:1.6;}
+.data-table th{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);padding:0.75rem 1rem;text-align:left;border-bottom:2px solid var(--border);background:var(--offwhite);font-weight:400;}
+.data-table td{padding:0.75rem 1rem;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:top;line-height:1.6;}
 .data-table tr:last-child td{border-bottom:none;}
 .data-table tr:hover td{background:rgba(220,196,184,0.08);}
 .bar-row{display:flex;align-items:center;gap:1rem;margin-bottom:0.65rem;}
-.bar-label{font-family:var(--mono);font-size:0.56rem;color:var(--slate);width:190px;flex-shrink:0;}
-.bar-wrap{flex:1;height:5px;background:var(--sand);border-radius:3px;overflow:hidden;}
-.bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--clay),var(--teal));animation:slideIn 1.2s ease forwards;transform-origin:left;}
-.bar-val{font-family:var(--mono);font-size:0.56rem;color:var(--rose);width:45px;text-align:right;flex-shrink:0;}
-.cs-stat-row{display:flex;gap:1px;flex-wrap:wrap;background:var(--sand);border:1px solid var(--sand);margin:2rem 0;}
-.cs-stat{background:var(--parchment);padding:1.4rem 1.8rem;flex:1;min-width:130px;}
-.cs-stat-val{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--clay);display:block;line-height:1;margin-bottom:0.35rem;}
-.cs-stat-label{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);}
-.cs-callout{background:var(--parchment);border-left:3px solid var(--clay);padding:1.3rem 1.8rem;margin:1.8rem 0;font-size:0.9rem;line-height:1.8;color:#4E3C35;font-style:italic;max-width:720px;}
-.info-block{background:var(--parchment);padding:1.4rem 1.8rem;}
-.info-block-title{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:0.9rem;padding-bottom:0.55rem;border-bottom:1px solid var(--sand);}
+.bar-label{font-family:var(--mono);font-size:0.56rem;color:var(--muted);width:190px;flex-shrink:0;}
+.bar-wrap{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:3px;background:var(--blue);animation:slideIn 1.2s ease forwards;transform-origin:left;}
+.bar-val{font-family:var(--mono);font-size:0.56rem;color:var(--muted);width:45px;text-align:right;flex-shrink:0;}
+.cs-stat-row{display:flex;gap:1px;flex-wrap:wrap;background:var(--border);border:1px solid var(--border);margin:2rem 0;}
+.cs-stat{background:var(--offwhite);padding:1.4rem 1.8rem;flex:1;min-width:130px;}
+.cs-stat-val{font-family:var(--sans);font-size:1.9rem;font-weight:400;color:var(--blue);display:block;line-height:1;margin-bottom:0.35rem;}
+.cs-stat-label{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.cs-callout{background:var(--offwhite);border-left:3px solid var(--blue);padding:1.3rem 1.8rem;margin:1.8rem 0;font-size:0.9rem;line-height:1.8;color:#4a5568;font-style:italic;max-width:720px;}
+.info-block{background:var(--offwhite);padding:1.4rem 1.8rem;}
+.info-block-title{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);margin-bottom:0.9rem;padding-bottom:0.55rem;border-bottom:1px solid var(--border);}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin:1.5rem 0;}
 .three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
 
 /* FOOTER */
 footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-.footer-copy{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+.footer-copy{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);}
 .footer-links{display:flex;gap:1.5rem;}
-.footer-links a{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--rose);}
+.footer-links a{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--white);}
 
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;padding-top:4rem;}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 6rem 5rem;position:relative;}
-.hero-left::before{content:'';position:absolute;top:0;right:-80px;bottom:0;left:0;background:var(--parchment);clip-path:polygon(0 0,100% 0,85% 100%,0 100%);z-index:-1;}
+.hero-left::before{content:'';position:absolute;top:0;right:-80px;bottom:0;left:0;background:var(--offwhite);clip-path:polygon(0 0,100% 0,85% 100%,0 100%);z-index:-1;}
 .eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;}
-.eyebrow-line{width:2.5rem;height:1px;background:var(--rose);}
-.eyebrow-text{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);}
-.hero-name{font-family:var(--serif);font-size:clamp(3.5rem,5.5vw,5.5rem);font-weight:400;line-height:1.0;letter-spacing:-0.02em;color:var(--ink);}
-.hero-name em{font-style:italic;color:var(--clay);}
-.hero-role{font-family:var(--serif);font-size:clamp(1rem,1.8vw,1.3rem);font-style:italic;color:var(--slate);margin-bottom:2rem;margin-top:0.8rem;}
-.hero-bio{font-size:0.92rem;line-height:1.88;color:#5C4A42;max-width:420px;margin-bottom:2rem;}
+.eyebrow-line{width:2.5rem;height:1px;background:var(--blue-mid);}
+.eyebrow-text{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);}
+.hero-name{font-family:var(--sans);font-size:clamp(3.5rem,5.5vw,5.5rem);font-weight:400;line-height:1.0;letter-spacing:-0.02em;color:var(--ink);}
+.hero-name em{font-style:italic;color:var(--blue);}
+.hero-role{font-family:var(--sans);font-size:clamp(1rem,1.8vw,1.3rem);font-style:italic;color:var(--muted);margin-bottom:2rem;margin-top:0.8rem;}
+.hero-bio{font-size:0.92rem;line-height:1.88;color:var(--muted);max-width:420px;margin-bottom:2rem;}
 .badge-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem;}
-.badge{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.85rem;border-radius:100px;border:1px solid var(--blush);color:var(--clay);}
-.badge.active{background:var(--clay);color:white;border-color:var(--clay);}
+.badge{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.85rem;border-radius: 20px;border:1px solid var(--blue-mid);color:var(--blue-dark);}
+.badge.active{background:var(--blue);color:#ffffff;border-color:var(--blue);}
 .btn-row{display:flex;gap:1rem;flex-wrap:wrap;}
 .btn{font-family:var(--mono);font-size:0.61rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.85rem 1.7rem;text-decoration:none;transition:all 0.22s;display:inline-block;border:none;cursor:pointer;}
-.btn-primary{background:var(--ink);color:var(--warm-white);}
-.btn-primary:hover{background:var(--clay);transform:translateY(-2px);}
-.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--sand);}
-.btn-outline:hover{border-color:var(--clay);color:var(--clay);}
-.hero-right{background:linear-gradient(145deg,var(--teal) 0%,var(--slate) 40%,var(--blush) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem;gap:2.5rem;}
-.hero-monogram{font-family:var(--serif);font-size:9rem;font-style:italic;font-weight:400;color:rgba(255,255,255,0.15);line-height:1;user-select:none;animation:drift 7s ease-in-out infinite;}
+.btn-primary{background:var(--blue);color:var(--white);}
+.btn-primary:hover{background:var(--blue);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--border);}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);}
+.hero-right{background:linear-gradient(145deg,var(--blue) 0%,var(--blue-mid) 60%,var(--blue-tint) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem;gap:2.5rem;}
+.hero-monogram{font-family:var(--sans);font-size:9rem;font-style:italic;font-weight:400;color:rgba(255,255,255,0.15);line-height:1;user-select:none;animation:drift 7s ease-in-out infinite;}
 .stat-box{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);width:100%;max-width:320px;}
 .stat{background:rgba(255,255,255,0.08);padding:1.2rem 1.5rem;}
-.stat-val{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:white;display:block;line-height:1;margin-bottom:0.3rem;}
+.stat-val{font-family:var(--sans);font-size:1.8rem;font-weight:400;color:white;display:block;line-height:1;margin-bottom:0.3rem;}
 .stat-label{font-family:var(--mono);font-size:0.51rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);}
 
 /* ABOUT */
-.about-section{background:white;padding:5rem;}
+.about-section{background:var(--offwhite);padding:5rem;}
 .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:5rem;align-items:start;}
-.about-text p{font-size:0.94rem;line-height:1.9;color:#4E3C35;margin-bottom:1.2rem;}
-.sb-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
-.sb-label::after{content:'';flex:1;height:1px;background:var(--sand);}
-.sb-item{font-size:0.83rem;color:var(--ink);padding:0.48rem 0;border-bottom:1px solid var(--parchment);display:flex;align-items:flex-start;gap:0.6rem;}
-.sb-item::before{content:'·';color:var(--rose);flex-shrink:0;}
+.about-text p{font-size:0.94rem;line-height:1.9;color:#4a5568;margin-bottom:1.2rem;}
+.sb-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
+.sb-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.sb-item{font-size:0.83rem;color:var(--ink);padding:0.48rem 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:0.6rem;}
+.sb-item::before{content:'·';color:var(--muted);flex-shrink:0;}
 .about-sidebar{display:flex;flex-direction:column;gap:2.5rem;}
 
 /* CATEGORY PORTFOLIO */
-.work-section{background:var(--warm-white);padding:5rem;}
-.disclaimer{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:#8C7268;background:var(--parchment);border-left:3px solid var(--blush);padding:0.8rem 1.2rem;margin-bottom:3rem;}
+.work-section{background:var(--white);padding:5rem;}
+.disclaimer{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:#8C7268;background:var(--offwhite);border-left:3px solid var(--border);padding:0.8rem 1.2rem;margin-bottom:3rem;}
 .cat-section{margin-bottom:4rem;}
-.cat-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--sand);}
+.cat-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--border);}
 .cat-icon{font-size:1.6rem;}
-.cat-title{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);}
-.cat-title em{font-style:italic;color:var(--clay);}
-.cat-count{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--rose);background:var(--parchment);padding:0.3rem 0.8rem;border-radius:2px;}
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--sand);}
-.card-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--sand);}
-.card{background:var(--warm-white);padding:2rem;position:relative;overflow:hidden;transition:background 0.25s;text-decoration:none;color:inherit;display:block;cursor:pointer;}
-.card::after{content:'';position:absolute;bottom:0;left:0;height:3px;width:0;background:var(--clay);transition:width 0.4s;}
-.card:hover{background:white;}
+.cat-title{font-family:var(--sans);font-size:1.6rem;font-weight:400;color:var(--ink);}
+.cat-title em{font-style:italic;color:var(--blue);}
+.cat-count{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--muted);background:var(--offwhite);padding:0.3rem 0.8rem;border-radius:2px;}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.card-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);}
+.card{background:var(--white);padding:2rem;position:relative;overflow:hidden;transition:background 0.25s;text-decoration:none;color:inherit;display:block;cursor:pointer;}
+.card::after{content:'';position:absolute;bottom:0;left:0;height:3px;width:0;background:var(--blue);transition:width 0.4s;}
+.card:hover{background:var(--white);}
 .card:hover::after{width:100%;}
-.card-num{font-family:var(--mono);font-size:0.51rem;letter-spacing:0.15em;color:var(--sand);margin-bottom:0.5rem;}
-.card-tag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.7rem;}
-.card-title{font-family:var(--serif);font-size:1.25rem;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:0.7rem;}
-.card-title em{font-style:italic;color:var(--clay);}
+.card-num{font-family:var(--mono);font-size:0.51rem;letter-spacing:0.15em;color:var(--border);margin-bottom:0.5rem;}
+.card-tag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.7rem;}
+.card-title{font-family:var(--sans);font-size:1.25rem;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:0.7rem;}
+.card-title em{font-style:italic;color:var(--blue);}
 .card-desc{font-size:0.81rem;line-height:1.7;color:#6B5248;margin-bottom:0.9rem;}
 .card-highlights{margin-bottom:0.9rem;display:flex;flex-direction:column;gap:0.32rem;}
-.highlight{font-family:var(--mono);font-size:0.56rem;color:var(--clay);display:flex;align-items:baseline;gap:0.4rem;}
+.highlight{font-family:var(--mono);font-size:0.56rem;color:var(--blue);display:flex;align-items:baseline;gap:0.4rem;}
 .highlight::before{content:'→';opacity:0.5;flex-shrink:0;}
 .card-tools{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.9rem;}
-.card-cta{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--clay);border-bottom:1px solid var(--blush);padding-bottom:0.1rem;}
+.card-cta{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--border);padding-bottom:0.1rem;}
 
 /* EXPERIENCE */
-.exp-section{background:white;padding:5rem;}
-.exp-item{display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:3rem 0;border-bottom:1px solid var(--parchment);}
+.exp-section{background:var(--white);padding:5rem;}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:3rem 0;border-bottom:1px solid var(--border);}
 .exp-item:first-child{padding-top:0;}
 .exp-item:last-child{border-bottom:none;}
-.exp-co{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;}
-.exp-dates{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;color:var(--rose);margin-bottom:0.4rem;}
-.exp-location{font-family:var(--mono);font-size:0.53rem;letter-spacing:0.08em;color:#aaa;}
+.exp-co{font-family:var(--sans);font-size:1.1rem;font-weight:500;color:var(--blue);margin-bottom:0.2rem;}
+.exp-dates{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.4rem;}
+.exp-location{font-family:var(--mono);font-size:0.53rem;letter-spacing:0.08em;color:var(--muted);}
 .exp-title{font-size:0.94rem;font-weight:500;color:var(--ink);margin-bottom:0.8rem;}
-.exp-bullet{font-size:0.85rem;line-height:1.72;color:#4E3C35;padding-left:1.2rem;position:relative;margin-bottom:0.55rem;}
-.exp-bullet::before{content:'—';position:absolute;left:0;color:var(--blush);}
+.exp-bullet{font-size:0.85rem;line-height:1.72;color:#4a5568;padding-left:1.2rem;position:relative;margin-bottom:0.55rem;}
+.exp-bullet::before{content:'—';position:absolute;left:0;color:var(--blue-tint);}
 
 /* SKILLS */
-.skills-section{background:var(--parchment);padding:5rem;}
+.skills-section{background:var(--white);padding:5rem;}
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;}
-.sk-head{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);padding-bottom:0.8rem;border-bottom:2px solid var(--blush);margin-bottom:1.2rem;}
+.sk-head{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);padding-bottom:0.8rem;border-bottom: 1px solid var(--border);margin-bottom:1.2rem;}
 .sk-item{margin-bottom:0.65rem;}
 .sk-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.22rem;}
 .sk-name{font-size:0.82rem;color:var(--ink);}
-.sk-pct{font-family:var(--mono);font-size:0.54rem;color:var(--rose);}
-.sk-track{height:3px;background:var(--blush);border-radius:2px;overflow:hidden;}
-.sk-fill{height:100%;background:linear-gradient(90deg,var(--clay),var(--teal));border-radius:2px;animation:slideIn 1.2s ease forwards;transform-origin:left;}
+.sk-pct{font-family:var(--mono);font-size:0.54rem;color:var(--muted);}
+.sk-track{height:3px;background:var(--offwhite);border-radius:2px;overflow:hidden;}
+.sk-fill{height:100%;background:var(--blue);border-radius:2px;animation:slideIn 1.2s ease forwards;transform-origin:left;}
 .certs-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:3rem;}
-.cert-card{background:white;border:1px solid var(--sand);padding:1rem 1.5rem;display:flex;align-items:center;gap:1rem;min-width:190px;}
-.cert-card.pending{border-style:dashed;border-color:var(--rose);}
+.cert-card{background:var(--white);border: 1px solid var(--border);padding:1rem 1.5rem;display:flex;align-items:center;gap:1rem;min-width:190px;}
+.cert-card.pending{border-style:dashed;border-color:var(--muted);}
 .cert-name{font-size:0.81rem;font-weight:500;color:var(--ink);}
-.cert-sub{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;color:var(--rose);text-transform:uppercase;margin-top:0.2rem;}
+.cert-sub{font-family:var(--mono);font-size:0.5rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin-top:0.2rem;}
 
 /* CONTACT */
-.contact-section{background:var(--ink);padding:8rem 5rem;text-align:center;}
-.contact-eyebrow{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-style:italic;color:white;margin-bottom:1.5rem;}
-.contact-body{font-size:0.92rem;line-height:1.85;color:var(--blush);max-width:480px;margin:0 auto 3.5rem;}
+.contact-section{background:var(--blue);padding:8rem 5rem;text-align:center;}
+.contact-eyebrow{font-family:var(--sans);font-size:clamp(2rem,4vw,3.5rem);font-style:italic;color:white;margin-bottom:1.5rem;}
+.contact-body{font-size:0.92rem;line-height:1.85;color:var(--blue-tint);max-width:480px;margin:0 auto 3.5rem;}
 .contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
 .c-link{font-family:var(--mono);font-size:0.61rem;letter-spacing:0.14em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;border:1px solid rgba(255,255,255,0.15);color:white;transition:all 0.22s;}
-.c-link:hover{background:var(--clay);border-color:var(--clay);transform:translateY(-3px);}
-.c-link.primary{background:var(--clay);border-color:var(--clay);}
+.c-link:hover{background:var(--blue);border-color:var(--blue);transform:translateY(-3px);}
+.c-link.primary{background:var(--blue);border-color:var(--blue);}
 
 /* ARTIFACT PAGES */
-.artifact-page{background:var(--warm-white);}
+.artifact-page{background:var(--white);}
 .art-hero{min-height:46vh;display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 5rem 3.5rem;position:relative;overflow:hidden;}
 .art-breadcrumb{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.5rem;}
 .art-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s;}
 .art-breadcrumb a:hover{color:white;}
-.art-cat{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.2em;color:var(--sky);margin-bottom:0.5rem;text-transform:uppercase;}
+.art-cat{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.2em;color:var(--blue-tint);margin-bottom:0.5rem;text-transform:uppercase;}
 .art-num{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.2em;color:rgba(255,255,255,0.4);margin-bottom:0.8rem;}
-.art-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.4rem);font-weight:400;line-height:1.1;color:white;margin-bottom:0.8rem;}
-.art-title em{font-style:italic;color:var(--blush);}
-.art-sub{font-family:var(--serif);font-size:0.98rem;font-style:italic;color:rgba(255,255,255,0.58);margin-bottom:1.8rem;}
+.art-title{font-family:var(--sans);font-size:clamp(2rem,5vw,3.4rem);font-weight:400;line-height:1.1;color:white;margin-bottom:0.8rem;}
+.art-title em{font-style:italic;color:var(--blue-tint);}
+.art-sub{font-family:var(--sans);font-size:0.98rem;font-style:italic;color:rgba(255,255,255,0.58);margin-bottom:1.8rem;}
 .art-meta{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,0.15);}
 .art-meta-lbl{font-family:var(--mono);font-size:0.48rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:0.22rem;}
 .art-meta-val{font-size:0.86rem;color:rgba(255,255,255,0.82);}
-.art-body{background:white;padding:4.5rem 5rem;}
-.art-body h3{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--ink);margin-bottom:0.9rem;margin-top:2.2rem;}
+.art-body{background:var(--white);padding:4.5rem 5rem;}
+.art-body h3{font-family:var(--sans);font-size:1.35rem;font-weight:400;color:var(--ink);margin-bottom:0.9rem;margin-top:2.2rem;}
 .art-body h3:first-child{margin-top:0;}
-.art-body h3 em{font-style:italic;color:var(--clay);}
-.art-body p{font-size:0.92rem;line-height:1.9;color:#4E3C35;margin-bottom:0.95rem;max-width:720px;}
+.art-body h3 em{font-style:italic;color:var(--blue);}
+.art-body p{font-size:0.92rem;line-height:1.9;color:#4a5568;margin-bottom:0.95rem;max-width:720px;}
 .art-body ul{margin-bottom:1.1rem;padding-left:1.5rem;display:flex;flex-direction:column;gap:0.4rem;}
-.art-body li{font-size:0.89rem;line-height:1.75;color:#4E3C35;}
-.art-divider{height:5px;background:linear-gradient(90deg,var(--clay),var(--teal),var(--sky));opacity:0.2;}
-.art-nav{background:var(--parchment);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--sand);}
-.art-nav a{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--clay);text-decoration:none;transition:color 0.2s;}
-.art-nav a:hover{color:var(--teal);}
-.art-nav span{font-family:var(--mono);font-size:0.56rem;color:var(--sand);}
+.art-body li{font-size:0.89rem;line-height:1.75;color:#4a5568;}
+.art-divider{height:5px;background:var(--blue);opacity:0.15;}
+.art-nav{background:var(--offwhite);padding:2rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.art-nav a{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);text-decoration:none;transition:color 0.2s;}
+.art-nav a:hover{color:var(--blue);}
+.art-nav span{font-family:var(--mono);font-size:0.56rem;color:var(--border);}
 
 /* CHECKLIST STYLES */
 .phase-block{margin-bottom:2.5rem;}
 .phase-title{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:white;background:var(--ink);padding:0.7rem 1.2rem;margin-bottom:0;display:flex;align-items:center;gap:0.8rem;}
-.phase-title .phase-num{color:var(--rose);}
-.checklist-group{background:var(--parchment);border:1px solid var(--sand);border-top:none;}
-.cl-sub{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);padding:0.8rem 1.2rem 0.4rem;border-bottom:1px solid var(--sand);}
+.phase-title .phase-num{color:var(--muted);}
+.checklist-group{background:var(--offwhite);border:1px solid var(--border);border-top:none;}
+.cl-sub{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);padding:0.8rem 1.2rem 0.4rem;border-bottom:1px solid var(--border);}
 .cl-item{display:flex;align-items:flex-start;gap:0.8rem;padding:0.7rem 1.2rem;border-bottom:1px solid rgba(226,217,204,0.5);}
 .cl-item:last-child{border-bottom:none;}
-.cl-check{width:16px;height:16px;border:2px solid var(--blush);border-radius:3px;flex-shrink:0;margin-top:2px;}
+.cl-check{width:16px;height:16px;border:2px solid var(--border);border-radius:3px;flex-shrink:0;margin-top:2px;}
 .cl-text{font-size:0.86rem;line-height:1.6;color:var(--ink);}
-.cl-text strong{color:var(--clay);}
-.cl-note{font-family:var(--mono);font-size:0.52rem;color:var(--slate);margin-top:0.2rem;display:block;}
-.cl-owner{font-family:var(--mono);font-size:0.5rem;color:var(--rose);background:rgba(196,144,126,0.1);padding:0.15rem 0.4rem;border-radius:2px;flex-shrink:0;margin-top:3px;height:fit-content;}
+.cl-text strong{color:var(--blue);}
+.cl-note{font-family:var(--mono);font-size:0.52rem;color:var(--muted);margin-top:0.2rem;display:block;}
+.cl-owner{font-family:var(--mono);font-size:0.5rem;color:var(--muted);background:rgba(196,144,126,0.1);padding:0.15rem 0.4rem;border-radius:2px;flex-shrink:0;margin-top:3px;height:fit-content;}
 
 /* CEREMONY GUIDE */
-.ceremony-card{background:var(--parchment);border-top:3px solid var(--teal);padding:1.5rem;margin-bottom:1rem;}
-.ceremony-title{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:0.3rem;}
+.ceremony-card{background:var(--offwhite);border-top:3px solid var(--blue);padding:1.5rem;margin-bottom:1rem;}
+.ceremony-title{font-family:var(--sans);font-size:1.1rem;font-weight:400;color:var(--ink);margin-bottom:0.3rem;}
 .ceremony-meta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;}
-.ceremony-chip{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--slate);background:white;padding:0.2rem 0.5rem;border-radius:2px;}
+.ceremony-chip{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;color:var(--muted);background:var(--white);padding:0.2rem 0.5rem;border-radius:2px;}
 .ceremony-steps{display:flex;flex-direction:column;gap:0.35rem;}
-.c-step{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.84rem;color:#4E3C35;line-height:1.55;}
-.c-step-num{font-family:var(--mono);font-size:0.55rem;color:var(--rose);background:white;padding:0.15rem 0.45rem;border-radius:2px;flex-shrink:0;margin-top:2px;}
+.c-step{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.84rem;color:#4a5568;line-height:1.55;}
+.c-step-num{font-family:var(--mono);font-size:0.55rem;color:var(--muted);background:var(--white);padding:0.15rem 0.45rem;border-radius:2px;flex-shrink:0;margin-top:2px;}
 
 /* PMO SETUP */
 .setup-step{display:grid;grid-template-columns:48px 1fr;gap:1rem;margin-bottom:1.2rem;align-items:start;}
-.setup-step-num{width:44px;height:44px;border-radius:50%;background:var(--clay);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.2rem;font-style:italic;flex-shrink:0;}
+.setup-step-num{width:44px;height:44px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:1.2rem;font-style:italic;flex-shrink:0;}
 .setup-step-body{}
 .setup-step-title{font-size:0.95rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;}
-.setup-step-desc{font-size:0.83rem;line-height:1.7;color:#4E3C35;}
+.setup-step-desc{font-size:0.83rem;line-height:1.7;color:#4a5568;}
 
 /* JIRA / MONDAY STYLES */
-.jira-wrap{background:#1a2030;color:#c9d1d9;border-radius:4px;overflow:hidden;margin:1.5rem 0;font-family:'Outfit',sans-serif;}
+.jira-wrap{background:#1a2030;color:#c9d1d9;border-radius:4px;overflow:hidden;margin:1.5rem 0;font-family:var(--sans);}
 .jira-topbar{background:#161b27;padding:0 20px;height:46px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2d3748;}
 .jira-logo-icon{width:22px;height:22px;background:linear-gradient(135deg,#0052cc,#2684ff);border-radius:4px;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:11px;}
 .jira-nav-bar{display:flex;gap:0;border-bottom:1px solid #2d3748;}
@@ -276,14 +276,14 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   <div class="hero-left">
     <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Project & Program Manager · AI & Technology</span></div>
     <h1 class="hero-name">Kia<br/><em>Montgomery</em></h1>
-    <p class="hero-role">HR Transformation · Agile Delivery · AI-Enabled Programs</p>
-    <p class="hero-bio">Senior Consultant at IBM with 9+ years spanning management consulting, large-scale program delivery, and HR operations leadership. I advise on HR strategy, operating model design, and HRIS modernization — leading cross-functional teams, managing complex program risk, and translating data-driven insights into executive-ready recommendations.</p>
+    <p class="hero-role">Project Management · Implementation · Business Transformation</p>
+    <p class="hero-bio">PMP-certified project management professional with experience delivering HR technology, payroll, and business transformation projects across federal and public-sector environments. Experienced in project planning, scheduling, risk and issue management, change control, resource planning, stakeholder coordination, Agile delivery, testing, and executive reporting.</p>
     <div class="badge-row">
-      <span class="badge active">PMP — May 2026</span>
+      <span class="badge active">PMP Certified</span>
       <span class="badge active">SAFe 6.0 Scrum Master</span>
       <span class="badge active">ICP Certified</span>
       <span class="badge">Howard University MBA</span>
-      <span class="badge">Remote · Open to Work</span>
+      <span class="badge">Houston, TX · Remote · Open to Relocate: Dallas · Austin · Washington D.C.</span>
     </div>
     <div class="btn-row">
       <a href="javascript:void(0)" onclick="nav('work')" class="btn btn-primary">View Portfolio</a>
@@ -306,9 +306,10 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   <div class="s-head reveal"><span class="s-num">01</span><h2 class="s-title">About <em>Me</em></h2><div class="s-rule"></div></div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>PMP-certified project management professional with experience delivering HR technology, payroll, and business transformation projects across federal and public-sector environments. Experienced in project planning, scheduling, risk and issue management, change control, resource planning, stakeholder coordination, Agile delivery, testing, and executive reporting.</p>
-      <p>Led project delivery activities for an Oracle PeopleSoft payroll transformation supporting 50,000+ end users and $11.1M in contract funding. Brings additional hands-on experience implementing PeopleSoft, supporting Workday initiatives, improving business processes, and using data and emerging technology to improve project delivery.</p>
-      <p>The portfolio below demonstrates the full PM toolkit organized by PMBOK Performance Domain — from governance and scope through schedule, finance, stakeholders, resources, risk, and Agile delivery.</p>
+      <p>I'm a Houston native — born, raised, but it was leaving home for the first time to attend Howard University in Washington, D.C. that changed everything. Being exposed to new people, new places, and new ideas lit something in me that never went out.</p>
+      <p>I fell into HR by accident — it was my first job — but I stayed because I genuinely loved the work and the people. What started as an entry-level role turned into a career spanning workforce strategy, enterprise systems, and large-scale program delivery. Howard introduced me to consulting and a global trilateral program that took me even further. One seat at a table led to many.</p>
+      <p>Outside of work I'm a foodie working my way through Houston's restaurant scene, a gym regular, a Netflix binge-watcher, and apparently one of the few people who can play Tien Len — a Vietnamese card game I picked up along the way. I volunteer with Search Homeless Services and I'm working toward something close to my heart: opening a family farm in Natchez, Mississippi.</p>
+      <p>At my core I'm a creative problem solver with a deep passion for AI and where it's heading. I don't see differences of opinion as disagreements — I see them as different seats at the same table. That perspective is what makes collaboration meaningful to me.</p>
     </div>
     <div class="about-sidebar reveal">
       <div><div class="sb-label">Education</div>
@@ -319,7 +320,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
       <div><div class="sb-label">Certifications</div>
         <div class="sb-item">SAFe 6.0 Scrum Master · Active</div>
         <div class="sb-item">ICAgile Certified Professional (ICP) · Active</div>
-        <div class="sb-item">PMP (May 2026)</div>
+        <div class="sb-item">PMP · Project Management Institute</div>
         <div class="sb-item">PHR — Prior</div>
       </div>
       <div><div class="sb-label">Tools & Technology</div>
@@ -569,7 +570,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
 <div class="artifact-page" id="pm-02">
   <div class="art-divider"></div>
-  <div class="art-hero" style="background:linear-gradient(145deg,#1a3a45 0%,var(--teal) 55%,#2a5533 100%);">
+  <div class="art-hero" style="background:linear-gradient(145deg,#0a1f3a 0%,#0f62fe 55%,#0043ce 100%);">
     <div class="art-breadcrumb"><a href="javascript:void(0)" onclick="nav('work')">↑ Portfolio</a> / Project Management</div>
     <div class="art-cat">📋 Project Management · PM-02</div>
     <h2 class="art-title">Project Charter &<br/><em>Scope Definition</em></h2>
@@ -627,7 +628,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
 <div class="artifact-page" id="pmo-04">
   <div class="art-divider"></div>
-  <div class="art-hero" style="background:linear-gradient(145deg,#2a1a30 0%,#4a3060 55%,var(--slate) 100%);">
+  <div class="art-hero" style="background:linear-gradient(145deg,#0a1a3a 0%,#1a3060 55%,#0f62fe 100%);">
     <div class="art-breadcrumb"><a href="javascript:void(0)" onclick="nav('work')">↑ Portfolio</a> / PMO Governance</div>
     <div class="art-cat">🏛️ PMO Governance · PMO-04</div>
     <h2 class="art-title">Meeting Minutes:<br/><em>Kickoff & Sprint Review</em></h2>
@@ -641,51 +642,51 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   </div>
   <div class="art-body">
     <h3>Artifact A: <em>Steering Committee Kickoff</em></h3>
-    <div style="background:var(--parchment);padding:2rem;margin:1.5rem 0;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--sand);">
-        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.15rem;">Date & Time</div><div style="font-size:0.84rem;margin-bottom:0.5rem;">Monday, January 6, 2025 · 10:00 AM – 12:00 PM CST</div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.15rem;">Facilitator</div><div style="font-size:0.84rem;">Kia Montgomery, IBM Senior Consultant</div></div>
-        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.15rem;">Attendees</div><div style="font-size:0.84rem;">CHRO, VP Talent Acquisition, CIO, IBM PM, IBM Delivery Lead, HR Ops Director, Vendor Rep</div></div>
+    <div style="background:var(--offwhite);padding:2rem;margin:1.5rem 0;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);">
+        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.15rem;">Date & Time</div><div style="font-size:0.84rem;margin-bottom:0.5rem;">Monday, January 6, 2025 · 10:00 AM – 12:00 PM CST</div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.15rem;">Facilitator</div><div style="font-size:0.84rem;">Kia Montgomery, IBM Senior Consultant</div></div>
+        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.15rem;">Attendees</div><div style="font-size:0.84rem;">CHRO, VP Talent Acquisition, CIO, IBM PM, IBM Delivery Lead, HR Ops Director, Vendor Rep</div></div>
       </div>
-      <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--teal);text-transform:uppercase;margin-bottom:0.7rem;">Decisions Made</div>
-      <div><div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--sand);"><div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);width:20px;flex-shrink:0;margin-top:2px;">#1</div><div><div style="font-size:0.83rem;color:var(--ink);">Project Charter formally approved by all executive stakeholders</div><div style="font-family:var(--mono);font-size:0.52rem;color:var(--slate);margin-top:0.15rem;">Decision Maker: CHRO</div></div></div>
-      <div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--sand);"><div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);width:20px;flex-shrink:0;margin-top:2px;">#2</div><div><div style="font-size:0.83rem;color:var(--ink);">ServiceNow integration evaluated as formal CR-001</div><div style="font-family:var(--mono);font-size:0.52rem;color:var(--slate);margin-top:0.15rem;">Decision Maker: IBM PM</div></div></div>
-      <div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.5rem 0;"><div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);width:20px;flex-shrink:0;margin-top:2px;">#3</div><div><div style="font-size:0.83rem;color:var(--ink);">48-hour action item SLA adopted for all steering committee members</div><div style="font-family:var(--mono);font-size:0.52rem;color:var(--slate);margin-top:0.15rem;">Decision Maker: All Attendees</div></div></div></div>
-      <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--teal);text-transform:uppercase;margin:1rem 0 0.7rem;">Action Items</div>
+      <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--blue);text-transform:uppercase;margin-bottom:0.7rem;">Decisions Made</div>
+      <div><div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--border);"><div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);width:20px;flex-shrink:0;margin-top:2px;">#1</div><div><div style="font-size:0.83rem;color:var(--ink);">Project Charter formally approved by all executive stakeholders</div><div style="font-family:var(--mono);font-size:0.52rem;color:var(--muted);margin-top:0.15rem;">Decision Maker: CHRO</div></div></div>
+      <div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.5rem 0;border-bottom:1px solid var(--border);"><div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);width:20px;flex-shrink:0;margin-top:2px;">#2</div><div><div style="font-size:0.83rem;color:var(--ink);">ServiceNow integration evaluated as formal CR-001</div><div style="font-family:var(--mono);font-size:0.52rem;color:var(--muted);margin-top:0.15rem;">Decision Maker: IBM PM</div></div></div>
+      <div style="display:flex;gap:0.8rem;align-items:flex-start;padding:0.5rem 0;"><div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);width:20px;flex-shrink:0;margin-top:2px;">#3</div><div><div style="font-size:0.83rem;color:var(--ink);">48-hour action item SLA adopted for all steering committee members</div><div style="font-family:var(--mono);font-size:0.52rem;color:var(--muted);margin-top:0.15rem;">Decision Maker: All Attendees</div></div></div></div>
+      <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--blue);text-transform:uppercase;margin:1rem 0 0.7rem;">Action Items</div>
       <div>
-        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--parchment);">
-          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);">A-01</div><div style="font-size:0.82rem;color:var(--ink);">Distribute signed Project Charter to all stakeholders</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--slate);">IBM PM</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--clay);font-weight:500;">Jan 8</div>
+        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--border);">
+          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);">A-01</div><div style="font-size:0.82rem;color:var(--ink);">Distribute signed Project Charter to all stakeholders</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--muted);">IBM PM</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--blue);font-weight:500;">Jan 8</div>
         </div>
-        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--parchment);">
-          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);">A-02</div><div style="font-size:0.82rem;color:var(--ink);">Submit ServiceNow integration as CR-001 with impact assessment</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--slate);">IBM PM + CIO</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--clay);font-weight:500;">Jan 20</div>
+        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--border);">
+          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);">A-02</div><div style="font-size:0.82rem;color:var(--ink);">Submit ServiceNow integration as CR-001 with impact assessment</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--muted);">IBM PM + CIO</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--blue);font-weight:500;">Jan 20</div>
         </div>
         <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;">
-          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);">A-03</div><div style="font-size:0.82rem;color:var(--ink);">Launch change readiness survey to HR Operations team</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--slate);">Change Mgr</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--clay);font-weight:500;">Jan 13</div>
+          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);">A-03</div><div style="font-size:0.82rem;color:var(--ink);">Launch change readiness survey to HR Operations team</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--muted);">Change Mgr</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--blue);font-weight:500;">Jan 13</div>
         </div>
       </div>
     </div>
 
     <h3>Artifact B: <em>Sprint 6 Review</em></h3>
-    <div style="background:var(--parchment);padding:2rem;margin:1.5rem 0;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--sand);">
-        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.15rem;">Date & Time</div><div style="font-size:0.84rem;margin-bottom:0.5rem;">Friday, April 25, 2025 · 2:00 PM – 3:30 PM CST</div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.15rem;">Sprint Velocity</div><div style="font-size:0.84rem;">31 of 38 pts delivered (US-024 blocked)</div></div>
-        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.15rem;">Attendees</div><div style="font-size:0.84rem;">IBM PM, AI/ML Lead, IT Lead, HR Ops SME, VP TA, Vendor PM, QA Lead</div></div>
+    <div style="background:var(--offwhite);padding:2rem;margin:1.5rem 0;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);">
+        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.15rem;">Date & Time</div><div style="font-size:0.84rem;margin-bottom:0.5rem;">Friday, April 25, 2025 · 2:00 PM – 3:30 PM CST</div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.15rem;">Sprint Velocity</div><div style="font-size:0.84rem;">31 of 38 pts delivered (US-024 blocked)</div></div>
+        <div><div style="font-family:var(--mono);font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:0.15rem;">Attendees</div><div style="font-size:0.84rem;">IBM PM, AI/ML Lead, IT Lead, HR Ops SME, VP TA, Vendor PM, QA Lead</div></div>
       </div>
-      <ul style="margin-bottom:1rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;line-height:1.7;color:#4E3C35;">
+      <ul style="margin-bottom:1rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:0.4rem;font-size:0.85rem;line-height:1.7;color:#4a5568;">
         <li>Workday ↔ AI Platform sync live: 4 min 12 sec — target 5 min — <strong>PASSED</strong></li>
         <li>AI 30-60-90 plan rated 8/10 relevance by VP TA for Marketing Coordinator demo role</li>
         <li>ServiceNow auto-ticket working end-to-end; equipment checklist bug assigned to IT Lead</li>
         <li>Phase 2 overall: 82% complete — on track despite sprint shortfall</li>
       </ul>
-      <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--teal);text-transform:uppercase;margin-top:1rem;margin-bottom:0.7rem;">Action Items</div>
+      <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:var(--blue);text-transform:uppercase;margin-top:1rem;margin-bottom:0.7rem;">Action Items</div>
       <div>
-        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--parchment);">
-          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);">A-01</div><div style="font-size:0.82rem;color:var(--ink);">Fix ServiceNow equipment checklist bug</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--slate);">IT Lead</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--clay);font-weight:500;">Apr 28</div>
+        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--border);">
+          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);">A-01</div><div style="font-size:0.82rem;color:var(--ink);">Fix ServiceNow equipment checklist bug</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--muted);">IT Lead</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--blue);font-weight:500;">Apr 28</div>
         </div>
-        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--parchment);">
-          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);">A-02</div><div style="font-size:0.82rem;color:var(--ink);">Schedule pen test and unblock US-024</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--slate);">Security</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--clay);font-weight:500;">Apr 28</div>
+        <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--border);">
+          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);">A-02</div><div style="font-size:0.82rem;color:var(--ink);">Schedule pen test and unblock US-024</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--muted);">Security</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--blue);font-weight:500;">Apr 28</div>
         </div>
         <div style="display:grid;grid-template-columns:35px 1fr 110px 90px;gap:0.5rem;padding:0.5rem 0;">
-          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--rose);">A-03</div><div style="font-size:0.82rem;color:var(--ink);">Follow up with CHRO on CR-004 approval (Phase 2 extension)</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--slate);">IBM PM</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--clay);font-weight:500;">Apr 28</div>
+          <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);">A-03</div><div style="font-size:0.82rem;color:var(--ink);">Follow up with CHRO on CR-004 approval (Phase 2 extension)</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--muted);">IBM PM</div><div style="font-family:var(--mono);font-size:0.56rem;color:var(--blue);font-weight:500;">Apr 28</div>
         </div>
       </div>
     </div>
@@ -750,7 +751,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
 <div class="artifact-page" id="pm-05">
   <div class="art-divider"></div>
-  <div class="art-hero" style="background:linear-gradient(145deg,#1a2a1a 0%,#3a5a3a 55%,var(--teal) 100%);">
+  <div class="art-hero" style="background:linear-gradient(145deg,#0a1a3a 0%,#1a3a8a 55%,#0f62fe 100%);">
     <div class="art-breadcrumb"><a href="javascript:void(0)" onclick="nav('work')">↑ Portfolio</a> / Project Management</div>
     <div class="art-cat">📋 Project Management · PM-05</div>
     <h2 class="art-title">Project Schedule<br/><em>& Gantt Chart</em></h2>
@@ -765,21 +766,21 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   <div class="art-body">
     <div style="overflow-x:auto;"><table class="data-table"><thead><tr><th>ID</th><th>Task</th><th>Owner</th><th>Start</th><th>End</th><th>Days</th><th>Status</th></tr></thead><tbody>
       <tr><td colspan="7" style="background:var(--ink);color:white;font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.5rem 1rem;">Phase 1: Discovery & Planning</td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-01</td><td>Define project scope & charter</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 6</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 17</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">10d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-02</td><td>Stakeholder analysis & interviews</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 13</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 31</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-03</td><td>Current-state process mapping</td><td style="font-family:var(--mono);font-size:0.6rem;">HR Ops</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 20</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 7</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-04</td><td>Vendor RFP & evaluation</td><td style="font-family:var(--mono);font-size:0.6rem;">Procurement</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 27</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 21</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">20d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-05</td><td>Platform selection & contract execution</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 10</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 28</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-01</td><td>Define project scope & charter</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 6</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 17</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">10d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-02</td><td>Stakeholder analysis & interviews</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 13</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 31</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-03</td><td>Current-state process mapping</td><td style="font-family:var(--mono);font-size:0.6rem;">HR Ops</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 20</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 7</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-04</td><td>Vendor RFP & evaluation</td><td style="font-family:var(--mono);font-size:0.6rem;">Procurement</td><td style="font-family:var(--mono);font-size:0.6rem;">Jan 27</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 21</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">20d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-05</td><td>Platform selection & contract execution</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 10</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 28</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
       <tr><td colspan="7" style="background:var(--ink);color:white;font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.5rem 1rem;">Phase 2: Design & Build</td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-06</td><td>Solution architecture design</td><td style="font-family:var(--mono);font-size:0.6rem;">IT Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 3</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 21</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-07</td><td>AI/ML model config & training</td><td style="font-family:var(--mono);font-size:0.6rem;">AI/ML Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 10</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">35d</td><td><span class="rag rag-amber" style="font-size:0.5rem;padding:0.15rem 0.4rem;">85%</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-08</td><td>Workday HRIS integration</td><td style="font-family:var(--mono);font-size:0.6rem;">IT Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 17</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 18</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">25d</td><td><span class="rag rag-amber" style="font-size:0.5rem;padding:0.15rem 0.4rem;">90%</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-09</td><td>ADP Payroll integration</td><td style="font-family:var(--mono);font-size:0.6rem;">IT Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 24</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 11</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">15d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-10</td><td>Security & compliance review</td><td style="font-family:var(--mono);font-size:0.6rem;">Security</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 14</td><td style="font-family:var(--mono);font-size:0.6rem;">May 9</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">18d</td><td><span class="rag rag-red" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Blocked</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-06</td><td>Solution architecture design</td><td style="font-family:var(--mono);font-size:0.6rem;">IT Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 3</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 21</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">14d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-07</td><td>AI/ML model config & training</td><td style="font-family:var(--mono);font-size:0.6rem;">AI/ML Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 10</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">35d</td><td><span class="rag rag-amber" style="font-size:0.5rem;padding:0.15rem 0.4rem;">85%</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-08</td><td>Workday HRIS integration</td><td style="font-family:var(--mono);font-size:0.6rem;">IT Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 17</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 18</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">25d</td><td><span class="rag rag-amber" style="font-size:0.5rem;padding:0.15rem 0.4rem;">90%</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-09</td><td>ADP Payroll integration</td><td style="font-family:var(--mono);font-size:0.6rem;">IT Lead</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 24</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 11</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">15d</td><td><span class="rag rag-green" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Done</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-10</td><td>Security & compliance review</td><td style="font-family:var(--mono);font-size:0.6rem;">Security</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 14</td><td style="font-family:var(--mono);font-size:0.6rem;">May 9</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">18d</td><td><span class="rag rag-red" style="font-size:0.5rem;padding:0.15rem 0.4rem;">Blocked</span></td></tr>
       <tr><td colspan="7" style="background:var(--ink);color:white;font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.5rem 1rem;">Phase 3: Pilot · Phase 4: Enterprise Rollout</td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-13</td><td>Pilot deployment (2 BUs)</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Jun 2</td><td style="font-family:var(--mono);font-size:0.6rem;">Jun 13</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">10d</td><td><span class="rag" style="background:rgba(150,150,150,0.1);color:#888;font-size:0.5rem;padding:0.15rem 0.4rem;">Planned</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-19</td><td>Enterprise go-live</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Aug 18</td><td style="font-family:var(--mono);font-size:0.6rem;">Aug 22</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">5d</td><td><span class="rag" style="background:rgba(150,150,150,0.1);color:#888;font-size:0.5rem;padding:0.15rem 0.4rem;">Planned</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">T-21</td><td>Project close & retrospective</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Sep 22</td><td style="font-family:var(--mono);font-size:0.6rem;">Sep 30</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">7d</td><td><span class="rag" style="background:rgba(150,150,150,0.1);color:#888;font-size:0.5rem;padding:0.15rem 0.4rem;">Planned</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-13</td><td>Pilot deployment (2 BUs)</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Jun 2</td><td style="font-family:var(--mono);font-size:0.6rem;">Jun 13</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">10d</td><td><span class="rag" style="background:rgba(150,150,150,0.1);color:#888;font-size:0.5rem;padding:0.15rem 0.4rem;">Planned</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-19</td><td>Enterprise go-live</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Aug 18</td><td style="font-family:var(--mono);font-size:0.6rem;">Aug 22</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">5d</td><td><span class="rag" style="background:rgba(150,150,150,0.1);color:#888;font-size:0.5rem;padding:0.15rem 0.4rem;">Planned</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">T-21</td><td>Project close & retrospective</td><td style="font-family:var(--mono);font-size:0.6rem;">IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Sep 22</td><td style="font-family:var(--mono);font-size:0.6rem;">Sep 30</td><td style="font-family:var(--mono);font-size:0.6rem;text-align:center;">7d</td><td><span class="rag" style="background:rgba(150,150,150,0.1);color:#888;font-size:0.5rem;padding:0.15rem 0.4rem;">Planned</span></td></tr>
     </tbody></table></div>
     <h3>Change Request <em>Log</em></h3>
     <table class="data-table" style="margin:1.5rem 0;"><thead><tr><th>CR ID</th><th>Change</th><th>Schedule Impact</th><th>Budget Impact</th><th>Decision</th></tr></thead><tbody>
@@ -894,12 +895,12 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     </tbody></table>
 
     <h3>Schedule <em>Change Control Process</em></h3>
-    <div class="checklist-group" style="border:1px solid var(--sand);margin:1.5rem 0;">
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text"><strong>Step 1 — Identify:</strong> IBM PM identifies schedule impact; documents in Issue Log within 24 hours of discovery</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text"><strong>Step 2 — Assess:</strong> Impact analysis completed — schedule, budget, scope, and quality implications documented</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text"><strong>Step 3 — Submit:</strong> Change Request submitted to CCB if threshold exceeded; IBM PM approves if within authority</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text"><strong>Step 4 — Approve/Reject:</strong> CCB decision within 3 business days; documented in Change Log</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text"><strong>Step 5 — Update:</strong> Approved change reflected in master schedule baseline; Jira updated same day; stakeholders notified per Comms Plan</div></div>
+    <div class="checklist-group" style="border:1px solid var(--border);margin:1.5rem 0;">
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text"><strong>Step 1 — Identify:</strong> IBM PM identifies schedule impact; documents in Issue Log within 24 hours of discovery</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text"><strong>Step 2 — Assess:</strong> Impact analysis completed — schedule, budget, scope, and quality implications documented</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text"><strong>Step 3 — Submit:</strong> Change Request submitted to CCB if threshold exceeded; IBM PM approves if within authority</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text"><strong>Step 4 — Approve/Reject:</strong> CCB decision within 3 business days; documented in Change Log</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text"><strong>Step 5 — Update:</strong> Approved change reflected in master schedule baseline; Jira updated same day; stakeholders notified per Comms Plan</div></div>
     </div>
 
     <h3>Earned Value <em>Schedule Metrics — Phase 2 Midpoint</em></h3>
@@ -987,7 +988,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
       <tr><td>IT Integration</td><td>$200,000</td><td>$95,000</td><td>$198,000</td><td>+$2,000</td><td><span class="rag rag-green">Under</span></td></tr>
       <tr><td>Change Mgmt & Training</td><td>$100,000</td><td>$18,300</td><td>$85,000</td><td>+$15,000</td><td><span class="rag rag-green">Under</span></td></tr>
       <tr><td>Contingency Reserve</td><td>$50,000</td><td>$7,000</td><td>$50,000</td><td>$0</td><td><span class="rag rag-amber">Monitoring</span></td></tr>
-      <tr style="background:var(--parchment);font-weight:500;"><td><strong>TOTAL</strong></td><td><strong>$1,250,000</strong></td><td><strong>$612,300</strong></td><td><strong>$1,218,000</strong></td><td><strong>+$32,000</strong></td><td><span class="rag rag-green">Under Budget</span></td></tr>
+      <tr style="background:var(--offwhite);font-weight:500;"><td><strong>TOTAL</strong></td><td><strong>$1,250,000</strong></td><td><strong>$612,300</strong></td><td><strong>$1,218,000</strong></td><td><strong>+$32,000</strong></td><td><span class="rag rag-green">Under Budget</span></td></tr>
     </tbody></table>
     <h3>Labor <em>Utilization Report</em></h3>
     <table class="data-table" style="margin:1.5rem 0;"><thead><tr><th>Team Member</th><th>Role</th><th>Rate/Hr</th><th>Hours (YTD)</th><th>Labor Cost</th><th>Util%</th></tr></thead><tbody>
@@ -1094,18 +1095,18 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     <p>Issues are different from risks. A risk is something that might happen — an issue is something that already has. The Issue Log is where the PM tracks problems that have materialized, who owns resolving them, and how long resolution is taking. At IBM, unresolved issues without an owner or deadline are how projects fall apart quietly before anyone notices.</p>
     <div class="cs-callout">Key distinction: Risk Register = future threats. Issue Log = current problems. A risk that materializes moves from the Risk Register to the Issue Log — with a cross-reference to the original risk ID.</div>
     <table class="data-table" style="margin:1.5rem 0;"><thead><tr><th>ID</th><th>Category</th><th>Issue</th><th>Impact</th><th>Owner</th><th>Raised</th><th>Target</th><th>Status</th></tr></thead><tbody>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-001</td><td>Vendor</td><td>LMS vendor has not provided API documentation — DEP-03 blocked</td><td><span class="rag rag-red">High</span></td><td>IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 14</td><td style="font-family:var(--mono);font-size:0.6rem;">May 16</td><td><span class="rag rag-amber">Escalated</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-002</td><td>Technical</td><td>Workday sync fails for employees with dual job codes (BUG-038)</td><td><span class="rag rag-red">High</span></td><td>Priya Nair</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;">May 23</td><td><span class="rag rag-amber">In Progress</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-003</td><td>Resource</td><td>Security pen test not scheduled — blocking SOC 2 compliance</td><td><span class="rag rag-red">High</span></td><td>Security Team</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 14</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-004</td><td>Stakeholder</td><td>HR Ops team (3 staff) refusing to attend training</td><td><span class="rag rag-amber">Medium</span></td><td>HR Director</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 20</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 15</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-005</td><td>Technical</td><td>ServiceNow equipment checklist missing items in auto-ticket</td><td><span class="rag rag-amber">Medium</span></td><td>Devon Ross</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-006</td><td>Scope</td><td>Client requesting offboarding workflow — not in WBS (CR-003)</td><td><span class="rag rag-amber">Medium</span></td><td>IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 5</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 12</td><td><span class="rag rag-green">Closed ✓ (CR rejected)</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-007</td><td>Vendor</td><td>VendorA contract terminated — replacement required mid-project</td><td><span class="rag rag-red">High</span></td><td>IBM PM + Procurement</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 10</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 28</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-008</td><td>Compliance</td><td>CCPA/TX HB4 review not initiated — PII in AI model flagged by Legal</td><td><span class="rag rag-red">High</span></td><td>Legal + IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 20</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 15</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-009</td><td>Resource</td><td>IBM developer Devon Ross requested for competing engagement Jun 1</td><td><span class="rag rag-amber">Medium</span></td><td>IBM PM + Resource Mgmt</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td style="font-family:var(--mono);font-size:0.6rem;">May 9</td><td><span class="rag rag-amber">Escalated</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-010</td><td>Technical</td><td>Mobile DocuSign broken on iOS 16.x — signature field unresponsive</td><td><span class="rag rag-amber">Medium</span></td><td>Marcus Chen</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;">May 9</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-011</td><td>Stakeholder</td><td>VP TA unavailable for UAT confirmation until May 15 — pilot at risk</td><td><span class="rag rag-red">High</span></td><td>IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td style="font-family:var(--mono);font-size:0.6rem;">May 1</td><td><span class="rag rag-amber">Escalated</span></td></tr>
-      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">ISS-012</td><td>Technical</td><td>LMS auto-assignment not triggering for employees with no manager assigned</td><td><span class="rag rag-amber">Medium</span></td><td>Devon Ross</td><td style="font-family:var(--mono);font-size:0.6rem;">May 5</td><td style="font-family:var(--mono);font-size:0.6rem;">May 30</td><td><span class="rag rag-amber">In Progress</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-001</td><td>Vendor</td><td>LMS vendor has not provided API documentation — DEP-03 blocked</td><td><span class="rag rag-red">High</span></td><td>IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 14</td><td style="font-family:var(--mono);font-size:0.6rem;">May 16</td><td><span class="rag rag-amber">Escalated</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-002</td><td>Technical</td><td>Workday sync fails for employees with dual job codes (BUG-038)</td><td><span class="rag rag-red">High</span></td><td>Priya Nair</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;">May 23</td><td><span class="rag rag-amber">In Progress</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-003</td><td>Resource</td><td>Security pen test not scheduled — blocking SOC 2 compliance</td><td><span class="rag rag-red">High</span></td><td>Security Team</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 14</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-004</td><td>Stakeholder</td><td>HR Ops team (3 staff) refusing to attend training</td><td><span class="rag rag-amber">Medium</span></td><td>HR Director</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 20</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 15</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-005</td><td>Technical</td><td>ServiceNow equipment checklist missing items in auto-ticket</td><td><span class="rag rag-amber">Medium</span></td><td>Devon Ross</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-006</td><td>Scope</td><td>Client requesting offboarding workflow — not in WBS (CR-003)</td><td><span class="rag rag-amber">Medium</span></td><td>IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 5</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 12</td><td><span class="rag rag-green">Closed ✓ (CR rejected)</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-007</td><td>Vendor</td><td>VendorA contract terminated — replacement required mid-project</td><td><span class="rag rag-red">High</span></td><td>IBM PM + Procurement</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 10</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 28</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-008</td><td>Compliance</td><td>CCPA/TX HB4 review not initiated — PII in AI model flagged by Legal</td><td><span class="rag rag-red">High</span></td><td>Legal + IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Feb 20</td><td style="font-family:var(--mono);font-size:0.6rem;">Mar 15</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-009</td><td>Resource</td><td>IBM developer Devon Ross requested for competing engagement Jun 1</td><td><span class="rag rag-amber">Medium</span></td><td>IBM PM + Resource Mgmt</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td style="font-family:var(--mono);font-size:0.6rem;">May 9</td><td><span class="rag rag-amber">Escalated</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-010</td><td>Technical</td><td>Mobile DocuSign broken on iOS 16.x — signature field unresponsive</td><td><span class="rag rag-amber">Medium</span></td><td>Marcus Chen</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 25</td><td style="font-family:var(--mono);font-size:0.6rem;">May 9</td><td><span class="rag rag-green">Closed ✓</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-011</td><td>Stakeholder</td><td>VP TA unavailable for UAT confirmation until May 15 — pilot at risk</td><td><span class="rag rag-red">High</span></td><td>IBM PM</td><td style="font-family:var(--mono);font-size:0.6rem;">Apr 28</td><td style="font-family:var(--mono);font-size:0.6rem;">May 1</td><td><span class="rag rag-amber">Escalated</span></td></tr>
+      <tr><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">ISS-012</td><td>Technical</td><td>LMS auto-assignment not triggering for employees with no manager assigned</td><td><span class="rag rag-amber">Medium</span></td><td>Devon Ross</td><td style="font-family:var(--mono);font-size:0.6rem;">May 5</td><td style="font-family:var(--mono);font-size:0.6rem;">May 30</td><td><span class="rag rag-amber">In Progress</span></td></tr>
     </tbody></table>
     <div class="cs-stat-row">
       <div class="cs-stat"><span class="cs-stat-val">12</span><span class="cs-stat-label">Total Issues Raised</span></div>
@@ -1147,7 +1148,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
       <tr><td>Tanya Osei</td><td>BA</td><td style="font-family:var(--mono);font-size:0.6rem;">1.3.1/1.1</td><td style="font-family:var(--mono);font-size:0.6rem;">0001</td><td>20</td><td>20</td><td>20</td><td>20</td><td style="font-weight:600;">80</td><td style="font-family:var(--mono);font-size:0.6rem;font-weight:600;">$12,400</td></tr>
       <tr><td>IBM Scrum Master</td><td>Scrum Master</td><td style="font-family:var(--mono);font-size:0.6rem;">1.1</td><td style="font-family:var(--mono);font-size:0.6rem;">0001</td><td>5</td><td>5</td><td>4</td><td>4</td><td style="font-weight:600;">18</td><td style="font-family:var(--mono);font-size:0.6rem;font-weight:600;">$2,970</td></tr>
       <tr><td>Vendor PM (CloudAI)</td><td>Vendor PM</td><td style="font-family:var(--mono);font-size:0.6rem;">1.2.1</td><td style="font-family:var(--mono);font-size:0.6rem;">0002</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="font-weight:600;">SOW</td><td style="font-family:var(--mono);font-size:0.6rem;font-weight:600;">Fixed SOW</td></tr>
-      <tr style="background:var(--parchment);font-weight:600;"><td colspan="4">Total IBM Labor</td><td>171</td><td>171</td><td>170</td><td>170</td><td>682 hrs</td><td style="font-family:var(--mono);">$128,490</td></tr>
+      <tr style="background:var(--offwhite);font-weight:600;"><td colspan="4">Total IBM Labor</td><td>171</td><td>171</td><td>170</td><td>170</td><td>682 hrs</td><td style="font-family:var(--mono);">$128,490</td></tr>
     </tbody></table>
     <div class="cs-callout">PM Certification: I certify that the hours reported above are accurate, reflect work performed on Contract No. [IBM-HRT-2025-001], and are properly allocable to the contract line items shown. — Kia Montgomery, IBM Senior Consultant, May 1, 2025</div>
     <h3>HR Skills <em>Demonstrated</em></h3>
@@ -1213,23 +1214,23 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     <p>This is the artifact the AI platform actually automates. Understanding what was being replaced — the manual onboarding checklist that HR staff tracked in spreadsheets — is what enabled the IBM team to design a better solution. It also shows the PM's HR background: the ability to think through onboarding not just as a project but as a human process that shapes new hire experience and retention from Day 1.</p>
 
     <h3>Day 1 <em>Tasks — Before Noon</em></h3>
-    <div class="checklist-group" style="border:1px solid var(--sand);margin:1.5rem 0;">
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Badge and physical access provisioned (Facilities)</div><div class="cl-owner">Facilities</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Laptop and equipment delivered to desk or shipped (IT)</div><div class="cl-owner">IT</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Network and system access credentials issued (IT)</div><div class="cl-owner">IT</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">New hire welcome email from CHRO delivered (Platform auto)</div><div class="cl-owner">Platform</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Benefits enrollment link sent — 30-day window opened (HR)</div><div class="cl-owner">HR Ops</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Workday profile activated — new hire can log in</div><div class="cl-owner">HR Ops</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">I-9 verification appointment completed or scheduled (HR)</div><div class="cl-owner">HR Ops</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Tax forms (W-4, state) completed via ADP — auto-routed</div><div class="cl-owner">Platform</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Manager 1:1 meeting on calendar — first day welcome</div><div class="cl-owner">Manager</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Team introduction email sent by manager</div><div class="cl-owner">Manager</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">Security briefing scheduled within first week (Security)</div><div class="cl-owner">Security</div></div>
-      <div class="cl-item"><div class="cl-check" style="background:var(--teal);border-color:var(--teal);"></div><div class="cl-text">AI onboarding platform checklist walkthrough complete (HR)</div><div class="cl-owner">HR Ops</div></div>
+    <div class="checklist-group" style="border:1px solid var(--border);margin:1.5rem 0;">
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Badge and physical access provisioned (Facilities)</div><div class="cl-owner">Facilities</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Laptop and equipment delivered to desk or shipped (IT)</div><div class="cl-owner">IT</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Network and system access credentials issued (IT)</div><div class="cl-owner">IT</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">New hire welcome email from CHRO delivered (Platform auto)</div><div class="cl-owner">Platform</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Benefits enrollment link sent — 30-day window opened (HR)</div><div class="cl-owner">HR Ops</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Workday profile activated — new hire can log in</div><div class="cl-owner">HR Ops</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">I-9 verification appointment completed or scheduled (HR)</div><div class="cl-owner">HR Ops</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Tax forms (W-4, state) completed via ADP — auto-routed</div><div class="cl-owner">Platform</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Manager 1:1 meeting on calendar — first day welcome</div><div class="cl-owner">Manager</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Team introduction email sent by manager</div><div class="cl-owner">Manager</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">Security briefing scheduled within first week (Security)</div><div class="cl-owner">Security</div></div>
+      <div class="cl-item"><div class="cl-check" style="background:var(--blue);border-color:var(--blue);"></div><div class="cl-text">AI onboarding platform checklist walkthrough complete (HR)</div><div class="cl-owner">HR Ops</div></div>
     </div>
 
     <h3>Week 1 <em>Tasks</em></h3>
-    <div class="checklist-group" style="border:1px solid var(--sand);margin:1.5rem 0;">
+    <div class="checklist-group" style="border:1px solid var(--border);margin:1.5rem 0;">
       <div class="cl-item"><div class="cl-check"></div><div class="cl-text">Mandatory compliance training assigned via LMS — HIPAA, Security Awareness, Code of Conduct</div><div class="cl-owner">Platform auto</div></div>
       <div class="cl-item"><div class="cl-check"></div><div class="cl-text">Security briefing completed and signed acknowledgment received</div><div class="cl-owner">Security</div></div>
       <div class="cl-item"><div class="cl-check"></div><div class="cl-text">Role-specific training path assigned based on job code — LMS auto-assignment</div><div class="cl-owner">Platform auto</div></div>
@@ -1241,7 +1242,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     </div>
 
     <h3>Month 1 <em>Milestones</em></h3>
-    <div class="checklist-group" style="border:1px solid var(--sand);margin:1.5rem 0;">
+    <div class="checklist-group" style="border:1px solid var(--border);margin:1.5rem 0;">
       <div class="cl-item"><div class="cl-check"></div><div class="cl-text">All mandatory training completed — compliance certification received</div><div class="cl-owner">New Hire</div></div>
       <div class="cl-item"><div class="cl-check"></div><div class="cl-text">30-day NPS survey completed via AI platform — sent Day 28 auto</div><div class="cl-owner">Platform auto</div></div>
       <div class="cl-item"><div class="cl-check"></div><div class="cl-text">AI attrition risk score generated — HR notified if High risk flagged</div><div class="cl-owner">Platform auto</div></div>
@@ -1300,7 +1301,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
 <div class="artifact-page" id="pm-03">
   <div class="art-divider"></div>
-  <div class="art-hero" style="background:linear-gradient(145deg,#3a1a1a 0%,#7a3030 55%,var(--clay) 100%);">
+  <div class="art-hero" style="background:linear-gradient(145deg,#0a1a3a 0%,#1a3060 55%,#0f62fe 100%);">
     <div class="art-breadcrumb"><a href="javascript:void(0)" onclick="nav('work')">↑ Portfolio</a> / Project Management</div>
     <div class="art-cat">📋 Project Management · PM-03</div>
     <h2 class="art-title">Risk Register &<br/><em>Response Plan</em></h2>
@@ -1357,31 +1358,31 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
         <div style="font-size:2rem;margin-bottom:0.3rem;">🟢</div>
         <div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:#2a7a3a;margin-bottom:0.4rem;">Schedule</div>
         <div style="font-size:0.75rem;font-weight:600;">On Track</div>
-        <div style="font-size:0.65rem;color:var(--slate);margin-top:0.3rem;">SPI 1.06 · CR-004 pending</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.3rem;">SPI 1.06 · CR-004 pending</div>
       </div>
       <div style="background:rgba(42,122,58,0.12);border:2px solid #2a7a3a;padding:1.2rem;text-align:center;">
         <div style="font-size:2rem;margin-bottom:0.3rem;">🟢</div>
         <div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:#2a7a3a;margin-bottom:0.4rem;">Budget</div>
         <div style="font-size:0.75rem;font-weight:600;">Under Plan</div>
-        <div style="font-size:0.65rem;color:var(--slate);margin-top:0.3rem;">CPI 1.03 · $32K under EAC</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.3rem;">CPI 1.03 · $32K under EAC</div>
       </div>
       <div style="background:rgba(232,184,75,0.12);border:2px solid #e8b84b;padding:1.2rem;text-align:center;">
         <div style="font-size:2rem;margin-bottom:0.3rem;">🟡</div>
         <div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a6a1a;margin-bottom:0.4rem;">Scope</div>
         <div style="font-size:0.75rem;font-weight:600;">Watch</div>
-        <div style="font-size:0.65rem;color:var(--slate);margin-top:0.3rem;">CR-005 pending · LMS blocked</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.3rem;">CR-005 pending · LMS blocked</div>
       </div>
       <div style="background:rgba(232,184,75,0.12);border:2px solid #e8b84b;padding:1.2rem;text-align:center;">
         <div style="font-size:2rem;margin-bottom:0.3rem;">🟡</div>
         <div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:#8a6a1a;margin-bottom:0.4rem;">Quality</div>
         <div style="font-size:0.75rem;font-weight:600;">Watch</div>
-        <div style="font-size:0.65rem;color:var(--slate);margin-top:0.3rem;">Pen test delayed · bias audit open</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.3rem;">Pen test delayed · bias audit open</div>
       </div>
       <div style="background:rgba(196,80,80,0.1);border:2px solid #c45050;padding:1.2rem;text-align:center;">
         <div style="font-size:2rem;margin-bottom:0.3rem;">🔴</div>
         <div style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:#c45050;margin-bottom:0.4rem;">Risk</div>
         <div style="font-size:0.75rem;font-weight:600;">Elevated</div>
-        <div style="font-size:0.65rem;color:var(--slate);margin-top:0.3rem;">3 active blockers · resource risk</div>
+        <div style="font-size:0.65rem;color:var(--muted);margin-top:0.3rem;">3 active blockers · resource risk</div>
       </div>
     </div>
 
@@ -1403,8 +1404,8 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
     <h3>Open <em>Issues Requiring Executive Action</em></h3>
     <table class="data-table" style="margin:1.5rem 0;"><thead><tr><th>Issue</th><th>Priority</th><th>Decision Needed From</th><th>Deadline</th><th>If Not Resolved</th></tr></thead><tbody>
-      <tr><td><strong>CR-004: Phase 2 Extension (14 days)</strong></td><td><span class="rag rag-red">High</span></td><td>CCB (CHRO + CIO)</td><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">Apr 28</td><td>Pilot go-live date becomes unachievable</td></tr>
-      <tr><td><strong>Devon Ross resource conflict (ISS-009)</strong></td><td><span class="rag rag-red">High</span></td><td>IBM Engagement Lead</td><td style="font-family:var(--mono);font-size:0.6rem;color:var(--rose);">May 9</td><td>Sprint 8 integration work loses key Workday resource</td></tr>
+      <tr><td><strong>CR-004: Phase 2 Extension (14 days)</strong></td><td><span class="rag rag-red">High</span></td><td>CCB (CHRO + CIO)</td><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">Apr 28</td><td>Pilot go-live date becomes unachievable</td></tr>
+      <tr><td><strong>Devon Ross resource conflict (ISS-009)</strong></td><td><span class="rag rag-red">High</span></td><td>IBM Engagement Lead</td><td style="font-family:var(--mono);font-size:0.6rem;color:var(--muted);">May 9</td><td>Sprint 8 integration work loses key Workday resource</td></tr>
     </tbody></table>
     <h3>PMO Skills <em>Demonstrated</em></h3>
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;"><span class="tag tag-teal">RAG Dashboard</span><span class="tag tag-teal">Executive Reporting</span><span class="tag tag-teal">EVM (SPI/CPI)</span><span class="tag tag-teal">Issue Escalation</span><span class="tag tag-teal">Decision Framing</span></div>
@@ -1433,7 +1434,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     <p>The RFP Shred Matrix is the foundation of any winning government proposal. "Shredding" an RFP means systematically decomposing every requirement, evaluation factor, and PWS task into a compliance matrix — so nothing is missed and every section of the proposal can be mapped back to a specific requirement. At IBM, the PM leads the shred session and owns the compliance matrix through submission.</p>
 
     <h3>Solicitation <em>Summary</em></h3>
-    <div style="background:var(--parchment);border:1px solid var(--sand);padding:1.2rem;margin:1.5rem 0;">
+    <div style="background:var(--offwhite);border:1px solid var(--border);padding:1.2rem;margin:1.5rem 0;">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.78rem;">
         <div><strong>Solicitation:</strong> RFQ-DOE-EDU-2025-0042</div>
         <div><strong>Agency:</strong> U.S. Department of Education — College Scorecard</div>
@@ -1535,7 +1536,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   </div>
   <div class="art-body">
     <style>
-    .mon-wrap{background:#1c1f2e;border-radius:4px;overflow:hidden;margin:1.5rem 0;font-family:'Outfit',sans-serif;}
+    .mon-wrap{background:#1c1f2e;border-radius:4px;overflow:hidden;margin:1.5rem 0;font-family:var(--sans);}
     .mon-topbar{background:#1c1f2e;padding:0 20px;height:48px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #2d3050;}
     .mon-logo{font-weight:800;font-size:16px;color:white;letter-spacing:-0.5px;}
     .mon-logo span{color:#ff3d71;}
@@ -1617,7 +1618,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
       </div>
     </div>
     <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin:0.5rem 0;align-items:center;">
-      <div style="font-family:var(--mono);font-size:0.55rem;color:var(--slate);">KM = Kia Montgomery &nbsp;·&nbsp; MC = Marcus Chen &nbsp;·&nbsp; PN = Priya Nair &nbsp;·&nbsp; DR = Devon Ross &nbsp;·&nbsp; TO = Tanya Osei</div>
+      <div style="font-family:var(--mono);font-size:0.55rem;color:var(--muted);">KM = Kia Montgomery &nbsp;·&nbsp; MC = Marcus Chen &nbsp;·&nbsp; PN = Priya Nair &nbsp;·&nbsp; DR = Devon Ross &nbsp;·&nbsp; TO = Tanya Osei</div>
     </div>
     <h3>PM Skills <em>Demonstrated</em></h3>
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;"><span class="tag tag-teal">Monday.com</span><span class="tag tag-teal">Sprint Tracking</span><span class="tag tag-teal">Workstream Management</span><span class="tag tag-teal">Task Prioritization</span><span class="tag tag-teal">Blocker Visibility</span></div>
@@ -1656,13 +1657,13 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
       <!-- Legend -->
       <div style="display:flex;flex-wrap:wrap;gap:0.8rem;margin-bottom:1.5rem;align-items:center;">
-        <span style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);">Priority:</span>
+        <span style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Priority:</span>
         <span style="background:#c45050;color:white;padding:0.15rem 0.5rem;border-radius:2px;font-family:var(--mono);font-size:0.52rem;">Critical</span>
         <span style="background:#e8b84b;color:#1a1a0a;padding:0.15rem 0.5rem;border-radius:2px;font-family:var(--mono);font-size:0.52rem;">High</span>
-        <span style="background:#3D7A8A;color:white;padding:0.15rem 0.5rem;border-radius:2px;font-family:var(--mono);font-size:0.52rem;">Medium</span>
+        <span style="background:var(--blue);color:white;padding:0.15rem 0.5rem;border-radius:2px;font-family:var(--mono);font-size:0.52rem;">Medium</span>
         <span style="background:#6a8a6a;color:white;padding:0.15rem 0.5rem;border-radius:2px;font-family:var(--mono);font-size:0.52rem;">Low</span>
-        <span style="margin-left:1rem;font-family:var(--mono);font-size:0.52rem;color:var(--slate);">⚠ = Blocked</span>
-        <span style="font-family:var(--mono);font-size:0.52rem;color:var(--slate);">Drag cards to move</span>
+        <span style="margin-left:1rem;font-family:var(--mono);font-size:0.52rem;color:var(--muted);">⚠ = Blocked</span>
+        <span style="font-family:var(--mono);font-size:0.52rem;color:var(--muted);">Drag cards to move</span>
       </div>
 
       <!-- Board -->
@@ -1677,7 +1678,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
           <div class="kb-cards" id="col-backlog">
             <div class="kb-card" draggable="true" data-id="us-047" data-pts="5" data-priority="medium">
               <div class="kb-card-top">
-                <span class="kb-priority" style="background:#3D7A8A;">Medium</span>
+                <span class="kb-priority" style="background:var(--blue);">Medium</span>
                 <span class="kb-pts">5 pts</span>
               </div>
               <div class="kb-card-id">US-047</div>
@@ -1690,7 +1691,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
         <!-- IN PROGRESS -->
         <div class="kb-col" data-col="inprogress">
-          <div class="kb-col-header" style="background:#3D7A8A;color:white;">
+          <div class="kb-col-header" style="background:var(--blue);color:white;">
             <span class="kb-col-title">In Progress</span>
             <span class="kb-col-count">3</span>
           </div>
@@ -1703,7 +1704,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
               <div class="kb-card-id">US-042</div>
               <div class="kb-card-title">Workday dual job code sync fix</div>
               <div class="kb-card-owner">Priya Nair</div>
-              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--teal);">ISS-002 · Sprint goal</div>
+              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--blue);">ISS-002 · Sprint goal</div>
             </div>
             <div class="kb-card" draggable="true" data-id="us-046" data-pts="8" data-priority="high">
               <div class="kb-card-top">
@@ -1713,7 +1714,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
               <div class="kb-card-id">US-046</div>
               <div class="kb-card-title">AI attrition bias audit report</div>
               <div class="kb-card-owner">Priya Nair</div>
-              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--teal);">Legal review pending</div>
+              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--blue);">Legal review pending</div>
             </div>
             <div class="kb-card" draggable="true" data-id="us-048" data-pts="5" data-priority="high">
               <div class="kb-card-top">
@@ -1723,14 +1724,14 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
               <div class="kb-card-id">US-048</div>
               <div class="kb-card-title">CHRO dashboard — real-time attrition risk score</div>
               <div class="kb-card-owner">Marcus Chen</div>
-              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--teal);">Workday feed live</div>
+              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--blue);">Workday feed live</div>
             </div>
           </div>
         </div>
 
         <!-- IN REVIEW -->
         <div class="kb-col" data-col="review">
-          <div class="kb-col-header" style="background:#9B5E4A;color:white;">
+          <div class="kb-col-header" style="background:var(--blue);color:white;">
             <span class="kb-col-title">In Review</span>
             <span class="kb-col-count">2</span>
           </div>
@@ -1743,17 +1744,17 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
               <div class="kb-card-id">US-043</div>
               <div class="kb-card-title">Security pen test — zero P1/P2 findings</div>
               <div class="kb-card-owner">IBM PM</div>
-              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--teal);">SecureNet review</div>
+              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--blue);">SecureNet review</div>
             </div>
             <div class="kb-card" draggable="true" data-id="us-045" data-pts="2" data-priority="medium">
               <div class="kb-card-top">
-                <span class="kb-priority" style="background:#3D7A8A;">Medium</span>
+                <span class="kb-priority" style="background:var(--blue);">Medium</span>
                 <span class="kb-pts">2 pts</span>
               </div>
               <div class="kb-card-id">US-045</div>
               <div class="kb-card-title">DocuSign — iOS 16.x &amp; Android 12+ fix</div>
               <div class="kb-card-owner">Marcus Chen</div>
-              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--teal);">ISS-010 regression</div>
+              <div class="kb-card-tag" style="background:rgba(61,122,138,0.1);color:var(--blue);">ISS-010 regression</div>
             </div>
           </div>
         </div>
@@ -1777,7 +1778,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
             </div>
             <div class="kb-card kb-card-done" draggable="true" data-id="us-049" data-pts="2" data-priority="medium">
               <div class="kb-card-top">
-                <span class="kb-priority" style="background:#3D7A8A;">Medium</span>
+                <span class="kb-priority" style="background:var(--blue);">Medium</span>
                 <span class="kb-pts">2 pts</span>
               </div>
               <div class="kb-card-id">US-049</div>
@@ -1791,15 +1792,15 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
       </div><!-- end board -->
 
       <!-- Sprint Progress Bar -->
-      <div style="margin-top:1.5rem;padding:1rem;background:var(--parchment);border:1px solid var(--sand);">
+      <div style="margin-top:1.5rem;padding:1rem;background:var(--offwhite);border:1px solid var(--border);">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
-          <span style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);">Sprint 7 Progress</span>
-          <span id="progress-label" style="font-family:var(--mono);font-size:0.62rem;color:var(--teal);font-weight:600;">5 / 33 pts complete</span>
+          <span style="font-family:var(--mono);font-size:0.52rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Sprint 7 Progress</span>
+          <span id="progress-label" style="font-family:var(--mono);font-size:0.62rem;color:var(--blue);font-weight:600;">5 / 33 pts complete</span>
         </div>
         <div style="background:#DDD5C8;border-radius:2px;height:6px;">
-          <div id="progress-bar" style="background:var(--teal);height:6px;border-radius:2px;transition:width 0.4s ease;width:15.2%"></div>
+          <div id="progress-bar" style="background:var(--blue);height:6px;border-radius:2px;transition:width 0.4s ease;width:15.2%"></div>
         </div>
-        <div style="display:flex;justify-content:space-between;margin-top:0.5rem;font-family:var(--mono);font-size:0.5rem;color:var(--slate);">
+        <div style="display:flex;justify-content:space-between;margin-top:0.5rem;font-family:var(--mono);font-size:0.5rem;color:var(--muted);">
           <span>Day 4 of 10</span>
           <span id="blocker-label" style="color:#c45050;">1 blocker active</span>
           <span>Sprint ends May 23</span>
@@ -1846,7 +1847,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
           <th style="background:rgba(155,94,74,0.3);color:white;">Release v2.0 (Q1 2026)</th>
         </tr></thead>
         <tbody>
-          <tr style="background:rgba(61,122,138,0.06);"><td rowspan="3" style="font-weight:600;color:var(--teal);vertical-align:top;padding-top:0.8rem;">🎯 Offer & Pre-Hire</td>
+          <tr style="background:rgba(61,122,138,0.06);"><td rowspan="3" style="font-weight:600;color:var(--blue);vertical-align:top;padding-top:0.8rem;">🎯 Offer & Pre-Hire</td>
             <td>Digital offer package</td>
             <td>DocuSign e-offer, policy sign-off, start date confirmation</td>
             <td>—</td><td>—</td></tr>
@@ -1857,11 +1858,11 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
             <td>AI-curated checklist by role, dept, location</td><td>Manager onboarding track</td><td>—</td></tr>
           <tr style="background:rgba(42,122,58,0.04);"><td>LMS course auto-assignment</td><td>Core compliance training auto-assigned on hire date</td><td>Role-specific learning path</td><td>AI-recommended learning</td></tr>
           <tr style="background:rgba(42,122,58,0.04);"><td>Welcome comms sequence</td><td>Automated emails Day 1, 7, 30 from CHRO template</td><td>Manager check-in prompts</td><td>—</td></tr>
-          <tr><td rowspan="2" style="font-weight:600;color:var(--rose);vertical-align:top;padding-top:0.8rem;">🔗 HRIS Integration</td>
+          <tr><td rowspan="2" style="font-weight:600;color:var(--muted);vertical-align:top;padding-top:0.8rem;">🔗 HRIS Integration</td>
             <td>Workday real-time sync</td>
             <td>Bi-directional sync &lt;5 min; standard employee types</td><td>Dual job code support (ISS-002)</td><td>Contractor and temp tracks</td></tr>
           <tr><td>Attrition risk modeling</td><td>30-day and 90-day risk score per hire</td><td>Manager-facing risk alerts</td><td>Predictive intervention recommendations</td></tr>
-          <tr style="background:rgba(61,122,138,0.06);"><td rowspan="3" style="font-weight:600;color:var(--teal);vertical-align:top;padding-top:0.8rem;">📊 Analytics & Admin</td>
+          <tr style="background:rgba(61,122,138,0.06);"><td rowspan="3" style="font-weight:600;color:var(--blue);vertical-align:top;padding-top:0.8rem;">📊 Analytics & Admin</td>
             <td>CHRO dashboard</td>
             <td>6 real-time KPIs; Workday data feed; RAG status</td><td>Cohort trend analysis</td><td>Predictive workforce planning</td></tr>
           <tr style="background:rgba(61,122,138,0.06);"><td>HR admin config panel</td><td>Checklist editor, email template management</td><td>Role-based workflow builder</td><td>—</td></tr>
@@ -1884,7 +1885,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
 <div class="artifact-page" id="qa-01">
   <div class="art-divider"></div>
-  <div class="art-hero" style="background:linear-gradient(145deg,#1a2a2a 0%,#2a4a4a 55%,var(--teal) 100%);">
+  <div class="art-hero" style="background:linear-gradient(145deg,#0a1a3a 0%,#1a3060 55%,#0f62fe 100%);">
     <div class="art-breadcrumb"><a href="javascript:void(0)" onclick="nav('work')">↑ Portfolio</a> / Testing & QA</div>
     <div class="art-cat">🧪 Testing & QA · QA-01</div>
     <h2 class="art-title">UAT Plan &<br/><em>Defect Tracker</em></h2>
@@ -1977,7 +1978,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   <div class="s-head reveal"><span class="s-num">03</span><h2 class="s-title">Work <em>Experience</em></h2><div class="s-rule"></div></div>
 
   <div class="exp-item reveal">
-    <div><div class="exp-co">IBM</div><div class="exp-dates">Jan 2024 — Apr 2026</div><div class="exp-location">Remote · Houston, TX</div></div>
+    <div><div class="exp-co">IBM</div><div class="exp-dates">Jan 2024 — Apr 2026</div><div class="exp-location">Houston, TX (Remote)</div></div>
     <div><div class="exp-title">Project Manager — HR Strategy & Implementation | Oracle PeopleSoft</div>
       <p class="exp-bullet">Led project delivery activities for a large-scale Oracle PeopleSoft payroll transformation supporting 50,000+ end users across four agencies — coordinating 80+ deliverables, 350+ change requests, and 50+ risks through an Integrated Master Program Schedule to maintain scope, schedule, dependencies, and delivery commitments.</p>
       <p class="exp-bullet">Translated program objectives and evolving business requirements into executable project plans, developing the WBS, milestone schedule, communications, risk, and change management plans for a 50+ person cross-functional delivery team; maintained the project charter and stakeholder register as scope and delivery needs evolved.</p>
@@ -2058,11 +2059,15 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     </div>
     <div>
       <div class="sk-head">Tools & Technology</div>
-      <div class="sk-item"><div class="sk-row"><span class="sk-name">Oracle PeopleSoft · Workday</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
-      <div class="sk-item"><div class="sk-row"><span class="sk-name">Jira · Power BI · Monday.com</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
-      <div class="sk-item"><div class="sk-row"><span class="sk-name">AWS Cloud Environments</span><span class="sk-pct">78%</span></div><div class="sk-track"><div class="sk-fill" style="width:78%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Oracle PeopleSoft</span><span class="sk-pct">92%</span></div><div class="sk-track"><div class="sk-fill" style="width:92%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Workday</span><span class="sk-pct">88%</span></div><div class="sk-track"><div class="sk-fill" style="width:88%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">HRIS Modernization · Payroll Systems</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Enterprise Systems Implementation</span><span class="sk-pct">88%</span></div><div class="sk-track"><div class="sk-fill" style="width:88%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">AWS Cloud Environments</span><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill" style="width:80%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Jira</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Power BI</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
+      <div class="sk-item"><div class="sk-row"><span class="sk-name">Monday.com</span><span class="sk-pct">88%</span></div><div class="sk-track"><div class="sk-fill" style="width:88%"></div></div></div>
       <div class="sk-item"><div class="sk-row"><span class="sk-name">Microsoft Copilot · GenAI / ICA</span><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill" style="width:85%"></div></div></div>
-      <div class="sk-item"><div class="sk-row"><span class="sk-name">NeoGov · Excel · PowerPoint · Word</span><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill" style="width:90%"></div></div></div>
     </div>
   </div>
   <div class="certs-row reveal">
