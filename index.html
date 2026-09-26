@@ -23,6 +23,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;flex-wrap:wrap;}
 .nav-links a{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);text-decoration:none;transition:color 0.2s;}
 .nav-links a:hover{color:var(--blue);}
+.nav-dropdown{position:relative;}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.1);min-width:200px;z-index:1000;padding:6px 0;}
+.nav-dropdown-menu li{list-style:none;}
+.nav-dropdown-menu a{display:block;padding:8px 16px;font-size:0.75rem;letter-spacing:0.05em;color:var(--ink)!important;text-transform:none;font-family:var(--sans);white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:var(--offwhite);color:var(--blue)!important;}
+.nav-dropdown:hover .nav-dropdown-menu{display:block;}
+.nav-resume{background:var(--offwhite)!important;color:var(--blue)!important;padding:0.35rem 0.85rem;border-radius:4px;border:1px solid var(--border)!important;}
+.nav-resume:hover{background:var(--blue-tint)!important;}
 .nav-cta{background:var(--blue)!important;color:white!important;padding:0.45rem 1.1rem;border-radius:2px;}
 
 /* TAGS */
@@ -108,8 +116,32 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 
 /* CATEGORY PORTFOLIO */
 .work-section{background:var(--white);padding:5rem;}
+.portfolio-intro{max-width:600px;margin-bottom:2.5rem;}
+.portfolio-intro p{font-size:0.9rem;color:var(--muted);line-height:1.7;}
+.portfolio-stats{display:flex;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.pstat{text-align:center;}
+.pstat-val{font-size:1.6rem;font-weight:600;color:var(--blue);font-family:var(--sans);}
+.pstat-label{font-size:0.68rem;font-family:var(--mono);color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
+.expand-all-row{display:flex;justify-content:flex-end;margin-bottom:1rem;}
+.expand-all-btn{font-size:0.72rem;font-family:var(--mono);color:var(--blue);background:none;border:1px solid var(--border);padding:0.3rem 0.8rem;border-radius:4px;cursor:pointer;letter-spacing:0.06em;}
+.expand-all-btn:hover{background:var(--blue-tint);}
 .disclaimer{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;color:#8C7268;background:var(--offwhite);border-left:3px solid var(--border);padding:0.8rem 1.2rem;margin-bottom:3rem;}
 .cat-section{margin-bottom:4rem;}
+.portfolio-group{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.2rem;}
+.portfolio-group.open .pg-body{max-height:2000px;opacity:1;}
+.portfolio-group.open .pg-chevron{transform:rotate(180deg);}
+.pg-header{display:flex;align-items:center;gap:1.2rem;padding:1.2rem 1.5rem;cursor:pointer;background:var(--white);transition:background 0.2s;user-select:none;}
+.pg-header:hover{background:var(--offwhite);}
+.pg-left{display:flex;align-items:center;gap:1rem;flex:1;}
+.pg-icon{font-size:1.4rem;line-height:1;}
+.pg-info{flex:1;}
+.pg-title{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:2px;}
+.pg-meta{font-size:0.72rem;font-family:var(--mono);color:var(--muted);letter-spacing:0.06em;}
+.pg-bar-wrap{width:80px;height:4px;background:var(--border);border-radius:2px;margin-top:4px;}
+.pg-bar{height:4px;background:var(--blue-mid);border-radius:2px;transition:width 0.4s ease;}
+.pg-chevron{font-size:0.7rem;color:var(--muted);transition:transform 0.25s;margin-left:0.5rem;}
+.pg-body{max-height:0;opacity:0;overflow:hidden;transition:max-height 0.4s ease, opacity 0.3s ease;}
+.pg-body-inner{padding:1rem 1.5rem 1.5rem;}
 .cat-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--border);}
 .cat-icon{font-size:1.6rem;}
 .cat-title{font-family:var(--sans);font-size:1.6rem;font-weight:400;color:var(--ink);}
@@ -137,6 +169,12 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 .exp-item{display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:3rem 0;border-bottom:1px solid var(--border);}
 .exp-item:first-child{padding-top:0;}
 .exp-item:last-child{border-bottom:none;}
+.exp-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;width:100%;}
+.exp-toggle:hover .exp-title{color:var(--blue);}
+.exp-chevron{font-size:0.75rem;color:var(--muted);transition:transform 0.25s;flex-shrink:0;margin-left:0.5rem;}
+.exp-chevron.open{transform:rotate(180deg);}
+.exp-body{overflow:hidden;transition:max-height 0.35s ease, opacity 0.3s ease;max-height:0;opacity:0;}
+.exp-body.open{max-height:2000px;opacity:1;}
 .exp-co{font-family:var(--sans);font-size:1.1rem;font-weight:500;color:var(--blue);margin-bottom:0.2rem;}
 .exp-dates{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.4rem;}
 .exp-location{font-family:var(--mono);font-size:0.53rem;letter-spacing:0.08em;color:var(--muted);}
@@ -309,9 +347,22 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   <a href="javascript:void(0)" onclick="nav('top')" class="nav-logo">Kia Montgomery</a>
   <ul class="nav-links">
     <li><a href="javascript:void(0)" onclick="nav('about')">About</a></li>
-    <li><a href="javascript:void(0)" onclick="nav('work')">Portfolio</a></li>
     <li><a href="javascript:void(0)" onclick="nav('experience')">Experience</a></li>
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)" onclick="nav('work')" class="nav-dropdown-toggle">Portfolio ▾</a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('governance'),300)">🏛 Governance</a></li>
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('scope'),300)">🎯 Scope</a></li>
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('schedule'),300)">📅 Schedule</a></li>
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('finance'),300)">💰 Finance</a></li>
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('stakeholders'),300)">👥 Stakeholders</a></li>
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('resources'),300)">🧑‍💼 Resources</a></li>
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('risk'),300)">⚠️ Risk</a></li>
+        <li><a href="javascript:void(0)" onclick="nav('work');setTimeout(()=>showDomain('agile'),300)">🏃 Agile Delivery</a></li>
+      </ul>
+    </li>
     <li><a href="javascript:void(0)" onclick="nav('skills')">Skills</a></li>
+    <li><a href="Kia_Montgomery_Resume_gitthub.docx" target="_blank" class="nav-resume">Resume ↓</a></li>
     <li><a href="javascript:void(0)" onclick="nav('contact')" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -333,6 +384,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     <div class="btn-row">
       <a href="javascript:void(0)" onclick="nav('work')" class="btn btn-primary">View Portfolio</a>
       <a href="javascript:void(0)" onclick="nav('contact')" class="btn btn-outline">Get in Touch</a>
+      <a href="Kia_Montgomery_Resume_gitthub.docx" target="_blank" class="btn btn-outline">Download Resume ↓</a>
     </div>
   </div>
   <div class="hero-right">
@@ -345,8 +397,6 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     </div>
   </div>
 </section>
-
-<!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="s-head reveal"><span class="s-num">01</span><h2 class="s-title">About <em>Me</em></h2><div class="s-rule"></div></div>
   <div class="about-grid">
@@ -380,80 +430,337 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     </div>
   </div>
 </section>
+<section class="exp-section" id="experience">
+  <div class="s-head reveal"><span class="s-num">02</span><h2 class="s-title">Work <em>Experience</em></h2><div class="s-rule"></div></div>
 
-<!-- PORTFOLIO -->
+      <div class="exp-item reveal">
+    <div>
+      <div class="exp-co">IBM</div>
+      <div class="exp-dates">May 2024 — May 2026</div>
+      <div class="exp-location">Remote, Texas</div>
+    </div>
+    <div>
+      <div class="exp-toggle" onclick="toggleExp('exp-0')">
+        <div class="exp-title">Project Manager</div>
+        <span class="exp-chevron open" id="chev-exp-0">▼</span>
+      </div>
+      <div class="exp-body open" id="body-exp-0">
+        <span class="exp-chevron" id="chev-ibm-May2024-May2026">▼</span>
+      </div>
+      <div class="exp-body" id="body-ibm-May2024-May2026">
+        <p class="exp-context" style="font-size:0.82rem;color:var(--muted);font-style:italic;margin-bottom:0.75rem;">Enterprise payroll modernization · Oracle PeopleSoft · 50,000+ users · 50+ person team · $11.1M program · 80+ deliverables</p>
+      <p class="exp-bullet">Led the phased rollout of an Oracle PeopleSoft payroll system for 50,000+ users, managing readiness, cutover, and handoff to operations with technical, security, and training leads; delivered on schedule and within the $11.1M budget.</p>
+      <p class="exp-bullet">Co-developed the project charter, project management plan, and WBS, and maintained the integrated project schedule in Microsoft Project, flagging conflicts and dependencies early to keep milestones on track over 24 months.</p>
+      <p class="exp-bullet">Served as the primary liaison between client leadership and delivery teams, leading project governance through weekly status reviews and steering committee updates, with Power BI and Tableau dashboards that gave leadership one clear view of decisions needed.</p>
+      <p class="exp-bullet">Managed 350+ change requests through the Change Control Board and tracked 50+ risks and issues in the RAID log, resolving them before they affected the schedule.</p>
+      <p class="exp-bullet">Redesigned the monthly labor forecast process with a standard Excel template, submission requirements, and deadlines, replacing late inputs with 100% on-time submissions. Managed vendor subcontracts and invoicing in SAP Concur and partnered with Finance to track burn rate against budget.</p>
+      <p class="exp-bullet">Managed integration, user acceptance, and regression testing across AWS environments, running defect triage in Jira against exit criteria to bring 80+ deliverables to a 100% client acceptance rate.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-co">IBM</div>
+      <div class="exp-dates">May 2023 — May 2024</div>
+      <div class="exp-location">Remote, Texas</div>
+    </div>
+    <div>
+      <div class="exp-toggle" onclick="toggleExp('exp-1')">
+        <div class="exp-title">Senior Consultant</div>
+        <span class="exp-chevron" id="chev-exp-1">▼</span>
+      </div>
+      <div class="exp-body" id="body-exp-1">
+        <p class="exp-bullet">Built the Requirements Traceability Matrix (RTM) in Excel, linking requirements, testing, and Jira defects to give the team one source of truth for sign-off.</p>
+      <p class="exp-bullet">Facilitated sprint planning, backlog refinement, and PI planning in a SAFe environment, tracking velocity in Jira so each sprint started with clear priorities and owners.</p>
+      <p class="exp-bullet">Completed 15-20 Oracle PeopleSoft regression scripts and introduced a cross-team resource-sharing practice adopted by the delivery team, easing a testing backlog during a busy release period.</p>
+      <p class="exp-bullet">Started and led an internal generative AI working group, building 15+ AI use cases in Microsoft Copilot and Claude and a WatsonX assistant demo shared at all-hands meetings, informing leadership's cost-benefit and AI adoption decisions.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-co">Accenture</div>
+      <div class="exp-dates">May 2022 — Aug 2022</div>
+      <div class="exp-location">Washington, D.C.</div>
+    </div>
+    <div>
+      <div class="exp-toggle" onclick="toggleExp('exp-2')">
+        <div class="exp-title">Strategy & Transformation MBA Intern</div>
+        <span class="exp-chevron" id="chev-exp-2">▼</span>
+      </div>
+      <div class="exp-body" id="body-exp-2">
+        <p class="exp-bullet">Built a phased change and adoption plan and benchmarked relocation packages, guiding 150+ employees through a corporate headquarters relocation.</p>
+      <p class="exp-bullet">Analyzed pre- and post-relocation survey data in Excel and presented an executive risk brief that turned engagement gaps and flight risks into clear recommendations for leadership.</p>
+      <p class="exp-bullet">Created process maps, governance materials, and communications plans with consultants and client stakeholders, leaving reusable templates for the client's transformation team.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-co">Harris County</div>
+      <div class="exp-dates">Jan 2017 — Aug 2021</div>
+      <div class="exp-location">Houston, TX</div>
+    </div>
+    <div>
+      <div class="exp-toggle" onclick="toggleExp('exp-3')">
+        <div class="exp-title">Human Resources Division Manager</div>
+        <span class="exp-chevron" id="chev-exp-3">▼</span>
+      </div>
+      <div class="exp-body" id="body-exp-3">
+        <p class="exp-bullet">Managed the end-to-end migration from IFAS to Oracle PeopleSoft Payroll for 500+ employees — coordinating data migration, UAT, ESS/MSS security configuration, and training across HR, IT, and Finance.</p>
+      <p class="exp-bullet">Coordinated restructuring initiatives across 6 divisions, managing role transitions, position eliminations, and headcount changes to support organizational priorities.</p>
+      <p class="exp-bullet">Managed workforce planning and reporting — forecasting $1M–$3M in annual workforce budgets and tracking PCN burn rates, compensation reclassifications, and allowances in Excel.</p>
+      <p class="exp-bullet">Managed full-cycle recruitment across multiple divisions using NeoGov, Indeed, and Workday; trained 20+ managers and 6 directors on standardized performance management practices and launched a workplace accommodations internship program with ~70% full-time conversion.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-co">Harris County</div>
+      <div class="exp-dates">Jan 2016 — Jan 2017</div>
+      <div class="exp-location">Houston, TX</div>
+    </div>
+    <div>
+      <div class="exp-toggle" onclick="toggleExp('exp-4')">
+        <div class="exp-title">HR Coordinator</div>
+        <span class="exp-chevron" id="chev-exp-4">▼</span>
+      </div>
+      <div class="exp-body" id="body-exp-4">
+        <p class="exp-bullet">Supported HR operations across county divisions — onboarding coordination, HRIS data management, recruitment support, and compliance reporting.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-co">ABM Corporate HQ</div>
+      <div class="exp-dates">Jan 2012 — Jan 2015</div>
+      <div class="exp-location">Houston, TX</div>
+    </div>
+    <div>
+      <div class="exp-toggle" onclick="toggleExp('exp-5')">
+        <div class="exp-title">HR Generalist</div>
+        <span class="exp-chevron" id="chev-exp-5">▼</span>
+      </div>
+      <div class="exp-body" id="body-exp-5">
+        <p class="exp-bullet">Managed HR operations across multiple facility services sites — full-cycle recruiting, onboarding, benefits administration, and employee relations.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exp-item reveal">
+    <div>
+      <div class="exp-co">LyondellBasell (CITGO)</div>
+      <div class="exp-dates">Jan 2011 — Jan 2012</div>
+      <div class="exp-location">Houston, TX</div>
+    </div>
+    <div>
+      <div class="exp-toggle" onclick="toggleExp('exp-6')">
+        <div class="exp-title">HR Coordinator</div>
+        <span class="exp-chevron" id="chev-exp-6">▼</span>
+      </div>
+      <div class="exp-body" id="body-exp-6">
+        <p class="exp-bullet">Supported HR operations for a global petrochemical company — onboarding coordination, HRIS data management, and compliance reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="work-section" id="work">
+  <div class="s-head reveal"><span class="s-num">03</span><h2 class="s-title">Portfolio <em>Artifacts</em></h2><div class="s-rule"></div></div>
 
-  <!-- GOVERNANCE -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">🏛️</div><h3 class="cat-title">Governance</h3><span class="cat-count">3 Artifacts</span></div>
-    <div class="card-grid">
+  <div class="portfolio-intro reveal">
+    <p>23 project management artifacts organized across 8 PMBOK Performance Domains — from initiating through closing. Click any domain to expand, then select an artifact to view the full document.</p>
+  </div>
+
+  <div class="portfolio-stats reveal">
+    <div class="pstat"><div class="pstat-val">23</div><div class="pstat-label">Artifacts</div></div>
+    <div class="pstat"><div class="pstat-val">8</div><div class="pstat-label">PMBOK Domains</div></div>
+    <div class="pstat"><div class="pstat-val">$11.1M</div><div class="pstat-label">Program Scale</div></div>
+    <div class="pstat"><div class="pstat-val">50K+</div><div class="pstat-label">End Users</div></div>
+  </div>
+
+  <div class="expand-all-row reveal">
+    <button class="expand-all-btn" onclick="toggleAllGroups()">EXPAND ALL</button>
+  </div>
+
+  
+  <div class="portfolio-group open" id="pg-gov">
+    <div class="pg-header" onclick="toggleGroup('gov')">
+      <div class="pg-left">
+        <div class="pg-icon">🏛️</div>
+        <div class="pg-info">
+          <div class="pg-title">Governance</div>
+          <div class="pg-meta">3 Artifacts &nbsp;·&nbsp; Charter · Meeting Minutes · Lessons Learned</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:23%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-gov">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-gov">
+      <div class="pg-body-inner">
+        <div class="card-grid">
       <a href="javascript:void(0)" onclick="nav('pm-02')" class="card"><div class="card-num">GOV-01</div><div class="card-tag">Initiating</div><h3 class="card-title">Project Charter &<br/><em>Scope Definition</em></h3><p class="card-desc">Formal charter — objectives, scope decisions, budget breakdown, stakeholder authorization, 4-phase timeline, KPI targets.</p><div class="card-highlights"><span class="highlight">$1.25M · 9 months · 5 KPIs</span><span class="highlight">85.5% projected 3-year ROI</span></div><div class="card-tools"><span class="tag">Charter</span><span class="tag">PMBOK 4.1</span><span class="tag">Initiating</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('pmo-04')" class="card"><div class="card-num">GOV-02</div><div class="card-tag">Executing</div><h3 class="card-title">Meeting Minutes<br/><em>Kickoff & Sprint Review</em></h3><p class="card-desc">Steering Committee kickoff and Sprint 6 Review — structured decisions, action items, owners, due dates, charter sign-off.</p><div class="card-highlights"><span class="highlight">7 decisions · 12 action items</span><span class="highlight">Charter signed · SLAs agreed</span></div><div class="card-tools"><span class="tag">Governance</span><span class="tag">Facilitation</span><span class="tag">Minutes</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('close-01')" class="card"><div class="card-num">GOV-03</div><div class="card-tag">Closing</div><h3 class="card-title">Lessons Learned<br/><em>Final Report</em></h3><p class="card-desc">Project summary, schedule/cost/scope variances, 8 root-cause lessons, and recommendations submitted to IBM Center of Excellence.</p><div class="card-highlights"><span class="highlight">All 5 KPIs exceeded</span><span class="highlight">IBM CoE submission format</span></div><div class="card-tools"><span class="tag">Closing</span><span class="tag">Lessons Learned</span><span class="tag">IBM CoE</span></div><span class="card-cta">View ↓</span></a>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- SCOPE -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">🎯</div><h3 class="cat-title">Scope</h3><span class="cat-count">2 Artifacts</span></div>
-    <div class="card-grid">
+  <div class="portfolio-group" id="pg-scope">
+    <div class="pg-header" onclick="toggleGroup('scope')">
+      <div class="pg-left">
+        <div class="pg-icon">🎯</div>
+        <div class="pg-info">
+          <div class="pg-title">Scope</div>
+          <div class="pg-meta">2 Artifacts &nbsp;·&nbsp; Gantt Chart · Deliverable Acceptance</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:26%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-scope">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-scope">
+      <div class="pg-body-inner">
+        <div class="card-grid">
       <a href="javascript:void(0)" onclick="nav('pm-05')" class="card"><div class="card-num">SCP-01</div><div class="card-tag">Planning</div><h3 class="card-title">Project Schedule &<br/><em>Gantt Chart</em></h3><p class="card-desc">21-task Gantt across 4 phases with owners, dates, percent complete, WBS structure, and change request log CR-001 through CR-005.</p><div class="card-highlights"><span class="highlight">21 tasks · 4 phases · 9-month arc</span><span class="highlight">5 change requests managed</span></div><div class="card-tools"><span class="tag">Gantt</span><span class="tag">WBS</span><span class="tag">Planning</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('pm-new-m')" class="card"><div class="card-num">SCP-02</div><div class="card-tag">M&C · Validate Scope</div><h3 class="card-title">Deliverable Acceptance<br/><em>Form</em></h3><p class="card-desc">Formal sign-off criteria per deliverable — acceptance criteria, pass/fail gate, client signature, corrective action path.</p><div class="card-highlights"><span class="highlight">8 deliverables · pass/fail gates</span><span class="highlight">Client sign-off · corrective action</span></div><div class="card-tools"><span class="tag">Validate Scope</span><span class="tag">Sign-off</span><span class="tag">PMBOK 5.5</span></div><span class="card-cta">View ↓</span></a>
     </div>
   </div>
-
-  <!-- SCHEDULE -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">📅</div><h3 class="cat-title">Schedule</h3><span class="cat-count">1 Artifact</span></div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('sched-new')" class="card"><div class="card-num">SCH-01</div><div class="card-tag">Planning · M&C</div><h3 class="card-title">Schedule Management<br/><em>Plan</em></h3><p class="card-desc">Schedule methodology, baseline phases, variance thresholds, change control process, and EVM schedule metrics — SPI 1.06 at Phase 2.</p><div class="card-highlights"><span class="highlight">SPI 1.06 · 4 phases · 21 tasks</span><span class="highlight">Variance thresholds · change control</span></div><div class="card-tools"><span class="tag">PMBOK 6.1</span><span class="tag">EVM</span><span class="tag">Baseline</span></div><span class="card-cta">View ↓</span></a>
+      </div>
     </div>
   </div>
 
-  <!-- FINANCE -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">💰</div><h3 class="cat-title">Finance</h3><span class="cat-count">2 Artifacts</span></div>
-    <div class="card-grid">
+  <div class="portfolio-group" id="pg-sched">
+    <div class="pg-header" onclick="toggleGroup('sched')">
+      <div class="pg-left">
+        <div class="pg-icon">📅</div>
+        <div class="pg-info">
+          <div class="pg-title">Schedule</div>
+          <div class="pg-meta">1 Artifact &nbsp;·&nbsp; Schedule Management Plan</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:33%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-sched">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-sched">
+      <div class="pg-body-inner">
+        <div class="card-grid">
+      <a href="javascript:void(0)" onclick="nav('sched-new')" class="card"><div class="card-num">SCH-01</div><div class="card-tag">Planning · M&C</div><h3 class="card-title">Schedule Management<br/><em>Plan</em></h3><p class="card-desc">Schedule methodology, baseline phases, variance thresholds, change control process, and EVM schedule metrics — SPI 1.06 at Phase 2.</p><div class="card-highlights"><span class="highlight">SPI 1.06 · 4 phases · 21 tasks</span><span class="highlight">Variance thresholds · change control</span></div><div class="card-tools"><span class="tag">PMBOK 6.1</span><span class="tag">EVM</span><span class="tag">Baseline</span></div><span class="card-cta">View ↓</span></a>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-group" id="pg-fin">
+    <div class="pg-header" onclick="toggleGroup('fin')">
+      <div class="pg-left">
+        <div class="pg-icon">💰</div>
+        <div class="pg-info">
+          <div class="pg-title">Finance</div>
+          <div class="pg-meta">2 Artifacts &nbsp;·&nbsp; Business Case & ROI · Budget Reports</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:26%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-fin">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-fin">
+      <div class="pg-body-inner">
+        <div class="card-grid">
       <a href="javascript:void(0)" onclick="nav('fin-01')" class="card"><div class="card-num">FIN-01</div><div class="card-tag">Planning · Develop Budget</div><h3 class="card-title">Business Case &<br/><em>ROI Analysis</em></h3><p class="card-desc">Full $1.25M investment justification — problem statement, 4 alternatives, quantified benefits, 3-year financial projection.</p><div class="card-highlights"><span class="highlight">$1.07M annual benefit</span><span class="highlight">18-month payback · 85.5% 3-yr ROI</span></div><div class="card-tools"><span class="tag">Business Case</span><span class="tag">ROI</span><span class="tag">Estimate Costs</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('fin-02')" class="card"><div class="card-num">FIN-02</div><div class="card-tag">M&C · Monitor Finances</div><h3 class="card-title">Budget & Labor<br/><em>Cost Reports</em></h3><p class="card-desc">Quarterly budget tracker, 7-person labor utilization with billing rates, contractor invoice tracking — CPI 1.03, $32K under forecast.</p><div class="card-highlights"><span class="highlight">$612K spent · $32K under forecast</span><span class="highlight">CPI 1.03 · 7 team members</span></div><div class="card-tools"><span class="tag">EVM</span><span class="tag">Budget Tracking</span><span class="tag">Labor</span></div><span class="card-cta">View ↓</span></a>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- STAKEHOLDERS -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">👥</div><h3 class="cat-title">Stakeholders</h3><span class="cat-count">2 Artifacts</span></div>
-    <div class="card-grid">
+  <div class="portfolio-group" id="pg-stk">
+    <div class="pg-header" onclick="toggleGroup('stk')">
+      <div class="pg-left">
+        <div class="pg-icon">👥</div>
+        <div class="pg-info">
+          <div class="pg-title">Stakeholders</div>
+          <div class="pg-meta">2 Artifacts &nbsp;·&nbsp; Communications Plan · Issue Log</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:26%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-stk">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-stk">
+      <div class="pg-body-inner">
+        <div class="card-grid">
       <a href="javascript:void(0)" onclick="nav('pm-09')" class="card"><div class="card-num">STK-01</div><div class="card-tag">Planning · Manage Comms</div><h3 class="card-title">Communications<br/><em>Management Plan</em></h3><p class="card-desc">8 audiences, 12 communication types, full cadence matrix, and 3-tier escalation protocol — who gets what, when, and how.</p><div class="card-highlights"><span class="highlight">8 audiences · 12 comm types</span><span class="highlight">Tier 1/2/3 escalation protocol</span></div><div class="card-tools"><span class="tag">PMBOK 10.1</span><span class="tag">Comms Plan</span><span class="tag">Stakeholder</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('pm-10')" class="card"><div class="card-num">STK-02</div><div class="card-tag">M&C · Monitor Engagement</div><h3 class="card-title">Issue Log &<br/><em>Resolution Tracker</em></h3><p class="card-desc">12 issues tracked — owner, resolution path, target date, escalation status. Avg 4.2 days to close non-escalated issues.</p><div class="card-highlights"><span class="highlight">12 issues · 3 escalated · 7 closed</span><span class="highlight">Avg 4.2 days to close</span></div><div class="card-tools"><span class="tag">Issue Management</span><span class="tag">Escalation</span><span class="tag">M&C</span></div><span class="card-cta">View ↓</span></a>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- RESOURCES -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">🧑‍💼</div><h3 class="cat-title">Resources</h3><span class="cat-count">4 Artifacts</span></div>
-    <div class="card-grid">
+  <div class="portfolio-group" id="pg-res">
+    <div class="pg-header" onclick="toggleGroup('res')">
+      <div class="pg-left">
+        <div class="pg-icon">🧑‍💼</div>
+        <div class="pg-info">
+          <div class="pg-title">Resources</div>
+          <div class="pg-meta">4 Artifacts &nbsp;·&nbsp; Labor Report · Key Personnel · Onboarding · Skill Gap</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:17%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-res">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-res">
+      <div class="pg-body-inner">
+        <div class="card-grid">
       <a href="javascript:void(0)" onclick="nav('hr-new-a')" class="card"><div class="card-num">RES-01</div><div class="card-tag">M&C · Monitor Resourcing</div><h3 class="card-title">Labor Report &<br/><em>Timesheet Tracker</em></h3><p class="card-desc">Hours by person, WBS element, CLIN, billing period — FAR-compliant format with PM certification and utilization summary.</p><div class="card-highlights"><span class="highlight">7 team members · 682 hrs billed</span><span class="highlight">WBS · CLIN · FAR compliant</span></div><div class="card-tools"><span class="tag">Labor</span><span class="tag">FAR</span><span class="tag">Resourcing</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('hr-new-b')" class="card"><div class="card-num">RES-02</div><div class="card-tag">Planning · Estimate Resources</div><h3 class="card-title">Key Personnel<br/><em>Resume Tracker</em></h3><p class="card-desc">Name, role, LCAT, education, relevant experience, clearance level — proposal-ready and active project resource planning.</p><div class="card-highlights"><span class="highlight">7 key personnel profiles</span><span class="highlight">LCAT · clearance · experience</span></div><div class="card-tools"><span class="tag">Staffing</span><span class="tag">LCAT</span><span class="tag">Proposal</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('hr-new-c')" class="card"><div class="card-num">RES-03</div><div class="card-tag">Executing · Lead the Team</div><h3 class="card-title">Employee Onboarding<br/><em>Checklist</em></h3><p class="card-desc">38 tasks across Day 1, Week 1, and Month 1 — IT, HR, Security, and Manager tracks. The manual baseline that the AI platform replaced.</p><div class="card-highlights"><span class="highlight">38 tasks · Day 1 through Month 1</span><span class="highlight">Automation reduced 22d → 3.8d</span></div><div class="card-tools"><span class="tag">Onboarding</span><span class="tag">HR Ops</span><span class="tag">Executing</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('hr-new-d')" class="card"><div class="card-num">RES-04</div><div class="card-tag">Planning · Acquire Resources</div><h3 class="card-title">Skill Gap &<br/><em>Training Tracker</em></h3><p class="card-desc">Required vs current skills per team member — gap analysis, training plan with courses, completion dates, and status.</p><div class="card-highlights"><span class="highlight">7 members · 11 gaps identified</span><span class="highlight">7 of 11 training complete</span></div><div class="card-tools"><span class="tag">Skill Gap</span><span class="tag">Training</span><span class="tag">Development</span></div><span class="card-cta">View ↓</span></a>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- RISK -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">⚠️</div><h3 class="cat-title">Risk</h3><span class="cat-count">3 Artifacts</span></div>
-    <div class="card-grid">
+  <div class="portfolio-group" id="pg-risk">
+    <div class="pg-header" onclick="toggleGroup('risk')">
+      <div class="pg-left">
+        <div class="pg-icon">⚠️</div>
+        <div class="pg-info">
+          <div class="pg-title">Risk</div>
+          <div class="pg-meta">3 Artifacts &nbsp;·&nbsp; Risk Register · Health Dashboard · RFP Matrix</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:23%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-risk">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-risk">
+      <div class="pg-body-inner">
+        <div class="card-grid">
       <a href="javascript:void(0)" onclick="nav('pm-03')" class="card"><div class="card-num">RSK-01</div><div class="card-tag">Planning · Identify Risks</div><h3 class="card-title">Risk Register &<br/><em>Response Plan</em></h3><p class="card-desc">10-risk register across 6 categories with probability/impact scoring, AI bias risk, CCPA compliance risk, and response strategies.</p><div class="card-highlights"><span class="highlight">4 High · 5 Medium · 1 Low</span><span class="highlight">Mitigate · Transfer · Avoid · Accept</span></div><div class="card-tools"><span class="tag">PMBOK 11</span><span class="tag">Risk Register</span><span class="tag">AI Ethics</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('pmo-new-a')" class="card"><div class="card-num">RSK-02</div><div class="card-tag">M&C · Monitor Risks</div><h3 class="card-title">Project Health<br/><em>Dashboard (RAG)</em></h3><p class="card-desc">Live RAG status across schedule, budget, scope, quality, and risk — executive-ready weekly dashboard with decisions required.</p><div class="card-highlights"><span class="highlight">5 RAG dimensions · trend indicators</span><span class="highlight">2 decisions escalated to Steering Cmte</span></div><div class="card-tools"><span class="tag">RAG</span><span class="tag">Monitor Risks</span><span class="tag">EVM</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('prop-01')" class="card"><div class="card-num">RSK-03</div><div class="card-tag">Planning · Plan Risk Responses</div><h3 class="card-title">RFP Shred<br/><em>Matrix</em></h3><p class="card-desc">PWS tasks mapped to compliance requirements — every evaluation factor tracked to a proposal section; pWin and competitive risk analysis.</p><div class="card-highlights"><span class="highlight">18 PWS tasks · 42 shall statements</span><span class="highlight">pWin 74% · IBM BD process</span></div><div class="card-tools"><span class="tag">Risk Response</span><span class="tag">Compliance</span><span class="tag">BD</span></div><span class="card-cta">View ↓</span></a>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- AGILE DELIVERY -->
-  <div class="portfolio-category">
-    <div class="cat-header"><div class="cat-icon">🏃</div><h3 class="cat-title">Agile <em>Delivery</em></h3><span class="cat-count">6 Artifacts</span></div>
-    <div class="card-grid">
+  <div class="portfolio-group" id="pg-agile">
+    <div class="pg-header" onclick="toggleGroup('agile')">
+      <div class="pg-left">
+        <div class="pg-icon">🏃</div>
+        <div class="pg-info">
+          <div class="pg-title">Agile Delivery</div>
+          <div class="pg-meta">6 Artifacts &nbsp;·&nbsp; PI Planning · Kanban · User Story Map · UAT · QC</div>
+          <div class="pg-bar-wrap"><div class="pg-bar" style="width:46%"></div></div>
+        </div>
+      </div>
+      <span class="pg-chevron" id="pgchev-agile">▼</span>
+    </div>
+    <div class="pg-body" id="pgbody-agile">
+      <div class="pg-body-inner">
+        <div class="card-grid">
       <a href="javascript:void(0)" onclick="nav('sm-02')" class="card"><div class="card-num">AGL-01</div><div class="card-tag">PI Planning · SAFe</div><h3 class="card-title">PI Planning<br/><em>Document</em></h3><p class="card-desc">PI 3 planning — team objectives, sprint capacity, cross-team dependencies, risks across 3 agile teams in the ART.</p><div class="card-highlights"><span class="highlight">3 teams · 9 objectives · 4 sprints</span><span class="highlight">6 cross-team dependencies mapped</span></div><div class="card-tools"><span class="tag">PI Planning</span><span class="tag">SAFe</span><span class="tag">ART</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('sm-06')" class="card"><div class="card-num">AGL-02</div><div class="card-tag">Executing · Agile Tracking</div><h3 class="card-title">Monday.com Sprint<br/><em>Tracker Board</em></h3><p class="card-desc">17 tasks across 3 workstreams — AI Integration, Process & Delivery, Strategy & Reporting — with status, owners, deadlines.</p><div class="card-highlights"><span class="highlight">17 tasks · 3 workstreams · Sprint 3</span><span class="highlight">Status pills · effort bars · blockers</span></div><div class="card-tools"><span class="tag">Monday.com</span><span class="tag">Sprint</span><span class="tag">Agile</span></div><span class="card-cta">View ↓</span></a>
       <a href="javascript:void(0)" onclick="nav('sm-kanban')" class="card"><div class="card-num">AGL-03</div><div class="card-tag">Executing · Kanban</div><h3 class="card-title">Sprint Kanban<br/><em>Board</em></h3><p class="card-desc">Interactive drag-and-drop Sprint 7 board — 8 stories, WIP limits enforced, blocker flagged, real-time progress bar.</p><div class="card-highlights"><span class="highlight">8 stories · 33 pts · 4 columns</span><span class="highlight">Drag & drop · live progress bar</span></div><div class="card-tools"><span class="tag">Kanban</span><span class="tag">WIP Limits</span><span class="tag">SAFe</span></div><span class="card-cta">View ↓</span></a>
@@ -462,14 +769,19 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
       <a href="javascript:void(0)" onclick="nav('qa-new-a')" class="card"><div class="card-num">AGL-06</div><div class="card-tag">M&C · Quality Control</div><h3 class="card-title">Quality Control<br/><em>Checklist</em></h3><p class="card-desc">3-tier inspection per deliverable — PM, QA Lead, Engagement Lead sign-off. Pass/fail gates with corrective action tracking.</p><div class="card-highlights"><span class="highlight">8 deliverables · 3-tier inspection</span><span class="highlight">Pass/fail · corrective action</span></div><div class="card-tools"><span class="tag">QC</span><span class="tag">PMBOK 8.3</span><span class="tag">Acceptance</span></div><span class="card-cta">View ↓</span></a>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
 
+
+  </section>
 </section>
 
 
 
 <!-- PORTFOLIO -->
 <section class="work-section" id="work">
-  <div class="s-head reveal"><span class="s-num">02</span><h2 class="s-title">Portfolio <em>by Discipline</em></h2><div class="s-rule"></div></div>
+  <div class="s-head reveal"><span class="s-num">03</span><h2 class="s-title">Portfolio <em>by Discipline</em></h2><div class="s-rule"></div></div>
   <div class="disclaimer reveal">⚠ All artifacts are mock deliverables created to demonstrate PM competency. IBM project data is simulated. Not client confidential.</div>
 
 
@@ -627,8 +939,10 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
       <div><div class="art-meta-lbl">Budget</div><div class="art-meta-val">$1,250,000</div></div>
       <div><div class="art-meta-lbl">Timeline</div><div class="art-meta-val">Jan 6 – Sep 30, 2025</div></div>
       <div><div class="art-meta-lbl">ROI</div><div class="art-meta-val">85.5% (3-Year)</div></div>
-      <div><div class="art-meta-lbl">Sponsor</div><div class="art-meta-val">CHRO</div></div>
+      <div><div class="art-meta-lbl">Sponsor</div><div class="art-meta-val">CHRO</div>
+      </div>
     </div>
+  </div>
   </div>
   <div class="art-body">
     <h3>Problem <em>Statement</em></h3>
@@ -2022,75 +2336,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 </div>
 
 
-<section class="exp-section" id="experience">
-  <div class="s-head reveal"><span class="s-num">03</span><h2 class="s-title">Work <em>Experience</em></h2><div class="s-rule"></div></div>
 
-  <div class="exp-item reveal">
-    <div><div class="exp-co">IBM</div><div class="exp-dates">May 2024 — May 2026</div><div class="exp-location">Remote, Texas</div></div>
-    <div><div class="exp-title">Project Manager</div>
-      <p class="exp-context" style="font-size:0.82rem;color:var(--muted);font-style:italic;margin-bottom:0.75rem;">Enterprise payroll modernization · Oracle PeopleSoft · 50,000+ users · 50+ person team · $11.1M program · 80+ deliverables</p>
-      <p class="exp-bullet">Led the phased rollout of an Oracle PeopleSoft payroll system for 50,000+ users, managing readiness, cutover, and handoff to operations with technical, security, and training leads; delivered on schedule and within the $11.1M budget.</p>
-      <p class="exp-bullet">Co-developed the project charter, project management plan, and WBS, and maintained the integrated project schedule in Microsoft Project, flagging conflicts and dependencies early to keep milestones on track over 24 months.</p>
-      <p class="exp-bullet">Served as the primary liaison between client leadership and delivery teams, leading project governance through weekly status reviews and steering committee updates, with Power BI and Tableau dashboards that gave leadership one clear view of decisions needed.</p>
-      <p class="exp-bullet">Managed 350+ change requests through the Change Control Board and tracked 50+ risks and issues in the RAID log, resolving them before they affected the schedule.</p>
-      <p class="exp-bullet">Redesigned the monthly labor forecast process with a standard Excel template, submission requirements, and deadlines, replacing late inputs with 100% on-time submissions. Managed vendor subcontracts and invoicing in SAP Concur and partnered with Finance to track burn rate against budget.</p>
-      <p class="exp-bullet">Managed integration, user acceptance, and regression testing across AWS environments, running defect triage in Jira against exit criteria to bring 80+ deliverables to a 100% client acceptance rate.</p>
-    </div>
-  </div>
-
-  <div class="exp-item reveal">
-    <div><div class="exp-co">IBM</div><div class="exp-dates">May 2023 — May 2024</div><div class="exp-location">Remote, Texas</div></div>
-    <div><div class="exp-title">Senior Consultant</div>
-      <p class="exp-bullet">Built the Requirements Traceability Matrix (RTM) in Excel, linking requirements, testing, and Jira defects to give the team one source of truth for sign-off.</p>
-      <p class="exp-bullet">Facilitated sprint planning, backlog refinement, and PI planning in a SAFe environment, tracking velocity in Jira so each sprint started with clear priorities and owners.</p>
-      <p class="exp-bullet">Completed 15-20 Oracle PeopleSoft regression scripts and introduced a cross-team resource-sharing practice adopted by the delivery team, easing a testing backlog during a busy release period.</p>
-      <p class="exp-bullet">Started and led an internal generative AI working group, building 15+ AI use cases in Microsoft Copilot and Claude and a WatsonX assistant demo shared at all-hands meetings, informing leadership's cost-benefit and AI adoption decisions.</p>
-    </div>
-  </div>
-
-  <div class="exp-item reveal">
-    <div><div class="exp-co">Accenture</div><div class="exp-dates">May 2022 — Aug 2022</div><div class="exp-location">Washington, D.C.</div></div>
-    <div><div class="exp-title">Strategy & Transformation MBA Intern</div>
-      <p class="exp-bullet">Built a phased change and adoption plan and benchmarked relocation packages, guiding 150+ employees through a corporate headquarters relocation.</p>
-      <p class="exp-bullet">Analyzed pre- and post-relocation survey data in Excel and presented an executive risk brief that turned engagement gaps and flight risks into clear recommendations for leadership.</p>
-      <p class="exp-bullet">Created process maps, governance materials, and communications plans with consultants and client stakeholders, leaving reusable templates for the client's transformation team.</p>
-    </div>
-  </div>
-
-  <div class="exp-item reveal">
-    <div><div class="exp-co">Harris County</div><div class="exp-dates">Jan 2017 — Aug 2021</div><div class="exp-location">Houston, TX</div></div>
-    <div><div class="exp-title">Human Resources Division Manager</div>
-      <p class="exp-bullet">Managed the end-to-end migration from IFAS to Oracle PeopleSoft Payroll for 500+ employees — coordinating data migration, UAT, ESS/MSS security configuration, and training across HR, IT, and Finance.</p>
-      <p class="exp-bullet">Coordinated restructuring initiatives across 6 divisions, managing role transitions, position eliminations, and headcount changes to support organizational priorities.</p>
-      <p class="exp-bullet">Managed workforce planning and reporting — forecasting $1M–$3M in annual workforce budgets and tracking PCN burn rates, compensation reclassifications, and allowances in Excel.</p>
-      <p class="exp-bullet">Managed full-cycle recruitment across multiple divisions using NeoGov, Indeed, and Workday; trained 20+ managers and 6 directors on standardized performance management practices and launched a workplace accommodations internship program with ~70% full-time conversion.</p>
-    </div>
-  </div>
-
-  <div class="exp-item reveal">
-    <div><div class="exp-co">Harris County</div><div class="exp-dates">Jan 2016 — Jan 2017</div><div class="exp-location">Houston, TX</div></div>
-    <div><div class="exp-title">HR Coordinator</div>
-      <p class="exp-bullet">Supported HR operations across county divisions — onboarding coordination, HRIS data management, recruitment support, and compliance reporting.</p>
-    </div>
-  </div>
-
-  <div class="exp-item reveal">
-    <div><div class="exp-co">ABM Corporate HQ</div><div class="exp-dates">Jan 2012 — Jan 2015</div><div class="exp-location">Houston, TX</div></div>
-    <div><div class="exp-title">HR Generalist</div>
-      <p class="exp-bullet">Managed HR operations across multiple facility services sites — full-cycle recruiting, onboarding, benefits administration, and employee relations.</p>
-    </div>
-  </div>
-
-  <div class="exp-item reveal">
-    <div><div class="exp-co">LyondellBasell (CITGO)</div><div class="exp-dates">Jan 2011 — Jan 2012</div><div class="exp-location">Houston, TX</div></div>
-    <div><div class="exp-title">HR Coordinator</div>
-      <p class="exp-bullet">Supported HR operations for a global petrochemical company — onboarding coordination, HRIS data management, and compliance reporting.</p>
-    </div>
-  </div>
-
-</section>
-
-<!-- ══════════════ SKILLS ══════════════ -->
 <section class="skills-section" id="skills">
   <div class="s-head reveal"><span class="s-num">04</span><h2 class="s-title">Skills &<br/><em>Certifications</em></h2><div class="s-rule"></div></div>
   <div class="skills-grid reveal">
@@ -2131,20 +2377,18 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     <div class="cert-card"><span style="font-size:1.5rem;">🎓</span><div><div class="cert-name">BBA, Business Administration</div><div class="cert-sub">Sam Houston State University · 2016</div></div></div>
   </div>
 </section>
-
-<!-- ══════════════ CONTACT ══════════════ -->
 <section class="contact-section" id="contact">
   <p class="contact-eyebrow">Let's <em>work together</em></p>
   <p class="contact-body">I'm actively seeking fully remote Project Manager and Program Manager roles in AI and technology. If you're building something that needs a PM who understands both the people side and the delivery side — let's talk.</p>
   <div class="contact-links">
     <a href="mailto:kmontgomery1292@gmail.com" class="c-link primary">kmontgomery1292@gmail.com</a>
     <a href="https://linkedin.com/in/kiamontgomery" target="_blank" class="c-link">LinkedIn</a>
-    <a href="KM_Base_Resume_2026_2.docx" download class="c-link">Download Resume</a>
+    <a href="Kia_Montgomery_Resume_gitthub.docx" download class="c-link">Download Resume</a>
   </div>
 </section>
 
 <footer>
-  <span class="footer-copy">© 2026 Kia Montgomery · All artifacts are mock deliverables for portfolio demonstration purposes</span>
+  <span class="footer-copy">© 2026 Kia Montgomery &nbsp;·&nbsp; <a href="Kia_Montgomery_Resume_gitthub.docx" target="_blank" style="color:var(--blue-mid);text-decoration:underline;">Download Resume</a> · All artifacts are mock deliverables for portfolio demonstration purposes</span>
   <div class="footer-links">
     <a href="javascript:void(0)" onclick="nav('top')">Top</a>
     <a href="javascript:void(0)" onclick="nav('work')">Portfolio</a>
