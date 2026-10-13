@@ -112,8 +112,8 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 .eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;}
 .eyebrow-line{width:2.5rem;height:1px;background:var(--blue-mid);}
 .eyebrow-text{font-family:var(--sans);font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue-light);}
-.hero-name{font-family:var(--sans);font-size:clamp(3.5rem,5.5vw,5.5rem);font-weight:400;line-height:1.0;letter-spacing:-0.02em;color:var(--ink);}
-.hero-name em{font-style:italic;color:var(--blue);}
+.hero-name{font-size:clamp(3.5rem,6vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-0.04em;color:white;margin-bottom:1.2rem;}
+.hero-name em{font-style:normal;background:linear-gradient(135deg,#60a5fa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-role{font-family:var(--sans);font-size:clamp(1rem,1.8vw,1.3rem);font-style:italic;color:var(--muted);margin-bottom:2rem;margin-top:0.8rem;}
 .hero-bio{font-size:0.92rem;line-height:1.88;color:var(--muted);max-width:420px;margin-bottom:2rem;}
 .badge-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem;}
@@ -209,8 +209,8 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 .exp-body{overflow:hidden;transition:max-height 0.35s ease, opacity 0.3s ease;max-height:0;opacity:0;}
 .exp-body.open{max-height:2000px;opacity:1;}
 .exp-co{font-family:var(--sans);font-size:1rem;font-weight:800;color:var(--ink);margin-bottom:0.25rem;letter-spacing:-0.02em;}
-.exp-dates{font-family:var(--sans);font-size:0.75rem;font-weight:500;color:var(--muted);margin-bottom:0.3rem;}
-.exp-location{font-family:var(--mono);font-size:0.53rem;letter-spacing:0.08em;color:var(--muted);}
+.exp-dates{font-family:var(--sans);font-size:0.8rem;font-weight:600;color:var(--blue);margin-bottom:0.3rem;white-space:nowrap;}
+.exp-location{font-family:var(--sans);font-size:0.73rem;color:var(--muted);}
 .exp-title{font-size:0.94rem;font-weight:500;color:var(--ink);margin-bottom:0.8rem;}
 .exp-bullet{font-size:0.85rem;line-height:1.72;color:#4a5568;padding-left:1.2rem;position:relative;margin-bottom:0.55rem;}
 .exp-bullet::before{content:'—';position:absolute;left:0;color:var(--blue-tint);}
@@ -509,7 +509,7 @@ section{scroll-margin-top:80px;}
 
 .exp-meta{padding-top:0.2rem;}
 .exp-co{font-size:0.95rem;font-weight:800;color:var(--ink);letter-spacing:-0.02em;margin-bottom:0.25rem;}
-.exp-dates{font-family:var(--sans);font-size:0.73rem;font-weight:500;color:var(--muted);margin-bottom:0.2rem;}
+.exp-dates{font-family:var(--sans);font-size:0.8rem;font-weight:600;color:var(--blue);margin-bottom:0.3rem;white-space:nowrap;}
 .exp-loc{font-size:0.72rem;color:var(--muted);}
 
 .exp-content{}
@@ -770,6 +770,10 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
   <div class="hero-left" style="position:relative;z-index:2;">
     <div class="hero-eyebrow-new">Project Manager &amp; Technology Consultant</div>
     <h1 class="hero-name">Kia<br/><em>Montgomery</em></h1>
+    <div class="avail-badge">
+  <span class="avail-dot"></span>
+  Open to Opportunities
+</div>
     <p class="hero-bio" style="color:rgba(255,255,255,0.75);max-width:500px;">PMP-certified PM with 8+ years delivering HR technology, payroll modernization, and enterprise transformation. Led an $11.1M Oracle PeopleSoft program serving 50,000+ users.</p>
     <div class="badge-row" style="margin-top:1.4rem;">
       <span class="badge active">PMP Certified</span>
@@ -816,41 +820,66 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
   </div>
 </section>
 
-<section class="marquee-section" aria-label="Tools and technologies"><div class="marquee-label">Tech Stack</div>
-  <div class="marquee-track">
-    <div class="marquee-inner" id="marqueeInner">
-      <!-- Set 1 -->
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F2C811"/><path d="M5 22l8-10 5 6 4-4 5 8H5z" fill="#1A1A1A"/></svg><span>Power BI</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#E97627"/><path d="M8 8h16v2H8zm0 5h12v2H8zm0 5h14v2H8z" fill="white"/><circle cx="24" cy="24" r="5" fill="white"/><circle cx="24" cy="24" r="3" fill="#E97627"/></svg><span>Tableau</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0052CC"/><path d="M6 20.5l4-8 4 5.5 3-3.5 4 6H6z" fill="white" opacity=".4"/><path d="M13 10l-6 10h4l2-3.5L16 20h4l-7-10z" fill="white"/></svg><span>Jira</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F62B54"/><circle cx="10" cy="16" r="3" fill="white"/><circle cx="16" cy="16" r="3" fill="white" opacity=".7"/><circle cx="22" cy="16" r="3" fill="white" opacity=".4"/></svg><span>Monday.com</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M7 9h18v2H7zm0 6h18v2H7zm0 6h12v2H7z" fill="white"/></svg><span>MS Project</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#C74634"/><path d="M16 7l7 4v10l-7 4-7-4V11l7-4z" fill="none" stroke="white" stroke-width="1.5"/><text x="12" y="20" fill="white" font-size="8" font-family="sans-serif">OPS</text></svg><span>Oracle PeopleSoft</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F5821F"/><path d="M9 10h14v3H9zm0 5h14v3H9zm0 5h10v3H9z" fill="white"/></svg><span>Workday</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#232F3E"/><path d="M5 19l5-8 3 4 3-3 4 7H5z" fill="#FF9900"/></svg><span>AWS</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0078D4"/><path d="M8 12h16v2H8zm0 4h12v2H8zm0 4h8v2H8z" fill="white"/></svg><span>MS Copilot</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M8 8h10v16H8zm2 2v12h6V10h-6zm8-2h8v16h-8zm2 2v12h4V10h-4z" fill="white" opacity=".9"/></svg><span>Excel</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><path d="M9 16l4 4 10-10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Google Cloud</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0FAAFF"/><text x="6" y="21" fill="white" font-size="10" font-family="sans-serif" font-weight="bold">SAP</text></svg><span>SAP Concur</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#172B4D"/><path d="M8 24l5-8 4 5 3-4 4 7H8z" fill="#36B37E"/></svg><span>Confluence</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><circle cx="16" cy="14" r="5" fill="white" opacity=".3"/><path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity=".3"/></svg><span>WalkMe</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#212529"/><path d="M10 16h12M16 10v12" stroke="#FF6B35" stroke-width="2" stroke-linecap="round"/></svg><span>WatsonX</span></div>
-      <!-- Set 2 (duplicate for seamless loop) -->
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F2C811"/><path d="M5 22l8-10 5 6 4-4 5 8H5z" fill="#1A1A1A"/></svg><span>Power BI</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#E97627"/><path d="M8 8h16v2H8zm0 5h12v2H8zm0 5h14v2H8z" fill="white"/><circle cx="24" cy="24" r="5" fill="white"/><circle cx="24" cy="24" r="3" fill="#E97627"/></svg><span>Tableau</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0052CC"/><path d="M13 10l-6 10h4l2-3.5L16 20h4l-7-10z" fill="white"/></svg><span>Jira</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F62B54"/><circle cx="10" cy="16" r="3" fill="white"/><circle cx="16" cy="16" r="3" fill="white" opacity=".7"/><circle cx="22" cy="16" r="3" fill="white" opacity=".4"/></svg><span>Monday.com</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M7 9h18v2H7zm0 6h18v2H7zm0 6h12v2H7z" fill="white"/></svg><span>MS Project</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#C74634"/><path d="M16 7l7 4v10l-7 4-7-4V11l7-4z" fill="none" stroke="white" stroke-width="1.5"/><text x="12" y="20" fill="white" font-size="8" font-family="sans-serif">OPS</text></svg><span>Oracle PeopleSoft</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F5821F"/><path d="M9 10h14v3H9zm0 5h14v3H9zm0 5h10v3H9z" fill="white"/></svg><span>Workday</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#232F3E"/><path d="M5 19l5-8 3 4 3-3 4 7H5z" fill="#FF9900"/></svg><span>AWS</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0078D4"/><path d="M8 12h16v2H8zm0 4h12v2H8zm0 4h8v2H8z" fill="white"/></svg><span>MS Copilot</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M8 8h10v16H8zm2 2v12h6V10h-6zm8-2h8v16h-8zm2 2v12h4V10h-4z" fill="white" opacity=".9"/></svg><span>Excel</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><path d="M9 16l4 4 10-10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Google Cloud</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0FAAFF"/><text x="6" y="21" fill="white" font-size="10" font-family="sans-serif" font-weight="bold">SAP</text></svg><span>SAP Concur</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#172B4D"/><path d="M8 24l5-8 4 5 3-4 4 7H8z" fill="#36B37E"/></svg><span>Confluence</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><circle cx="16" cy="14" r="5" fill="white" opacity=".3"/><path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity=".3"/></svg><span>WalkMe</span></div>
-      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#212529"/><path d="M10 16h12M16 10v12" stroke="#FF6B35" stroke-width="2" stroke-linecap="round"/></svg><span>WatsonX</span></div>
+<section class="marquee-section" aria-label="Tools and technologies">
+  <div class="marquee-eyebrow">Tech Stack</div>
+  <div class="marquee-container">
+    <div class="marquee-row">
+      <div class="marquee-inner" id="marqueeInner">
+        <div class="mtool"><div class="mtool-icon" style="background:#F2C811"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M5 22l8-10 5 6 4-4 5 8H5z" fill="#1A1A1A"/></svg></div><span>Power BI</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#E97627"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 8h16v2H8zm0 5h12v2H8zm0 5h14v2H8z" fill="white"/></svg></div><span>Tableau</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0052CC"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M13 10l-6 10h4l2-3.5L16 20h4l-7-10z" fill="white"/></svg></div><span>Jira</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#F62B54"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="10" cy="16" r="4" fill="white"/><circle cx="16" cy="16" r="4" fill="white" opacity=".65"/><circle cx="22" cy="16" r="4" fill="white" opacity=".35"/></svg></div><span>Monday.com</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#217346"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 9h16v2H8zm0 5h16v2H8zm0 5h12v2H8z" fill="white"/></svg></div><span>MS Project</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#C74634"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 7l7 4v10l-7 4-7-4V11z" fill="none" stroke="white" stroke-width="2"/></svg></div><span>Oracle PeopleSoft</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#FF6D00"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M9 10h14v3H9zm0 5h14v3H9zm0 5h10v3H9z" fill="white"/></svg></div><span>Workday</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#232F3E"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M5 19l5-8 3 4 3-3 4 7H5z" fill="#FF9900"/></svg></div><span>AWS</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0078D4"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="8" fill="none" stroke="white" stroke-width="2.5"/><path d="M16 10v6l4 4" stroke="white" stroke-width="2"/></svg></div><span>MS Copilot</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#217346"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 8h10v16H8zm2 2v12h6V10h-6z" fill="white"/><path d="M18 8h6v16h-6zm1 2v12h4V10h-4z" fill="white" opacity=".6"/></svg></div><span>Excel</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#9B59B6"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 8c-4.4 0-8 2.7-8 6 0 2 1.2 3.8 3 5l-1 4 4-2c.6.1 1.3.1 2 .1 4.4 0 8-2.7 8-6s-3.6-7.1-8-7.1z" fill="white"/></svg></div><span>WatsonX</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#10A37F"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 9l4 6-4 2-4-2 4-6zm0 6l-4-2v6l4 3 4-3v-6l-4 2z" fill="white"/></svg></div><span>ChatGPT</span></div>
+        <!-- duplicate for seamless loop -->
+        <div class="mtool"><div class="mtool-icon" style="background:#F2C811"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M5 22l8-10 5 6 4-4 5 8H5z" fill="#1A1A1A"/></svg></div><span>Power BI</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#E97627"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 8h16v2H8zm0 5h12v2H8zm0 5h14v2H8z" fill="white"/></svg></div><span>Tableau</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0052CC"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M13 10l-6 10h4l2-3.5L16 20h4l-7-10z" fill="white"/></svg></div><span>Jira</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#F62B54"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="10" cy="16" r="4" fill="white"/><circle cx="16" cy="16" r="4" fill="white" opacity=".65"/><circle cx="22" cy="16" r="4" fill="white" opacity=".35"/></svg></div><span>Monday.com</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#217346"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 9h16v2H8zm0 5h16v2H8zm0 5h12v2H8z" fill="white"/></svg></div><span>MS Project</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#C74634"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 7l7 4v10l-7 4-7-4V11z" fill="none" stroke="white" stroke-width="2"/></svg></div><span>Oracle PeopleSoft</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#FF6D00"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M9 10h14v3H9zm0 5h14v3H9zm0 5h10v3H9z" fill="white"/></svg></div><span>Workday</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#232F3E"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M5 19l5-8 3 4 3-3 4 7H5z" fill="#FF9900"/></svg></div><span>AWS</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0078D4"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="8" fill="none" stroke="white" stroke-width="2.5"/><path d="M16 10v6l4 4" stroke="white" stroke-width="2"/></svg></div><span>MS Copilot</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#217346"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 8h10v16H8zm2 2v12h6V10h-6z" fill="white"/><path d="M18 8h6v16h-6zm1 2v12h4V10h-4z" fill="white" opacity=".6"/></svg></div><span>Excel</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#9B59B6"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 8c-4.4 0-8 2.7-8 6 0 2 1.2 3.8 3 5l-1 4 4-2c.6.1 1.3.1 2 .1 4.4 0 8-2.7 8-6s-3.6-7.1-8-7.1z" fill="white"/></svg></div><span>WatsonX</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#10A37F"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 9l4 6-4 2-4-2 4-6zm0 6l-4-2v6l4 3 4-3v-6l-4 2z" fill="white"/></svg></div><span>ChatGPT</span></div>
+      </div>
+    </div>
+    <div class="marquee-row">
+      <div class="marquee-inner marquee-reverse" id="marqueeInner2">
+        <div class="mtool"><div class="mtool-icon" style="background:#0F9D58"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 8l8 16 8-16H8z" fill="white" opacity=".9"/></svg></div><span>SAP Concur</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#1A73E8"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="8" fill="none" stroke="white" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="white"/></svg></div><span>NeoGov</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#7B5EA7"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 22l4-12h8l4 12H8z" fill="none" stroke="white" stroke-width="2"/><line x1="16" y1="10" x2="16" y2="22" stroke="white" stroke-width="1.5"/></svg></div><span>WalkMe</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#C85729"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M10 22l3-8 3 5 2-3 4 6H10z" fill="white"/></svg></div><span>Claude AI</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#4285F4"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 8a8 8 0 100 16A8 8 0 0016 8zm0 2a6 6 0 11-6 6h6V10z" fill="white"/></svg></div><span>Gemini</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0D47A1"><svg viewBox="0 0 32 32" width="28" height="28"><rect x="8" y="10" width="16" height="12" rx="2" fill="none" stroke="white" stroke-width="2"/><path d="M12 10V8m8 2V8m-10 6h12" stroke="white" stroke-width="1.5"/></svg></div><span>SharePoint</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#4F46E5"><svg viewBox="0 0 32 32" width="28" height="28"><rect x="6" y="8" width="20" height="4" rx="2" fill="white"/><rect x="6" y="14" width="14" height="4" rx="2" fill="white" opacity=".7"/><rect x="6" y="20" width="17" height="4" rx="2" fill="white" opacity=".5"/></svg></div><span>Microsoft 365</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#E01E5A"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M10 22l2-12 4 8 4-8 2 12H10z" fill="white"/></svg></div><span>Slack</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0891B2"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 16h4l2-6 4 12 2-6h4" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Agile / SAFe</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#2563EB"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="14" r="5" fill="white"/><path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" stroke-width="2" fill="none"/></svg></div><span>Stakeholder Mgmt</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#6366F1"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 8l3 6h6l-5 4 2 7-6-4-6 4 2-7-5-4h6z" fill="white"/></svg></div><span>Change Mgmt</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#059669"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 20l5-8 3 4 3-3 5 7H8z" fill="white"/></svg></div><span>Power Automate</span></div>
+        <!-- duplicate -->
+        <div class="mtool"><div class="mtool-icon" style="background:#0F9D58"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 8l8 16 8-16H8z" fill="white" opacity=".9"/></svg></div><span>SAP Concur</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#1A73E8"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="16" r="8" fill="none" stroke="white" stroke-width="2"/><circle cx="16" cy="16" r="3" fill="white"/></svg></div><span>NeoGov</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#7B5EA7"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 22l4-12h8l4 12H8z" fill="none" stroke="white" stroke-width="2"/><line x1="16" y1="10" x2="16" y2="22" stroke="white" stroke-width="1.5"/></svg></div><span>WalkMe</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#C85729"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M10 22l3-8 3 5 2-3 4 6H10z" fill="white"/></svg></div><span>Claude AI</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#4285F4"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 8a8 8 0 100 16A8 8 0 0016 8zm0 2a6 6 0 11-6 6h6V10z" fill="white"/></svg></div><span>Gemini</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0D47A1"><svg viewBox="0 0 32 32" width="28" height="28"><rect x="8" y="10" width="16" height="12" rx="2" fill="none" stroke="white" stroke-width="2"/><path d="M12 10V8m8 2V8m-10 6h12" stroke="white" stroke-width="1.5"/></svg></div><span>SharePoint</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#4F46E5"><svg viewBox="0 0 32 32" width="28" height="28"><rect x="6" y="8" width="20" height="4" rx="2" fill="white"/><rect x="6" y="14" width="14" height="4" rx="2" fill="white" opacity=".7"/><rect x="6" y="20" width="17" height="4" rx="2" fill="white" opacity=".5"/></svg></div><span>Microsoft 365</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#E01E5A"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M10 22l2-12 4 8 4-8 2 12H10z" fill="white"/></svg></div><span>Slack</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#0891B2"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 16h4l2-6 4 12 2-6h4" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Agile / SAFe</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#2563EB"><svg viewBox="0 0 32 32" width="28" height="28"><circle cx="16" cy="14" r="5" fill="white"/><path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" stroke-width="2" fill="none"/></svg></div><span>Stakeholder Mgmt</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#6366F1"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 8l3 6h6l-5 4 2 7-6-4-6 4 2-7-5-4h6z" fill="white"/></svg></div><span>Change Mgmt</span></div>
+        <div class="mtool"><div class="mtool-icon" style="background:#059669"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M8 20l5-8 3 4 3-3 5 7H8z" fill="white"/></svg></div><span>Power Automate</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -880,24 +909,72 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
       </div>
     </div>
     <div class="about-sidebar reveal">
-      <div><div class="sb-label">Education</div>
-        <div class="sb-item"><strong>MBA</strong> · Howard University, 2023</div>
-        <div class="sb-item">Certificate, Global Trilateral Consulting · Howard University · Wits Business School + CUFE</div>
-        <div class="sb-item">BBA · Sam Houston State University, 2016</div>
+
+      <!-- STAT CARD -->
+      <div class="sb-stat-card">
+        <div class="sb-stat-bg"></div>
+        <div class="sb-stat-content">
+          <div class="sb-stat-row">
+            <div class="sb-stat-item">
+              <div class="sb-stat-val">8+</div>
+              <div class="sb-stat-desc">Years Experience</div>
+            </div>
+            <div class="sb-stat-item">
+              <div class="sb-stat-val">$11M</div>
+              <div class="sb-stat-desc">Programs Led</div>
+            </div>
+          </div>
+          <div class="sb-stat-row">
+            <div class="sb-stat-item">
+              <div class="sb-stat-val">50K+</div>
+              <div class="sb-stat-desc">Users Impacted</div>
+            </div>
+            <div class="sb-stat-item">
+              <div class="sb-stat-val">80+</div>
+              <div class="sb-stat-desc">Deliverables</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div><div class="sb-label">Certifications</div>
-        <div class="sb-item">SAFe 6.0 Scrum Master · Active</div>
-        <div class="sb-item">ICAgile Certified Professional (ICP) · Active</div>
-        <div class="sb-item">PMP · Project Management Institute</div>
-        <div class="sb-item">Workday HCM Fundamentals · Workday</div>
-        <div class="sb-item">Google Cloud Digital Leader · Google</div>
-        <div class="sb-item">PHR — Prior (HRCI)</div>
+
+      <!-- EDUCATION CARD -->
+      <div class="sb-card">
+        <div class="sb-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="sb-card-body">
+          <div class="sb-card-label">Education</div>
+          <div class="sb-edu-item">
+            <span class="sb-edu-deg">MBA</span>
+            <span class="sb-edu-school">Howard University · 2023</span>
+          </div>
+          <div class="sb-edu-item">
+            <span class="sb-edu-deg">Certificate</span>
+            <span class="sb-edu-school">Global Trilateral Consulting · Howard / Wits / CUFE</span>
+          </div>
+          <div class="sb-edu-item">
+            <span class="sb-edu-deg">BBA</span>
+            <span class="sb-edu-school">Sam Houston State · 2016</span>
+          </div>
+        </div>
       </div>
-      <div><div class="sb-label">Tools & Technology</div>
-        <div class="sb-item">Power BI · Tableau · Jira · Monday.com · Microsoft Project</div>
-        <div class="sb-item">Oracle PeopleSoft · Workday · AWS · SAP Concur</div>
-        <div class="sb-item">MS Copilot · WatsonX · Claude · ChatGPT · Gemini</div>
-        <div class="sb-item">NeoGov · WalkMe · Excel · PowerPoint · Word</div>
+
+      <!-- CERTS CARD -->
+      <div class="sb-card">
+        <div class="sb-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div class="sb-card-body">
+          <div class="sb-card-label">Certifications</div>
+          <div class="sb-cert-pill-row">
+            <span class="sb-cert-pill active-p">PMP</span>
+            <span class="sb-cert-pill active-p">SAFe 6.0 SM</span>
+            <span class="sb-cert-pill active-p">ICP</span>
+            <span class="sb-cert-pill active-p">Workday HCM</span>
+            <span class="sb-cert-pill active-p">GCP Digital</span>
+            <span class="sb-cert-pill past-p">PHR</span>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -2554,6 +2631,85 @@ nav{padding:0.85rem 3.5rem;}
   .cert-glow{min-width:140px;}
 }
 
+
+/* ═══ NEW MARQUEE + ABOUT SIDEBAR CSS ═══ */
+
+/* Marquee overhaul */
+.marquee-section{background:linear-gradient(135deg,#0a0f1e 0%,#0d1830 60%,#0f1e35 100%);padding:2.5rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(96,165,250,0.15);border-bottom:1px solid rgba(96,165,250,0.15);}
+.marquee-section::before,.marquee-section::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;}
+.marquee-section::before{left:0;background:linear-gradient(to right,#0a0f1e,transparent);}
+.marquee-section::after{right:0;background:linear-gradient(to left,#0a0f1e,transparent);}
+.marquee-eyebrow{text-align:center;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(96,165,250,0.7);margin-bottom:1.4rem;font-family:var(--sans);}
+.marquee-container{display:flex;flex-direction:column;gap:0.9rem;overflow:hidden;}
+.marquee-row{overflow:hidden;}
+.marquee-inner{display:flex;gap:0;white-space:nowrap;animation:marqueeScroll 38s linear infinite;}
+.marquee-inner.marquee-reverse{animation:marqueeScrollRev 44s linear infinite;}
+.marquee-inner:hover{animation-play-state:paused;}
+.mtool{display:inline-flex;align-items:center;gap:0.65rem;padding:0.45rem 1.6rem;font-size:0.82rem;font-family:var(--sans);font-weight:500;color:rgba(255,255,255,0.78);white-space:nowrap;transition:color 0.2s;}
+.mtool:hover{color:#fff;}
+.mtool-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.mtool-icon svg{display:block;}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marqueeScrollRev{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.marquee-inner,.marquee-inner.marquee-reverse{animation:none;}}
+
+/* About sidebar cards */
+.sb-stat-card{background:linear-gradient(135deg,#0f1e2e 0%,#162032 100%);border:1px solid rgba(96,165,250,0.2);border-radius:18px;padding:1.4rem 1.2rem;position:relative;overflow:hidden;}
+.sb-stat-card::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(96,165,250,0.12) 0%,transparent 70%);pointer-events:none;}
+.sb-stat-content{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+.sb-stat-item{text-align:center;padding:0.6rem 0.4rem;background:rgba(255,255,255,0.04);border-radius:10px;}
+.sb-stat-val{font-size:1.55rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;display:block;}
+.sb-stat-desc{font-size:0.67rem;color:rgba(255,255,255,0.55);font-family:var(--sans);font-weight:500;letter-spacing:0.04em;margin-top:0.25rem;display:block;text-transform:uppercase;}
+.sb-stat-row{display:contents;}
+
+.sb-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.2rem 1.3rem;box-shadow:0 2px 12px rgba(37,99,235,0.06);position:relative;overflow:hidden;}
+.sb-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--teal));}
+.sb-card-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--blue-tint),#e0f2fe);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:0.8rem;}
+.sb-card-label{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem;font-family:var(--sans);}
+.sb-card-body{display:flex;flex-direction:column;gap:0.5rem;}
+
+.sb-edu-item{display:flex;flex-direction:column;gap:0.1rem;padding:0.5rem 0;border-bottom:1px solid var(--border);}
+.sb-edu-item:last-child{border-bottom:none;padding-bottom:0;}
+.sb-edu-deg{font-size:0.8rem;font-weight:600;color:var(--ink);line-height:1.3;}
+.sb-edu-school{font-size:0.72rem;color:var(--muted);font-family:var(--sans);}
+
+.sb-cert-pill-row{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.sb-cert-pill{font-size:0.7rem;font-weight:600;padding:0.3rem 0.7rem;border-radius:20px;font-family:var(--sans);letter-spacing:0.02em;}
+.sb-cert-pill.active-p{background:linear-gradient(135deg,#eff6ff,#e0f2fe);color:var(--blue);border:1px solid rgba(37,99,235,0.25);}
+.sb-cert-pill.past-p{background:var(--surface);color:var(--muted);border:1px solid var(--border);}
+
+/* ═══ WIDGETS ═══ */
+
+/* Availability badge */
+.avail-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(5,150,105,0.15);border:1px solid rgba(5,150,105,0.35);border-radius:99px;padding:0.4rem 1rem;font-size:0.78rem;font-weight:600;color:#34d399;margin-bottom:1.8rem;font-family:var(--sans);}
+.avail-dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,0.6);animation:pulse-dot 2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,0.6);}50%{box-shadow:0 0 0 6px rgba(52,211,153,0);}}
+
+/* Scroll-to-top */
+.sto-btn{position:fixed;bottom:2.2rem;right:2.2rem;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--teal));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:white;box-shadow:0 4px 20px rgba(37,99,235,0.45),0 0 0 0 rgba(96,165,250,0.4);z-index:999;opacity:0;transform:translateY(20px);transition:opacity 0.3s,transform 0.3s,box-shadow 0.3s;}
+.sto-btn.visible{opacity:1;transform:translateY(0);}
+.sto-btn:hover{box-shadow:0 6px 28px rgba(37,99,235,0.55),0 0 0 8px rgba(96,165,250,0.15);}
+
+/* Radar section */
+.radar-section{background:var(--white);padding:5rem;}
+.radar-wrap{display:grid;grid-template-columns:360px 1fr;gap:3.5rem;align-items:center;max-width:900px;margin:0 auto;}
+.radar-chart-area{display:flex;justify-content:center;}
+.radar-ring{fill:none;stroke:var(--border);stroke-width:1;}
+.radar-axis{stroke:var(--border);stroke-width:1;}
+.radar-data{fill:rgba(37,99,235,0.15);stroke:var(--blue);stroke-width:2;transition:all 0.8s cubic-bezier(0.4,0,0.2,1);}
+.radar-dot{fill:var(--blue);stroke:white;stroke-width:2;transition:cx 0.8s,cy 0.8s;}
+.radar-label{font-family:var(--sans);font-size:11px;font-weight:600;fill:var(--ink-soft);}
+.radar-legend-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:1.2rem;font-family:var(--sans);}
+.radar-items{display:flex;flex-direction:column;gap:0.85rem;}
+.ri-item{display:flex;flex-direction:column;gap:0.3rem;}
+.ri-label{font-size:0.82rem;font-weight:600;color:var(--ink);font-family:var(--sans);display:flex;justify-content:space-between;}
+.ri-bar{height:6px;border-radius:99px;background:var(--surface);}
+.ri-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--teal));width:0;transition:width 1.2s cubic-bezier(0.4,0,0.2,1);}
+.ri-score{font-size:0.72rem;color:var(--muted);font-family:var(--sans);}
+@media(max-width:900px){.radar-wrap{grid-template-columns:1fr;}.radar-chart-area svg{width:280px;height:260px;}}
+
+/* Stat counters */
+.stat-counter{display:inline-block;transition:opacity 0.4s;}
 </style>
     <div class="mon-wrap">
       <div class="mon-topbar">
@@ -2963,7 +3119,7 @@ nav{padding:0.85rem 3.5rem;}
 
 
 
-<section class="skills<section class="skills-section" id="skills">
+<section class="skills-section" id="skills">
   <div class="s-head reveal"><h2 class="s-title">Skills &amp; <em>Certifications</em></h2><div class="s-rule"></div></div>
 
   <!-- Skill pillars as visual cards -->
@@ -3073,6 +3229,47 @@ nav{padding:0.85rem 3.5rem;}
     </div>
   </div>
 </section>
+<section class="radar-section reveal" id="radar">
+  <div class="s-head reveal"><span class="s-num">04</span><h2 class="s-title">PM <em>Competency Map</em></h2><div class="s-rule"></div></div>
+  <div class="radar-wrap">
+    <div class="radar-chart-area">
+      <svg id="radarSvg" viewBox="0 0 340 320" width="340" height="320" aria-hidden="true">
+        <!-- background polygon rings -->
+        <polygon class="radar-ring" points="170,50 270,110 270,210 170,270 70,210 70,110"/>
+        <polygon class="radar-ring" points="170,80 245,127 245,193 170,240 95,193 95,127"/>
+        <polygon class="radar-ring" points="170,110 220,145 220,175 170,210 120,175 120,145"/>
+        <polygon class="radar-ring" points="170,140 195,162 195,158 170,180 145,158 145,162"/>
+        <!-- axes -->
+        <line class="radar-axis" x1="170" y1="160" x2="170" y2="50"/>
+        <line class="radar-axis" x1="170" y1="160" x2="270" y2="110"/>
+        <line class="radar-axis" x1="170" y1="160" x2="270" y2="210"/>
+        <line class="radar-axis" x1="170" y1="160" x2="170" y2="270"/>
+        <line class="radar-axis" x1="170" y1="160" x2="70" y2="210"/>
+        <line class="radar-axis" x1="170" y1="160" x2="70" y2="110"/>
+        <!-- data polygon — will be set by JS -->
+        <polygon id="radarData" class="radar-data" points=""/>
+        <!-- dot markers -->
+        <circle id="rd0" class="radar-dot" cx="0" cy="0" r="5"/>
+        <circle id="rd1" class="radar-dot" cx="0" cy="0" r="5"/>
+        <circle id="rd2" class="radar-dot" cx="0" cy="0" r="5"/>
+        <circle id="rd3" class="radar-dot" cx="0" cy="0" r="5"/>
+        <circle id="rd4" class="radar-dot" cx="0" cy="0" r="5"/>
+        <circle id="rd5" class="radar-dot" cx="0" cy="0" r="5"/>
+        <!-- labels -->
+        <text class="radar-label" x="170" y="38" text-anchor="middle">Program Delivery</text>
+        <text class="radar-label" x="285" y="108" text-anchor="start">Stakeholder Mgmt</text>
+        <text class="radar-label" x="285" y="218" text-anchor="start">Change Mgmt</text>
+        <text class="radar-label" x="170" y="290" text-anchor="middle">HRIS &amp; Systems</text>
+        <text class="radar-label" x="55" y="218" text-anchor="end">Agile / SAFe</text>
+        <text class="radar-label" x="55" y="108" text-anchor="end">AI Enablement</text>
+      </svg>
+    </div>
+    <div class="radar-legend">
+      <div class="radar-legend-title">Competency Levels</div>
+      <div class="radar-items" id="radarItems"></div>
+    </div>
+  </div>
+</section>
 <section class="contact-section" id="contact">
   <!-- decorative blobs -->
   <div style="position:absolute;top:-80px;left:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(37,99,235,0.18) 0%,transparent 70%);pointer-events:none;"></div>
@@ -3095,6 +3292,9 @@ nav{padding:0.85rem 3.5rem;}
   </div>
 </section>
 
+<button class="sto-btn" id="stoBtn" onclick="nav('top')" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 <footer>
   <span class="footer-copy">© 2026 Kia Montgomery &nbsp;·&nbsp; <a href="Kia_Montgomery_Resume_githubPM.docx" target="_blank" style="color:var(--blue-mid);text-decoration:underline;">Download Resume</a> · All artifacts are mock deliverables for portfolio demonstration purposes</span>
   <div class="footer-links">
@@ -3227,6 +3427,128 @@ document.querySelectorAll('.card').forEach(function(card){
     card.appendChild(tip);
   }
 });
+
+
+// Scroll-to-top visibility
+var stoBtn = document.getElementById('stoBtn');
+window.addEventListener('scroll', function(){
+  if(stoBtn){ if(window.scrollY > 400){ stoBtn.classList.add('visible'); } else { stoBtn.classList.remove('visible'); } }
+}, {passive:true});
+
+// Animated stat counters
+function countUp(el, target, suffix, duration){
+  var start = 0;
+  var isFloat = target % 1 !== 0;
+  var step = duration / 60;
+  var inc = target / (duration / (1000/60));
+  var cur = 0;
+  var timer = setInterval(function(){
+    cur += inc;
+    if(cur >= target){ cur = target; clearInterval(timer); }
+    el.textContent = (isFloat ? cur.toFixed(1) : Math.floor(cur)) + suffix;
+  }, 1000/60);
+}
+
+function initCounters(){
+  // stat card values
+  var counterDefs = [
+    {sel:'.sb-stat-val', targets:[{text:'8+',num:8,suffix:'+'},{text:'$11M',num:11,suffix:'M',prefix:'$'},{text:'50K+',num:50,suffix:'K+'},{text:'80+',num:80,suffix:'+'}]}
+  ];
+  var vals = document.querySelectorAll('.sb-stat-val');
+  var nums = [8,11,50,80];
+  var suffixes = ['+','M','+','+'];
+  var prefixes = ['','$','',''];
+  vals.forEach(function(el,i){
+    if(i >= nums.length) return;
+    var orig = el.textContent;
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var n = nums[i]; var s = suffixes[i]; var p = prefixes[i];
+          var cur = 0; var target = n;
+          var timer = setInterval(function(){
+            cur += target/50;
+            if(cur>=target){cur=target;clearInterval(timer);}
+            var display = p + (i===1 ? cur.toFixed(0) : Math.floor(cur)) + s;
+            el.textContent = display;
+          }, 30);
+          io2.unobserve(el);
+        }
+      });
+    },{threshold:0.5});
+    io2.observe(el);
+  });
+}
+initCounters();
+
+// Radar chart
+(function(){
+  var skills = [
+    {name:'Program Delivery',     score:0.95},
+    {name:'Stakeholder Mgmt',     score:0.92},
+    {name:'Change Management',    score:0.90},
+    {name:'HRIS & Systems',       score:0.85},
+    {name:'Agile / SAFe',         score:0.90},
+    {name:'AI Enablement',        score:0.82}
+  ];
+  // Radar center and radii
+  var cx=170, cy=160, r=110;
+  // 6 axes starting from top, going clockwise
+  var angles = [-90,-30,30,90,150,210].map(function(a){return a*Math.PI/180;});
+
+  function getPoint(i, pct){
+    return {
+      x: cx + r*pct*Math.cos(angles[i]),
+      y: cy + r*pct*Math.sin(angles[i])
+    };
+  }
+
+  var legend = document.getElementById('radarItems');
+  if(!legend) return;
+
+  skills.forEach(function(sk, i){
+    var li = document.createElement('div');
+    li.className = 'ri-item';
+    li.innerHTML = '<div class="ri-label"><span>'+sk.name+'</span><span class="ri-score">'+(sk.score*100)+'%</span></div><div class="ri-bar"><div class="ri-fill" style="--w:'+Math.round(sk.score*100)+'%" data-w="'+Math.round(sk.score*100)+'"></div></div>';
+    legend.appendChild(li);
+  });
+
+  // Animate radar on intersection
+  var svg = document.getElementById('radarSvg');
+  if(!svg) return;
+  var animated = false;
+  var io3 = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !animated){
+        animated = true;
+        // Animate bars
+        document.querySelectorAll('.ri-fill').forEach(function(el){
+          setTimeout(function(){ el.style.width = el.getAttribute('data-w')+'%'; }, 200);
+        });
+        // Animate radar polygon
+        var pts = skills.map(function(sk,i){ return getPoint(i,sk.score); });
+        var ptStr = pts.map(function(p){ return p.x.toFixed(1)+','+p.y.toFixed(1); }).join(' ');
+        var poly = document.getElementById('radarData');
+        if(poly) setTimeout(function(){ poly.setAttribute('points', ptStr); }, 100);
+        // Set dots
+        pts.forEach(function(p, i){
+          var dot = document.getElementById('rd'+i);
+          if(dot){ setTimeout(function(){ dot.setAttribute('cx',p.x.toFixed(1)); dot.setAttribute('cy',p.y.toFixed(1)); }, 100); }
+        });
+        io3.unobserve(e.target);
+      }
+    });
+  },{threshold:0.3});
+  io3.observe(svg);
+
+  // Init dots at center
+  for(var i=0;i<6;i++){
+    var dot = document.getElementById('rd'+i);
+    if(dot){ dot.setAttribute('cx','170'); dot.setAttribute('cy','160'); }
+  }
+  var poly = document.getElementById('radarData');
+  if(poly) poly.setAttribute('points','170,160 170,160 170,160 170,160 170,160 170,160');
+})();
 
 </script>
 
