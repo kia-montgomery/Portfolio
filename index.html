@@ -294,6 +294,54 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 /* RESPONSIVE */
 @media(max-width:1100px){.hero{grid-template-columns:1fr;}.hero-right{display:none;}.hero-left::before{clip-path:none;}}
 @media(max-width:900px){.about-section,.work-section,.exp-section,.skills-section,.contact-section{padding:3rem 1.5rem;}.about-grid{grid-template-columns:1fr;}.card-grid,.card-grid-2{grid-template-columns:1fr;}.skills-grid{grid-template-columns:1fr 1fr;}.exp-item{grid-template-columns:1fr;gap:0.5rem;}.art-hero,.art-body{padding:6rem 1.5rem 3rem;}.art-nav{padding:1.5rem;flex-direction:column;gap:1rem;}.two-col,.three-col{grid-template-columns:1fr;}nav{padding:1rem 1.5rem;}.nav-links{gap:0.8rem;}footer{padding:1.5rem;flex-direction:column;}}
+
+/* ── MARQUEE ── */
+.marquee-section{background:#0e1623;padding:1rem 0;overflow:hidden;position:relative;}
+.marquee-section::before,.marquee-section::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+.marquee-section::before{left:0;background:linear-gradient(to right,#0e1623,transparent);}
+.marquee-section::after{right:0;background:linear-gradient(to left,#0e1623,transparent);}
+.marquee-track{overflow:hidden;}
+.marquee-inner{display:flex;gap:0;white-space:nowrap;animation:marqueeScroll 40s linear infinite;}
+.marquee-inner:hover{animation-play-state:paused;}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mtool{display:inline-flex;align-items:center;gap:0.55rem;padding:0.4rem 1.4rem;color:rgba(255,255,255,0.75);font-size:0.82rem;font-family:var(--sans);font-weight:500;letter-spacing:0.01em;border-right:1px solid rgba(255,255,255,0.07);}
+.mtool svg{flex-shrink:0;border-radius:4px;}
+.mtool:hover{color:#fff;}
+@media(prefers-reduced-motion:reduce){.marquee-inner{animation:none;}}
+
+/* ── NAV PROGRESS BAR ── */
+.nav-progress{position:absolute;bottom:0;left:0;height:2px;background:var(--blue);width:0%;transition:width 0.1s linear;z-index:300;}
+
+/* ── MODERNIZED NAV ── */
+nav{padding:0.85rem 3.5rem;}
+.nav-links a{font-family:var(--sans);font-size:0.8rem;letter-spacing:0.02em;text-transform:none;font-weight:500;}
+.nav-logo{font-size:1rem;font-weight:700;font-style:normal;letter-spacing:-0.02em;}
+
+/* ── HERO STAT MODERNIZE ── */
+.stat-val{font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;}
+.stat-label{font-family:var(--sans);font-size:0.72rem;font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0.01em;}
+
+/* ── FLOATING DOMAIN QUICK-JUMP ── */
+.domain-quickjump{position:fixed;right:1.2rem;top:50%;transform:translateY(-50%);z-index:150;display:flex;flex-direction:column;gap:6px;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.domain-quickjump.visible{opacity:1;pointer-events:all;}
+.dqj-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:1.5px solid var(--muted);cursor:pointer;transition:all 0.2s;position:relative;}
+.dqj-dot:hover{background:var(--blue);border-color:var(--blue);transform:scale(1.4);}
+.dqj-dot.active{background:var(--blue);border-color:var(--blue);}
+.dqj-dot[data-label]:hover::before{content:attr(data-label);position:absolute;right:14px;top:50%;transform:translateY(-50%);background:var(--ink);color:white;font-size:0.65rem;font-family:var(--sans);white-space:nowrap;padding:3px 8px;border-radius:3px;pointer-events:none;}
+
+/* ── SECTION HEADER CLEANUP (remove numbered sequence look) ── */
+.s-num{display:none;}
+.s-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;}
+.s-title em{font-style:normal;color:var(--blue);}
+
+/* ── BADGE ROW MODERNIZE ── */
+.badge{font-family:var(--sans);font-size:0.74rem;letter-spacing:0.01em;text-transform:none;padding:0.3rem 0.75rem;border-radius:999px;border:1.5px solid var(--border);color:var(--muted);font-weight:500;}
+.badge.active{background:var(--blue-tint);border-color:var(--blue);color:var(--blue);}
+
+/* ── CARD HOVER GLOW ── */
+.card{transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(58,134,200,0.13);}
+
 </style>
 <script type="application/ld+json">
 {
@@ -351,7 +399,15 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
 </head>
 <body>
 
+<div class="domain-quickjump" id="domainQJ">
+  <div class="dqj-dot" data-label="About" onclick="nav('about')"></div>
+  <div class="dqj-dot" data-label="Experience" onclick="nav('experience')"></div>
+  <div class="dqj-dot" data-label="Portfolio" onclick="nav('work')"></div>
+  <div class="dqj-dot" data-label="Skills" onclick="nav('skills')"></div>
+  <div class="dqj-dot" data-label="Contact" onclick="nav('contact')"></div>
+</div>
 <nav>
+  <div class="nav-progress" id="navProgress"></div>
   <a href="javascript:void(0)" onclick="nav('top')" class="nav-logo">Kia Montgomery</a>
   <ul class="nav-links">
     <li><a href="javascript:void(0)" onclick="nav('about')">About</a></li>
@@ -398,10 +454,49 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
   <div class="hero-right">
     <div class="hero-monogram">KM</div>
     <div class="stat-box">
-      <div class="stat"><span class="stat-val">9+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-val">8+</span><span class="stat-label">Years Experience</span></div>
       <div class="stat"><span class="stat-val">IBM</span><span class="stat-label">Current Employer</span></div>
       <div class="stat"><span class="stat-val">$11M+</span><span class="stat-label">Programs Managed</span></div>
       <div class="stat"><span class="stat-val">50+</span><span class="stat-label">Consultants Led</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="marquee-section" aria-label="Tools and technologies">
+  <div class="marquee-track">
+    <div class="marquee-inner" id="marqueeInner">
+      <!-- Set 1 -->
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F2C811"/><path d="M5 22l8-10 5 6 4-4 5 8H5z" fill="#1A1A1A"/></svg><span>Power BI</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#E97627"/><path d="M8 8h16v2H8zm0 5h12v2H8zm0 5h14v2H8z" fill="white"/><circle cx="24" cy="24" r="5" fill="white"/><circle cx="24" cy="24" r="3" fill="#E97627"/></svg><span>Tableau</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0052CC"/><path d="M6 20.5l4-8 4 5.5 3-3.5 4 6H6z" fill="white" opacity=".4"/><path d="M13 10l-6 10h4l2-3.5L16 20h4l-7-10z" fill="white"/></svg><span>Jira</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F62B54"/><circle cx="10" cy="16" r="3" fill="white"/><circle cx="16" cy="16" r="3" fill="white" opacity=".7"/><circle cx="22" cy="16" r="3" fill="white" opacity=".4"/></svg><span>Monday.com</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M7 9h18v2H7zm0 6h18v2H7zm0 6h12v2H7z" fill="white"/></svg><span>MS Project</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#C74634"/><path d="M16 7l7 4v10l-7 4-7-4V11l7-4z" fill="none" stroke="white" stroke-width="1.5"/><text x="12" y="20" fill="white" font-size="8" font-family="sans-serif">OPS</text></svg><span>Oracle PeopleSoft</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F5821F"/><path d="M9 10h14v3H9zm0 5h14v3H9zm0 5h10v3H9z" fill="white"/></svg><span>Workday</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#232F3E"/><path d="M5 19l5-8 3 4 3-3 4 7H5z" fill="#FF9900"/></svg><span>AWS</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0078D4"/><path d="M8 12h16v2H8zm0 4h12v2H8zm0 4h8v2H8z" fill="white"/></svg><span>MS Copilot</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M8 8h10v16H8zm2 2v12h6V10h-6zm8-2h8v16h-8zm2 2v12h4V10h-4z" fill="white" opacity=".9"/></svg><span>Excel</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><path d="M9 16l4 4 10-10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Google Cloud</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0FAAFF"/><text x="6" y="21" fill="white" font-size="10" font-family="sans-serif" font-weight="bold">SAP</text></svg><span>SAP Concur</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#172B4D"/><path d="M8 24l5-8 4 5 3-4 4 7H8z" fill="#36B37E"/></svg><span>Confluence</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><circle cx="16" cy="14" r="5" fill="white" opacity=".3"/><path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity=".3"/></svg><span>WalkMe</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#212529"/><path d="M10 16h12M16 10v12" stroke="#FF6B35" stroke-width="2" stroke-linecap="round"/></svg><span>WatsonX</span></div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F2C811"/><path d="M5 22l8-10 5 6 4-4 5 8H5z" fill="#1A1A1A"/></svg><span>Power BI</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#E97627"/><path d="M8 8h16v2H8zm0 5h12v2H8zm0 5h14v2H8z" fill="white"/><circle cx="24" cy="24" r="5" fill="white"/><circle cx="24" cy="24" r="3" fill="#E97627"/></svg><span>Tableau</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0052CC"/><path d="M13 10l-6 10h4l2-3.5L16 20h4l-7-10z" fill="white"/></svg><span>Jira</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F62B54"/><circle cx="10" cy="16" r="3" fill="white"/><circle cx="16" cy="16" r="3" fill="white" opacity=".7"/><circle cx="22" cy="16" r="3" fill="white" opacity=".4"/></svg><span>Monday.com</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M7 9h18v2H7zm0 6h18v2H7zm0 6h12v2H7z" fill="white"/></svg><span>MS Project</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#C74634"/><path d="M16 7l7 4v10l-7 4-7-4V11l7-4z" fill="none" stroke="white" stroke-width="1.5"/><text x="12" y="20" fill="white" font-size="8" font-family="sans-serif">OPS</text></svg><span>Oracle PeopleSoft</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F5821F"/><path d="M9 10h14v3H9zm0 5h14v3H9zm0 5h10v3H9z" fill="white"/></svg><span>Workday</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#232F3E"/><path d="M5 19l5-8 3 4 3-3 4 7H5z" fill="#FF9900"/></svg><span>AWS</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0078D4"/><path d="M8 12h16v2H8zm0 4h12v2H8zm0 4h8v2H8z" fill="white"/></svg><span>MS Copilot</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#217346"/><path d="M8 8h10v16H8zm2 2v12h6V10h-6zm8-2h8v16h-8zm2 2v12h4V10h-4z" fill="white" opacity=".9"/></svg><span>Excel</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><path d="M9 16l4 4 10-10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Google Cloud</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#0FAAFF"/><text x="6" y="21" fill="white" font-size="10" font-family="sans-serif" font-weight="bold">SAP</text></svg><span>SAP Concur</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#172B4D"/><path d="M8 24l5-8 4 5 3-4 4 7H8z" fill="#36B37E"/></svg><span>Confluence</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#1A73E8"/><circle cx="16" cy="14" r="5" fill="white" opacity=".3"/><path d="M8 24c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity=".3"/></svg><span>WalkMe</span></div>
+      <div class="mtool"><svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#212529"/><path d="M10 16h12M16 10v12" stroke="#FF6B35" stroke-width="2" stroke-linecap="round"/></svg><span>WatsonX</span></div>
     </div>
   </div>
 </section>
@@ -437,22 +532,7 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
         <div class="sb-item">MS Copilot · WatsonX · Claude · ChatGPT · Gemini</div>
         <div class="sb-item">NeoGov · WalkMe · Excel · PowerPoint · Word</div>
       </div>
-      <div style="margin-top:1.4rem;">
-        <div class="sb-label">Tech Stack</div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.6rem;">
-          <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black" alt="Power BI">
-          <img src="https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white" alt="Tableau">
-          <img src="https://img.shields.io/badge/Jira-0052CC?style=flat&logo=jira&logoColor=white" alt="Jira">
-          <img src="https://img.shields.io/badge/Monday.com-F62B54?style=flat&logo=monday&logoColor=white" alt="Monday.com">
-          <img src="https://img.shields.io/badge/MS%20Project-217346?style=flat&logo=microsoft&logoColor=white" alt="MS Project">
-          <img src="https://img.shields.io/badge/Oracle%20PeopleSoft-F80000?style=flat&logo=oracle&logoColor=white" alt="Oracle PeopleSoft">
-          <img src="https://img.shields.io/badge/Workday-F5821F?style=flat&logo=workday&logoColor=white" alt="Workday">
-          <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white" alt="AWS">
-          <img src="https://img.shields.io/badge/SAP%20Concur-0FAAFF?style=flat&logo=sap&logoColor=white" alt="SAP Concur">
-          <img src="https://img.shields.io/badge/MS%20Copilot-0078D4?style=flat&logo=microsoft&logoColor=white" alt="MS Copilot">
-          <img src="https://img.shields.io/badge/Excel-217346?style=flat&logo=microsoftexcel&logoColor=white" alt="Excel">
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -1955,7 +2035,55 @@ footer{background:#0C0909;padding:1.8rem 3.5rem;display:flex;justify-content:spa
     .mon-deadline.ok{color:#0ac389;}
     .mon-effort{height:4px;border-radius:2px;width:100%;background:#2d3050;overflow:hidden;}
     .mon-effort-fill{height:100%;border-radius:2px;}
-    </style>
+    
+/* ── MARQUEE ── */
+.marquee-section{background:#0e1623;padding:1rem 0;overflow:hidden;position:relative;}
+.marquee-section::before,.marquee-section::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+.marquee-section::before{left:0;background:linear-gradient(to right,#0e1623,transparent);}
+.marquee-section::after{right:0;background:linear-gradient(to left,#0e1623,transparent);}
+.marquee-track{overflow:hidden;}
+.marquee-inner{display:flex;gap:0;white-space:nowrap;animation:marqueeScroll 40s linear infinite;}
+.marquee-inner:hover{animation-play-state:paused;}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mtool{display:inline-flex;align-items:center;gap:0.55rem;padding:0.4rem 1.4rem;color:rgba(255,255,255,0.75);font-size:0.82rem;font-family:var(--sans);font-weight:500;letter-spacing:0.01em;border-right:1px solid rgba(255,255,255,0.07);}
+.mtool svg{flex-shrink:0;border-radius:4px;}
+.mtool:hover{color:#fff;}
+@media(prefers-reduced-motion:reduce){.marquee-inner{animation:none;}}
+
+/* ── NAV PROGRESS BAR ── */
+.nav-progress{position:absolute;bottom:0;left:0;height:2px;background:var(--blue);width:0%;transition:width 0.1s linear;z-index:300;}
+
+/* ── MODERNIZED NAV ── */
+nav{padding:0.85rem 3.5rem;}
+.nav-links a{font-family:var(--sans);font-size:0.8rem;letter-spacing:0.02em;text-transform:none;font-weight:500;}
+.nav-logo{font-size:1rem;font-weight:700;font-style:normal;letter-spacing:-0.02em;}
+
+/* ── HERO STAT MODERNIZE ── */
+.stat-val{font-size:2.2rem;font-weight:800;letter-spacing:-0.04em;}
+.stat-label{font-family:var(--sans);font-size:0.72rem;font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0.01em;}
+
+/* ── FLOATING DOMAIN QUICK-JUMP ── */
+.domain-quickjump{position:fixed;right:1.2rem;top:50%;transform:translateY(-50%);z-index:150;display:flex;flex-direction:column;gap:6px;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.domain-quickjump.visible{opacity:1;pointer-events:all;}
+.dqj-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:1.5px solid var(--muted);cursor:pointer;transition:all 0.2s;position:relative;}
+.dqj-dot:hover{background:var(--blue);border-color:var(--blue);transform:scale(1.4);}
+.dqj-dot.active{background:var(--blue);border-color:var(--blue);}
+.dqj-dot[data-label]:hover::before{content:attr(data-label);position:absolute;right:14px;top:50%;transform:translateY(-50%);background:var(--ink);color:white;font-size:0.65rem;font-family:var(--sans);white-space:nowrap;padding:3px 8px;border-radius:3px;pointer-events:none;}
+
+/* ── SECTION HEADER CLEANUP (remove numbered sequence look) ── */
+.s-num{display:none;}
+.s-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-0.03em;}
+.s-title em{font-style:normal;color:var(--blue);}
+
+/* ── BADGE ROW MODERNIZE ── */
+.badge{font-family:var(--sans);font-size:0.74rem;letter-spacing:0.01em;text-transform:none;padding:0.3rem 0.75rem;border-radius:999px;border:1.5px solid var(--border);color:var(--muted);font-weight:500;}
+.badge.active{background:var(--blue-tint);border-color:var(--blue);color:var(--blue);}
+
+/* ── CARD HOVER GLOW ── */
+.card{transition:transform 0.18s ease,box-shadow 0.18s ease;}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(58,134,200,0.13);}
+
+</style>
     <div class="mon-wrap">
       <div class="mon-topbar">
         <div class="mon-logo">mon<span>.</span>day</div>
@@ -2448,6 +2576,35 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
 }, {threshold:0.08});
 revealEls.forEach(el => io.observe(el));
+
+// Progress bar
+function updateProgress(){
+  var scrolled = document.documentElement.scrollTop||document.body.scrollTop;
+  var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var pct = total > 0 ? (scrolled/total)*100 : 0;
+  var el = document.getElementById('navProgress');
+  if(el) el.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+
+// Floating quickjump show/hide
+var qj = document.getElementById('domainQJ');
+var qjSections = ['about','experience','work','skills','contact'];
+function updateQJ(){
+  var scrolled = window.scrollY || document.documentElement.scrollTop;
+  if(scrolled > 400){ if(qj) qj.classList.add('visible'); }
+  else { if(qj) qj.classList.remove('visible'); }
+  // highlight active dot
+  var dots = qj ? qj.querySelectorAll('.dqj-dot') : [];
+  var active = 0;
+  for(var i=0;i<qjSections.length;i++){
+    var sec = document.getElementById(qjSections[i]);
+    if(sec && sec.getBoundingClientRect().top <= 120) active = i;
+  }
+  dots.forEach(function(d,i){ d.classList.toggle('active', i===active); });
+}
+window.addEventListener('scroll', updateQJ, {passive:true});
+
 </script>
 </body>
 </html>
