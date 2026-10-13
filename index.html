@@ -2719,20 +2719,21 @@ nav{padding:0.85rem 3.5rem;}
 
 .hero-name{
   margin:0 0 1.2rem;
-  line-height:0.95;
-  letter-spacing:-0.04em;
+  line-height:1.0;
+  letter-spacing:-0.02em;
   font-weight:900;
+  white-space:nowrap;
 }
 .hero-first{
   display:block;
-  font-size:clamp(2.4rem,5vw,4.6rem);
+  font-size:clamp(2rem,3.8vw,3.6rem);
   color:#ffffff;
   font-family:var(--sans);
 }
 .hero-last{
   display:block;
-  font-size:clamp(2.4rem,5vw,4.6rem);
-  background:linear-gradient(135deg,#60a5fa 0%,#38bdf8 60%,#7dd3fc 100%);
+  font-size:clamp(2rem,3.8vw,3.6rem);
+  background:linear-gradient(135deg,#93c5fd 0%,#a5b4fc 50%,#c4b5fd 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
   font-family:var(--sans);
@@ -2839,7 +2840,7 @@ nav{padding:0.85rem 3.5rem;}
 }
 @media(max-width:600px){
   .hero-inner{padding:5rem 1.5rem 3rem;}
-  .hero-first,.hero-last{font-size:clamp(2rem,10vw,3rem);}
+  .hero-first,.hero-last{font-size:clamp(1.7rem,8vw,2.6rem);white-space:nowrap;}
 }
 /* Make sure old hero-left/right rules don't bleed in */
 .hero .hero-left,.hero .hero-right,.hero .hero-left::before{all:unset;}
@@ -3149,71 +3150,126 @@ nav{padding:0.85rem 3.5rem;}
 
 
 
-/* ═══ ACCENT REFINEMENT — Blues stay, warm accents added ═══ */
 
-/* Name gradient: richer blue-to-periwinkle-to-blush — more dimensional than flat cyan */
+
+
+/* ═══ COLOR SYSTEM v2 — IBM Blues + elevated accents ═══ */
+
+/* Core blue vars back to IBM scale */
+:root{
+  --blue:#0f62fe;
+  --blue-mid:#4589ff;
+  --blue-light:#82cfff;
+  --blue-tint:#edf5ff;
+  --teal:#0072c3;
+  --teal-tint:#e5f6ff;
+  --accent-violet:#8a3ffc;
+  --accent-gold:#f1c21b;
+}
+
+/* Hero background — deep IBM navy with a violet bloom */
+.hero-bg{
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(15,98,254,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 15% 85%, rgba(138,63,252,0.14) 0%, transparent 55%),
+    linear-gradient(145deg, #060d1a 0%, #08122a 50%, #0a1530 100%) !important;
+}
+.hero-orb-1{background:rgba(15,98,254,0.2) !important;}
+.hero-orb-2{background:rgba(138,63,252,0.13) !important;}
+.hero-orb-3{background:rgba(130,207,255,0.1) !important;}
+
+/* Grid overlay — IBM blue tint */
+.hero-grid-overlay{
+  background-image:
+    linear-gradient(rgba(130,207,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130,207,255,0.05) 1px, transparent 1px) !important;
+}
+
+/* Name: "Montgomery" — IBM sky-to-periwinkle gradient */
 .hero-last{
-  background:linear-gradient(135deg,#93c5fd 0%,#a5b4fc 45%,#c4b5fd 100%) !important;
+  background:linear-gradient(135deg,#82cfff 0%,#a8c0ff 45%,#be95ff 100%) !important;
   -webkit-background-clip:text !important;
   -webkit-text-fill-color:transparent !important;
   background-clip:text !important;
 }
 
-/* Hero background: add a warm rose hint at the bottom-left orb */
-.hero-orb-2{background:rgba(167,139,250,0.12) !important;}
+/* Eyebrow line — IBM blue to violet */
+.hero-eyebrow{ color:rgba(130,207,255,0.85) !important; }
+.hero-eyebrow-line{ background:linear-gradient(90deg,#4589ff,#8a3ffc) !important; }
 
-/* Eyebrow line: blue-to-indigo gradient instead of flat blue */
-.hero-eyebrow-line{background:linear-gradient(90deg,#3b82f6,#818cf8) !important;}
-
-/* Availability badge: keep green but soften */
-/* (no change needed — green badge reads well) */
-
-/* Primary CTA: blue-to-indigo gradient for more warmth */
+/* Primary button — IBM blue */
 .hbtn-primary{
-  background:linear-gradient(135deg,#2563eb,#7c3aed) !important;
-  box-shadow:0 4px 18px rgba(37,99,235,0.38) !important;
+  background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important;
+  box-shadow:0 4px 18px rgba(15,98,254,0.38) !important;
 }
-.hbtn-primary:hover{box-shadow:0 8px 28px rgba(37,99,235,0.5) !important;}
+.hbtn-primary:hover{ box-shadow:0 8px 28px rgba(15,98,254,0.5) !important; }
+.hbtn-outline{ border-color:rgba(130,207,255,0.35) !important; }
+.hbtn-outline:hover{ border-color:rgba(130,207,255,0.65) !important; color:#82cfff !important; }
 
-/* Hero card top shimmer: blue-to-indigo */
+/* Hero card shimmer — sky to violet */
 .hero-card::before{
-  background:linear-gradient(90deg,transparent,rgba(129,140,248,0.5),transparent) !important;
+  background:linear-gradient(90deg,transparent,rgba(138,63,252,0.45),transparent) !important;
 }
+.hero-card{ border-color:rgba(69,137,255,0.2) !important; }
+.hcard-stat:hover{ border-color:rgba(130,207,255,0.3) !important; }
 
-/* Stat card values: blue-to-periwinkle */
+/* Stat values — white to sky */
 .hcard-val{
-  background:linear-gradient(135deg,#ffffff,#c7d2fe) !important;
+  background:linear-gradient(135deg,#ffffff,#82cfff) !important;
   -webkit-background-clip:text !important;
   -webkit-text-fill-color:transparent !important;
   background-clip:text !important;
 }
 
-/* Timeline node: blue-to-indigo */
-.tl-node{background:linear-gradient(135deg,#2563eb,#6366f1) !important;}
-.tl-node{box-shadow:0 0 0 4px var(--offwhite),0 0 0 6px #2563eb !important;}
-.tl-card::before{background:linear-gradient(90deg,#2563eb,#6366f1) !important;}
+/* Cert pills in hero */
+.hcert{ border-color:rgba(69,137,255,0.35) !important; background:rgba(69,137,255,0.08) !important; }
 
-/* Section heading em: indigo accent */
-.s-title em{color:#6366f1;}
+/* Nav */
+.logo{ color:#4589ff !important; }
+nav a.active, nav a:hover{ color:#4589ff !important; }
 
-/* Scroll-to-top: blue-to-indigo */
-.sto-btn{background:linear-gradient(135deg,#2563eb,#6366f1) !important;}
+/* Section headings em */
+.s-title em{ color:#8a3ffc; }
 
-/* Radar: indigo fill */
-.ri-fill{background:linear-gradient(90deg,#2563eb,#6366f1) !important;}
+/* Timeline */
+.tl-node{ background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important; box-shadow:0 0 0 4px var(--offwhite),0 0 0 6px #0f62fe !important; }
+.tl-card::before{ background:linear-gradient(90deg,#0f62fe,#8a3ffc) !important; }
+.tl-date-pill{ color:#0f62fe !important; background:#edf5ff !important; }
+.tl-tags span{ color:#0f62fe !important; background:#edf5ff !important; }
+.tl-hl-dot{ background:linear-gradient(135deg,#4589ff,#8a3ffc) !important; }
 
-/* Skills cert row label */
-.certs-row-label{color:#6366f1 !important;}
+/* Portfolio */
+.pf-tab.active{ background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important; border-color:#0f62fe !important; }
+.pf-tab:hover{ border-color:#4589ff !important; color:#4589ff !important; }
+.pf-card-tags span{ color:#0f62fe !important; background:#edf5ff !important; }
+.pf-card-arrow{ color:#4589ff !important; }
 
-/* Cert chip hover */
-.cert-chip:hover{border-color:rgba(99,102,241,0.35) !important; box-shadow:0 4px 16px rgba(99,102,241,0.1) !important;}
+/* Skill bars use per-card --c already; certs row accent */
+.certs-row-label{ color:#8a3ffc !important; }
+.cert-chip.active-cert{ border-color:rgba(69,137,255,0.25) !important; }
+.cert-chip:hover{ border-color:#4589ff !important; box-shadow:0 4px 14px rgba(15,98,254,0.1) !important; }
 
-/* Portfolio tab active: keep blue, add warmth */
-.pf-tab.active{background:linear-gradient(135deg,#2563eb,#6366f1) !important; border-color:#2563eb !important;}
+/* Skill items hover accent */
+.sk-item:hover::after{ background:linear-gradient(90deg,#4589ff,#8a3ffc) !important; opacity:1 !important; }
 
-/* About sidebar stat values: blue-to-indigo */
-.sb-stat-val{background:linear-gradient(135deg,#60a5fa,#a5b4fc) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important;}
-.sb-card::after{background:linear-gradient(90deg,#2563eb,#6366f1) !important;}
+/* Radar */
+.radar-data{ fill:rgba(15,98,254,0.15) !important; stroke:#0f62fe !important; }
+.radar-dot{ fill:#4589ff !important; }
+.ri-fill{ background:linear-gradient(90deg,#0f62fe,#8a3ffc) !important; }
+.radar-legend-title{ color:#8a3ffc !important; }
+
+/* About sidebar */
+.sb-stat-val{ background:linear-gradient(135deg,#82cfff,#be95ff) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+.sb-stat-card{ border-color:rgba(69,137,255,0.25) !important; }
+.sb-card::after{ background:linear-gradient(90deg,#0f62fe,#8a3ffc) !important; }
+.sb-card-label{ color:#0f62fe !important; }
+.sb-cert-pill.active-p{ background:linear-gradient(135deg,#edf5ff,#f6f2ff) !important; color:#0f62fe !important; border-color:rgba(15,98,254,0.25) !important; }
+
+/* Scroll-to-top */
+.sto-btn{ background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important; box-shadow:0 4px 20px rgba(15,98,254,0.45) !important; }
+
+/* s-num section number badges */
+.s-num{ color:#8a3ffc; }
 
 </style>
     <div class="mon-wrap">
