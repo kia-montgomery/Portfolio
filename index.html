@@ -2725,13 +2725,13 @@ nav{padding:0.85rem 3.5rem;}
 }
 .hero-first{
   display:block;
-  font-size:clamp(3.5rem,7vw,6.5rem);
+  font-size:clamp(2.4rem,5vw,4.6rem);
   color:#ffffff;
   font-family:var(--sans);
 }
 .hero-last{
   display:block;
-  font-size:clamp(3.5rem,7vw,6.5rem);
+  font-size:clamp(2.4rem,5vw,4.6rem);
   background:linear-gradient(135deg,#60a5fa 0%,#38bdf8 60%,#7dd3fc 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
@@ -2839,7 +2839,7 @@ nav{padding:0.85rem 3.5rem;}
 }
 @media(max-width:600px){
   .hero-inner{padding:5rem 1.5rem 3rem;}
-  .hero-first,.hero-last{font-size:clamp(2.8rem,12vw,4rem);}
+  .hero-first,.hero-last{font-size:clamp(2rem,10vw,3rem);}
 }
 /* Make sure old hero-left/right rules don't bleed in */
 .hero .hero-left,.hero .hero-right,.hero .hero-left::before{all:unset;}
@@ -3144,6 +3144,76 @@ nav{padding:0.85rem 3.5rem;}
 
 @media(max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:580px){.pf-grid{grid-template-columns:1fr;}}
+
+
+
+
+
+/* ═══ ACCENT REFINEMENT — Blues stay, warm accents added ═══ */
+
+/* Name gradient: richer blue-to-periwinkle-to-blush — more dimensional than flat cyan */
+.hero-last{
+  background:linear-gradient(135deg,#93c5fd 0%,#a5b4fc 45%,#c4b5fd 100%) !important;
+  -webkit-background-clip:text !important;
+  -webkit-text-fill-color:transparent !important;
+  background-clip:text !important;
+}
+
+/* Hero background: add a warm rose hint at the bottom-left orb */
+.hero-orb-2{background:rgba(167,139,250,0.12) !important;}
+
+/* Eyebrow line: blue-to-indigo gradient instead of flat blue */
+.hero-eyebrow-line{background:linear-gradient(90deg,#3b82f6,#818cf8) !important;}
+
+/* Availability badge: keep green but soften */
+/* (no change needed — green badge reads well) */
+
+/* Primary CTA: blue-to-indigo gradient for more warmth */
+.hbtn-primary{
+  background:linear-gradient(135deg,#2563eb,#7c3aed) !important;
+  box-shadow:0 4px 18px rgba(37,99,235,0.38) !important;
+}
+.hbtn-primary:hover{box-shadow:0 8px 28px rgba(37,99,235,0.5) !important;}
+
+/* Hero card top shimmer: blue-to-indigo */
+.hero-card::before{
+  background:linear-gradient(90deg,transparent,rgba(129,140,248,0.5),transparent) !important;
+}
+
+/* Stat card values: blue-to-periwinkle */
+.hcard-val{
+  background:linear-gradient(135deg,#ffffff,#c7d2fe) !important;
+  -webkit-background-clip:text !important;
+  -webkit-text-fill-color:transparent !important;
+  background-clip:text !important;
+}
+
+/* Timeline node: blue-to-indigo */
+.tl-node{background:linear-gradient(135deg,#2563eb,#6366f1) !important;}
+.tl-node{box-shadow:0 0 0 4px var(--offwhite),0 0 0 6px #2563eb !important;}
+.tl-card::before{background:linear-gradient(90deg,#2563eb,#6366f1) !important;}
+
+/* Section heading em: indigo accent */
+.s-title em{color:#6366f1;}
+
+/* Scroll-to-top: blue-to-indigo */
+.sto-btn{background:linear-gradient(135deg,#2563eb,#6366f1) !important;}
+
+/* Radar: indigo fill */
+.ri-fill{background:linear-gradient(90deg,#2563eb,#6366f1) !important;}
+
+/* Skills cert row label */
+.certs-row-label{color:#6366f1 !important;}
+
+/* Cert chip hover */
+.cert-chip:hover{border-color:rgba(99,102,241,0.35) !important; box-shadow:0 4px 16px rgba(99,102,241,0.1) !important;}
+
+/* Portfolio tab active: keep blue, add warmth */
+.pf-tab.active{background:linear-gradient(135deg,#2563eb,#6366f1) !important; border-color:#2563eb !important;}
+
+/* About sidebar stat values: blue-to-indigo */
+.sb-stat-val{background:linear-gradient(135deg,#60a5fa,#a5b4fc) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important;}
+.sb-card::after{background:linear-gradient(90deg,#2563eb,#6366f1) !important;}
 
 </style>
     <div class="mon-wrap">
