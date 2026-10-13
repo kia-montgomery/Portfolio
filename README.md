@@ -8,7 +8,7 @@
 
 ## About
 
-I'm a PMP-certified PM with 9+ years of experience delivering HR technology, payroll modernization, and business transformation programs. I led project delivery for a large-scale Oracle PeopleSoft payroll transformation supporting **50,000+ end users** across four client organizations, managing **$11.1M in contract funding**, 80+ deliverables, 350+ change requests, and a 50+ person cross-functional team.
+I'm a PMP-certified PM with 8+ years of experience delivering HR technology, payroll modernization, and business transformation programs. I led project delivery for a large-scale Oracle PeopleSoft payroll transformation supporting **50,000+ end users** across four client organizations, managing **$11.1M in contract funding**, 80+ deliverables, 350+ change requests, and a 50+ person cross-functional team.
 
 This portfolio showcases **23 mock project management artifacts** organized across the 8 PMBOK Performance Domains — built to demonstrate depth, not just titles.
 
@@ -17,6 +17,7 @@ This portfolio showcases **23 mock project management artifacts** organized acro
 ## Tech Stack
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white)
 ![Jira](https://img.shields.io/badge/Jira-0052CC?style=flat&logo=jira&logoColor=white)
 ![Monday.com](https://img.shields.io/badge/Monday.com-F62B54?style=flat&logo=monday&logoColor=white)
 ![Oracle](https://img.shields.io/badge/Oracle%20PeopleSoft-F80000?style=flat&logo=oracle&logoColor=white)
@@ -51,6 +52,8 @@ This portfolio showcases **23 mock project management artifacts** organized acro
 - **PMP** — Project Management Institute
 - **SAFe 6.0 Scrum Master** — Scaled Agile
 - **ICAgile Certified Professional (ICP)** — ICAgile
+- **Workday HCM Fundamentals** — Workday
+- **Google Cloud Digital Leader** — Google
 - **MBA** — Howard University (2023)
 
 ---
