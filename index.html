@@ -742,80 +742,84 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="top" style="padding:0;position:relative;overflow:hidden;">
-  <!-- animated background shapes -->
-  <svg class="hero-bg-svg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#1a3a5c;stop-opacity:1"/>
-        <stop offset="100%" style="stop-color:#0d1f35;stop-opacity:1"/>
-      </linearGradient>
-      <linearGradient id="hg2" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:var(--blue);stop-opacity:0.15"/>
-        <stop offset="100%" style="stop-color:var(--blue);stop-opacity:0"/>
-      </linearGradient>
-    </defs>
-    <rect width="1200" height="700" fill="url(#hg1)"/>
-    <!-- floating geometric shapes -->
-    <circle cx="900" cy="120" r="280" fill="url(#hg2)" class="hero-circle-1"/>
-    <circle cx="1050" cy="500" r="160" fill="url(#hg2)" class="hero-circle-2"/>
-    <polygon points="80,600 200,400 320,600" fill="rgba(58,134,200,0.06)" class="hero-tri"/>
-    <!-- grid lines -->
-    <line x1="0" y1="350" x2="1200" y2="350" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-    <line x1="600" y1="0" x2="600" y2="700" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-    <!-- accent arc -->
-    <path d="M 1100 0 Q 1200 350 1100 700" fill="none" stroke="rgba(58,134,200,0.2)" stroke-width="2"/>
-  </svg>
+<section class="hero" id="top">
+  <!-- Mesh gradient background -->
+  <div class="hero-bg"></div>
+  <!-- Decorative grid overlay -->
+  <div class="hero-grid-overlay" aria-hidden="true"></div>
+  <!-- Floating orbs -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
 
-  <div class="hero-left" style="position:relative;z-index:2;">
-    <div class="hero-eyebrow-new">Project Manager &amp; Technology Consultant</div>
-    <h1 class="hero-name">Kia<br/><em>Montgomery</em></h1>
-    <div class="avail-badge">
-  <span class="avail-dot"></span>
-  Open to Opportunities
-</div>
-    <p class="hero-bio" style="color:rgba(255,255,255,0.75);max-width:500px;">PMP-certified PM with 8+ years delivering HR technology, payroll modernization, and enterprise transformation. Led an $11.1M Oracle PeopleSoft program serving 50,000+ users.</p>
-    <div class="badge-row" style="margin-top:1.4rem;">
-      <span class="badge active">PMP Certified</span>
-      <span class="badge active">SAFe 6.0 SM</span>
-      <span class="badge active">ICP Certified</span>
-      <span class="badge" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);">Howard University MBA</span>
+  <div class="hero-inner">
+    <!-- LEFT: text -->
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        Project Manager &amp; Technology Consultant
+      </div>
+      <h1 class="hero-name">
+        <span class="hero-first">Kia</span>
+        <span class="hero-last">Montgomery</span>
+      </h1>
+      <div class="avail-badge-v2">
+        <span class="avail-dot"></span>
+        Open to Opportunities
+      </div>
+      <p class="hero-bio">PMP-certified PM with 8+ years delivering HR technology, payroll modernization, and enterprise transformation. Led an $11.1M Oracle PeopleSoft program serving 50,000+ users at IBM.</p>
+      <div class="hero-certs">
+        <span class="hcert">PMP</span>
+        <span class="hcert">SAFe 6.0 SM</span>
+        <span class="hcert">ICP</span>
+        <span class="hcert hcert-muted">Howard University MBA</span>
+      </div>
+      <div class="hero-actions">
+        <a href="javascript:void(0)" onclick="nav('work')" class="hbtn hbtn-primary">View Portfolio</a>
+        <a href="Kia_Montgomery_Resume_githubPM.docx" download class="hbtn hbtn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 3v12m0 0-4-4m4 4 4-4M3 19h18"/></svg>
+          Resume
+        </a>
+        <a href="javascript:void(0)" onclick="nav('contact')" class="hbtn hbtn-ghost">Contact</a>
+      </div>
     </div>
-    <div class="btn-row" style="margin-top:2rem;">
-      <a href="javascript:void(0)" onclick="nav('work')" class="btn btn-primary">View Portfolio</a>
-      <a href="Kia_Montgomery_Resume_githubPM.docx" target="_blank" class="btn btn-ghost">Download Resume</a>
-      <a href="javascript:void(0)" onclick="nav('contact')" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
 
-  <div class="hero-right" style="position:relative;z-index:2;">
-    <!-- animated KM monogram ring -->
-    <div class="km-ring-wrap">
-      <svg class="km-ring" viewBox="0 0 220 220" width="220" height="220">
-        <circle cx="110" cy="110" r="100" fill="none" stroke="rgba(58,134,200,0.2)" stroke-width="1"/>
-        <circle cx="110" cy="110" r="85" fill="rgba(58,134,200,0.08)" stroke="rgba(58,134,200,0.35)" stroke-width="1.5" stroke-dasharray="6 4"/>
-        <circle cx="110" cy="110" r="68" fill="rgba(26,58,92,0.8)" stroke="rgba(58,134,200,0.5)" stroke-width="2"/>
-        <text x="110" y="125" text-anchor="middle" fill="white" font-size="38" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" letter-spacing="-2">KM</text>
-      </svg>
-    </div>
-    <!-- animated stats -->
-    <div class="hero-stats-grid">
-      <div class="hstat">
-        <div class="hstat-val" data-count="8" data-suffix="+">0</div>
-        <div class="hstat-lbl">Years</div>
+    <!-- RIGHT: stats card -->
+    <div class="hero-card">
+      <!-- KM monogram -->
+      <div class="hcard-monogram">
+        <svg viewBox="0 0 100 100" width="100" height="100">
+          <defs>
+            <linearGradient id="mgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#60a5fa"/>
+              <stop offset="100%" stop-color="#38bdf8"/>
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="48" fill="rgba(15,30,55,0.6)" stroke="rgba(96,165,250,0.4)" stroke-width="1.5"/>
+          <text x="50" y="65" text-anchor="middle" fill="url(#mgGrad)" font-size="28" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" letter-spacing="-1">KM</text>
+        </svg>
       </div>
-      <div class="hstat">
-        <div class="hstat-val" data-count="11" data-prefix="$" data-suffix="M+">$0</div>
-        <div class="hstat-lbl">Managed</div>
+      <!-- Stats grid -->
+      <div class="hcard-stats">
+        <div class="hcard-stat">
+          <div class="hcard-val" data-target="8" data-suffix="+">0+</div>
+          <div class="hcard-lbl">Years Exp.</div>
+        </div>
+        <div class="hcard-stat">
+          <div class="hcard-val" data-target="11" data-prefix="$" data-suffix="M+">$0M+</div>
+          <div class="hcard-lbl">Managed</div>
+        </div>
+        <div class="hcard-stat">
+          <div class="hcard-val" data-target="50" data-suffix="K+">0K+</div>
+          <div class="hcard-lbl">Users Impact</div>
+        </div>
+        <div class="hcard-stat">
+          <div class="hcard-val" data-target="80" data-suffix="+">0+</div>
+          <div class="hcard-lbl">Deliverables</div>
+        </div>
       </div>
-      <div class="hstat">
-        <div class="hstat-val" data-count="80" data-suffix="+">0</div>
-        <div class="hstat-lbl">Deliverables</div>
-      </div>
-      <div class="hstat">
-        <div class="hstat-val" data-count="50" data-suffix="+">0</div>
-        <div class="hstat-lbl">Team Led</div>
-      </div>
+      <!-- Decorative accent line -->
+      <div class="hcard-accent"></div>
     </div>
   </div>
 </section>
@@ -983,501 +987,451 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 <section class="exp-section" id="experience">
   <div class="s-head reveal"><span class="s-num">02</span><h2 class="s-title">Work <em>Experience</em></h2><div class="s-rule"></div></div>
 
-      <div class="exp-item reveal">
-    <div>
-      <div class="exp-co">IBM</div>
-      <div class="exp-dates">Jan 2024 — Apr 2026</div>
-      <div class="exp-location">Remote, Texas</div>
-    </div>
-    <div>
-      <div class="exp-toggle" onclick="toggleExp('exp-0')">
-        <div class="exp-title">Project Manager, HR Strategy and Implementation</div>
-        <span class="exp-chevron open" id="chev-exp-0">▼</span>
+  <div class="tl-container">
+
+    <!-- IBM 1 -->
+    <div class="tl-item reveal" data-side="right">
+      <div class="tl-node">
+        <div class="tl-node-inner">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
       </div>
-      <div class="exp-body open" id="body-exp-0">
-        <span class="exp-chevron" id="chev-ibm-May2024-May2026">▼</span>
-      </div>
-      <div class="exp-body" id="body-ibm-May2024-May2026">
-        <p class="exp-context" style="font-size:0.82rem;color:var(--muted);font-style:italic;margin-bottom:0.75rem;">Oracle PeopleSoft payroll transformation · 50,000+ end users · 50+ person team · $11.1M program · 80+ deliverables · SAFe Agile delivery</p>
-      <p class="exp-bullet">Led project delivery for a large-scale Oracle PeopleSoft payroll transformation supporting 50,000+ end users across four client organizations, coordinating 80+ deliverables, 350+ change requests, and 50+ risks through an Integrated Master Program Schedule to maintain scope, schedule, dependencies, and delivery commitments.</p>
-      <p class="exp-bullet">Translated program objectives and business requirements into executable project plans — developing the WBS, milestone schedule, communications, risk, and change management plans for a 50+ person cross-functional team; maintained the project charter and stakeholder register as scope and delivery needs evolved.</p>
-      <p class="exp-bullet">Directed day-to-day project governance and cross-functional execution across client leadership, program sponsors, delivery workstreams, and vendor partners; facilitated Steering Committee, Integrated Project Team, and Change Control Board activities while managing escalations, decisions, and follow-up actions.</p>
-      <p class="exp-bullet">Managed project scope, change, risk, and issue resolution by evaluating impacts of 350+ change requests, maintaining visibility into 50+ risks, coordinating mitigation activities, and integrating approved changes into project plans, schedules, stakeholder communications, and downstream delivery.</p>
-      <p class="exp-bullet">Managed project financial and resource planning supporting $11.1M in contract funding, using Power BI and Monday.com to provide visibility into labor forecasting, resource utilization, project performance, and executive status; improved labor forecasting by establishing standardized submission timelines and eliminating late inputs.</p>
-      <p class="exp-bullet">Coordinated Agile technology delivery within a SAFe environment, facilitating sprint planning, backlog refinement, and PI planning; tracked delivery velocity in Jira and coordinated UAT, functional testing, and regression testing across AWS environments supporting a 50,000+ user implementation.</p>
-      <p class="exp-bullet">Enabled digital transformation by developing 15+ Microsoft Copilot use cases with executives and senior managers, contributing to cost-benefit analysis and deployment decisions, and creating AI demonstrations that translated emerging capabilities into practical workflow improvements.</p>
-      </div>
-    </div>
-  </div>
-  <div class="exp-item reveal">
-    <div>
-      <div class="exp-co">IBM</div>
-      <div class="exp-dates">May 2023 — May 2024</div>
-      <div class="exp-location">Remote, Texas</div>
-    </div>
-    <div>
-      <div class="exp-toggle" onclick="toggleExp('exp-1')">
-        <div class="exp-title">Senior Consultant</div>
-        <span class="exp-chevron" id="chev-exp-1">▼</span>
-      </div>
-      <div class="exp-body" id="body-exp-1">
-        <p class="exp-bullet">Performed business analysis and built the Requirements Traceability Matrix (RTM) in Excel, linking requirements, testing, and Jira defects to give the team one source of truth for sign-off.</p>
-      <p class="exp-bullet">Facilitated sprint planning, backlog refinement and prioritization, and PI planning in a SAFe environment, tracking velocity in Jira so each sprint started with clear priorities and owners.</p>
-      <p class="exp-bullet">Completed and reviewed 15–20 Oracle PeopleSoft regression scripts in AWS-hosted test environments, logged and tracked defects in Jira, and supported retesting; introduced a cross-team resource-sharing process improvement adopted by the delivery team to ease a testing backlog.</p>
-      <p class="exp-bullet">Created end-user training, job aids, and communications, and turned WalkMe feedback and post-release lessons learned into improvements for each next release.</p>
-      <p class="exp-bullet">Started and led an internal generative AI working group, building 15+ AI use cases in Microsoft Copilot and Claude and a WatsonX assistant demo that were shared at all-hands meetings and informed leadership's cost-benefit and AI adoption decisions.</p>
+      <div class="tl-card">
+        <div class="tl-card-header">
+          <div class="tl-company-badge ibm-badge">IBM</div>
+          <div class="tl-date-pill">Jan 2024 — Apr 2026</div>
+        </div>
+        <h3 class="tl-title">Project Manager, HR Strategy &amp; Implementation</h3>
+        <div class="tl-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Remote, Texas
+        </div>
+        <div class="tl-context-strip">$11.1M program · 50,000+ users · 80+ deliverables · SAFe</div>
+        <div class="tl-highlights">
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Led Oracle PeopleSoft payroll transformation coordinating 350+ change requests and 50+ risks across an Integrated Master Program Schedule.</div>
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Directed day-to-day governance across client leadership, program sponsors, and vendor partners — Steering Committee, IPT, CCB facilitation.</div>
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Managed $11.1M contract funding with Power BI and Monday.com visibility into labor forecasting and executive status.</div>
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Enabled AI adoption — developed 15+ Microsoft Copilot use cases and WatsonX demo that informed leadership cost-benefit decisions.</div>
+        </div>
+        <div class="tl-tags">
+          <span>PMP</span><span>SAFe</span><span>Oracle PeopleSoft</span><span>Power BI</span><span>Monday.com</span><span>Jira</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="exp-item reveal">
-    <div>
-      <div class="exp-co">Accenture</div>
-      <div class="exp-dates">May 2022 — Aug 2022</div>
-      <div class="exp-location">Washington, D.C.</div>
-    </div>
-    <div>
-      <div class="exp-toggle" onclick="toggleExp('exp-2')">
-        <div class="exp-title">Strategy & Transformation MBA Intern</div>
-        <span class="exp-chevron" id="chev-exp-2">▼</span>
+
+    <!-- IBM 2 -->
+    <div class="tl-item reveal" data-side="left">
+      <div class="tl-node">
+        <div class="tl-node-inner">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
       </div>
-      <div class="exp-body" id="body-exp-2">
-        <p class="exp-bullet">Built a phased change and adoption plan and benchmarked relocation packages, guiding 150+ employees through a corporate headquarters relocation.</p>
-      <p class="exp-bullet">Analyzed pre- and post-relocation survey data in Excel and presented an executive risk brief that turned engagement gaps and flight risks into clear recommendations for leadership.</p>
-      <p class="exp-bullet">Created process maps, governance materials, and communications plans with consultants and client stakeholders, leaving reusable templates for the client's transformation team.</p>
-      </div>
-    </div>
-  </div>
-  <div class="exp-item reveal">
-    <div>
-      <div class="exp-co">Harris County</div>
-      <div class="exp-dates">Jan 2017 — Aug 2021</div>
-      <div class="exp-location">Houston, TX</div>
-    </div>
-    <div>
-      <div class="exp-toggle" onclick="toggleExp('exp-3')">
-        <div class="exp-title">Human Resources Division Manager</div>
-        <span class="exp-chevron" id="chev-exp-3">▼</span>
-      </div>
-      <div class="exp-body" id="body-exp-3">
-        <p class="exp-bullet">Tracked $1M–$3M in annual workforce spend in Excel, including position budgets and reclassifications, giving leadership current data for staffing decisions.</p>
-      <p class="exp-bullet">Coordinated a restructuring across six divisions, managing role transitions and headcount changes while keeping employee data accurate.</p>
-      <p class="exp-bullet">Supervised HR staff and trained and mentored 20+ managers and 6 directors on standardized performance practices while leading high-volume recruiting in NeoGov and Workday. Helped launch an accommodations internship program with ~70% full-time conversion.</p>
+      <div class="tl-card">
+        <div class="tl-card-header">
+          <div class="tl-company-badge ibm-badge">IBM</div>
+          <div class="tl-date-pill">May 2023 — May 2024</div>
+        </div>
+        <h3 class="tl-title">Senior Consultant</h3>
+        <div class="tl-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Remote, Texas
+        </div>
+        <div class="tl-highlights">
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Built Requirements Traceability Matrix linking requirements, testing, and Jira defects — single source of truth for sign-off.</div>
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Facilitated sprint planning, backlog refinement, and PI planning in SAFe; completed 15–20 PeopleSoft regression scripts in AWS environments.</div>
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Founded internal generative AI working group — 15+ Copilot and Claude use cases shared at all-hands; WatsonX demo informed AI adoption decisions.</div>
+        </div>
+        <div class="tl-tags">
+          <span>Business Analysis</span><span>RTM</span><span>SAFe</span><span>WatsonX</span><span>WalkMe</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="exp-item reveal">
-    <div>
-      <div class="exp-co">Harris County</div>
-      <div class="exp-dates">Jan 2016 — Jan 2017</div>
-      <div class="exp-location">Houston, TX</div>
-    </div>
-    <div>
-      <div class="exp-toggle" onclick="toggleExp('exp-4')">
-        <div class="exp-title">HR Coordinator</div>
-        <span class="exp-chevron" id="chev-exp-4">▼</span>
+
+    <!-- Accenture -->
+    <div class="tl-item reveal" data-side="right">
+      <div class="tl-node">
+        <div class="tl-node-inner">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+        </div>
       </div>
-      <div class="exp-body" id="body-exp-4">
-        <p class="exp-bullet">Coordinated data migration, UAT, and user training to move 500+ employees to Oracle PeopleSoft payroll.</p>
-      </div>
-    </div>
-  </div>
-  <div class="exp-item reveal">
-    <div>
-      <div class="exp-co">ABM Corporate HQ</div>
-      <div class="exp-dates">Jan 2012 — Jan 2015</div>
-      <div class="exp-location">Houston, TX</div>
-    </div>
-    <div>
-      <div class="exp-toggle" onclick="toggleExp('exp-5')">
-        <div class="exp-title">HR Generalist</div>
-        <span class="exp-chevron" id="chev-exp-5">▼</span>
-      </div>
-      <div class="exp-body" id="body-exp-5">
-        <p class="exp-bullet">Managed HR operations across multiple facility services sites — full-cycle recruiting, onboarding, benefits administration, and employee relations.</p>
+      <div class="tl-card">
+        <div class="tl-card-header">
+          <div class="tl-company-badge acn-badge">Accenture</div>
+          <div class="tl-date-pill">May 2022 — Aug 2022</div>
+        </div>
+        <h3 class="tl-title">Strategy &amp; Transformation MBA Intern</h3>
+        <div class="tl-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Washington, D.C.
+        </div>
+        <div class="tl-highlights">
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Built phased change and adoption plan guiding 150+ employees through a corporate HQ relocation.</div>
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Analyzed pre- and post-relocation survey data and presented executive risk brief with engagement gap recommendations.</div>
+        </div>
+        <div class="tl-tags"><span>Change Mgmt</span><span>OCM</span><span>Strategy</span></div>
       </div>
     </div>
-  </div>
-  <div class="exp-item reveal">
-    <div>
-      <div class="exp-co">LyondellBasell (CITGO)</div>
-      <div class="exp-dates">Jan 2011 — Jan 2012</div>
-      <div class="exp-location">Houston, TX</div>
-    </div>
-    <div>
-      <div class="exp-toggle" onclick="toggleExp('exp-6')">
-        <div class="exp-title">HR Coordinator</div>
-        <span class="exp-chevron" id="chev-exp-6">▼</span>
+
+    <!-- Harris County Manager -->
+    <div class="tl-item reveal" data-side="left">
+      <div class="tl-node">
+        <div class="tl-node-inner">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+        </div>
       </div>
-      <div class="exp-body" id="body-exp-6">
-        <p class="exp-bullet">Supported HR operations for a global petrochemical company — onboarding coordination, HRIS data management, and compliance reporting.</p>
+      <div class="tl-card">
+        <div class="tl-card-header">
+          <div class="tl-company-badge gov-badge">Harris County</div>
+          <div class="tl-date-pill">Jan 2017 — Aug 2021</div>
+        </div>
+        <h3 class="tl-title">Human Resources Division Manager</h3>
+        <div class="tl-location">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Houston, TX
+        </div>
+        <div class="tl-highlights">
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Tracked $1M–$3M annual workforce spend; coordinated restructuring across six divisions managing headcount transitions.</div>
+          <div class="tl-hl"><span class="tl-hl-dot"></span>Supervised HR staff, trained 20+ managers and 6 directors on standardized performance practices; led high-volume recruiting in NeoGov and Workday.</div>
+        </div>
+        <div class="tl-tags"><span>HR Strategy</span><span>Workday</span><span>NeoGov</span><span>Budget</span></div>
       </div>
     </div>
+
+    <!-- Earlier roles collapsed -->
+    <div class="tl-item reveal" data-side="right">
+      <div class="tl-node tl-node-sm">
+        <div class="tl-node-inner-sm"></div>
+      </div>
+      <div class="tl-card tl-card-sm">
+        <div class="tl-card-header">
+          <div class="tl-company-badge gov-badge">Harris County</div>
+          <div class="tl-date-pill">Jan 2016 — Jan 2017</div>
+        </div>
+        <h3 class="tl-title" style="font-size:0.9rem;">HR Coordinator</h3>
+        <p style="font-size:0.8rem;color:var(--muted);margin:0.4rem 0 0;">Coordinated data migration, UAT, and user training for 500+ employee Oracle PeopleSoft payroll rollout.</p>
+      </div>
+    </div>
+
+    <div class="tl-item reveal" data-side="left">
+      <div class="tl-node tl-node-sm">
+        <div class="tl-node-inner-sm"></div>
+      </div>
+      <div class="tl-card tl-card-sm">
+        <div class="tl-card-header">
+          <div class="tl-company-badge corp-badge">ABM</div>
+          <div class="tl-date-pill">2012 — 2015</div>
+        </div>
+        <h3 class="tl-title" style="font-size:0.9rem;">HR Generalist</h3>
+        <p style="font-size:0.8rem;color:var(--muted);margin:0.4rem 0 0;">Full-cycle HR operations — recruiting, onboarding, benefits, and employee relations across multi-site facility services.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 <section class="work-section" id="work">
   <div class="s-head reveal"><span class="s-num">03</span><h2 class="s-title">Portfolio <em>Artifacts</em></h2><div class="s-rule"></div></div>
 
-  <div class="portfolio-intro reveal">
-    <p>23 project management artifacts organized across 8 PMBOK Performance Domains — from initiating through closing. Click any domain to expand, then select an artifact to view the full document.</p>
+  <!-- Portfolio stats bar -->
+  <div class="pf-stats-bar reveal">
+    <div class="pf-stat"><span class="pf-stat-val">23</span><span class="pf-stat-lbl">Artifacts</span></div>
+    <div class="pf-stat-div"></div>
+    <div class="pf-stat"><span class="pf-stat-val">8</span><span class="pf-stat-lbl">PMBOK Domains</span></div>
+    <div class="pf-stat-div"></div>
+    <div class="pf-stat"><span class="pf-stat-val">$11.1M</span><span class="pf-stat-lbl">Program Scale</span></div>
+    <div class="pf-stat-div"></div>
+    <div class="pf-stat"><span class="pf-stat-val">50K+</span><span class="pf-stat-lbl">End Users</span></div>
   </div>
 
-  <div class="portfolio-stats reveal">
-    <div class="pstat"><div class="pstat-val">23</div><div class="pstat-label">Artifacts</div></div>
-    <div class="pstat"><div class="pstat-val">8</div><div class="pstat-label">PMBOK Domains</div></div>
-    <div class="pstat"><div class="pstat-val">$11.1M</div><div class="pstat-label">Program Scale</div></div>
-    <div class="pstat"><div class="pstat-val">50K+</div><div class="pstat-label">End Users</div></div>
+  <p class="pf-disclaimer reveal">⚠ All artifacts are mock deliverables created to demonstrate PM competency. Data is simulated and not client-confidential.</p>
+
+  <!-- Domain filter tabs -->
+  <div class="pf-tabs reveal" id="pfTabs">
+    <button class="pf-tab active" data-domain="all">All</button>
+    <button class="pf-tab" data-domain="gov">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      Governance
+    </button>
+    <button class="pf-tab" data-domain="scope">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Scope
+    </button>
+    <button class="pf-tab" data-domain="schedule">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Schedule
+    </button>
+    <button class="pf-tab" data-domain="cost">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Cost
+    </button>
+    <button class="pf-tab" data-domain="risk">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.29 3.86-8 14A1 1 0 0 0 3 19.5h18a1 1 0 0 0 .71-1.71l-8-14a1 1 0 0 0-1.42 0zM12 9v4M12 17h.01"/></svg>
+      Risk
+    </button>
+    <button class="pf-tab" data-domain="stakeholder">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Stakeholder
+    </button>
+    <button class="pf-tab" data-domain="agile">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Agile
+    </button>
+    <button class="pf-tab" data-domain="hr">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      HR
+    </button>
   </div>
 
-  <div class="expand-all-row reveal">
-    <button class="expand-all-btn" onclick="toggleAllGroups()">EXPAND ALL</button>
-  </div>
+  <!-- Artifact card grid -->
+  <div class="pf-grid reveal" id="pfGrid">
 
-  
-  <div class="portfolio-group open" id="pg-gov">
-    <div class="pg-header" onclick="toggleGroup('gov')">
-      <div class="pg-left">
-        <div class="pg-icon">🏛️</div>
-        <div class="pg-info">
-          <div class="pg-title">Governance</div>
-          <div class="pg-meta">3 Artifacts &nbsp;·&nbsp; Charter · Meeting Minutes · Lessons Learned</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:23%"></div></div>
-        </div>
+    <!-- GOVERNANCE -->
+    <a href="javascript:void(0)" onclick="nav('pm-02')" class="pf-card" data-domain="gov">
+      <div class="pf-card-domain gov-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Governance
       </div>
-      <span class="pg-chevron" id="pgchev-gov">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-gov">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('pm-02')" class="card"><div class="card-num">GOV-01</div><div class="card-tag">Initiating</div><h3 class="card-title">Project Charter &<br/><em>Scope Definition</em></h3><p class="card-desc">Formal charter — objectives, scope decisions, budget breakdown, stakeholder authorization, 4-phase timeline, KPI targets.</p><div class="card-highlights"><span class="highlight">$1.25M · 9 months · 5 KPIs</span><span class="highlight">85.5% projected 3-year ROI</span></div><div class="card-tools"><span class="tag">Charter</span><span class="tag">PMBOK 4.1</span><span class="tag">Initiating</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pmo-04')" class="card"><div class="card-num">GOV-02</div><div class="card-tag">Executing</div><h3 class="card-title">Meeting Minutes<br/><em>Kickoff & Sprint Review</em></h3><p class="card-desc">Steering Committee kickoff and Sprint 6 Review — structured decisions, action items, owners, due dates, charter sign-off.</p><div class="card-highlights"><span class="highlight">7 decisions · 12 action items</span><span class="highlight">Charter signed · SLAs agreed</span></div><div class="card-tools"><span class="tag">Governance</span><span class="tag">Facilitation</span><span class="tag">Minutes</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('close-01')" class="card"><div class="card-num">GOV-03</div><div class="card-tag">Closing</div><h3 class="card-title">Lessons Learned<br/><em>Final Report</em></h3><p class="card-desc">Project summary, schedule/cost/scope variances, 8 root-cause lessons, and recommendations submitted to IBM Center of Excellence.</p><div class="card-highlights"><span class="highlight">All 5 KPIs exceeded</span><span class="highlight">IBM CoE submission format</span></div><div class="card-tools"><span class="tag">Closing</span><span class="tag">Lessons Learned</span><span class="tag">IBM CoE</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
+      <div class="pf-card-num">GOV-01</div>
+      <div class="pf-card-phase">Initiating</div>
+      <h3 class="pf-card-title">Project Charter &amp; Scope Definition</h3>
+      <p class="pf-card-desc">Formal charter with objectives, scope, budget, stakeholder authorization, and 4-phase timeline.</p>
+      <div class="pf-card-meta"><span>$1.25M · 9 months</span><span>85.5% ROI</span></div>
+      <div class="pf-card-tags"><span>Charter</span><span>PMBOK 4.1</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
 
-  <div class="portfolio-group" id="pg-scope">
-    <div class="pg-header" onclick="toggleGroup('scope')">
-      <div class="pg-left">
-        <div class="pg-icon">🎯</div>
-        <div class="pg-info">
-          <div class="pg-title">Scope</div>
-          <div class="pg-meta">2 Artifacts &nbsp;·&nbsp; Gantt Chart · Deliverable Acceptance</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:26%"></div></div>
-        </div>
+    <a href="javascript:void(0)" onclick="nav('pmo-04')" class="pf-card" data-domain="gov">
+      <div class="pf-card-domain gov-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Governance
       </div>
-      <span class="pg-chevron" id="pgchev-scope">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-scope">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('pm-05')" class="card"><div class="card-num">SCP-01</div><div class="card-tag">Planning</div><h3 class="card-title">Project Schedule &<br/><em>Gantt Chart</em></h3><p class="card-desc">21-task Gantt across 4 phases with owners, dates, percent complete, WBS structure, and change request log CR-001 through CR-005.</p><div class="card-highlights"><span class="highlight">21 tasks · 4 phases · 9-month arc</span><span class="highlight">5 change requests managed</span></div><div class="card-tools"><span class="tag">Gantt</span><span class="tag">WBS</span><span class="tag">Planning</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pm-new-m')" class="card"><div class="card-num">SCP-02</div><div class="card-tag">M&C · Validate Scope</div><h3 class="card-title">Deliverable Acceptance<br/><em>Form</em></h3><p class="card-desc">Formal sign-off criteria per deliverable — acceptance criteria, pass/fail gate, client signature, corrective action path.</p><div class="card-highlights"><span class="highlight">8 deliverables · pass/fail gates</span><span class="highlight">Client sign-off · corrective action</span></div><div class="card-tools"><span class="tag">Validate Scope</span><span class="tag">Sign-off</span><span class="tag">PMBOK 5.5</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
+      <div class="pf-card-num">GOV-02</div>
+      <div class="pf-card-phase">Executing</div>
+      <h3 class="pf-card-title">Meeting Minutes — Kickoff &amp; Sprint Review</h3>
+      <p class="pf-card-desc">Steering Committee kickoff and Sprint 6 Review with decisions, action items, and charter sign-off.</p>
+      <div class="pf-card-meta"><span>7 decisions</span><span>12 action items</span></div>
+      <div class="pf-card-tags"><span>Governance</span><span>Minutes</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
 
-  <div class="portfolio-group" id="pg-sched">
-    <div class="pg-header" onclick="toggleGroup('sched')">
-      <div class="pg-left">
-        <div class="pg-icon">📅</div>
-        <div class="pg-info">
-          <div class="pg-title">Schedule</div>
-          <div class="pg-meta">1 Artifact &nbsp;·&nbsp; Schedule Management Plan</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:33%"></div></div>
-        </div>
+    <a href="javascript:void(0)" onclick="nav('close-01')" class="pf-card" data-domain="gov">
+      <div class="pf-card-domain gov-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        Governance
       </div>
-      <span class="pg-chevron" id="pgchev-sched">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-sched">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('sched-new')" class="card"><div class="card-num">SCH-01</div><div class="card-tag">Planning · M&C</div><h3 class="card-title">Schedule Management<br/><em>Plan</em></h3><p class="card-desc">Schedule methodology, baseline phases, variance thresholds, change control process, and EVM schedule metrics — SPI 1.06 at Phase 2.</p><div class="card-highlights"><span class="highlight">SPI 1.06 · 4 phases · 21 tasks</span><span class="highlight">Variance thresholds · change control</span></div><div class="card-tools"><span class="tag">PMBOK 6.1</span><span class="tag">EVM</span><span class="tag">Baseline</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
+      <div class="pf-card-num">GOV-03</div>
+      <div class="pf-card-phase">Closing</div>
+      <h3 class="pf-card-title">Lessons Learned Final Report</h3>
+      <p class="pf-card-desc">8 root-cause lessons, variances, and recommendations submitted to IBM Center of Excellence.</p>
+      <div class="pf-card-meta"><span>All 5 KPIs exceeded</span><span>IBM CoE</span></div>
+      <div class="pf-card-tags"><span>Lessons Learned</span><span>Closing</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
 
-  <div class="portfolio-group" id="pg-fin">
-    <div class="pg-header" onclick="toggleGroup('fin')">
-      <div class="pg-left">
-        <div class="pg-icon">💰</div>
-        <div class="pg-info">
-          <div class="pg-title">Finance</div>
-          <div class="pg-meta">2 Artifacts &nbsp;·&nbsp; Business Case & ROI · Budget Reports</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:26%"></div></div>
-        </div>
+    <!-- SCOPE -->
+    <a href="javascript:void(0)" onclick="nav('sched-01')" class="pf-card" data-domain="scope">
+      <div class="pf-card-domain scope-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Scope
       </div>
-      <span class="pg-chevron" id="pgchev-fin">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-fin">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('fin-01')" class="card"><div class="card-num">FIN-01</div><div class="card-tag">Planning · Develop Budget</div><h3 class="card-title">Business Case &<br/><em>ROI Analysis</em></h3><p class="card-desc">Full $1.25M investment justification — problem statement, 4 alternatives, quantified benefits, 3-year financial projection.</p><div class="card-highlights"><span class="highlight">$1.07M annual benefit</span><span class="highlight">18-month payback · 85.5% 3-yr ROI</span></div><div class="card-tools"><span class="tag">Business Case</span><span class="tag">ROI</span><span class="tag">Estimate Costs</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('fin-02')" class="card"><div class="card-num">FIN-02</div><div class="card-tag">M&C · Monitor Finances</div><h3 class="card-title">Budget & Labor<br/><em>Cost Reports</em></h3><p class="card-desc">Quarterly budget tracker, 7-person labor utilization with billing rates, contractor invoice tracking — CPI 1.03, $32K under forecast.</p><div class="card-highlights"><span class="highlight">$612K spent · $32K under forecast</span><span class="highlight">CPI 1.03 · 7 team members</span></div><div class="card-tools"><span class="tag">EVM</span><span class="tag">Budget Tracking</span><span class="tag">Labor</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
+      <div class="pf-card-num">SCP-01</div>
+      <div class="pf-card-phase">Planning</div>
+      <h3 class="pf-card-title">Work Breakdown Structure &amp; Gantt</h3>
+      <p class="pf-card-desc">Full WBS decomposing the 4-phase program with 21 work packages, dependencies, and Gantt baseline.</p>
+      <div class="pf-card-meta"><span>4 phases · 21 tasks</span><span>9-month baseline</span></div>
+      <div class="pf-card-tags"><span>WBS</span><span>Gantt</span><span>PMBOK 5.4</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
 
-  <div class="portfolio-group" id="pg-stk">
-    <div class="pg-header" onclick="toggleGroup('stk')">
-      <div class="pg-left">
-        <div class="pg-icon">👥</div>
-        <div class="pg-info">
-          <div class="pg-title">Stakeholders</div>
-          <div class="pg-meta">2 Artifacts &nbsp;·&nbsp; Communications Plan · Issue Log</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:26%"></div></div>
-        </div>
+    <a href="javascript:void(0)" onclick="nav('pm-new-m')" class="pf-card" data-domain="scope">
+      <div class="pf-card-domain scope-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Scope
       </div>
-      <span class="pg-chevron" id="pgchev-stk">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-stk">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('pm-09')" class="card"><div class="card-num">STK-01</div><div class="card-tag">Planning · Manage Comms</div><h3 class="card-title">Communications<br/><em>Management Plan</em></h3><p class="card-desc">8 audiences, 12 communication types, full cadence matrix, and 3-tier escalation protocol — who gets what, when, and how.</p><div class="card-highlights"><span class="highlight">8 audiences · 12 comm types</span><span class="highlight">Tier 1/2/3 escalation protocol</span></div><div class="card-tools"><span class="tag">PMBOK 10.1</span><span class="tag">Comms Plan</span><span class="tag">Stakeholder</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pm-10')" class="card"><div class="card-num">STK-02</div><div class="card-tag">M&C · Monitor Engagement</div><h3 class="card-title">Issue Log &<br/><em>Resolution Tracker</em></h3><p class="card-desc">12 issues tracked — owner, resolution path, target date, escalation status. Avg 4.2 days to close non-escalated issues.</p><div class="card-highlights"><span class="highlight">12 issues · 3 escalated · 7 closed</span><span class="highlight">Avg 4.2 days to close</span></div><div class="card-tools"><span class="tag">Issue Management</span><span class="tag">Escalation</span><span class="tag">M&C</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
+      <div class="pf-card-num">SCP-02</div>
+      <div class="pf-card-phase">M&amp;C · Validate Scope</div>
+      <h3 class="pf-card-title">Deliverable Acceptance Form</h3>
+      <p class="pf-card-desc">Formal sign-off criteria per deliverable — acceptance gates, pass/fail criteria, client signature.</p>
+      <div class="pf-card-meta"><span>8 deliverables</span><span>Pass/fail gates</span></div>
+      <div class="pf-card-tags"><span>Validate Scope</span><span>Sign-off</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
 
-  <div class="portfolio-group" id="pg-res">
-    <div class="pg-header" onclick="toggleGroup('res')">
-      <div class="pg-left">
-        <div class="pg-icon">🧑‍💼</div>
-        <div class="pg-info">
-          <div class="pg-title">Resources</div>
-          <div class="pg-meta">4 Artifacts &nbsp;·&nbsp; Labor Report · Key Personnel · Onboarding · Skill Gap</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:17%"></div></div>
-        </div>
+    <!-- SCHEDULE -->
+    <a href="javascript:void(0)" onclick="nav('sched-new')" class="pf-card" data-domain="schedule">
+      <div class="pf-card-domain sched-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Schedule
       </div>
-      <span class="pg-chevron" id="pgchev-res">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-res">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('hr-new-a')" class="card"><div class="card-num">RES-01</div><div class="card-tag">M&C · Monitor Resourcing</div><h3 class="card-title">Labor Report &<br/><em>Timesheet Tracker</em></h3><p class="card-desc">Hours by person, WBS element, CLIN, billing period — contract-compliant format with PM certification and utilization summary.</p><div class="card-highlights"><span class="highlight">7 team members · 682 hrs billed</span><span class="highlight">WBS · CLIN · contract compliant</span></div><div class="card-tools"><span class="tag">Labor</span><span class="tag">Compliance</span><span class="tag">Resourcing</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('hr-new-b')" class="card"><div class="card-num">RES-02</div><div class="card-tag">Planning · Estimate Resources</div><h3 class="card-title">Key Personnel<br/><em>Resume Tracker</em></h3><p class="card-desc">Name, role, LCAT, education, relevant experience, clearance level — proposal-ready and active project resource planning.</p><div class="card-highlights"><span class="highlight">7 key personnel profiles</span><span class="highlight">LCAT · clearance · experience</span></div><div class="card-tools"><span class="tag">Staffing</span><span class="tag">LCAT</span><span class="tag">Proposal</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('hr-new-c')" class="card"><div class="card-num">RES-03</div><div class="card-tag">Executing · Lead the Team</div><h3 class="card-title">Employee Onboarding<br/><em>Checklist</em></h3><p class="card-desc">38 tasks across Day 1, Week 1, and Month 1 — IT, HR, Security, and Manager tracks. The manual baseline that the AI platform replaced.</p><div class="card-highlights"><span class="highlight">38 tasks · Day 1 through Month 1</span><span class="highlight">Automation reduced 22d → 3.8d</span></div><div class="card-tools"><span class="tag">Onboarding</span><span class="tag">HR Ops</span><span class="tag">Executing</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('hr-new-d')" class="card"><div class="card-num">RES-04</div><div class="card-tag">Planning · Acquire Resources</div><h3 class="card-title">Skill Gap &<br/><em>Training Tracker</em></h3><p class="card-desc">Required vs current skills per team member — gap analysis, training plan with courses, completion dates, and status.</p><div class="card-highlights"><span class="highlight">7 members · 11 gaps identified</span><span class="highlight">7 of 11 training complete</span></div><div class="card-tools"><span class="tag">Skill Gap</span><span class="tag">Training</span><span class="tag">Development</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
+      <div class="pf-card-num">SCH-01</div>
+      <div class="pf-card-phase">Planning · M&amp;C</div>
+      <h3 class="pf-card-title">Schedule Management Plan</h3>
+      <p class="pf-card-desc">Schedule methodology, baselines, variance thresholds, change control, and EVM metrics — SPI 1.06.</p>
+      <div class="pf-card-meta"><span>SPI 1.06</span><span>4 phases · 21 tasks</span></div>
+      <div class="pf-card-tags"><span>EVM</span><span>PMBOK 6.1</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
 
-  <div class="portfolio-group" id="pg-risk">
-    <div class="pg-header" onclick="toggleGroup('risk')">
-      <div class="pg-left">
-        <div class="pg-icon">⚠️</div>
-        <div class="pg-info">
-          <div class="pg-title">Risk</div>
-          <div class="pg-meta">3 Artifacts &nbsp;·&nbsp; Risk Register · Health Dashboard · SOW Compliance Matrix</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:23%"></div></div>
-        </div>
+    <!-- COST -->
+    <a href="javascript:void(0)" onclick="nav('cost-01')" class="pf-card" data-domain="cost">
+      <div class="pf-card-domain cost-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Cost
       </div>
-      <span class="pg-chevron" id="pgchev-risk">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-risk">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('pm-03')" class="card"><div class="card-num">RSK-01</div><div class="card-tag">Planning · Identify Risks</div><h3 class="card-title">Risk Register &<br/><em>Response Plan</em></h3><p class="card-desc">10-risk register across 6 categories with probability/impact scoring, AI bias risk, CCPA compliance risk, and response strategies.</p><div class="card-highlights"><span class="highlight">4 High · 5 Medium · 1 Low</span><span class="highlight">Mitigate · Transfer · Avoid · Accept</span></div><div class="card-tools"><span class="tag">PMBOK 11</span><span class="tag">Risk Register</span><span class="tag">AI Ethics</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pmo-new-a')" class="card"><div class="card-num">RSK-02</div><div class="card-tag">M&C · Monitor Risks</div><h3 class="card-title">Project Health<br/><em>Dashboard (RAG)</em></h3><p class="card-desc">Live RAG status across schedule, budget, scope, quality, and risk — executive-ready weekly dashboard with decisions required.</p><div class="card-highlights"><span class="highlight">5 RAG dimensions · trend indicators</span><span class="highlight">2 decisions escalated to Steering Cmte</span></div><div class="card-tools"><span class="tag">RAG</span><span class="tag">Monitor Risks</span><span class="tag">EVM</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('prop-01')" class="card"><div class="card-num">RSK-03</div><div class="card-tag">Planning · Plan Risk Responses</div><h3 class="card-title">SOW Compliance<br/><em>Matrix</em></h3><p class="card-desc">SOW requirements mapped to evaluation criteria — every proposal section tracked to a specific client requirement; win strategy and competitive analysis.</p><div class="card-highlights"><span class="highlight">18 SOW tasks · 42 requirements</span><span class="highlight">pWin 74% · IBM BD process</span></div><div class="card-tools"><span class="tag">Risk Response</span><span class="tag">Compliance</span><span class="tag">BD</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
+      <div class="pf-card-num">CST-01</div>
+      <div class="pf-card-phase">Planning</div>
+      <h3 class="pf-card-title">Budget Plan &amp; EVM Tracker</h3>
+      <p class="pf-card-desc">Phase-level cost estimates, actuals vs. baseline tracking, CPI/SPI, forecast at completion.</p>
+      <div class="pf-card-meta"><span>$11.1M program</span><span>EVM metrics</span></div>
+      <div class="pf-card-tags"><span>EVM</span><span>Budget</span><span>PMBOK 7</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
 
-  <div class="portfolio-group" id="pg-agile">
-    <div class="pg-header" onclick="toggleGroup('agile')">
-      <div class="pg-left">
-        <div class="pg-icon">🏃</div>
-        <div class="pg-info">
-          <div class="pg-title">Agile Delivery</div>
-          <div class="pg-meta">6 Artifacts &nbsp;·&nbsp; PI Planning · Kanban · User Story Map · UAT · QC</div>
-          <div class="pg-bar-wrap"><div class="pg-bar" style="width:46%"></div></div>
-        </div>
+    <a href="javascript:void(0)" onclick="nav('cost-02')" class="pf-card" data-domain="cost">
+      <div class="pf-card-domain cost-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Cost
       </div>
-      <span class="pg-chevron" id="pgchev-agile">▼</span>
-    </div>
-    <div class="pg-body" id="pgbody-agile">
-      <div class="pg-body-inner">
-        <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('sm-02')" class="card"><div class="card-num">AGL-01</div><div class="card-tag">PI Planning · SAFe</div><h3 class="card-title">PI Planning<br/><em>Document</em></h3><p class="card-desc">PI 3 planning — team objectives, sprint capacity, cross-team dependencies, risks across 3 agile teams in the ART.</p><div class="card-highlights"><span class="highlight">3 teams · 9 objectives · 4 sprints</span><span class="highlight">6 cross-team dependencies mapped</span></div><div class="card-tools"><span class="tag">PI Planning</span><span class="tag">SAFe</span><span class="tag">ART</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('sm-06')" class="card"><div class="card-num">AGL-02</div><div class="card-tag">Executing · Agile Tracking</div><h3 class="card-title">Monday.com Sprint<br/><em>Tracker Board</em></h3><p class="card-desc">17 tasks across 3 workstreams — AI Integration, Process & Delivery, Strategy & Reporting — with status, owners, deadlines.</p><div class="card-highlights"><span class="highlight">17 tasks · 3 workstreams · Sprint 3</span><span class="highlight">Status pills · effort bars · blockers</span></div><div class="card-tools"><span class="tag">Monday.com</span><span class="tag">Sprint</span><span class="tag">Agile</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('sm-kanban')" class="card"><div class="card-num">AGL-03</div><div class="card-tag">Executing · Kanban</div><h3 class="card-title">Sprint Kanban<br/><em>Board</em></h3><p class="card-desc">Interactive drag-and-drop Sprint 7 board — 8 stories, WIP limits enforced, blocker flagged, real-time progress bar.</p><div class="card-highlights"><span class="highlight">8 stories · 33 pts · 4 columns</span><span class="highlight">Drag & drop · live progress bar</span></div><div class="card-tools"><span class="tag">Kanban</span><span class="tag">WIP Limits</span><span class="tag">SAFe</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('sm-new-d')" class="card"><div class="card-num">AGL-04</div><div class="card-tag">Planning · Product Mapping</div><h3 class="card-title">User Story<br/><em>Map</em></h3><p class="card-desc">Epic > Feature > Story with release swim lanes — full product scope in one visual, MVP boundary explicit, 3 release targets.</p><div class="card-highlights"><span class="highlight">5 epics · 14 features · 3 releases</span><span class="highlight">MVP boundary · release swim lanes</span></div><div class="card-tools"><span class="tag">Story Map</span><span class="tag">Product</span><span class="tag">Release</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('qa-01')" class="card"><div class="card-num">AGL-05</div><div class="card-tag">Executing · Quality Assurance</div><h3 class="card-title">UAT Plan &<br/><em>Defect Tracker</em></h3><p class="card-desc">Full UAT planning — 24 test scenarios, entry/exit criteria, tester assignments, defect log with severity, sign-off tracking.</p><div class="card-highlights"><span class="highlight">24 test scenarios · 3 test cycles</span><span class="highlight">Defect log · P1 resolution SLA</span></div><div class="card-tools"><span class="tag">UAT</span><span class="tag">QA</span><span class="tag">Defect Mgmt</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('qa-new-a')" class="card"><div class="card-num">AGL-06</div><div class="card-tag">M&C · Quality Control</div><h3 class="card-title">Quality Control<br/><em>Checklist</em></h3><p class="card-desc">3-tier inspection per deliverable — PM, QA Lead, Engagement Lead sign-off. Pass/fail gates with corrective action tracking.</p><div class="card-highlights"><span class="highlight">8 deliverables · 3-tier inspection</span><span class="highlight">Pass/fail · corrective action</span></div><div class="card-tools"><span class="tag">QC</span><span class="tag">PMBOK 8.3</span><span class="tag">Acceptance</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
+      <div class="pf-card-num">CST-02</div>
+      <div class="pf-card-phase">M&amp;C</div>
+      <h3 class="pf-card-title">Executive Cost Status Report</h3>
+      <p class="pf-card-desc">One-page monthly executive summary of cost performance, variance analysis, and corrective actions.</p>
+      <div class="pf-card-meta"><span>Monthly cadence</span><span>Executive format</span></div>
+      <div class="pf-card-tags"><span>Status Report</span><span>Power BI</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <!-- RISK -->
+    <a href="javascript:void(0)" onclick="nav('risk-01')" class="pf-card" data-domain="risk">
+      <div class="pf-card-domain risk-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.29 3.86-8 14A1 1 0 0 0 3 19.5h18a1 1 0 0 0 .71-1.71l-8-14a1 1 0 0 0-1.42 0zM12 9v4M12 17h.01"/></svg>
+        Risk
       </div>
-    </div>
+      <div class="pf-card-num">RSK-01</div>
+      <div class="pf-card-phase">Planning · M&amp;C</div>
+      <h3 class="pf-card-title">Risk Register &amp; RAID Log</h3>
+      <p class="pf-card-desc">Active risk register with probability/impact matrix, mitigation owners, 50+ risks tracked across program.</p>
+      <div class="pf-card-meta"><span>50+ risks</span><span>Probability/impact</span></div>
+      <div class="pf-card-tags"><span>RAID</span><span>Risk Matrix</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <a href="javascript:void(0)" onclick="nav('risk-02')" class="pf-card" data-domain="risk">
+      <div class="pf-card-domain risk-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10.29 3.86-8 14A1 1 0 0 0 3 19.5h18a1 1 0 0 0 .71-1.71l-8-14a1 1 0 0 0-1.42 0zM12 9v4M12 17h.01"/></svg>
+        Risk
+      </div>
+      <div class="pf-card-num">RSK-02</div>
+      <div class="pf-card-phase">Planning</div>
+      <h3 class="pf-card-title">Risk Management Plan</h3>
+      <p class="pf-card-desc">Risk appetite, thresholds, identification methodology, response planning, and escalation procedures.</p>
+      <div class="pf-card-meta"><span>Risk appetite defined</span><span>Escalation matrix</span></div>
+      <div class="pf-card-tags"><span>Risk Plan</span><span>PMBOK 11.1</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <!-- STAKEHOLDER -->
+    <a href="javascript:void(0)" onclick="nav('stake-01')" class="pf-card" data-domain="stakeholder">
+      <div class="pf-card-domain stake-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Stakeholder
+      </div>
+      <div class="pf-card-num">STK-01</div>
+      <div class="pf-card-phase">Planning</div>
+      <h3 class="pf-card-title">Stakeholder Register &amp; Power/Interest Grid</h3>
+      <p class="pf-card-desc">Full stakeholder analysis with influence mapping, engagement strategy, and communication preferences.</p>
+      <div class="pf-card-meta"><span>30+ stakeholders</span><span>Power/interest grid</span></div>
+      <div class="pf-card-tags"><span>PMBOK 13.1</span><span>Engagement</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <a href="javascript:void(0)" onclick="nav('stake-02')" class="pf-card" data-domain="stakeholder">
+      <div class="pf-card-domain stake-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Stakeholder
+      </div>
+      <div class="pf-card-num">STK-02</div>
+      <div class="pf-card-phase">Executing</div>
+      <h3 class="pf-card-title">Communications Management Plan</h3>
+      <p class="pf-card-desc">Cadence matrix for executive, IPT, and vendor communications — format, frequency, owner, and channel.</p>
+      <div class="pf-card-meta"><span>5 communication tiers</span><span>Cadence matrix</span></div>
+      <div class="pf-card-tags"><span>Comms Plan</span><span>RACI</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <!-- AGILE -->
+    <a href="javascript:void(0)" onclick="nav('agile-01')" class="pf-card" data-domain="agile">
+      <div class="pf-card-domain agile-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Agile
+      </div>
+      <div class="pf-card-num">AGL-01</div>
+      <div class="pf-card-phase">Sprint Planning</div>
+      <h3 class="pf-card-title">Sprint Plan &amp; Backlog — Sprint 6</h3>
+      <p class="pf-card-desc">Sprint goals, user stories with acceptance criteria, story points, team assignments, and velocity tracking.</p>
+      <div class="pf-card-meta"><span>22 story points</span><span>Team velocity tracked</span></div>
+      <div class="pf-card-tags"><span>Scrum</span><span>Jira</span><span>SAFe</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <a href="javascript:void(0)" onclick="nav('agile-02')" class="pf-card" data-domain="agile">
+      <div class="pf-card-domain agile-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Agile
+      </div>
+      <div class="pf-card-num">AGL-02</div>
+      <div class="pf-card-phase">SAFe PI Planning</div>
+      <h3 class="pf-card-title">PI Planning Board &amp; Program Increment</h3>
+      <p class="pf-card-desc">SAFe PI objectives, feature breakdown, team iterations, dependencies, and risk identification board.</p>
+      <div class="pf-card-meta"><span>5 teams</span><span>PI objectives</span></div>
+      <div class="pf-card-tags"><span>SAFe 6.0</span><span>PI Board</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <a href="javascript:void(0)" onclick="nav('agile-rtm')" class="pf-card" data-domain="agile">
+      <div class="pf-card-domain agile-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Agile
+      </div>
+      <div class="pf-card-num">AGL-03</div>
+      <div class="pf-card-phase">Testing · M&amp;C</div>
+      <h3 class="pf-card-title">Requirements Traceability Matrix</h3>
+      <p class="pf-card-desc">RTM linking business requirements to test cases, Jira defects, and UAT sign-off — single source of truth.</p>
+      <div class="pf-card-meta"><span>80+ requirements</span><span>Jira defect links</span></div>
+      <div class="pf-card-tags"><span>RTM</span><span>UAT</span><span>Jira</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <!-- HR -->
+    <a href="javascript:void(0)" onclick="nav('hr-ocm')" class="pf-card" data-domain="hr">
+      <div class="pf-card-domain hr-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        HR
+      </div>
+      <div class="pf-card-num">HR-01</div>
+      <div class="pf-card-phase">Executing</div>
+      <h3 class="pf-card-title">OCM Change &amp; Adoption Plan</h3>
+      <p class="pf-card-desc">Organizational change management plan covering impact assessment, training, resistance mitigation, and adoption metrics.</p>
+      <div class="pf-card-meta"><span>50,000+ users</span><span>Change readiness</span></div>
+      <div class="pf-card-tags"><span>OCM</span><span>WalkMe</span><span>Training</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
+    <a href="javascript:void(0)" onclick="nav('hr-02')" class="pf-card" data-domain="hr">
+      <div class="pf-card-domain hr-d">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        HR
+      </div>
+      <div class="pf-card-num">HR-02</div>
+      <div class="pf-card-phase">Executing</div>
+      <h3 class="pf-card-title">HRIS Implementation Plan</h3>
+      <p class="pf-card-desc">PeopleSoft payroll implementation plan — data migration, UAT, cutover checklist, rollback procedures.</p>
+      <div class="pf-card-meta"><span>Oracle PeopleSoft</span><span>Cutover checklist</span></div>
+      <div class="pf-card-tags"><span>HRIS</span><span>PeopleSoft</span><span>UAT</span></div>
+      <div class="pf-card-arrow">View →</div>
+    </a>
+
   </div>
-
-
-  </section>
 </section>
-
-
-
-<!-- PORTFOLIO -->
-<section class="work-section" id="work">
-  <div class="s-head reveal"><span class="s-num">03</span><h2 class="s-title">Portfolio <em>by Discipline</em></h2><div class="s-rule"></div></div>
-  <div class="disclaimer reveal">⚠ All artifacts are mock deliverables created to demonstrate PM competency. IBM project data is simulated. Not client confidential.</div>
-
-
-<section class="work-section" id="work">
-
-  <!-- CATEGORY 1: PROJECT MANAGEMENT -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">📋</div>
-      <h3 class="cat-title">Project <em>Management</em></h3>
-      <span class="cat-count">8 Artifacts</span>
-    </div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('pm-02')" class="card"><div class="card-num">PM-02</div><div class="card-tag">Project Charter</div><h3 class="card-title">Project Charter &<br/><em>Scope Definition</em></h3><p class="card-desc">Formal charter — objectives, scope decisions, budget breakdown, stakeholder authorization, 4-phase timeline.</p><div class="card-highlights"><span class="highlight">$1.25M · 9 months · 5 KPIs</span><span class="highlight">85.5% projected 3-year ROI</span></div><div class="card-tools"><span class="tag">Charter</span><span class="tag">Scope</span><span class="tag">PMBOK</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pm-03')" class="card"><div class="card-num">PM-03</div><div class="card-tag">Risk Management</div><h3 class="card-title">Risk Register &<br/><em>Response Plan</em></h3><p class="card-desc">10-risk register across 6 categories with probability/impact scoring, AI bias risk, and CCPA compliance risk.</p><div class="card-highlights"><span class="highlight">4 High · 5 Medium · 1 Low</span><span class="highlight">Mitigate · Transfer · Avoid · Accept</span></div><div class="card-tools"><span class="tag">Risk</span><span class="tag">Compliance</span><span class="tag">AI Ethics</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pm-05')" class="card"><div class="card-num">PM-05</div><div class="card-tag">Schedule Management</div><h3 class="card-title">Project Schedule<br/><em>& Gantt Chart</em></h3><p class="card-desc">21-task Gantt across 4 phases with owners, dates, percent complete, and change request log CR-001 through CR-005.</p><div class="card-highlights"><span class="highlight">21 tasks · 4 phases · 9-month arc</span><span class="highlight">5 change requests managed</span></div><div class="card-tools"><span class="tag">Gantt</span><span class="tag">WBS</span><span class="tag">Change Control</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-      
-      <a href="javascript:void(0)" onclick="nav('pm-09')" class="card"><div class="card-num">PM-09</div><div class="card-tag">Communications</div><h3 class="card-title">Communications<br/><em>Management Plan</em></h3><p class="card-desc">8 audiences, 12 communication types, full cadence matrix, escalation protocol — who gets what, when, how.</p><div class="card-highlights"><span class="highlight">8 audiences · 12 comm types</span><span class="highlight">Tier 1/2/3 escalation protocol</span></div><div class="card-tools"><span class="tag">Comms Plan</span><span class="tag">PMBOK 10.1</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pm-10')" class="card"><div class="card-num">PM-10</div><div class="card-tag">Issue Management</div><h3 class="card-title">Issue Log &<br/><em>Resolution Tracker</em></h3><p class="card-desc">12 issues tracked — distinct from the risk register. Owner, resolution path, target date, escalation status per issue.</p><div class="card-highlights"><span class="highlight">12 issues · 3 escalated · 7 closed</span><span class="highlight">Avg 4.2 days to close</span></div><div class="card-tools"><span class="tag">Issue Log</span><span class="tag">Escalation</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-      
-      
-      
-      <a href="javascript:void(0)" onclick="nav('pm-new-m')" class="card"><div class="card-num">PM-23</div><div class="card-tag">Acceptance Management</div><h3 class="card-title">Deliverable<br/><em>Acceptance Form</em></h3><p class="card-desc">Formal sign-off criteria per deliverable — acceptance criteria, pass/fail gate, client signature, corrective action path.</p><div class="card-highlights"><span class="highlight">8 deliverables · pass/fail gates</span><span class="highlight">Client sign-off · corrective action</span></div><div class="card-tools"><span class="tag">Acceptance</span><span class="tag">Sign-off</span><span class="tag">Governance</span></div><span class="card-cta">View ↓</span></a>
-      
-    </div>
-  </div>
-
-  <!-- CATEGORY 2: SAFE SCRUM MASTER -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">🏃</div>
-      <h3 class="cat-title">SAFe <em>Scrum Master</em></h3>
-      <span class="cat-count">3 Artifacts</span>
-    </div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('sm-02')" class="card"><div class="card-num">SM-01</div><div class="card-tag">PI Planning</div><h3 class="card-title">PI Planning<br/><em>Document</em></h3><p class="card-desc">PI 3 planning — team objectives, sprint capacity, cross-team dependencies, risks across 3 agile teams.</p><div class="card-highlights"><span class="highlight">3 teams · 9 PI objectives · 4 sprints</span><span class="highlight">6 cross-team dependencies mapped</span></div><div class="card-tools"><span class="tag">PI Planning</span><span class="tag">ART</span><span class="tag">SAFe</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-      <a href="javascript:void(0)" onclick="nav('sm-06')" class="card"><div class="card-num">SM-04</div><div class="card-tag">Task Management</div><h3 class="card-title">Monday.com Sprint<br/><em>Tracker Board</em></h3><p class="card-desc">17 tasks across 3 workstreams — AI Integration, Process & Delivery, Strategy & Reporting — with status, owners, deadlines.</p><div class="card-highlights"><span class="highlight">17 tasks · 3 workstreams · Sprint 3 of 4</span><span class="highlight">Status pills · effort bars · blocker flags</span></div><div class="card-tools"><span class="tag">Monday.com</span><span class="tag">Sprint</span><span class="tag">Task Mgmt</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('sm-kanban')" class="card"><div class="card-num">SM-05</div><div class="card-tag">Kanban Management</div><h3 class="card-title">Sprint Kanban<br/><em>Board</em></h3><p class="card-desc">Interactive drag-and-drop Sprint 7 board — 8 stories, WIP limits enforced, blocker flagged, real-time progress tracking.</p><div class="card-highlights"><span class="highlight">8 stories · 33 pts · 4 columns</span><span class="highlight">Drag & drop · live progress bar</span></div><div class="card-tools"><span class="tag">Kanban</span><span class="tag">WIP Limits</span><span class="tag">SAFe</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-      
-      <a href="javascript:void(0)" onclick="nav('sm-new-d')" class="card"><div class="card-num">SM-08</div><div class="card-tag">Product Mapping</div><h3 class="card-title">User Story<br/><em>Map</em></h3><p class="card-desc">Epic > Feature > Story with release swim lanes — full product scope in one visual, priorities clear across the program.</p><div class="card-highlights"><span class="highlight">5 epics · 14 features · 3 releases</span><span class="highlight">Release swim lanes · MVP boundary</span></div><div class="card-tools"><span class="tag">Story Map</span><span class="tag">Product</span><span class="tag">Release</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-    </div>
-  </div>
-
-  <!-- CATEGORY 3: PMO -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">🏛️</div>
-      <h3 class="cat-title">PMO <em>Governance</em></h3>
-      <span class="cat-count">3 Artifacts</span>
-    </div>
-    <div class="card-grid">
-      
-      
-      <a href="javascript:void(0)" onclick="nav('pmo-04')" class="card"><div class="card-num">PMO-03</div><div class="card-tag">Strategic Roadmap</div><h3 class="card-title">Project Roadmap &<br/><em>Release Plan</em></h3><p class="card-desc">12-month visual roadmap across 3 workstreams and 4 quarters, 3-release plan with go/no-go criteria.</p><div class="card-highlights"><span class="highlight">4 quarters · 8 milestones · 3 releases</span><span class="highlight">Go/No-Go criteria defined</span></div><div class="card-tools"><span class="tag">Roadmap</span><span class="tag">Release Mgmt</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pmo-04')" class="card"><div class="card-num">PMO-04</div><div class="card-tag">Meeting Governance</div><h3 class="card-title">Meeting Minutes<br/><em>Kickoff & Sprint Review</em></h3><p class="card-desc">Steering Committee kickoff and Sprint 6 Review — structured decisions, action items, owners, due dates.</p><div class="card-highlights"><span class="highlight">7 decisions · 12 action items logged</span><span class="highlight">Charter signed · SLAs agreed</span></div><div class="card-tools"><span class="tag">Facilitation</span><span class="tag">Minutes</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('pmo-new-a')" class="card"><div class="card-num">PMO-05</div><div class="card-tag">Health Monitoring</div><h3 class="card-title">Project Health<br/><em>Dashboard (RAG)</em></h3><p class="card-desc">Live RAG status across schedule, budget, scope, quality, and risk — one visual that tells the full project story.</p><div class="card-highlights"><span class="highlight">5 RAG dimensions · trend indicators</span><span class="highlight">Executive-ready · weekly updated</span></div><div class="card-tools"><span class="tag">RAG</span><span class="tag">Dashboard</span><span class="tag">Executive</span></div><span class="card-cta">View ↓</span></a>
-      
-    </div>
-  </div>
-
-  <!-- CATEGORY 4: FINANCIALS -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">💰</div>
-      <h3 class="cat-title">Financial <em>Management</em></h3>
-      <span class="cat-count">2 Artifacts</span>
-    </div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('fin-01')" class="card"><div class="card-num">FIN-01</div><div class="card-tag">Business Case</div><h3 class="card-title">Business Case &<br/><em>ROI Analysis</em></h3><p class="card-desc">Full $1.25M investment justification — problem statement, 4 alternatives, quantified benefits, 3-year financial projection.</p><div class="card-highlights"><span class="highlight">$1.07M annual benefit (conservative)</span><span class="highlight">18-month payback · 85.5% 3-yr ROI</span></div><div class="card-tools"><span class="tag">Business Case</span><span class="tag">ROI</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('fin-02')" class="card"><div class="card-num">FIN-02</div><div class="card-tag">Budget Tracking</div><h3 class="card-title">Budget & Labor<br/><em>Cost Reports</em></h3><p class="card-desc">Quarterly budget tracker, 7-person labor utilization with billing rates, contractor invoice tracking, lessons learned.</p><div class="card-highlights"><span class="highlight">$612K spent · $32K under forecast</span><span class="highlight">7 team members · 3 vendor invoices</span></div><div class="card-tools"><span class="tag">Budget</span><span class="tag">Labor</span><span class="tag">Invoicing</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-      
-    </div>
-  </div>
-
-  <!-- CATEGORY 5: HR TRANSFORMATION -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">👥</div>
-      <h3 class="cat-title">HR <em>Transformation</em></h3>
-      <span class="cat-count">4 Artifacts</span>
-    </div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('hr-new-a')" class="card"><div class="card-num">HR-01</div><div class="card-tag">Labor Reporting</div><h3 class="card-title">Labor Report<br/><em>& Timesheet Tracker</em></h3><p class="card-desc">Hours by person, WBS element, CLIN, billing period — contract-compliant format with utilization summary.</p><div class="card-highlights"><span class="highlight">7 team members · billing period detail</span><span class="highlight">WBS · CLIN · contract compliant</span></div><div class="card-tools"><span class="tag">Labor</span><span class="tag">Timesheet</span><span class="tag">Compliance</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('hr-new-b')" class="card"><div class="card-num">HR-02</div><div class="card-tag">Personnel Tracking</div><h3 class="card-title">Key Personnel<br/><em>Resume Tracker</em></h3><p class="card-desc">Name, role, LCAT, education, relevant experience, clearance level — proposal-ready and project resource planning.</p><div class="card-highlights"><span class="highlight">7 key personnel profiles</span><span class="highlight">LCAT · clearance · experience summary</span></div><div class="card-tools"><span class="tag">Personnel</span><span class="tag">Resume</span><span class="tag">LCAT</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('hr-new-c')" class="card"><div class="card-num">HR-03</div><div class="card-tag">Onboarding</div><h3 class="card-title">Employee Onboarding<br/><em>Checklist</em></h3><p class="card-desc">Background check, badge, system access, briefings, IBM W3 setup — Day 1 through Week 4 new hire checklist.</p><div class="card-highlights"><span class="highlight">Day 1 · Week 1 · Month 1 milestones</span><span class="highlight">IT · HR · Security · Manager tasks</span></div><div class="card-tools"><span class="tag">Onboarding</span><span class="tag">Checklist</span><span class="tag">HR</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('hr-new-d')" class="card"><div class="card-num">HR-04</div><div class="card-tag">Talent Development</div><h3 class="card-title">Skill Gap<br/><em>& Training Tracker</em></h3><p class="card-desc">Required vs current skills per team member, gap analysis, training plan with courses, completion dates and status.</p><div class="card-highlights"><span class="highlight">7 team members · skill gap analysis</span><span class="highlight">Training plan · completion tracking</span></div><div class="card-tools"><span class="tag">Skill Gap</span><span class="tag">Training</span><span class="tag">Development</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-
-  <!-- CATEGORY 6: TESTING & QA -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">🧪</div>
-      <h3 class="cat-title">Testing <em>& QA</em></h3>
-      <span class="cat-count">2 Artifacts</span>
-    </div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('qa-01')" class="card"><div class="card-num">QA-01</div><div class="card-tag">UAT Management</div><h3 class="card-title">UAT Plan &<br/><em>Defect Tracker</em></h3><p class="card-desc">Full UAT planning — test scenarios, entry/exit criteria, tester assignments, defect log with severity, sign-off tracking.</p><div class="card-highlights"><span class="highlight">24 test scenarios · 3 test cycles</span><span class="highlight">Defect log · P1 resolution SLA</span></div><div class="card-tools"><span class="tag">UAT</span><span class="tag">QA</span><span class="tag">Defect Mgmt</span></div><span class="card-cta">View ↓</span></a>
-      <a href="javascript:void(0)" onclick="nav('qa-new-a')" class="card"><div class="card-num">QA-02</div><div class="card-tag">Quality Control</div><h3 class="card-title">Quality Control<br/><em>Checklist</em></h3><p class="card-desc">Inspection criteria, pass/fail acceptance gates, and corrective action log applied per major deliverable — formal QC evidence.</p><div class="card-highlights"><span class="highlight">8 deliverables · 3-tier inspection</span><span class="highlight">Pass/fail · corrective action · sign-off</span></div><div class="card-tools"><span class="tag">QC</span><span class="tag">Acceptance</span><span class="tag">PMBOK 8.3</span></div><span class="card-cta">View ↓</span></a>
-    </div>
-  </div>
-
-  <!-- CATEGORY 7: IBM PROPOSAL & BD -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">📝</div>
-      <h3 class="cat-title">IBM Proposal <em>& Business Development</em></h3>
-      <span class="cat-count">1 Artifact</span>
-    </div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('prop-01')" class="card"><div class="card-num">PROP-01</div><div class="card-tag">RFP Response</div><h3 class="card-title">SOW Compliance<br/><em>Matrix</em></h3><p class="card-desc">PWS tasks mapped to compliance requirements — Vol I/II, evaluation factors, every requirement tracked to a response section.</p><div class="card-highlights"><span class="highlight">PWS · compliance mapping · eval factors</span><span class="highlight">IBM proposal foundation document</span></div><div class="card-tools"><span class="tag">RFP</span><span class="tag">Proposal</span><span class="tag">Compliance</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-      
-    </div>
-  </div>
-
-  <!-- CATEGORY 8: CLOSEOUT & GOVERNANCE -->
-  <div class="portfolio-category">
-    <div class="cat-header">
-      <div class="cat-icon">📦</div>
-      <h3 class="cat-title">Closeout <em>& Governance</em></h3>
-      <span class="cat-count">1 Artifact</span>
-    </div>
-    <div class="card-grid">
-      <a href="javascript:void(0)" onclick="nav('close-01')" class="card"><div class="card-num">CLOSE-01</div><div class="card-tag">Lessons Learned</div><h3 class="card-title">Lessons Learned<br/><em>Final Report</em></h3><p class="card-desc">Project summary, schedule/cost/scope variances, root causes, and recommendations submitted to IBM Center of Excellence.</p><div class="card-highlights"><span class="highlight">Variances · root causes · recommendations</span><span class="highlight">IBM CoE submission format</span></div><div class="card-tools"><span class="tag">Lessons Learned</span><span class="tag">Final</span><span class="tag">IBM CoE</span></div><span class="card-cta">View ↓</span></a>
-      
-      
-    </div>
-  </div>
-
-</section>
-
 
 <div class="artifact-page" id="pm-02">
   <div class="art-divider"></div>
@@ -2710,6 +2664,487 @@ nav{padding:0.85rem 3.5rem;}
 
 /* Stat counters */
 .stat-counter{display:inline-block;transition:opacity 0.4s;}
+
+/* ═══ HERO v3 — full override ═══ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:#060d1a;
+  padding:0;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(37,99,235,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 20% 80%, rgba(8,145,178,0.14) 0%, transparent 55%),
+    linear-gradient(145deg, #060d1a 0%, #0a1628 50%, #0c1d30 100%);
+  z-index:0;
+}
+.hero-grid-overlay{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(96,165,250,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96,165,250,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
+  z-index:1;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(60px);z-index:1;pointer-events:none;}
+.hero-orb-1{width:400px;height:400px;background:rgba(37,99,235,0.18);top:-100px;right:5%;}
+.hero-orb-2{width:300px;height:300px;background:rgba(8,145,178,0.12);bottom:-80px;left:10%;}
+.hero-orb-3{width:200px;height:200px;background:rgba(96,165,250,0.1);top:40%;right:25%;}
+
+.hero-inner{
+  position:relative;z-index:2;
+  width:100%;max-width:1200px;
+  margin:0 auto;
+  padding:7rem 5rem 6rem;
+  display:grid;
+  grid-template-columns:1fr 400px;
+  gap:4rem;
+  align-items:center;
+}
+.hero-content{display:flex;flex-direction:column;gap:0;}
+
+.hero-eyebrow{
+  display:flex;align-items:center;gap:0.8rem;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:rgba(96,165,250,0.8);
+  margin-bottom:1.4rem;font-family:var(--sans);
+}
+.hero-eyebrow-line{display:block;width:32px;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:2px;flex-shrink:0;}
+
+.hero-name{
+  margin:0 0 1.2rem;
+  line-height:0.95;
+  letter-spacing:-0.04em;
+  font-weight:900;
+}
+.hero-first{
+  display:block;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  color:#ffffff;
+  font-family:var(--sans);
+}
+.hero-last{
+  display:block;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  background:linear-gradient(135deg,#60a5fa 0%,#38bdf8 60%,#7dd3fc 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  font-family:var(--sans);
+}
+
+.avail-badge-v2{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(5,150,105,0.12);
+  border:1px solid rgba(52,211,153,0.3);
+  border-radius:99px;padding:0.38rem 0.9rem;
+  font-size:0.76rem;font-weight:600;color:#34d399;
+  margin-bottom:1.6rem;font-family:var(--sans);
+  width:fit-content;
+}
+
+.hero-bio{
+  font-size:1rem;line-height:1.75;
+  color:rgba(255,255,255,0.62);
+  max-width:500px;margin:0 0 1.8rem;
+  font-family:var(--sans);font-weight:400;
+}
+
+.hero-certs{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.2rem;}
+.hcert{
+  font-size:0.72rem;font-weight:600;
+  padding:0.3rem 0.8rem;border-radius:6px;
+  border:1px solid rgba(96,165,250,0.3);
+  color:rgba(255,255,255,0.8);
+  background:rgba(96,165,250,0.08);
+  font-family:var(--sans);
+}
+.hcert-muted{border-color:rgba(255,255,255,0.12);color:rgba(255,255,255,0.4);background:transparent;}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;}
+.hbtn{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  padding:0.72rem 1.6rem;border-radius:10px;
+  font-size:0.85rem;font-weight:600;font-family:var(--sans);
+  text-decoration:none;cursor:pointer;transition:all 0.2s;white-space:nowrap;
+}
+.hbtn-primary{
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  color:#fff;box-shadow:0 4px 18px rgba(37,99,235,0.35);
+}
+.hbtn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,0.45);}
+.hbtn-outline{
+  background:transparent;color:rgba(255,255,255,0.85);
+  border:1px solid rgba(255,255,255,0.2);
+}
+.hbtn-outline:hover{border-color:rgba(96,165,250,0.6);color:#60a5fa;background:rgba(96,165,250,0.06);}
+.hbtn-ghost{color:rgba(255,255,255,0.5);background:transparent;}
+.hbtn-ghost:hover{color:rgba(255,255,255,0.85);}
+
+/* Hero stats card */
+.hero-card{
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(96,165,250,0.15);
+  border-radius:24px;
+  padding:2.5rem 2rem;
+  display:flex;flex-direction:column;align-items:center;gap:2rem;
+  position:relative;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.hero-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(96,165,250,0.4),transparent);
+}
+.hcard-accent{
+  position:absolute;bottom:-40px;right:-40px;
+  width:140px;height:140px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,0.2) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hcard-monogram{margin-bottom:-0.5rem;}
+.hcard-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1rem;width:100%;
+}
+.hcard-stat{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(96,165,250,0.1);
+  border-radius:14px;padding:1.1rem 0.8rem;
+  text-align:center;transition:border-color 0.2s;
+}
+.hcard-stat:hover{border-color:rgba(96,165,250,0.3);}
+.hcard-val{
+  font-size:1.65rem;font-weight:900;
+  background:linear-gradient(135deg,#ffffff,#93c5fd);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  line-height:1.1;font-family:var(--sans);letter-spacing:-0.03em;
+}
+.hcard-lbl{
+  font-size:0.62rem;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:rgba(255,255,255,0.4);
+  margin-top:0.3rem;font-family:var(--sans);
+}
+
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;padding:6rem 2rem 4rem;}
+  .hero-card{max-width:400px;}
+}
+@media(max-width:600px){
+  .hero-inner{padding:5rem 1.5rem 3rem;}
+  .hero-first,.hero-last{font-size:clamp(2.8rem,12vw,4rem);}
+}
+/* Make sure old hero-left/right rules don't bleed in */
+.hero .hero-left,.hero .hero-right,.hero .hero-left::before{all:unset;}
+
+
+/* ═══ TIMELINE EXPERIENCE ═══ */
+.exp-section{background:var(--offwhite);padding:5rem;}
+.tl-container{
+  position:relative;max-width:920px;margin:0 auto;
+  padding:2rem 0 1rem;
+}
+.tl-container::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;
+  width:2px;
+  background:linear-gradient(180deg,var(--blue) 0%,var(--teal) 50%,rgba(8,145,178,0.1) 100%);
+  transform:translateX(-50%);
+}
+.tl-item{
+  position:relative;width:45%;
+  margin-bottom:3rem;
+}
+.tl-item[data-side="right"]{margin-left:55%;}
+.tl-item[data-side="left"]{margin-left:0;}
+
+.tl-node{
+  position:absolute;
+  top:1.2rem;
+  width:36px;height:36px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  display:flex;align-items:center;justify-content:center;
+  color:white;
+  box-shadow:0 0 0 4px var(--offwhite),0 0 0 6px var(--blue);
+  z-index:2;
+}
+.tl-item[data-side="right"] .tl-node{left:-62px;}
+.tl-item[data-side="left"] .tl-node{right:-62px;}
+
+.tl-node-sm{
+  position:absolute;top:1.1rem;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--border);
+  box-shadow:0 0 0 3px var(--offwhite),0 0 0 5px var(--border);
+  z-index:2;
+}
+.tl-item[data-side="right"] .tl-node-sm{left:-50px;}
+.tl-item[data-side="left"] .tl-node-sm{right:-50px;}
+.tl-node-inner{display:flex;align-items:center;justify-content:center;}
+.tl-node-inner-sm{width:100%;height:100%;border-radius:50%;background:var(--muted);}
+
+.tl-card{
+  background:white;border:1px solid var(--border);
+  border-radius:16px;padding:1.5rem;
+  box-shadow:0 2px 16px rgba(0,0,0,0.05);
+  transition:transform 0.2s,box-shadow 0.2s;
+  position:relative;overflow:hidden;
+}
+.tl-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--blue),var(--teal));
+}
+.tl-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,99,235,0.1);}
+.tl-card-sm{padding:1rem 1.2rem;}
+
+.tl-card-header{display:flex;align-items:center;justify-content:space-between;gap:0.8rem;flex-wrap:wrap;margin-bottom:0.8rem;}
+.tl-company-badge{
+  font-size:0.68rem;font-weight:800;letter-spacing:0.06em;
+  padding:0.25rem 0.7rem;border-radius:6px;font-family:var(--sans);
+  text-transform:uppercase;
+}
+.ibm-badge{background:#0f62fe;color:white;}
+.acn-badge{background:#a100ff;color:white;}
+.gov-badge{background:#1e3a5f;color:white;}
+.corp-badge{background:#374151;color:white;}
+.tl-date-pill{
+  font-size:0.7rem;font-weight:600;color:var(--blue);
+  background:var(--blue-tint);padding:0.2rem 0.6rem;
+  border-radius:99px;font-family:var(--sans);white-space:nowrap;
+}
+.tl-title{font-size:0.96rem;font-weight:700;color:var(--ink);margin:0 0 0.4rem;line-height:1.3;}
+.tl-location{
+  display:flex;align-items:center;gap:0.35rem;
+  font-size:0.72rem;color:var(--muted);margin-bottom:0.7rem;
+  font-family:var(--sans);
+}
+.tl-context-strip{
+  font-size:0.72rem;font-style:italic;color:var(--muted);
+  background:var(--offwhite);border-radius:6px;
+  padding:0.3rem 0.6rem;margin-bottom:0.8rem;
+}
+.tl-highlights{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;}
+.tl-hl{
+  font-size:0.79rem;line-height:1.6;color:var(--ink-soft);
+  display:flex;gap:0.5rem;align-items:flex-start;
+}
+.tl-hl-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--teal));
+  flex-shrink:0;margin-top:0.42rem;
+}
+.tl-tags{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.tl-tags span{
+  font-size:0.66rem;font-weight:600;color:var(--blue);
+  background:var(--blue-tint);padding:0.18rem 0.55rem;
+  border-radius:5px;font-family:var(--sans);
+}
+
+@media(max-width:780px){
+  .tl-container::before{left:20px;}
+  .tl-item,.tl-item[data-side="right"],.tl-item[data-side="left"]{
+    width:calc(100% - 50px);margin-left:50px;
+  }
+  .tl-item[data-side="right"] .tl-node,
+  .tl-item[data-side="left"] .tl-node{left:-42px;right:auto;}
+  .tl-item[data-side="right"] .tl-node-sm,
+  .tl-item[data-side="left"] .tl-node-sm{left:-32px;right:auto;}
+}
+
+/* ═══ SKILLS GRID ═══ */
+.skills-section{background:var(--white);padding:5rem;}
+.skill-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.2rem;max-width:960px;margin:0 auto;
+}
+.sk-item{
+  background:white;border:1px solid var(--border);
+  border-radius:16px;padding:1.4rem;
+  transition:all 0.22s;position:relative;overflow:hidden;
+}
+.sk-item::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent,var(--blue)),transparent);
+  opacity:0;transition:opacity 0.2s;
+}
+.sk-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.07);}
+.sk-item:hover::after{opacity:1;}
+.sk-icon-wrap{
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid;margin-bottom:0.9rem;
+}
+.sk-name{font-size:0.88rem;font-weight:700;color:var(--ink);margin-bottom:0.7rem;font-family:var(--sans);}
+.sk-bar-wrap{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.7rem;}
+.sk-bar{flex:1;height:6px;background:var(--surface);border-radius:99px;overflow:hidden;}
+.sk-fill{height:100%;width:0;border-radius:99px;background:var(--c,var(--blue));transition:width 1.2s cubic-bezier(0.4,0,0.2,1);}
+.sk-fill.animated{width:calc(var(--w,0) * 1%);}
+.sk-pct{font-size:0.68rem;font-weight:700;color:var(--muted);font-family:var(--sans);white-space:nowrap;}
+.sk-chips{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.sk-chips span{font-size:0.63rem;color:var(--muted);background:var(--surface);padding:0.15rem 0.45rem;border-radius:4px;font-family:var(--sans);}
+
+/* Certs scroll row */
+.certs-row-label{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;font-family:var(--sans);}
+.certs-scroll-row{
+  display:flex;gap:0.9rem;overflow-x:auto;padding-bottom:0.5rem;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+}
+.certs-scroll-row::-webkit-scrollbar{height:4px;}
+.certs-scroll-row::-webkit-scrollbar-track{background:transparent;}
+.certs-scroll-row::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.cert-chip{
+  display:flex;align-items:center;gap:0.75rem;
+  background:white;border:1px solid var(--border);
+  border-radius:12px;padding:0.8rem 1rem;
+  white-space:nowrap;flex-shrink:0;
+  transition:all 0.2s;cursor:default;
+}
+.cert-chip:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(37,99,235,0.1);}
+.active-cert{border-color:rgba(37,99,235,0.2);}
+.edu-cert{border-color:var(--border);}
+.cert-chip-icon{
+  width:34px;height:34px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.cert-chip-name{font-size:0.82rem;font-weight:700;color:var(--ink);font-family:var(--sans);}
+.cert-chip-org{font-size:0.68rem;color:var(--muted);margin-top:0.1rem;font-family:var(--sans);}
+
+@media(max-width:900px){
+  .skill-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:580px){
+  .skill-grid{grid-template-columns:1fr;}
+}
+
+
+/* ═══ PORTFOLIO SECTION ═══ */
+.work-section{background:var(--offwhite);padding:5rem;}
+.pf-disclaimer{
+  font-size:0.74rem;color:var(--muted);
+  background:rgba(245,158,11,0.06);
+  border:1px solid rgba(245,158,11,0.2);
+  border-radius:8px;padding:0.6rem 1rem;
+  max-width:760px;margin:0 auto 2.5rem;
+  text-align:center;
+}
+.pf-stats-bar{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;max-width:600px;margin:0 auto 1.8rem;
+  background:white;border:1px solid var(--border);
+  border-radius:14px;padding:1.2rem 2rem;
+}
+.pf-stat{text-align:center;flex:1;}
+.pf-stat-val{font-size:1.4rem;font-weight:800;color:var(--ink);font-family:var(--sans);display:block;}
+.pf-stat-lbl{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);font-family:var(--sans);margin-top:0.2rem;display:block;}
+.pf-stat-div{width:1px;background:var(--border);align-self:stretch;margin:0 0.5rem;}
+
+/* Tabs */
+.pf-tabs{
+  display:flex;flex-wrap:wrap;gap:0.5rem;
+  justify-content:center;margin-bottom:2.5rem;
+}
+.pf-tab{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  padding:0.45rem 1rem;border-radius:99px;
+  font-size:0.78rem;font-weight:600;font-family:var(--sans);
+  border:1px solid var(--border);background:white;
+  color:var(--muted);cursor:pointer;transition:all 0.18s;
+}
+.pf-tab:hover{border-color:var(--blue);color:var(--blue);}
+.pf-tab.active{
+  background:var(--blue);border-color:var(--blue);color:white;
+  box-shadow:0 3px 12px rgba(37,99,235,0.25);
+}
+.pf-tab svg{flex-shrink:0;}
+
+/* Card grid */
+.pf-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.2rem;
+  max-width:1080px;margin:0 auto;
+}
+.pf-card{
+  background:white;border:1px solid var(--border);
+  border-radius:16px;padding:1.4rem;
+  text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;gap:0.5rem;
+  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;
+  position:relative;overflow:hidden;
+}
+.pf-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  opacity:0;transition:opacity 0.2s;
+}
+.pf-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.08);border-color:transparent;}
+.pf-card:hover::before{opacity:1;}
+.pf-card.pf-hidden{display:none;}
+.pf-card.pf-fade-in{animation:pfFadeIn 0.3s ease both;}
+@keyframes pfFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* Domain label colors */
+.pf-card-domain{
+  display:inline-flex;align-items:center;gap:0.35rem;
+  font-size:0.66rem;font-weight:700;
+  padding:0.2rem 0.6rem;border-radius:5px;
+  width:fit-content;font-family:var(--sans);
+  text-transform:uppercase;letter-spacing:0.06em;
+}
+.gov-d{background:rgba(124,58,237,0.08);color:#7c3aed;}
+.pf-card[data-domain="gov"]::before{background:linear-gradient(90deg,#7c3aed,#8b5cf6);}
+.pf-card[data-domain="gov"]:hover{border-color:rgba(124,58,237,0.2);}
+
+.scope-d{background:rgba(8,145,178,0.08);color:#0891b2;}
+.pf-card[data-domain="scope"]::before{background:linear-gradient(90deg,#0891b2,#38bdf8);}
+.pf-card[data-domain="scope"]:hover{border-color:rgba(8,145,178,0.2);}
+
+.sched-d{background:rgba(37,99,235,0.08);color:#2563eb;}
+.pf-card[data-domain="schedule"]::before{background:linear-gradient(90deg,#2563eb,#3b82f6);}
+.pf-card[data-domain="schedule"]:hover{border-color:rgba(37,99,235,0.2);}
+
+.cost-d{background:rgba(5,150,105,0.08);color:#059669;}
+.pf-card[data-domain="cost"]::before{background:linear-gradient(90deg,#059669,#34d399);}
+.pf-card[data-domain="cost"]:hover{border-color:rgba(5,150,105,0.2);}
+
+.risk-d{background:rgba(220,38,38,0.08);color:#dc2626;}
+.pf-card[data-domain="risk"]::before{background:linear-gradient(90deg,#dc2626,#f87171);}
+.pf-card[data-domain="risk"]:hover{border-color:rgba(220,38,38,0.2);}
+
+.stake-d{background:rgba(245,158,11,0.08);color:#d97706;}
+.pf-card[data-domain="stakeholder"]::before{background:linear-gradient(90deg,#d97706,#fbbf24);}
+.pf-card[data-domain="stakeholder"]:hover{border-color:rgba(245,158,11,0.2);}
+
+.agile-d{background:rgba(239,68,68,0.08);color:#e11d48;}
+.pf-card[data-domain="agile"]::before{background:linear-gradient(90deg,#e11d48,#fb7185);}
+.pf-card[data-domain="agile"]:hover{border-color:rgba(239,68,68,0.2);}
+
+.hr-d{background:rgba(99,102,241,0.08);color:#6366f1;}
+.pf-card[data-domain="hr"]::before{background:linear-gradient(90deg,#6366f1,#818cf8);}
+.pf-card[data-domain="hr"]:hover{border-color:rgba(99,102,241,0.2);}
+
+.pf-card-num{font-size:0.66rem;font-weight:700;color:var(--muted);font-family:var(--sans);letter-spacing:0.08em;}
+.pf-card-phase{font-size:0.7rem;color:var(--muted);font-family:var(--sans);}
+.pf-card-title{font-size:0.95rem;font-weight:700;color:var(--ink);margin:0.2rem 0;line-height:1.35;}
+.pf-card-desc{font-size:0.79rem;color:var(--ink-soft);line-height:1.6;flex:1;}
+.pf-card-meta{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.3rem;}
+.pf-card-meta span{font-size:0.67rem;font-weight:600;color:var(--muted);background:var(--surface);padding:0.15rem 0.5rem;border-radius:4px;}
+.pf-card-tags{display:flex;flex-wrap:wrap;gap:0.3rem;}
+.pf-card-tags span{font-size:0.63rem;font-weight:600;color:var(--blue);background:var(--blue-tint);padding:0.15rem 0.5rem;border-radius:4px;}
+.pf-card-arrow{font-size:0.77rem;font-weight:600;color:var(--blue);margin-top:0.4rem;transition:letter-spacing 0.2s;}
+.pf-card:hover .pf-card-arrow{letter-spacing:0.04em;}
+
+@media(max-width:900px){.pf-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:580px){.pf-grid{grid-template-columns:1fr;}}
+
 </style>
     <div class="mon-wrap">
       <div class="mon-topbar">
@@ -3120,111 +3555,145 @@ nav{padding:0.85rem 3.5rem;}
 
 
 <section class="skills-section" id="skills">
-  <div class="s-head reveal"><h2 class="s-title">Skills &amp; <em>Certifications</em></h2><div class="s-rule"></div></div>
+  <div class="s-head reveal"><span class="s-num">05</span><h2 class="s-title">Skills &amp; <em>Certifications</em></h2><div class="s-rule"></div></div>
 
-  <!-- Skill pillars as visual cards -->
-  <div class="skill-pillars reveal">
-    <div class="sp-card" data-color="var(--blue)">
-      <div class="sp-icon">📋</div>
-      <div class="sp-name">Planning &amp; Scheduling</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:95%"></div></div>
-      <div class="sp-tags"><span>WBS</span><span>MS Project</span><span>Milestones</span></div>
+  <!-- Skill grid with SVG icons and animated fills -->
+  <div class="skill-grid reveal">
+
+    <div class="sk-item" style="--accent:#2563eb">
+      <div class="sk-icon-wrap" style="background:rgba(37,99,235,0.1);border-color:rgba(37,99,235,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+      </div>
+      <div class="sk-name">Planning &amp; Scheduling</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="95"><div class="sk-fill" style="--c:#2563eb"></div></div><span class="sk-pct">95%</span></div>
+      <div class="sk-chips"><span>WBS</span><span>MS Project</span><span>IMPS</span></div>
     </div>
-    <div class="sp-card">
-      <div class="sp-icon">⚙️</div>
-      <div class="sp-name">Governance &amp; Control</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:95%"></div></div>
-      <div class="sp-tags"><span>Charter</span><span>CCB</span><span>RAID</span></div>
+
+    <div class="sk-item" style="--accent:#7c3aed">
+      <div class="sk-icon-wrap" style="background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="sk-name">Governance &amp; Control</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="95"><div class="sk-fill" style="--c:#7c3aed"></div></div><span class="sk-pct">95%</span></div>
+      <div class="sk-chips"><span>Charter</span><span>CCB</span><span>RAID</span></div>
     </div>
-    <div class="sp-card">
-      <div class="sp-icon">⚠️</div>
-      <div class="sp-name">Risk Management</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:92%"></div></div>
-      <div class="sp-tags"><span>Risk Register</span><span>Mitigation</span><span>Issues</span></div>
+
+    <div class="sk-item" style="--accent:#dc2626">
+      <div class="sk-icon-wrap" style="background:rgba(220,38,38,0.1);border-color:rgba(220,38,38,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="1.8"><path d="m10.29 3.86-8 14A1 1 0 0 0 3 19.5h18a1 1 0 0 0 .71-1.71l-8-14a1 1 0 0 0-1.42 0zM12 9v4M12 17h.01"/></svg>
+      </div>
+      <div class="sk-name">Risk Management</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="92"><div class="sk-fill" style="--c:#dc2626"></div></div><span class="sk-pct">92%</span></div>
+      <div class="sk-chips"><span>Risk Register</span><span>Mitigation</span><span>Issues</span></div>
     </div>
-    <div class="sp-card">
-      <div class="sp-icon">💰</div>
-      <div class="sp-name">Budget &amp; Finance</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:90%"></div></div>
-      <div class="sp-tags"><span>Forecasting</span><span>EVM</span><span>Power BI</span></div>
+
+    <div class="sk-item" style="--accent:#059669">
+      <div class="sk-icon-wrap" style="background:rgba(5,150,105,0.1);border-color:rgba(5,150,105,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div class="sk-name">Budget &amp; Finance</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="90"><div class="sk-fill" style="--c:#059669"></div></div><span class="sk-pct">90%</span></div>
+      <div class="sk-chips"><span>EVM</span><span>Forecasting</span><span>Power BI</span></div>
     </div>
-    <div class="sp-card">
-      <div class="sp-icon">👥</div>
-      <div class="sp-name">Stakeholder Mgmt</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:92%"></div></div>
-      <div class="sp-tags"><span>Comms Plan</span><span>Executive</span><span>Alignment</span></div>
+
+    <div class="sk-item" style="--accent:#0891b2">
+      <div class="sk-icon-wrap" style="background:rgba(8,145,178,0.1);border-color:rgba(8,145,178,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="sk-name">Stakeholder Mgmt</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="92"><div class="sk-fill" style="--c:#0891b2"></div></div><span class="sk-pct">92%</span></div>
+      <div class="sk-chips"><span>Comms Plan</span><span>Executive</span><span>RACI</span></div>
     </div>
-    <div class="sp-card">
-      <div class="sp-icon">🏃</div>
-      <div class="sp-name">Agile / SAFe</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:90%"></div></div>
-      <div class="sp-tags"><span>SAFe 6.0</span><span>Jira</span><span>PI Planning</span></div>
+
+    <div class="sk-item" style="--accent:#f59e0b">
+      <div class="sk-icon-wrap" style="background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="sk-name">Agile / SAFe</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="90"><div class="sk-fill" style="--c:#f59e0b"></div></div><span class="sk-pct">90%</span></div>
+      <div class="sk-chips"><span>SAFe 6.0</span><span>Jira</span><span>PI Planning</span></div>
     </div>
-    <div class="sp-card" data-color="var(--blue)">
-      <div class="sp-icon">📊</div>
-      <div class="sp-name">Reporting &amp; Analytics</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:92%"></div></div>
-      <div class="sp-tags"><span>Power BI</span><span>Tableau</span><span>KPIs</span></div>
+
+    <div class="sk-item" style="--accent:#6366f1">
+      <div class="sk-icon-wrap" style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div class="sk-name">Reporting &amp; Analytics</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="92"><div class="sk-fill" style="--c:#6366f1"></div></div><span class="sk-pct">92%</span></div>
+      <div class="sk-chips"><span>Power BI</span><span>Tableau</span><span>KPIs</span></div>
     </div>
-    <div class="sp-card">
-      <div class="sp-icon">🤖</div>
-      <div class="sp-name">AI Enablement</div>
-      <div class="sp-bar"><div class="sp-fill" style="--w:85%"></div></div>
-      <div class="sp-tags"><span>Copilot</span><span>WatsonX</span><span>Claude</span></div>
+
+    <div class="sk-item" style="--accent:#10a37f">
+      <div class="sk-icon-wrap" style="background:rgba(16,163,127,0.1);border-color:rgba(16,163,127,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="sk-name">AI Enablement</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="85"><div class="sk-fill" style="--c:#10a37f"></div></div><span class="sk-pct">85%</span></div>
+      <div class="sk-chips"><span>Copilot</span><span>WatsonX</span><span>Claude</span></div>
     </div>
+
+    <div class="sk-item" style="--accent:#e11d48">
+      <div class="sk-icon-wrap" style="background:rgba(225,29,72,0.1);border-color:rgba(225,29,72,0.2)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="sk-name">HRIS &amp; Systems</div>
+      <div class="sk-bar-wrap"><div class="sk-bar" data-w="88"><div class="sk-fill" style="--c:#e11d48"></div></div><span class="sk-pct">88%</span></div>
+      <div class="sk-chips"><span>Workday</span><span>PeopleSoft</span><span>NeoGov</span></div>
+    </div>
+
   </div>
 
-  <!-- Certification cards with glow -->
-  <div class="certs-modern reveal" style="margin-top:3rem;">
-    <h3 class="certs-subhead">Certifications</h3>
-    <div class="certs-flex">
-      <div class="cert-glow active-cert">
-        <div class="cg-icon">🏅</div>
-        <div class="cg-name">PMP</div>
-        <div class="cg-org">Project Management Institute</div>
-        <div class="cg-status active-badge">Active</div>
+  <!-- Certifications — horizontal scroll cards -->
+  <div class="certs-row-wrap reveal" style="margin-top:3.5rem;">
+    <div class="certs-row-label">Certifications &amp; Education</div>
+    <div class="certs-scroll-row">
+      <div class="cert-chip active-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#2563eb,#0891b2)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div><div class="cert-chip-name">PMP</div><div class="cert-chip-org">PMI · Active</div></div>
       </div>
-      <div class="cert-glow">
-        <div class="cg-icon">🏆</div>
-        <div class="cg-name">SAFe 6.0 Scrum Master</div>
-        <div class="cg-org">Scaled Agile</div>
-        <div class="cg-status active-badge">Active</div>
+      <div class="cert-chip active-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div><div class="cert-chip-name">SAFe 6.0 SM</div><div class="cert-chip-org">Scaled Agile · Active</div></div>
       </div>
-      <div class="cert-glow">
-        <div class="cg-icon">🏆</div>
-        <div class="cg-name">ICAgile (ICP)</div>
-        <div class="cg-org">ICAgile</div>
-        <div class="cg-status active-badge">Active</div>
+      <div class="cert-chip active-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#8b5cf6,#6366f1)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div><div class="cert-chip-name">ICP</div><div class="cert-chip-org">ICAgile · Active</div></div>
       </div>
-      <div class="cert-glow">
-        <div class="cg-icon">💼</div>
-        <div class="cg-name">Workday HCM</div>
-        <div class="cg-org">Workday</div>
-        <div class="cg-status active-badge">Active</div>
+      <div class="cert-chip active-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#FF6D00,#f59e0b)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div><div class="cert-chip-name">Workday HCM</div><div class="cert-chip-org">Workday · Active</div></div>
       </div>
-      <div class="cert-glow">
-        <div class="cg-icon">☁️</div>
-        <div class="cg-name">Cloud Digital Leader</div>
-        <div class="cg-org">Google</div>
-        <div class="cg-status active-badge">Active</div>
+      <div class="cert-chip active-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#1A73E8,#4285F4)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div><div class="cert-chip-name">GCP Digital Leader</div><div class="cert-chip-org">Google · Active</div></div>
       </div>
-      <div class="cert-glow">
-        <div class="cg-icon">🎓</div>
-        <div class="cg-name">MBA</div>
-        <div class="cg-org">Howard University · 2023</div>
-        <div class="cg-status edu-badge">Education</div>
+      <div class="cert-chip edu-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#dc2626,#9f1239)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div><div class="cert-chip-name">MBA</div><div class="cert-chip-org">Howard University · 2023</div></div>
       </div>
-      <div class="cert-glow">
-        <div class="cg-icon">🌍</div>
-        <div class="cg-name">Global Trilateral Certificate</div>
-        <div class="cg-org">Howard · Wits · CUFE · 2023</div>
-        <div class="cg-status edu-badge">Education</div>
+      <div class="cert-chip edu-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#059669,#0891b2)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div><div class="cert-chip-name">Global Trilateral Cert.</div><div class="cert-chip-org">Howard / Wits / CUFE</div></div>
       </div>
-      <div class="cert-glow">
-        <div class="cg-icon">🎓</div>
-        <div class="cg-name">BBA</div>
-        <div class="cg-org">Sam Houston State · 2016</div>
-        <div class="cg-status edu-badge">Education</div>
+      <div class="cert-chip edu-cert">
+        <div class="cert-chip-icon" style="background:linear-gradient(135deg,#2563eb,#7c3aed)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div><div class="cert-chip-name">BBA</div><div class="cert-chip-org">Sam Houston State · 2016</div></div>
       </div>
     </div>
   </div>
@@ -3548,6 +4017,88 @@ initCounters();
   }
   var poly = document.getElementById('radarData');
   if(poly) poly.setAttribute('points','170,160 170,160 170,160 170,160 170,160 170,160');
+})();
+
+
+// Hero card counter animation
+(function(){
+  var vals = document.querySelectorAll('.hcard-val[data-target]');
+  if(!vals.length) return;
+  var animated = false;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !animated){
+        animated = true;
+        vals.forEach(function(el){
+          var target = parseInt(el.getAttribute('data-target'));
+          var prefix = el.getAttribute('data-prefix') || '';
+          var suffix = el.getAttribute('data-suffix') || '';
+          var cur = 0;
+          var steps = 50;
+          var inc = target / steps;
+          var timer = setInterval(function(){
+            cur += inc;
+            if(cur >= target){ cur = target; clearInterval(timer); }
+            el.textContent = prefix + Math.floor(cur) + suffix;
+          }, 30);
+        });
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.3});
+  var card = document.querySelector('.hero-card');
+  if(card) io.observe(card);
+})();
+
+
+// Skill bar animation
+(function(){
+  var fills = document.querySelectorAll('.sk-fill');
+  if(!fills.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var bar = e.target.closest('.sk-item');
+        if(!bar) return;
+        var fill = bar.querySelector('.sk-fill');
+        var w = bar.querySelector('.sk-bar').getAttribute('data-w');
+        if(fill && w){
+          fill.style.setProperty('--w', w);
+          setTimeout(function(){ fill.classList.add('animated'); }, 100);
+        }
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  document.querySelectorAll('.sk-item').forEach(function(el){ io.observe(el); });
+})();
+
+
+// Portfolio domain filter tabs
+(function(){
+  var tabs = document.querySelectorAll('.pf-tab');
+  var cards = document.querySelectorAll('.pf-card');
+  if(!tabs.length || !cards.length) return;
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var domain = this.getAttribute('data-domain');
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      this.classList.add('active');
+      var delay = 0;
+      cards.forEach(function(card){
+        if(domain === 'all' || card.getAttribute('data-domain') === domain){
+          card.classList.remove('pf-hidden');
+          card.style.animationDelay = (delay * 0.04) + 's';
+          card.classList.remove('pf-fade-in');
+          void card.offsetWidth; // reflow
+          card.classList.add('pf-fade-in');
+          delay++;
+        } else {
+          card.classList.add('pf-hidden');
+        }
+      });
+    });
+  });
 })();
 
 </script>
