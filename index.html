@@ -3156,130 +3156,228 @@ nav{padding:0.85rem 3.5rem;}
 
 
 
-/* ═══ PALETTE v3 — Light IBM Blues + Gold/Coral accent ═══ */
+
+
+
+/* ══════════════════════════════════════════════════════
+   HERO REDESIGN — Light / White background
+   IBM Blue palette + vibrant accents
+   ══════════════════════════════════════════════════════ */
+
+/* ── Core brand tokens ── */
 :root{
-  --blue:#4589ff;
-  --blue-mid:#82cfff;
-  --blue-light:#a6c8ff;
-  --blue-tint:#edf5ff;
-  --teal:#1192e8;
-  --teal-tint:#e5f6ff;
-  --accent-gold:#f1c21b;
-  --accent-coral:#ff7eb6;
+  --blue:#0f62fe;        /* IBM Blue 60 — primary */
+  --royal:#4589ff;       /* IBM Blue 50 — royal */
+  --sky:#82cfff;         /* IBM Cyan 30 — sky */
+  --ink:#0a0a14;
+  --offwhite:#f8fafc;
+  --white:#ffffff;
+  --border:#e2e8f0;
+  --shadow:0 4px 24px rgba(15,98,254,0.1);
 }
 
-/* Hero dark background — true deep navy */
-.hero,.hero-bg{ background:#030712 !important; }
+/* ── Hero: white background, not dark ── */
+.hero{
+  background:#ffffff !important;
+  position:relative;
+  overflow:hidden;
+}
 .hero-bg{
   background:
-    radial-gradient(ellipse 75% 55% at 65% 35%, rgba(69,137,255,0.26) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 60% at 18% 82%, rgba(17,146,232,0.15) 0%, transparent 55%),
-    radial-gradient(ellipse 30% 40% at 85% 80%, rgba(241,194,27,0.07) 0%, transparent 50%),
-    linear-gradient(145deg, #030712 0%, #060f1f 60%, #080f1c 100%) !important;
+    radial-gradient(ellipse 70% 80% at 95% 10%, rgba(69,137,255,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 5% 90%, rgba(130,207,255,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 35% 45% at 70% 85%, rgba(241,194,27,0.06) 0%, transparent 45%),
+    #ffffff !important;
 }
-.hero-orb-1{ background:rgba(69,137,255,0.22) !important; }
-.hero-orb-2{ background:rgba(17,146,232,0.15) !important; }
-.hero-orb-3{ background:rgba(241,194,27,0.09) !important; }
-
-/* Grid overlay — sky blue */
+.hero-orb-1{background:rgba(69,137,255,0.10) !important; filter:blur(80px) !important;}
+.hero-orb-2{background:rgba(130,207,255,0.09) !important; filter:blur(70px) !important;}
+.hero-orb-3{background:rgba(241,194,27,0.06) !important; filter:blur(60px) !important;}
 .hero-grid-overlay{
   background-image:
-    linear-gradient(rgba(130,207,255,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(130,207,255,0.045) 1px, transparent 1px) !important;
+    linear-gradient(rgba(15,98,254,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,98,254,0.04) 1px, transparent 1px) !important;
+  background-size:50px 50px !important;
 }
 
-/* "Montgomery" gradient — royal → sky → light blue */
+/* ── Eyebrow ── */
+.hero-eyebrow{ color:#4589ff !important; font-weight:700; letter-spacing:0.14em; }
+.hero-eyebrow-line{ background:linear-gradient(90deg,#0f62fe,#f1c21b) !important; }
+
+/* ── Name — fix clipping: add padding-bottom so descenders show ── */
+.hero-name{
+  line-height:1.1 !important;
+  letter-spacing:-0.03em !important;
+  font-weight:900 !important;
+  white-space:normal !important;
+  overflow:visible !important;
+  padding-bottom:0.15em !important;
+  margin-bottom:1.4rem !important;
+}
+.hero-first{
+  display:block !important;
+  font-size:clamp(3.2rem,5.5vw,5rem) !important;
+  color:#0a0a14 !important;
+  font-family:var(--sans) !important;
+  line-height:1.05 !important;
+}
 .hero-last{
-  background:linear-gradient(135deg,#4589ff 0%,#82cfff 50%,#a6c8ff 100%) !important;
+  display:block !important;
+  font-size:clamp(3.2rem,5.5vw,5rem) !important;
+  background:linear-gradient(135deg,#0f62fe 0%,#4589ff 45%,#82cfff 100%) !important;
   -webkit-background-clip:text !important;
   -webkit-text-fill-color:transparent !important;
   background-clip:text !important;
+  font-family:var(--sans) !important;
+  line-height:1.1 !important;
+  padding-bottom:0.12em !important;
 }
 
-/* Eyebrow */
-.hero-eyebrow{ color:rgba(166,200,255,0.9) !important; }
-.hero-eyebrow-line{ background:linear-gradient(90deg,#4589ff,#f1c21b) !important; }
-
-/* Availability badge — gold tint */
+/* ── Availability badge ── */
 .avail-badge-v2{
-  background:rgba(241,194,27,0.1) !important;
-  border-color:rgba(241,194,27,0.35) !important;
-  color:#f1c21b !important;
+  background:rgba(5,150,105,0.08) !important;
+  border:1px solid rgba(5,150,105,0.3) !important;
+  color:#059669 !important;
 }
-.avail-dot{ background:#f1c21b !important; }
-@keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(241,194,27,0.6);}50%{box-shadow:0 0 0 6px rgba(241,194,27,0);}}
-.avail-dot{ animation:pulse-gold 2s ease-in-out infinite !important; }
+.avail-dot{ background:#10b981 !important; }
 
-/* Cert pills in hero */
-.hcert{ border-color:rgba(69,137,255,0.35) !important; background:rgba(69,137,255,0.09) !important; }
+/* ── Bio text ── */
+.hero-bio{ color:#374151 !important; }
 
-/* Primary button — royal blue + gold shimmer */
+/* ── Cert pills ── */
+.hcert{
+  border-color:rgba(15,98,254,0.25) !important;
+  color:#0f62fe !important;
+  background:rgba(15,98,254,0.06) !important;
+}
+.hcert-muted{
+  border-color:rgba(100,116,139,0.2) !important;
+  color:#64748b !important;
+  background:transparent !important;
+}
+
+/* ── Buttons ── */
 .hbtn-primary{
-  background:linear-gradient(135deg,#1192e8,#4589ff) !important;
-  box-shadow:0 4px 18px rgba(69,137,255,0.4) !important;
+  background:linear-gradient(135deg,#0f62fe,#4589ff) !important;
+  color:#fff !important;
+  box-shadow:0 4px 20px rgba(15,98,254,0.35) !important;
 }
-.hbtn-primary:hover{ box-shadow:0 8px 28px rgba(69,137,255,0.55) !important; transform:translateY(-2px); }
-.hbtn-outline{ border-color:rgba(130,207,255,0.35) !important; }
-.hbtn-outline:hover{ border-color:#82cfff !important; color:#82cfff !important; background:rgba(130,207,255,0.06) !important; }
+.hbtn-primary:hover{
+  box-shadow:0 8px 30px rgba(15,98,254,0.5) !important;
+  transform:translateY(-2px) !important;
+}
+.hbtn-outline{
+  background:transparent !important;
+  color:#0f62fe !important;
+  border:1.5px solid rgba(15,98,254,0.35) !important;
+}
+.hbtn-outline:hover{
+  border-color:#0f62fe !important;
+  background:rgba(15,98,254,0.05) !important;
+}
+.hbtn-ghost{ color:#64748b !important; }
+.hbtn-ghost:hover{ color:#0f62fe !important; }
 
-/* Hero card */
-.hero-card{ border-color:rgba(69,137,255,0.2) !important; }
-.hero-card::before{ background:linear-gradient(90deg,transparent,rgba(241,194,27,0.4),transparent) !important; }
-.hcard-stat:hover{ border-color:rgba(130,207,255,0.3) !important; }
+/* ── Stats card — white card with blue accents, strong shadow ── */
+.hero-card{
+  background:#ffffff !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  border:1.5px solid rgba(15,98,254,0.15) !important;
+  border-radius:20px !important;
+  box-shadow:0 8px 40px rgba(15,98,254,0.14), 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+.hero-card::before{
+  background:linear-gradient(90deg,transparent,rgba(15,98,254,0.3),transparent) !important;
+}
+.hcard-accent{
+  background:radial-gradient(circle,rgba(15,98,254,0.1) 0%,transparent 70%) !important;
+}
 .hcard-val{
-  background:linear-gradient(135deg,#ffffff,#82cfff) !important;
+  background:linear-gradient(135deg,#0f62fe,#4589ff) !important;
   -webkit-background-clip:text !important;
   -webkit-text-fill-color:transparent !important;
   background-clip:text !important;
 }
+.hcard-lbl{ color:#64748b !important; font-size:0.72rem !important; font-weight:600 !important; letter-spacing:0.05em !important; }
+.hcard-stat{
+  background:#f8fafc !important;
+  border:1px solid rgba(15,98,254,0.1) !important;
+  border-radius:12px !important;
+}
+.hcard-stat:hover{ border-color:rgba(15,98,254,0.28) !important; background:#edf5ff !important; }
 
-/* Nav */
-.logo{ color:#4589ff !important; }
+/* Monogram circle on card */
+.hcard-monogram-circle{
+  background:linear-gradient(135deg,#0f62fe,#4589ff) !important;
+  box-shadow:0 4px 16px rgba(15,98,254,0.3) !important;
+}
 
-/* Section number + heading em — gold accent */
-.s-num{ color:#f1c21b !important; font-weight:800; }
-.s-title em{ color:#4589ff; }
-.s-rule{ background:linear-gradient(90deg,#4589ff,#f1c21b,transparent) !important; }
+/* ── Nav — stays white, logo blue ── */
+nav{ background:rgba(255,255,255,0.95) !important; border-bottom:1px solid rgba(15,98,254,0.1) !important; }
+.logo{ color:#0f62fe !important; }
+nav a{ color:#374151 !important; }
+nav a:hover, nav a.active{ color:#0f62fe !important; }
+.nav-resume-btn{
+  background:linear-gradient(135deg,#0f62fe,#4589ff) !important;
+  color:#fff !important;
+}
+.nav-contact-btn{
+  background:linear-gradient(135deg,#0f62fe,#4589ff) !important;
+  color:#fff !important;
+  box-shadow:0 2px 10px rgba(15,98,254,0.3) !important;
+}
 
-/* Timeline */
-.tl-node{ background:linear-gradient(135deg,#1192e8,#4589ff) !important; box-shadow:0 0 0 4px var(--offwhite),0 0 0 6px #4589ff !important; }
-.tl-card::before{ background:linear-gradient(90deg,#4589ff,#82cfff) !important; }
-.tl-date-pill{ color:#1192e8 !important; background:#e5f6ff !important; }
-.tl-tags span{ color:#1192e8 !important; background:#edf5ff !important; }
-.tl-hl-dot{ background:linear-gradient(135deg,#4589ff,#82cfff) !important; }
-.tl-card:hover{ box-shadow:0 8px 28px rgba(69,137,255,0.12) !important; }
+/* ── Section numbers ── */
+.s-num{ color:#f1c21b !important; font-weight:800 !important; }
+.s-rule{ background:linear-gradient(90deg,#0f62fe,#f1c21b,transparent) !important; }
 
-/* Portfolio */
-.pf-stats-bar{ border-color:rgba(69,137,255,0.15) !important; }
-.pf-tab.active{ background:linear-gradient(135deg,#1192e8,#4589ff) !important; border-color:#1192e8 !important; box-shadow:0 3px 12px rgba(17,146,232,0.3) !important; }
-.pf-tab:hover{ border-color:#4589ff !important; color:#4589ff !important; }
-.pf-card-tags span{ color:#1192e8 !important; background:#edf5ff !important; }
-.pf-card-arrow{ color:#4589ff !important; }
+/* ── Timeline ── */
+.tl-node{ background:linear-gradient(135deg,#0f62fe,#4589ff) !important; box-shadow:0 0 0 4px #fff,0 0 0 6px #4589ff !important; }
+.tl-card::before{ background:linear-gradient(90deg,#0f62fe,#82cfff) !important; }
+.tl-date-pill{ color:#0f62fe !important; background:#edf5ff !important; border:1px solid rgba(15,98,254,0.2) !important; }
+.tl-tags span{ color:#0f62fe !important; background:#edf5ff !important; }
+.tl-hl-dot{ background:linear-gradient(135deg,#0f62fe,#4589ff) !important; }
+.tl-card:hover{ box-shadow:0 8px 32px rgba(15,98,254,0.12) !important; }
 
-/* Skills */
-.certs-row-label{ color:#f1c21b !important; }
-.cert-chip.active-cert{ border-color:rgba(69,137,255,0.25) !important; }
-.cert-chip:hover{ border-color:#4589ff !important; box-shadow:0 4px 14px rgba(69,137,255,0.12) !important; }
+/* ── Portfolio ── */
+.pf-tab.active{
+  background:linear-gradient(135deg,#0f62fe,#4589ff) !important;
+  border-color:#0f62fe !important;
+  box-shadow:0 3px 12px rgba(15,98,254,0.3) !important;
+  color:#fff !important;
+}
+.pf-tab:hover{ border-color:#4589ff !important; color:#0f62fe !important; }
+.pf-card-tags span{ color:#0f62fe !important; background:#edf5ff !important; }
+.pf-card-arrow{ color:#0f62fe !important; }
 
-/* Radar */
-.radar-data{ fill:rgba(69,137,255,0.15) !important; stroke:#4589ff !important; }
-.radar-dot{ fill:#82cfff !important; stroke:#4589ff !important; }
-.ri-fill{ background:linear-gradient(90deg,#4589ff,#82cfff) !important; }
+/* ── Skills / certs ── */
+.certs-row-label{ color:#f1c21b !important; font-weight:700 !important; }
+.cert-chip:hover{ border-color:#4589ff !important; box-shadow:0 4px 14px rgba(15,98,254,0.12) !important; }
+
+/* ── Radar ── */
+.radar-data{ fill:rgba(15,98,254,0.12) !important; stroke:#0f62fe !important; }
+.radar-dot{ fill:#4589ff !important; stroke:#0f62fe !important; }
+.ri-fill{ background:linear-gradient(90deg,#0f62fe,#4589ff) !important; }
 .radar-legend-title{ color:#f1c21b !important; }
 
-/* About sidebar */
-.sb-stat-val{ background:linear-gradient(135deg,#82cfff,#a6c8ff) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
-.sb-stat-card{ border-color:rgba(69,137,255,0.2) !important; }
-.sb-card::after{ background:linear-gradient(90deg,#4589ff,#82cfff) !important; }
-.sb-card-label{ color:#1192e8 !important; }
-.sb-cert-pill.active-p{ background:#edf5ff !important; color:#1192e8 !important; border-color:rgba(17,146,232,0.3) !important; }
+/* ── About sidebar ── */
+.sb-stat-val{
+  background:linear-gradient(135deg,#0f62fe,#4589ff) !important;
+  -webkit-background-clip:text !important;
+  -webkit-text-fill-color:transparent !important;
+  background-clip:text !important;
+}
+.sb-stat-card{ border-color:rgba(15,98,254,0.18) !important; }
+.sb-card::after{ background:linear-gradient(90deg,#0f62fe,#82cfff) !important; }
+.sb-card-label{ color:#0f62fe !important; }
+.sb-cert-pill.active-p{ background:#edf5ff !important; color:#0f62fe !important; border-color:rgba(15,98,254,0.25) !important; }
 
-/* Scroll to top */
-.sto-btn{ background:linear-gradient(135deg,#1192e8,#4589ff) !important; box-shadow:0 4px 20px rgba(69,137,255,0.45) !important; }
-.sto-btn:hover{ box-shadow:0 6px 28px rgba(69,137,255,0.6),0 0 0 8px rgba(130,207,255,0.15) !important; }
+/* ── Scroll to top ── */
+.sto-btn{ background:linear-gradient(135deg,#0f62fe,#4589ff) !important; box-shadow:0 4px 20px rgba(15,98,254,0.45) !important; }
+.sto-btn:hover{ box-shadow:0 6px 28px rgba(15,98,254,0.6),0 0 0 8px rgba(69,137,255,0.12) !important; }
 
-/* Marquee section border accents */
-.marquee-section{ border-top-color:rgba(69,137,255,0.2) !important; border-bottom-color:rgba(69,137,255,0.2) !important; }
+/* ── Marquee strip ── */
+.marquee-section{ background:#0f1b2d !important; }
 
 </style>
     <div class="mon-wrap">
