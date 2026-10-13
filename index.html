@@ -999,7 +999,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
       <div class="tl-card">
         <div class="tl-card-header">
           <div class="tl-company-badge ibm-badge">IBM</div>
-          <div class="tl-date-pill">Jan 2024 — Apr 2026</div>
+          <div class="tl-date-pill">2024 — 2026</div>
         </div>
         <h3 class="tl-title">Project Manager, HR Strategy &amp; Implementation</h3>
         <div class="tl-location">
@@ -1029,7 +1029,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
       <div class="tl-card">
         <div class="tl-card-header">
           <div class="tl-company-badge ibm-badge">IBM</div>
-          <div class="tl-date-pill">May 2023 — May 2024</div>
+          <div class="tl-date-pill">2023 — 2024</div>
         </div>
         <h3 class="tl-title">Senior Consultant</h3>
         <div class="tl-location">
@@ -1057,7 +1057,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
       <div class="tl-card">
         <div class="tl-card-header">
           <div class="tl-company-badge acn-badge">Accenture</div>
-          <div class="tl-date-pill">May 2022 — Aug 2022</div>
+          <div class="tl-date-pill">2022</div>
         </div>
         <h3 class="tl-title">Strategy &amp; Transformation MBA Intern</h3>
         <div class="tl-location">
@@ -1082,7 +1082,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
       <div class="tl-card">
         <div class="tl-card-header">
           <div class="tl-company-badge gov-badge">Harris County</div>
-          <div class="tl-date-pill">Jan 2017 — Aug 2021</div>
+          <div class="tl-date-pill">2017 — 2021</div>
         </div>
         <h3 class="tl-title">Human Resources Division Manager</h3>
         <div class="tl-location">
@@ -1105,7 +1105,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
       <div class="tl-card tl-card-sm">
         <div class="tl-card-header">
           <div class="tl-company-badge gov-badge">Harris County</div>
-          <div class="tl-date-pill">Jan 2016 — Jan 2017</div>
+          <div class="tl-date-pill">2016 — 2017</div>
         </div>
         <h3 class="tl-title" style="font-size:0.9rem;">HR Coordinator</h3>
         <p style="font-size:0.8rem;color:var(--muted);margin:0.4rem 0 0;">Coordinated data migration, UAT, and user training for 500+ employee Oracle PeopleSoft payroll rollout.</p>
@@ -3153,67 +3153,79 @@ nav{padding:0.85rem 3.5rem;}
 
 
 
-/* ═══ COLOR SYSTEM v2 — IBM Blues + elevated accents ═══ */
 
-/* Core blue vars back to IBM scale */
+
+
+/* ═══ PALETTE v3 — Light IBM Blues + Gold/Coral accent ═══ */
 :root{
-  --blue:#0f62fe;
-  --blue-mid:#4589ff;
-  --blue-light:#82cfff;
+  --blue:#4589ff;
+  --blue-mid:#82cfff;
+  --blue-light:#a6c8ff;
   --blue-tint:#edf5ff;
-  --teal:#0072c3;
+  --teal:#1192e8;
   --teal-tint:#e5f6ff;
-  --accent-violet:#8a3ffc;
   --accent-gold:#f1c21b;
+  --accent-coral:#ff7eb6;
 }
 
-/* Hero background — deep IBM navy with a violet bloom */
+/* Hero dark background — true deep navy */
+.hero,.hero-bg{ background:#030712 !important; }
 .hero-bg{
   background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(15,98,254,0.22) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 50% at 15% 85%, rgba(138,63,252,0.14) 0%, transparent 55%),
-    linear-gradient(145deg, #060d1a 0%, #08122a 50%, #0a1530 100%) !important;
+    radial-gradient(ellipse 75% 55% at 65% 35%, rgba(69,137,255,0.26) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 60% at 18% 82%, rgba(17,146,232,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 30% 40% at 85% 80%, rgba(241,194,27,0.07) 0%, transparent 50%),
+    linear-gradient(145deg, #030712 0%, #060f1f 60%, #080f1c 100%) !important;
 }
-.hero-orb-1{background:rgba(15,98,254,0.2) !important;}
-.hero-orb-2{background:rgba(138,63,252,0.13) !important;}
-.hero-orb-3{background:rgba(130,207,255,0.1) !important;}
+.hero-orb-1{ background:rgba(69,137,255,0.22) !important; }
+.hero-orb-2{ background:rgba(17,146,232,0.15) !important; }
+.hero-orb-3{ background:rgba(241,194,27,0.09) !important; }
 
-/* Grid overlay — IBM blue tint */
+/* Grid overlay — sky blue */
 .hero-grid-overlay{
   background-image:
-    linear-gradient(rgba(130,207,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(130,207,255,0.05) 1px, transparent 1px) !important;
+    linear-gradient(rgba(130,207,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130,207,255,0.045) 1px, transparent 1px) !important;
 }
 
-/* Name: "Montgomery" — IBM sky-to-periwinkle gradient */
+/* "Montgomery" gradient — royal → sky → light blue */
 .hero-last{
-  background:linear-gradient(135deg,#82cfff 0%,#a8c0ff 45%,#be95ff 100%) !important;
+  background:linear-gradient(135deg,#4589ff 0%,#82cfff 50%,#a6c8ff 100%) !important;
   -webkit-background-clip:text !important;
   -webkit-text-fill-color:transparent !important;
   background-clip:text !important;
 }
 
-/* Eyebrow line — IBM blue to violet */
-.hero-eyebrow{ color:rgba(130,207,255,0.85) !important; }
-.hero-eyebrow-line{ background:linear-gradient(90deg,#4589ff,#8a3ffc) !important; }
+/* Eyebrow */
+.hero-eyebrow{ color:rgba(166,200,255,0.9) !important; }
+.hero-eyebrow-line{ background:linear-gradient(90deg,#4589ff,#f1c21b) !important; }
 
-/* Primary button — IBM blue */
+/* Availability badge — gold tint */
+.avail-badge-v2{
+  background:rgba(241,194,27,0.1) !important;
+  border-color:rgba(241,194,27,0.35) !important;
+  color:#f1c21b !important;
+}
+.avail-dot{ background:#f1c21b !important; }
+@keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(241,194,27,0.6);}50%{box-shadow:0 0 0 6px rgba(241,194,27,0);}}
+.avail-dot{ animation:pulse-gold 2s ease-in-out infinite !important; }
+
+/* Cert pills in hero */
+.hcert{ border-color:rgba(69,137,255,0.35) !important; background:rgba(69,137,255,0.09) !important; }
+
+/* Primary button — royal blue + gold shimmer */
 .hbtn-primary{
-  background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important;
-  box-shadow:0 4px 18px rgba(15,98,254,0.38) !important;
+  background:linear-gradient(135deg,#1192e8,#4589ff) !important;
+  box-shadow:0 4px 18px rgba(69,137,255,0.4) !important;
 }
-.hbtn-primary:hover{ box-shadow:0 8px 28px rgba(15,98,254,0.5) !important; }
+.hbtn-primary:hover{ box-shadow:0 8px 28px rgba(69,137,255,0.55) !important; transform:translateY(-2px); }
 .hbtn-outline{ border-color:rgba(130,207,255,0.35) !important; }
-.hbtn-outline:hover{ border-color:rgba(130,207,255,0.65) !important; color:#82cfff !important; }
+.hbtn-outline:hover{ border-color:#82cfff !important; color:#82cfff !important; background:rgba(130,207,255,0.06) !important; }
 
-/* Hero card shimmer — sky to violet */
-.hero-card::before{
-  background:linear-gradient(90deg,transparent,rgba(138,63,252,0.45),transparent) !important;
-}
+/* Hero card */
 .hero-card{ border-color:rgba(69,137,255,0.2) !important; }
+.hero-card::before{ background:linear-gradient(90deg,transparent,rgba(241,194,27,0.4),transparent) !important; }
 .hcard-stat:hover{ border-color:rgba(130,207,255,0.3) !important; }
-
-/* Stat values — white to sky */
 .hcard-val{
   background:linear-gradient(135deg,#ffffff,#82cfff) !important;
   -webkit-background-clip:text !important;
@@ -3221,55 +3233,53 @@ nav{padding:0.85rem 3.5rem;}
   background-clip:text !important;
 }
 
-/* Cert pills in hero */
-.hcert{ border-color:rgba(69,137,255,0.35) !important; background:rgba(69,137,255,0.08) !important; }
-
 /* Nav */
 .logo{ color:#4589ff !important; }
-nav a.active, nav a:hover{ color:#4589ff !important; }
 
-/* Section headings em */
-.s-title em{ color:#8a3ffc; }
+/* Section number + heading em — gold accent */
+.s-num{ color:#f1c21b !important; font-weight:800; }
+.s-title em{ color:#4589ff; }
+.s-rule{ background:linear-gradient(90deg,#4589ff,#f1c21b,transparent) !important; }
 
 /* Timeline */
-.tl-node{ background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important; box-shadow:0 0 0 4px var(--offwhite),0 0 0 6px #0f62fe !important; }
-.tl-card::before{ background:linear-gradient(90deg,#0f62fe,#8a3ffc) !important; }
-.tl-date-pill{ color:#0f62fe !important; background:#edf5ff !important; }
-.tl-tags span{ color:#0f62fe !important; background:#edf5ff !important; }
-.tl-hl-dot{ background:linear-gradient(135deg,#4589ff,#8a3ffc) !important; }
+.tl-node{ background:linear-gradient(135deg,#1192e8,#4589ff) !important; box-shadow:0 0 0 4px var(--offwhite),0 0 0 6px #4589ff !important; }
+.tl-card::before{ background:linear-gradient(90deg,#4589ff,#82cfff) !important; }
+.tl-date-pill{ color:#1192e8 !important; background:#e5f6ff !important; }
+.tl-tags span{ color:#1192e8 !important; background:#edf5ff !important; }
+.tl-hl-dot{ background:linear-gradient(135deg,#4589ff,#82cfff) !important; }
+.tl-card:hover{ box-shadow:0 8px 28px rgba(69,137,255,0.12) !important; }
 
 /* Portfolio */
-.pf-tab.active{ background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important; border-color:#0f62fe !important; }
+.pf-stats-bar{ border-color:rgba(69,137,255,0.15) !important; }
+.pf-tab.active{ background:linear-gradient(135deg,#1192e8,#4589ff) !important; border-color:#1192e8 !important; box-shadow:0 3px 12px rgba(17,146,232,0.3) !important; }
 .pf-tab:hover{ border-color:#4589ff !important; color:#4589ff !important; }
-.pf-card-tags span{ color:#0f62fe !important; background:#edf5ff !important; }
+.pf-card-tags span{ color:#1192e8 !important; background:#edf5ff !important; }
 .pf-card-arrow{ color:#4589ff !important; }
 
-/* Skill bars use per-card --c already; certs row accent */
-.certs-row-label{ color:#8a3ffc !important; }
+/* Skills */
+.certs-row-label{ color:#f1c21b !important; }
 .cert-chip.active-cert{ border-color:rgba(69,137,255,0.25) !important; }
-.cert-chip:hover{ border-color:#4589ff !important; box-shadow:0 4px 14px rgba(15,98,254,0.1) !important; }
-
-/* Skill items hover accent */
-.sk-item:hover::after{ background:linear-gradient(90deg,#4589ff,#8a3ffc) !important; opacity:1 !important; }
+.cert-chip:hover{ border-color:#4589ff !important; box-shadow:0 4px 14px rgba(69,137,255,0.12) !important; }
 
 /* Radar */
-.radar-data{ fill:rgba(15,98,254,0.15) !important; stroke:#0f62fe !important; }
-.radar-dot{ fill:#4589ff !important; }
-.ri-fill{ background:linear-gradient(90deg,#0f62fe,#8a3ffc) !important; }
-.radar-legend-title{ color:#8a3ffc !important; }
+.radar-data{ fill:rgba(69,137,255,0.15) !important; stroke:#4589ff !important; }
+.radar-dot{ fill:#82cfff !important; stroke:#4589ff !important; }
+.ri-fill{ background:linear-gradient(90deg,#4589ff,#82cfff) !important; }
+.radar-legend-title{ color:#f1c21b !important; }
 
 /* About sidebar */
-.sb-stat-val{ background:linear-gradient(135deg,#82cfff,#be95ff) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
-.sb-stat-card{ border-color:rgba(69,137,255,0.25) !important; }
-.sb-card::after{ background:linear-gradient(90deg,#0f62fe,#8a3ffc) !important; }
-.sb-card-label{ color:#0f62fe !important; }
-.sb-cert-pill.active-p{ background:linear-gradient(135deg,#edf5ff,#f6f2ff) !important; color:#0f62fe !important; border-color:rgba(15,98,254,0.25) !important; }
+.sb-stat-val{ background:linear-gradient(135deg,#82cfff,#a6c8ff) !important; -webkit-background-clip:text !important; -webkit-text-fill-color:transparent !important; background-clip:text !important; }
+.sb-stat-card{ border-color:rgba(69,137,255,0.2) !important; }
+.sb-card::after{ background:linear-gradient(90deg,#4589ff,#82cfff) !important; }
+.sb-card-label{ color:#1192e8 !important; }
+.sb-cert-pill.active-p{ background:#edf5ff !important; color:#1192e8 !important; border-color:rgba(17,146,232,0.3) !important; }
 
-/* Scroll-to-top */
-.sto-btn{ background:linear-gradient(135deg,#0f62fe,#8a3ffc) !important; box-shadow:0 4px 20px rgba(15,98,254,0.45) !important; }
+/* Scroll to top */
+.sto-btn{ background:linear-gradient(135deg,#1192e8,#4589ff) !important; box-shadow:0 4px 20px rgba(69,137,255,0.45) !important; }
+.sto-btn:hover{ box-shadow:0 6px 28px rgba(69,137,255,0.6),0 0 0 8px rgba(130,207,255,0.15) !important; }
 
-/* s-num section number badges */
-.s-num{ color:#8a3ffc; }
+/* Marquee section border accents */
+.marquee-section{ border-top-color:rgba(69,137,255,0.2) !important; border-bottom-color:rgba(69,137,255,0.2) !important; }
 
 </style>
     <div class="mon-wrap">
