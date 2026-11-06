@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function(){
+  // Block right-click context menu (Save As, View Page Source, Inspect)
+  document.addEventListener('contextmenu',function(e){e.preventDefault();});
+  // Block common dev tools / view-source keyboard shortcuts
+  document.addEventListener('keydown',function(e){
+    if(e.key==='F12') e.preventDefault();
+    if(e.ctrlKey&&e.shiftKey&&['I','J','C','K'].includes(e.key)) e.preventDefault();
+    if(e.ctrlKey&&e.key==='U') e.preventDefault();
+    if(e.ctrlKey&&e.key==='S') e.preventDefault();
+    if(e.metaKey&&e.key==='S') e.preventDefault();
+    if(e.metaKey&&e.key==='U') e.preventDefault();
+    if(e.metaKey&&e.shiftKey&&['I','J','C'].includes(e.key)) e.preventDefault();
+  });
+  // Block drag-to-copy of text/images
+  document.addEventListener('dragstart',function(e){e.preventDefault();});
+  // Disable text selection via CSS (still readable, just harder to bulk-copy)
+  var s=document.createElement('style');
+  s.textContent='body{-webkit-user-select:none;-moz-user-select:none;user-select:none;}input,textarea{-webkit-user-select:text;user-select:text;}';
+  document.head.appendChild(s);
+})();
+</script>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Kia Montgomery · Project Manager & Consultant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -660,11 +682,9 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
   "name": "Kia Montgomery",
   "jobTitle": "Project Manager",
   "url": "https://kia-montgomery.github.io/Portfolio",
-  "email": "kmontgomery1292@gmail.com",
-  "telephone": "+13464279465",
-  "address": {
+      "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Houston",
+    "addressLocality": "Dallas",
     "addressRegion": "TX",
     "addressCountry": "US"
   },
@@ -708,6 +728,132 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 </script>
 </head>
 <body>
+<!-- Watermark overlay -->
+<div class="wm-overlay" aria-hidden="true">
+  <div class="wm-text">
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+    <div class="wm-stamp">© Kia Montgomery</div>
+  </div>
+</div>
+
 
 <div class="domain-quickjump" id="domainQJ">
   <div class="dqj-dot" data-label="About" onclick="nav('about')"></div>
@@ -897,7 +1043,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
         <button class="atab" onclick="showTab('personal')">Personal</button>
       </div>
       <div class="atab-panel active" id="tab-career">
-        <p>Originally from Houston, I attended Howard University in Washington, D.C. — where I earned my MBA and was introduced to consulting. I started my career in HR, spending years across operations, recruiting, workforce planning, and enterprise software implementation.</p>
+        <p>Originally from Houston, I earned my MBA from Howard University in Washington, D.C., where I launched my consulting career. After several years working in D.C., I returned to Houston to take on federal and enterprise HR transformation work, and I've since relocated to Dallas to continue building in that space. My background spans HR operations, workforce planning, recruiting, and enterprise software implementation.</p>
         <p>My work grew into project management, where I became responsible for coordinating large teams, managing deliverables, and keeping complex programs moving. I've always been drawn to the part of a job where I get to figure something out — especially when there isn't already a perfect process in place.</p>
         <p>Moving into full-time consulting, I realized my HR background wasn't a detour — it was a differentiator. I understood what it meant to be on the other side of an implementation, which made me a better PM.</p>
       </div>
@@ -907,7 +1053,7 @@ html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
         <p>I see AI as a capability multiplier for project managers — and I want to be the kind of PM who already knows how to use it when it becomes expected.</p>
       </div>
       <div class="atab-panel" id="tab-personal">
-        <p>Outside of work, I love traveling with my husband, trying new restaurants, working out, and spending time with family and friends. I volunteer with SEARCH Homeless Services in Houston.</p>
+        <p>Outside of work, I love traveling with my husband, trying new restaurants, working out, and spending time with family and friends. I recently relocated to Dallas and am getting to know the city while staying connected to community and volunteer work.</p>
         <p>One of my long-term personal goals is to build a family farm in Natchez, Mississippi — a nod to my family roots and the kind of long-term, intentional project I find meaningful outside of work.</p>
         <p>My career has taken turns I couldn't have planned when I started in HR, and I'm glad it did. I enjoy building on what I know, learning what I don't, and staying open to where that takes me next.</p>
       </div>
@@ -3379,6 +3525,50 @@ nav a:hover, nav a.active{ color:#0f62fe !important; }
 /* ── Marquee strip ── */
 .marquee-section{ background:#0f1b2d !important; }
 
+
+/* ══════════════════════════════════════
+   WATERMARK — Kia Montgomery Portfolio
+   ══════════════════════════════════════ */
+.wm-overlay{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+  overflow:hidden;
+}
+.wm-text{
+  position:absolute;
+  inset:-50%;
+  width:200%;
+  height:200%;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  align-content:flex-start;
+  gap:0;
+}
+.wm-stamp{
+  flex:0 0 auto;
+  width:280px;
+  padding:40px 20px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  color:rgba(15,98,254,0.055);
+  transform:rotate(-35deg);
+  transform-origin:center;
+  white-space:nowrap;
+  user-select:none;
+  -webkit-user-select:none;
+  text-align:center;
+  line-height:1.5;
+}
+/* tighter on artifact pages */
+.artifact-page .wm-stamp{
+  color:rgba(15,98,254,0.07);
+}
+
 </style>
     <div class="mon-wrap">
       <div class="mon-topbar">
@@ -3982,10 +4172,7 @@ nav a:hover, nav a.active{ color:#0f62fe !important; }
     <p class="contact-eyebrow">Let's work together</p>
     <p class="contact-body">I'm actively seeking fully remote Project Manager and Program Manager roles in AI and technology. If you're building something that needs a PM who understands both the people side and the delivery side — let's talk.</p>
     <div class="contact-links">
-      <a href="mailto:kmontgomery1292@gmail.com" class="c-link primary">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:6px" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-        kmontgomery1292@gmail.com
-      </a>
+      <a href="https://linkedin.com/in/kiamontgomery" target="_blank" class="c-link primary">Connect on LinkedIn ↗</a>
       <a href="https://linkedin.com/in/kiamontgomery" target="_blank" class="c-link">LinkedIn ↗</a>
       <a href="Kia_Montgomery_Resume_githubPM.docx" download class="c-link">
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:5px" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M3 19h18"/></svg>
@@ -4003,7 +4190,7 @@ nav a:hover, nav a.active{ color:#0f62fe !important; }
   <div class="footer-links">
     <a href="javascript:void(0)" onclick="nav('top')">Top</a>
     <a href="javascript:void(0)" onclick="nav('work')">Portfolio</a>
-    <a href="mailto:kmontgomery1292@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/kiamontgomery" target="_blank">LinkedIn</a>
     <a href="https://linkedin.com/in/kiamontgomery" target="_blank">LinkedIn</a>
   </div>
 </footer>
